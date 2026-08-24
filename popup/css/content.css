@@ -1,3 +1,15 @@
+.title {
+  position: absolute;
+  display: flex;
+
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  
+  justify-content: center;
+}
+
+
 .button-support {
   display: block;
   align-items: center;
@@ -32,21 +44,6 @@
   height: 50px;
 }
 
-@keyframes AnimateBT {
-  0% {
-    background-position: 0% 50%;
-    border-radius: 15px 30px;
-  }
-  50% {
-    background-position: 100% 50%;
-    border-radius: 30px 15px;
-  }
-  100% {
-    background-position: 0% 50%;
-    border-radius: 15px 30px;
-  }
-}
-
 .button-border {
   z-index: -1;
   position: absolute;
@@ -62,29 +59,6 @@
   animation: AnimateBD 10s linear infinite;
 }
 
-@keyframes AnimateBD {
-  0% { 
-    background-position: 0% 100%; 
-    opacity: 0.80;
-  }
-  25% { 
-    background-position: 50% 50%; 
-    opacity: 0.50;
-  }
-  50% { 
-    background-position: 100% 0%; 
-    opacity: 0.80;
-  }
-  75% { 
-    background-position: 50% 50%; 
-    opacity: 0.50;
-  }
-  100% { 
-    background-position: 0% 100%; 
-    opacity: 0.80;
-  }
-}
-
 .text-support {
   position: relative;
   display: flex;
@@ -95,14 +69,35 @@
   animation: AnimateTX 7s ease infinite;
 }
 
-@keyframes AnimateTX {
-  0% { 
-    text-shadow: 0px 0px 10px #fbfbfb;
-  }
-  50% { 
-    text-shadow: 0px 0px 2px #fbfbfb;
-  }
-  100% { 
-    text-shadow: 0px 0px 10px #fbfbfb;
-  }
+.image-list {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  row-gap: 10px;
+  justify-content: right;
+
+  
+  width: 330;
+  bottom: 10px;
+}
+
+.image-github {
+  height: 40px;
+
+  border-radius: 100%;
+  
+  cursor: pointer;
+
+  transition: all 0.7s;
+}
+.image-github:hover {
+  transform: scale(1.12);
+
+  box-shadow: 0px 0px 12px white;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
 }
