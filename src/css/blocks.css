@@ -1,0 +1,208 @@
+/* Bases des bloques */
+.canva-base-block {
+    position: relative;
+    display: flex;
+
+    align-items: center;
+
+    min-height: 45px;
+    min-width: 100px;
+    height: fit-content;
+    width: fit-content;
+    
+    background-color: var(--color-blocks);
+
+    border-radius: 4px;
+    
+    box-shadow: 0px 0px 1px 1px var(--color-alterntive) inset;
+
+    user-select: none;
+}
+.canva-base-block:hover {
+    cursor: grab;
+}
+.canva-base-block:active {
+    cursor: grabbing;
+}
+.canva-end-block {
+    clip-path: polygon(
+        0% 0%,
+        12px 0%,
+        16px 6px,
+        36px 6px,
+        40px 0%,
+        100% 0%,
+        100% calc(100% + 6px),
+        0% calc(100% + 6px)
+    );
+}
+.canva-end-block-setup {
+    clip-path: polygon(
+        0% calc(0% - 5px),
+        20px calc(0% - 5px),
+        20px 0%,
+        32px 0%,
+        32px calc(0% - 5px),
+        100% calc(0% - 5px),
+        100% 100%,
+        44px 100%,
+        44px calc(100% - 5px),
+        32px calc(100% - 5px),
+        32px 100%,
+        20px 100%,
+        20px calc(100% - 5px),
+        8px calc(100% - 5px),
+        8px 100%,
+        0% 100%
+    );
+}
+
+.color-tasks {
+    --color-blocks: #ffbf00;
+    --color-intermediate: #d9a200;
+    --color-alterntive: #bf8f00;
+}
+.color-other {
+    --color-blocks: #9a72a2;
+    --color-intermediate: #83618a;
+    --color-alterntive: #74567a;
+}
+.color-comment {
+    --color-blocks: #bfbfbf;
+    --color-intermediate: #a2a2a2;
+    --color-alterntive: #8f8f8f;
+}
+.color-output {
+    --color-blocks: #4c97ff;
+    --color-intermediate: #4180d9;
+    --color-alterntive: #386fbc;
+}
+.color-flow {
+    --color-blocks: #ffab19;
+    --color-intermediate: #d99115;
+    --color-alterntive: #bf8013;
+}
+
+/* Element principaux des bloques */
+.canva-global-blocks-output {
+    position: absolute;
+
+    left: 10px;
+    bottom: -6px;
+
+    border-top: 10px solid var(--color-blocks);
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+
+	height: 0;
+	width: 20px;
+}
+.canva-global-blocks-setup {
+    position: absolute;
+
+    left: 8px;
+    top: -5px;
+
+    border-top: 10px solid var(--color-blocks);
+	border-left: 0px solid transparent;
+	border-right: 0px solid transparent;
+
+	height: 0;
+	width: 36px;
+}
+
+.canva-global-blocks-icon {
+    height: 35px;
+    margin: 0px 0px 3px 8px;
+
+    pointer-events: none;
+}
+
+.separator {
+    position: relative;
+    display: flex;
+    align-self: center; 
+    align-items: center;
+
+    margin: 0px 10px 0px 10px;
+    padding: 0px 0px 0px 10px;
+
+    border-left: 1px solid var(--color-alterntive);
+
+    min-width: 50px;
+    min-height: 35px;
+    height: fit-content;
+
+    color: #ffffff;
+    font: bold 12pt "Helvetica Neue", "Segoe UI", Helvetica, sans-serif;
+    white-space: nowrap;
+}
+
+.canva-global-block-text {
+    color: inherit;
+    font: inherit;
+    white-space: inherit;
+
+    margin-right: 6px;
+}
+
+
+/* Element modifiable des bloques */
+.canva-global-block-default {
+    position: relative;
+    align-items: center;
+    display: flex;
+
+    min-height: 30px;
+    height: fit-content;
+
+    margin: 5px 5px 5px 0px;
+
+    font: inherit;
+    white-space: inherit;
+}
+.canva-global-block-number-case {
+    padding: 0px 0px 0px 5px;
+    border-radius: 500px;
+
+    border: 1px solid var(--color-alterntive);
+    background-color: var(--color-intermediate);
+    color: inherit;
+}
+.canva-global-block-text-case {
+    padding: 0px 0px 0px 5px;
+    border-radius: 5px;
+
+    border: 1px solid var(--color-alterntive);
+    background-color: var(--color-blocks);
+    color: inherit;
+}
+.canva-global-block-number-input {
+    padding: 0px 5px 0px 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+
+    border: 1px solid var(--color-alterntive);
+    background-color: #ffffff;
+    color: #575e75;
+}
+.canva-global-block-text-input {
+    padding: 0px 5px 0px 5px;
+    border-radius: 5px;
+
+    border: 1px solid var(--color-alterntive);
+    background-color: var(--color-intermediate);
+    color: inherit;
+}
+.canva-global-block-number-case:hover {
+    cursor: pointer;
+}
+.canva-global-block-text-case:hover {
+    cursor: pointer;
+}
+.canva-global-block-number-input:hover {
+    cursor: text;
+}
+.canva-global-block-text-input:hover {
+    cursor: text;
+}

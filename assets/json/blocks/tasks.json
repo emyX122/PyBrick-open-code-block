@@ -1,0 +1,41 @@
+{
+    "0": [{
+        "version": 1.0,
+        "name": "setup",
+        "class": "tasks",
+        "categorie": "tasks",
+        "submenu": "Setup",
+        "icon": "setup",
+        "connection": [{
+            "type": "setup",
+            "input": false,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "text",
+                "text": "set up"
+            }
+        ]
+    }],
+
+    "1": [{
+        "version": 1.0,
+        "name": "program",
+        "class": "tasks",
+        "categorie": "tasks",
+        "submenu": "Multitask",
+        "icon": "start",
+        "connection": [{
+            "type": "code",
+            "input": false,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "text",
+                "text": "program"
+            }
+        ]
+    }]
+}

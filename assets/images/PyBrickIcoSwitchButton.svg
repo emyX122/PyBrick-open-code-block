@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="51.299973mm"
+   height="39.525959mm"
+   viewBox="0 0 51.299973 39.525959"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   sodipodi:docname="PyBrickIcoSwitchButton.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.916899"
+     inkscape:cx="78.508032"
+     inkscape:cy="82.27916"
+     inkscape:window-width="1920"
+     inkscape:window-height="1128"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-80.1672,-73.40678)">
+    <path
+       d="m 118.14473,79.12902 c 0,0 -0.52917,0.01025 -0.52917,0.652674 0,0.642426 0.52917,0.652673 0.52917,0.652673 3.35552,0.226569 6.63442,1.865742 9.0382,4.73046 4.32522,5.154583 3.87086,12.728924 -0.89193,17.335893 l 0.11265,-1.28519 c 0.0296,-0.33818 -0.15879,-0.62882 -0.60254,-0.66766 -0.44375,-0.0387 -0.63557,0.34254 -0.67851,0.83354 l -0.19844,2.26549 c -0.043,0.49095 0.31777,0.9208 0.80873,0.96377 l 2.26602,0.19844 c 0.30684,0.0269 0.57945,0.007 0.75189,-0.13436 0.10361,-0.0843 0.17069,-0.21237 0.18707,-0.39946 0.0437,-0.49882 -0.21527,-0.66911 -0.55346,-0.69867 l -1.22008,-0.10697 c 5.28206,-5.07513 5.79509,-13.448169 1.01699,-19.142497 -2.66169,-3.172088 -6.3091,-4.970724 -10.03659,-5.198133 z"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.79375"
+       id="path7"
+       sodipodi:nodetypes="czcsccccscccsccsc" />
+    <text
+       xml:space="preserve"
+       style="font-weight:500;font-size:19.0224px;line-height:0;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu Medium';writing-mode:lr-tb;direction:ltr;fill:#ffffff;fill-opacity:1;stroke-width:1.1889"
+       x="96.095444"
+       y="83.260376"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:1.1889"
+         x="96.095444"
+         y="83.260376">&gt;_</tspan></text>
+    <path
+       d="m 105.78254,98.352765 v 0.33383 c 0,0.88838 -0.71514,1.603505 -1.60353,1.603505 h -9.235608 c -0.888388,0 -1.60352,-0.715125 -1.60352,-1.603505 v -0.33383 h -4.311881 c -0.888388,0 -1.60352,0.71512 -1.60352,1.60351 v 8.887825 c 0,0.88839 0.715132,1.60352 1.60352,1.60352 h 4.311881 v 0.8816 c 0,0.88839 0.715132,1.60352 1.60352,1.60352 h 9.235608 c 0.88839,0 1.60353,-0.71513 1.60353,-1.60352 v -0.8816 h 15.32361 c 0.88839,0 1.60352,-0.71513 1.60352,-1.60352 v -8.887825 c 0,-0.88839 -0.71513,-1.60351 -1.60352,-1.60351 z"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.79375"
+       id="path3"
+       sodipodi:nodetypes="csssscsssscsssscssssc" />
+    <path
+       d="m 92.810356,76.943624 c -0.13353,-0.0018 -0.267196,0.05326 -0.399976,0.186035 -0.35407,0.354076 -0.265371,0.65086 -0.02532,0.890902 l 0.866097,0.866097 C 85.942626,79.379202 80.1672,85.46377 80.1672,92.897172 c 0,4.405939 1.854741,8.338448 4.880839,10.913028 0,0 0.635036,0.5897 1.058333,0.1664 0.423297,-0.4233 -0.529166,-1.4211 -0.529166,-1.4211 -2.241147,-2.3142 -4.106727,-6.078636 -4.106727,-9.658328 0,-6.72883 5.216859,-12.239035 11.826669,-12.706718 l -0.912089,0.912089 c -0.24004,0.240042 -0.282921,0.583672 0.03204,0.898653 0.31499,0.31498 0.707259,0.145911 1.055749,-0.202571 l 1.608171,-1.607654 c 0.34848,-0.348482 0.34848,-0.909838 0,-1.258321 l -1.608171,-1.608171 c -0.21781,-0.217802 -0.439921,-0.37787 -0.662492,-0.380855 z"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.79375"
+       id="path8"
+       sodipodi:nodetypes="ssscsczcscssccscs" />
+  </g>
+</svg>

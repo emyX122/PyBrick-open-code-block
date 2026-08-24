@@ -1,0 +1,730 @@
+{
+    "0": [{
+        "version": 1.0,
+        "name": "motorRunAt",
+        "class": "output",
+        "categorie": "output",
+        "submenu": "Motor",
+        "icon": "outputMotor",
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!left!"
+                    },
+                    {
+                        "option": "!right!"
+                    }
+                ],
+                "text": "motor"
+            },
+            {
+                "type": "text",
+                "text": "run at"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 500,
+                "text": "°/s"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "rotate forever",
+                        "subtext": "forever",
+                        "redirect": "0"
+                    },
+                    {
+                        "option": "rotate by the given angle",
+                        "subtext": "by",
+                        "selected": true,
+                        "redirect": "1"
+                    },
+                    {
+                        "option": "rotate towards the angle target",
+                        "subtext": "towards",
+                        "redirect": "1"
+                    },
+                    {
+                        "option": "rotate to the end stop",
+                        "subtext": "to end stop",
+                        "redirect": "2"
+                    }
+                ]
+            },
+            {
+                "selection": "1",
+                "type": "number",
+                "input": true,
+                "value": 360,
+                "text": "°"
+            },
+            {
+                "selection": "1",
+                "type": "text",
+                "text": "then"
+            },
+            {
+                "selection": "1",
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "coast freely",
+                        "subtext": "coast"
+                    },
+                    {
+                        "option": "brake by friction",
+                        "subtext": "brake"
+                    },
+                    {
+                        "option": "hold this position",
+                        "subtext": "hold",
+                        "selected": true
+                    },
+                    {
+                        "option": "continue moving",
+                        "subtext": "continue"
+                    }
+                ]
+            },
+            {
+                "selection": "2",
+                "type": "text",
+                "text": "with power limit"
+            },
+            {
+                "selection": "2",
+                "type": "number",
+                "input": true,
+                "value": 50,
+                "text": "%"
+            },
+            {
+                "selection": "2",
+                "type": "text",
+                "text": "then"
+            },
+            {
+                "selection": "2",
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "coast freely",
+                        "subtext": "coast",
+                        "selected": true
+                    },
+                    {
+                        "option": "brake by friction",
+                        "subtext": "brake"
+                    },
+                    {
+                        "option": "hold this position",
+                        "subtext": "hold"
+                    },
+                    {
+                        "option": "continue moving",
+                        "subtext": "continue"
+                    }
+                ]
+            }
+        ]
+    }],
+
+    "1": [{
+        "version": 1.0,
+        "name": "motorTrack",
+        "class": "output",
+        "categorie": "output",
+        "submenu": "Motor",
+        "icon": "outputMotor",
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!left!"
+                    },
+                    {
+                        "option": "!right!"
+                    }
+                ],
+                "text": "motor"
+            },
+            {
+                "type": "text",
+                "text": "track"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 90,
+                "text": "°"
+            }
+        ]
+    }],
+
+    "2": [{
+        "version": 1.0,
+        "name": "motorStop",
+        "class": "output",
+        "categorie": "output",
+        "submenu": "Motor",
+        "icon": "outputMotor",
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!left!"
+                    },
+                    {
+                        "option": "!right!"
+                    }
+                ],
+                "text": "motor"
+            },
+            {
+                "type": "text",
+                "text": "stop"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "coast freely",
+                        "subtext": "coast",
+                        "selected": true
+                    },
+                    {
+                        "option": "brake by friction",
+                        "subtext": "brake"
+                    },
+                    {
+                        "option": "hold this position",
+                        "subtext": "hold"
+                    }
+                ]
+            }
+        ]
+    }],
+
+    "3": [{
+        "version": 1.0,
+        "name": "motorConfigure",
+        "class": "output",
+        "categorie": "output",
+        "submenu": "Motor",
+        "icon": "outputMotor",
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!left!"
+                    },
+                    {
+                        "option": "!right!"
+                    }
+                ],
+                "text": "motor"
+            },
+            {
+                "type": "text",
+                "text": "configure"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "acceleration and deceleration",
+                        "subtext": "acceleration",
+                        "selected": true,
+                        "redirect": "0"
+                    },
+                    {
+                        "option": "maximum speed",
+                        "subtext": "maximum speed",
+                        "redirect": "1"
+                    },
+                    {
+                        "option": "maximum feedback torque",
+                        "subtext": "maximum torque",
+                        "redirect": "2"
+                    },
+                    {
+                        "option": "maximum voltage",
+                        "subtext": "maximum voltage",
+                        "redirect": "3"
+                    },
+                    {
+                        "option": "tolerances for movements",
+                        "subtext": "tolerances",
+                        "redirect": "4"
+                    }
+                ]
+            },
+            {
+                "selection": "0",
+                "type": "number",
+                "input": true,
+                "value": 2000,
+                "text": "°/s²"
+            },
+            {
+                "selection": "1",
+                "type": "number",
+                "input": true,
+                "value": 1000,
+                "text": "°/s"
+            },
+            {
+                "selection": "2",
+                "type": "number",
+                "input": true,
+                "value": 200,
+                "text": "mNm"
+            },
+            {
+                "selection": "3",
+                "type": "number",
+                "input": true,
+                "value": 9000,
+                "text": "mV"
+            },
+            {
+                "selection": "4",
+                "type": "text",
+                "text": "speed"
+            },
+            {
+                "selection": "4",
+                "type": "number",
+                "input": true,
+                "value": 50,
+                "text": "°/s"
+            },
+            {
+                "selection": "4",
+                "type": "text",
+                "text": "angle"
+            },
+            {
+                "selection": "4",
+                "type": "number",
+                "input": true,
+                "value": 11,
+                "text": "°"
+            }
+        ]
+    }],
+
+    "4": [{
+        "version": 1.0,
+        "name": "motorPowerAt",
+        "class": "output",
+        "categorie": "output",
+        "submenu": "Motor",
+        "icon": "outputMotor",
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!left!"
+                    },
+                    {
+                        "option": "!right!"
+                    }
+                ],
+                "text": "motor"
+            },
+            {
+                "type": "text",
+                "text": "power at"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 50,
+                "text": "%"
+            },
+            {
+                "type": "text",
+                "text": "duty cycle"
+            }
+        ]
+    }],
+    
+    "5": [{
+        "version": 1.0,
+        "name": "drive",
+        "class": "output",
+        "categorie": "output",
+        "submenu": "Drive base",
+        "icon": "outputDrive",
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!drivebase!"
+                    }
+                ],
+                "text": "drive base"
+            },
+            {
+                "type": "text",
+                "text": "drive"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "straight",
+                        "subtext": "straight",
+                        "selected": true,
+                        "redirect": "0"
+                    },
+                    {
+                        "option": "turn",
+                        "subtext": "turn",
+                        "redirect": "1"
+                    },
+                    {
+                        "option": "curve",
+                        "subtext": "curve",
+                        "redirect": "2"
+                    },
+                    {
+                        "option": "coordinates",
+                        "subtext": "coordinates",
+                        "redirect": "3"
+                    }
+                ]
+            },
+            {
+                "selection": "0",
+                "type": "text",
+                "text": "for"
+            },
+            {
+                "selection": "0",
+                "type": "number",
+                "input": true,
+                "value": 250,
+                "text": "mm"
+            },
+            {
+                "selection": "2",
+                "type": "text",
+                "text": "radius"
+            },
+            {
+                "selection": "2",
+                "type": "number",
+                "input": true,
+                "value": 100,
+                "text": "mm"
+            },
+            {
+                "selection": "12",
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "relative: by a given angle",
+                        "subtext": "by",
+                        "selected": true
+                    },
+                    {
+                        "option": "absolute: to a target angle",
+                        "subtext": "to"
+                    }
+                ]
+            },
+            {
+                "selection": "12",
+                "type": "number",
+                "input": true,
+                "value": 90,
+                "text": "°"
+            },
+            {
+                "selection": "3",
+                "type": "text",
+                "text": "Δ X"
+            },
+            {
+                "selection": "3",
+                "type": "number",
+                "input": true,
+                "value": 200,
+                "text": "mm"
+            },
+            {
+                "selection": "3",
+                "type": "text",
+                "text": "Δ Y"
+            },
+            {
+                "selection": "3",
+                "type": "number",
+                "input": true,
+                "value": 100,
+                "text": "mm"
+            },
+            {
+                "type": "text",
+                "text": "then"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "coast freely",
+                        "subtext": "coast"
+                    },
+                    {
+                        "option": "brake by friction",
+                        "subtext": "brake"
+                    },
+                    {
+                        "option": "hold this position",
+                        "subtext": "hold",
+                        "selected": true
+                    },
+                    {
+                        "option": "continue moving",
+                        "subtext": "continue"
+                    }
+                ]
+            }
+        ]
+    }],
+
+    "6": [{
+        "version": 1.0,
+        "name": "driveConfigure",
+        "class": "output",
+        "categorie": "output",
+        "submenu": "Drive base",
+        "icon": "outputDrive",
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!drivebase!"
+                    }
+                ],
+                "text": "drive base"
+            },
+            {
+                "type": "text",
+                "text": "configure"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "drive speed",
+                        "subtext": "drive speed",
+                        "selected": true,
+                        "redirect": "0"
+                    },
+                    {
+                        "option": "turn speed",
+                        "subtext": "turn speed",
+                        "redirect": "1"
+                    },
+                    {
+                        "option": "drive acceleration",
+                        "subtext": "curdrive accelerationve",
+                        "redirect": "2"
+                    },
+                    {
+                        "option": "turn acceleration",
+                        "subtext": "turn acceleration",
+                        "redirect": "3"
+                    }
+                ]
+            },
+            {
+                "selection": "0",
+                "type": "number",
+                "input": true,
+                "value": 200,
+                "text": "mm/s"
+            },
+            {
+                "selection": "1",
+                "type": "number",
+                "input": true,
+                "value": 150,
+                "text": "°/s"
+            },
+            {
+                "selection": "2",
+                "type": "number",
+                "input": true,
+                "value": 750,
+                "text": "mm/s²"
+            },
+            {
+                "selection": "3",
+                "type": "number",
+                "input": true,
+                "value": 750,
+                "text": "°/s²"
+            }
+        ]
+    }],
+
+    "7": [{
+        "version": 1.0,
+        "name": "driveStartAt",
+        "class": "output",
+        "categorie": "output",
+        "submenu": "Drive base",
+        "icon": "outputDrive",
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!drivebase!"
+                    }
+                ],
+                "text": "drive base"
+            },
+            {
+                "type": "text",
+                "text": "start at"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 100,
+                "text": "mm/s"
+            },
+            {
+                "type": "text",
+                "text": "and"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "text": "°/s"
+            }
+        ]
+    }],
+
+    "8": [{
+        "version": 1.0,
+        "name": "driveStop",
+        "class": "output",
+        "categorie": "output",
+        "submenu": "Drive base",
+        "icon": "outputDrive",
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!drivebase!"
+                    }
+                ],
+                "text": "drive base"
+            },
+            {
+                "type": "text",
+                "text": "stop"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "coast freely",
+                        "subtext": "coast",
+                        "selected": true
+                    },
+                    {
+                        "option": "brake by friction",
+                        "subtext": "brake"
+                    },
+                    {
+                        "option": "hold this position",
+                        "subtext": "hold"
+                    }
+                ]
+            }
+        ]
+    }]
+}

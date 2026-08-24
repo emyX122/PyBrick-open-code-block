@@ -1,0 +1,57 @@
+{
+  "version": "0.1",
+  "manifest_version": 3,
+  "name": "PybrickCodeBlock Extensions",
+  "description": "Pybrick Extension for free block coding",
+  "permissions": ["activeTab"],
+  "host_permissions": ["https://beta.pybricks.com/*"],
+  "action": {
+    "default_popup": "popup/html/popup.html",
+    "default_icon": "assets/images/pybrickCodeBlock.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://beta.pybricks.com/*"],
+      "js": [
+        "src/js/basicRemover.js", 
+        "src/js/SwitchCodeMode.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/images/PyBlock.png", 
+
+        "assets/images/PyBrickIcoSwitchButton.svg",
+        "assets/images/sponsorButton.svg",
+        "assets/images/blockMode/setup.svg",
+        "assets/images/blockMode/output.svg",
+        "assets/images/blockMode/input.svg",
+        "assets/images/blockMode/flow.svg",
+        "assets/images/blockMode/tasks.svg",
+        "assets/images/blockMode/data.svg",
+        "assets/images/blockMode/variables.svg",
+        "assets/images/blockMode/other.svg",
+
+        "assets/images/blockMode/blocks/start.svg",
+        "assets/images/blockMode/blocks/power.svg",
+        "assets/images/blockMode/blocks/comment.svg",
+        "assets/images/blockMode/blocks/outputMotor.svg",
+        "assets/images/blockMode/blocks/outputDrive.svg",
+        "assets/images/blockMode/blocks/wait.svg",
+        "assets/images/blockMode/blocks/setup.svg",
+        "assets/images/blockMode/blocks/cityHub.svg",
+        "assets/images/blockMode/blocks/essentialHub.svg",
+        "assets/images/blockMode/blocks/moveHub.svg",
+        "assets/images/blockMode/blocks/primeHub.svg",
+        "assets/images/blockMode/blocks/technicHub.svg",
+
+        "src/html/panelBlockMode.html",
+        "src/html/sponsorModal.html"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

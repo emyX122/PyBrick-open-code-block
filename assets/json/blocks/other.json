@@ -1,0 +1,124 @@
+{
+    "0": [{
+        "version": 1.0,
+        "name": "comments",
+        "class": "comment",
+        "categorie": "other",
+        "submenu": "Comments",
+        "icon": "comment",
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "Describle your program."
+            }
+        ]
+    }],
+
+    "1": [{
+        "version": 1.0,
+        "name": "stopButtonIs",
+        "class": "other",
+        "categorie": "other",
+        "submenu": "Stopping the program",
+        "icon": "power",
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!prime!"
+                    }
+                ],
+                "text": "HUD"
+            },
+            {
+                "type": "text",
+                "text": "stop button is"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "none",
+                        "selected": true
+                    },
+                    {
+                        "option": "center"
+                    },
+                    {
+                        "option": "left"
+                    },
+                    {
+                        "option": "right"
+                    },
+                    {
+                        "option": "bluetooth"
+                    }
+                ]
+            }
+        ]
+    }],
+
+    "2": [{
+        "version": 1.0,
+        "name": "shutdown",
+        "class": "other",
+        "categorie": "other",
+        "submenu": "Stopping the program",
+        "icon": "power",
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": false
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!prime!"
+                    }
+                ],
+                "text": "HUD"
+            },
+            {
+                "type": "text",
+                "text": "shut down"
+            }
+        ]
+    }],
+
+    "3": [{
+        "version": 1.0,
+        "name": "stopProgram",
+        "class": "other",
+        "categorie": "other",
+        "submenu": "Stopping the program",
+        "icon": "power",
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": false
+        }],
+        "content": [
+            {
+                "type": "text",
+                "text": "stop program"
+            }
+        ]
+    }] 
+}

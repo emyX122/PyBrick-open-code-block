@@ -1,0 +1,37 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: -10px;
+  width: 350px;
+  height: 450px;
+
+  background-size: 300% 300%;
+  background-image: linear-gradient(45deg, rgb(4, 70, 79) 0%, rgb(0, 0, 0) 25%, rgb(44, 3, 60) 51%, rgb(4, 70, 79) 100%);
+  animation: AnimateBG 20s ease infinite;
+
+  color: antiquewhite;
+  font-family: Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+@keyframes AnimateBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+a {
+  user-select: none;
+}
+
+h1 {
+  user-select: none;
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0, 0)" style="transition: all 0.5s;">
+    <g fill="#fff" stroke-width="0" style="transition: all 0.5s;">
+<rect x="5.6818e-7" y="2.75" width="25" height="8.25" rx=".75841" ry=".69521" style="transition: all 0.5s;"/>
+<rect x="2.5" y="5.8467e-7" width="7" height="11" rx=".75841" ry=".72543" style="transition: all 0.5s;"/>
+<rect x="15.5" y="5.8467e-7" width="7" height="11" rx=".75841" ry=".72543" style="transition: all 0.5s;"/>
+<rect x="5.6818e-7" y="16.75" width="25" height="8.25" rx=".75841" ry=".69521" style="transition: all 0.5s;"/>
+<rect x="2.5" y="14" width="7" height="11" rx=".75841" ry=".72543" style="transition: all 0.5s;"/>
+<rect x="15.5" y="14" width="7" height="11" rx=".75841" ry=".72543" style="transition: all 0.5s;"/>
+</g>
+  </g>
+</svg>

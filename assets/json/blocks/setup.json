@@ -1,0 +1,127 @@
+{
+    "0": [{
+        "version": 1.0,
+        "name": "inventorHub",
+        "class": "output",
+        "categorie": "setup",
+        "submenu": "Set up hub",
+        "icon": "primeHub",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "inventor hub"
+            }
+        ]
+    }],
+
+    "1": [{
+        "version": 1.0,
+        "name": "primeHub",
+        "class": "output",
+        "categorie": "setup",
+        "submenu": "Set up hub",
+        "icon": "primeHub",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "prime hub"
+            }
+        ]
+    }],
+
+    "2": [{
+        "version": 1.0,
+        "name": "essentialHub",
+        "class": "output",
+        "categorie": "setup",
+        "submenu": "Set up hub",
+        "icon": "essentialHub",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "essential hub"
+            }
+        ]
+    }],
+
+    "3": [{
+        "version": 1.0,
+        "name": "technicHub",
+        "class": "output",
+        "categorie": "setup",
+        "submenu": "Set up hub",
+        "icon": "technicHub",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "technic hub"
+            }
+        ]
+    }],
+
+    "4": [{
+        "version": 1.0,
+        "name": "cityHub",
+        "class": "output",
+        "categorie": "setup",
+        "submenu": "Set up hub",
+        "icon": "cityHub",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "city hub"
+            }
+        ]
+    }],
+
+    "5": [{
+        "version": 1.0,
+        "name": "moveHub",
+        "class": "output",
+        "categorie": "setup",
+        "submenu": "Set up hub",
+        "icon": "moveHub",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "move hub"
+            }
+        ]
+    }]
+}

@@ -1,0 +1,21 @@
+{
+    "0": [{
+        "version": 1.0,
+        "name": "flowStopProgram",
+        "class": "flow",
+        "categorie": "flow",
+        "submenu": "Waiting",
+        "icon": "wait",
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": false
+        }],
+        "content": [
+            {
+                "type": "text",
+                "text": "wait forever"
+            }
+        ]
+    }]
+}

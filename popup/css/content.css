@@ -1,0 +1,108 @@
+.button-support {
+  display: block;
+  align-items: center;
+  justify-content: center;
+
+  --color-1: rgba(12, 42, 99);
+  --color-2: rgb(30, 56, 65);
+  --color-3: rgba(62, 0, 65);
+  --color-4: #383232;
+
+  font-size: 23px;
+  font-weight: bold;
+
+  width: 300px;
+  height: 45px;
+
+  border-radius: 15px 30px;
+  
+  background-size: 300% 300%;
+  background-image: linear-gradient(-45deg, var(--color-1) 0%, var(--color-2) 25%, var(--color-3) 51%, var(--color-4) 100%);
+
+  animation: AnimateBT 15s ease infinite;
+
+  cursor: pointer;
+
+  transition: all 0.7s;
+}
+.button-support:hover {
+  box-shadow: 0px 0px 15px white;
+  margin: -2.5px -7.5px;
+  width: 315px;
+  height: 50px;
+}
+
+@keyframes AnimateBT {
+  0% {
+    background-position: 0% 50%;
+    border-radius: 15px 30px;
+  }
+  50% {
+    background-position: 100% 50%;
+    border-radius: 30px 15px;
+  }
+  100% {
+    background-position: 0% 50%;
+    border-radius: 15px 30px;
+  }
+}
+
+.button-border {
+  z-index: -1;
+  position: absolute;
+  width: 300px;
+  height: 45px;
+  
+  background: linear-gradient(45deg, #ff00fb 0%, #00ffff 100%);
+  background-size: 200% 200%;
+  filter: blur(10px);
+  opacity: 0.79;
+  border-radius: inherit;
+  
+  animation: AnimateBD 10s linear infinite;
+}
+
+@keyframes AnimateBD {
+  0% { 
+    background-position: 0% 100%; 
+    opacity: 0.80;
+  }
+  25% { 
+    background-position: 50% 50%; 
+    opacity: 0.50;
+  }
+  50% { 
+    background-position: 100% 0%; 
+    opacity: 0.80;
+  }
+  75% { 
+    background-position: 50% 50%; 
+    opacity: 0.50;
+  }
+  100% { 
+    background-position: 0% 100%; 
+    opacity: 0.80;
+  }
+}
+
+.text-support {
+  position: relative;
+  display: flex;
+  top: 20%;
+  justify-content: center;
+  text-shadow: 0px 0px 10px #fbfbfb;
+
+  animation: AnimateTX 7s ease infinite;
+}
+
+@keyframes AnimateTX {
+  0% { 
+    text-shadow: 0px 0px 10px #fbfbfb;
+  }
+  50% { 
+    text-shadow: 0px 0px 2px #fbfbfb;
+  }
+  100% { 
+    text-shadow: 0px 0px 10px #fbfbfb;
+  }
+}

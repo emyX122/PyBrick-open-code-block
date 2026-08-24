@@ -1,0 +1,19 @@
+body {
+    --dot-bg: #333d46;
+    --dot-color: #666666;
+    --xPosition: 0px;
+    --yPosition: 0px;
+    --scrollZoom: 1;
+    --dot-size: 2px;
+    --dot-space: 40px;
+    --zoomOffset: calc((var(--dot-space) * var(--scrollZoom) - var(--dot-space)) / 2);
+
+    background:
+    linear-gradient(90deg, var(--dot-bg) calc((var(--dot-space) - var(--dot-size)) * var(--scrollZoom)), transparent 1%) center / calc(var(--dot-space) * var(--scrollZoom)) calc(var(--dot-space) * var(--scrollZoom)),
+    linear-gradient(var(--dot-bg) calc((var(--dot-space) - var(--dot-size)) * var(--scrollZoom)), transparent 1%) center / calc(var(--dot-space) * var(--scrollZoom)) calc(var(--dot-space) * var(--scrollZoom)),
+    var(--dot-color);
+    background-position: 
+        calc(250px - var(--zoomOffset) + var(--xPosition)) 
+        calc(250px - var(--zoomOffset) + var(--yPosition));
+
+}

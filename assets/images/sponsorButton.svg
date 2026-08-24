@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="103.21398mm"
+   height="78.781204mm"
+   viewBox="0 0 103.21398 78.781204"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   sodipodi:docname="sponsorButton.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.78751403"
+     inkscape:cx="57.776748"
+     inkscape:cy="250.15427"
+     inkscape:window-width="1920"
+     inkscape:window-height="1128"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-107.42051,-120.27845)">
+    <path
+       id="path1"
+       style="fill:#0088ce;stroke-width:0.79375"
+       d="m 184.76495,120.27845 c -6.62069,0 -13.24153,2.52538 -18.29294,7.57679 -1.92514,1.92514 -4.73492,4.25718 -7.77265,7.04247 -2.79357,-2.66392 -5.34053,-4.89508 -7.11585,-6.67039 -10.10283,-10.10283 -26.48305,-10.10283 -36.58588,0 -10.10283,10.10283 -10.10283,26.48253 0,36.58536 9.28052,9.28052 35.95087,33.4014 43.54463,34.07957 6.09044,2.54883 34.76674,-24.70275 44.51511,-34.45112 10.10283,-10.10283 10.10283,-26.48306 0,-36.58589 -5.05141,-5.05141 -11.67173,-7.57679 -18.29242,-7.57679 z" />
+  </g>
+</svg>

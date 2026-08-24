@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/canvas.css">
+    <link rel="stylesheet" href="../css/blocks.css">
+    <link rel="stylesheet" href="../css/shapes.css">
+</head>
+<body>
+    <!-- menu latéral -->
+    <div id="menu" class="menu">
+        <div id="menuCase-setup" class="menu-categorie menu-categorie-setup">
+            <object class="menu-categorie-image menu-categorie-image-setup" data="../../assets/images/blockMode/setup.svg" type="image/svg+xml"></object>
+            <a class="menu-categorie-text">Setup</a>
+        </div>
+        <div id="menuCase-output" class="menu-categorie menu-categorie-output">
+            <object class="menu-categorie-image menu-categorie-image-output" data="../../assets/images/blockMode/output.svg" type="image/svg+xml"></object>
+            <a class="menu-categorie-text">Output</a>
+        </div>
+        <div id="menuCase-input" class="menu-categorie menu-categorie-input">
+            <object class="menu-categorie-image menu-categorie-image-input" data="../../assets/images/blockMode/input.svg" type="image/svg+xml"></object>
+            <a class="menu-categorie-text">Input</a>
+        </div>
+        <div id="menuCase-flow" class="menu-categorie menu-categorie-flow">
+            <object class="menu-categorie-image menu-categorie-image-flow" data="../../assets/images/blockMode/flow.svg" type="image/svg+xml"></object>
+            <a class="menu-categorie-text">Flow</a>
+        </div>
+        <div id="menuCase-tasks" class="menu-categorie menu-categorie-tasks">
+            <object class="menu-categorie-image menu-categorie-image-tasks" data="../../assets/images/blockMode/tasks.svg" type="image/svg+xml"></object>
+            <a class="menu-categorie-text">Tasks</a>
+        </div>
+        <div id="menuCase-data" class="menu-categorie menu-categorie-data">
+            <object class="menu-categorie-image menu-categorie-image-data" data="../../assets/images/blockMode/data.svg" type="image/svg+xml"></object>
+            <a class="menu-categorie-text">Data</a>
+        </div>
+        <div id="menuCase-variables" class="menu-categorie menu-categorie-variables">
+            <object class="menu-categorie-image menu-categorie-image-variables" data="../../assets/images/blockMode/variables.svg" type="image/svg+xml"></object>
+            <a class="menu-categorie-text">variables</a>
+        </div>
+        <div id="menuCase-other" class="menu-categorie menu-categorie-other">
+            <object class="menu-categorie-image menu-categorie-image-other" data="../../assets/images/blockMode/other.svg" type="image/svg+xml"></object>
+            <a class="menu-categorie-text">Other</a>
+        </div>
+    </div>
+    <div id="panelMenu" class="panel-menu">
+
+        <div class="panel-menu-submenu" id="panelMenu-setup">
+            <a data-submenu="Set up hub" class="panel-menu-title">Set up hub</a>
+
+            <a data-submenu="Set smart motors" class="panel-menu-title">Set smart motors</a>
+
+            <a data-submenu="Set up basic motors" class="panel-menu-title">Set up basic motors</a>
+
+            <a data-submenu="Set up lights" class="panel-menu-title">Set up lights</a>
+
+            <a data-submenu="Set up powered up sensors" class="panel-menu-title">Set up powered up sensors</a>
+
+            <a data-submenu="Set up other sensors" class="panel-menu-title">Set up other sensors</a>
+
+        </div>
+
+        <div class="panel-menu-submenu" id="panelMenu-output">
+            <a data-submenu="Motor" class="panel-menu-title">Motor</a>
+
+            <a data-submenu="Drive base" class="panel-menu-title">Drive base</a>
+
+            <a data-submenu="Car" class="panel-menu-title">Car</a>
+
+            <a data-submenu="Light & sound" class="panel-menu-title">Light & sound</a>
+
+            <a data-submenu="Communication" class="panel-menu-title">Communication</a>
+            
+        </div>
+
+        <div class="panel-menu-submenu" id="panelMenu-input">
+            <a data-submenu="Motors" class="panel-menu-title">Motors</a>
+
+            <a data-submenu="General" class="panel-menu-title">General</a>
+
+            <a data-submenu="Light and Color" class="panel-menu-title">Light and Color</a>
+
+            <a data-submenu="Orientation" class="panel-menu-title">Orientation</a>
+
+            <a data-submenu="Buttons and force" class="panel-menu-title">Buttons and force</a>
+
+            <a data-submenu="Time" class="panel-menu-title">Time</a>
+
+            <a data-submenu="Communication" class="panel-menu-title">Communication</a>
+
+        </div>
+
+        <div class="panel-menu-submenu" id="panelMenu-flow">
+            <a data-submenu="Decisions" class="panel-menu-title">Decisions</a>
+
+            <a data-submenu="Waiting" class="panel-menu-title">Waiting</a>
+
+            <a data-submenu="Repeating" class="panel-menu-title">Repeating</a>
+
+        </div>
+
+        <div class="panel-menu-submenu" id="panelMenu-tasks">
+            <a data-submenu="Setup" class="panel-menu-title">Setup</a>
+
+            <a data-submenu="Multitask" class="panel-menu-title">Multitask</a>
+
+            <a data-submenu="Make your own task" class="panel-menu-title">Make your own task</a>
+
+        </div>
+
+        <div class="panel-menu-submenu" id="panelMenu-data">
+            <a data-submenu="Number" class="panel-menu-title">Number</a>
+
+            <a data-submenu="Logic" class="panel-menu-title">Logic</a>
+
+            <a data-submenu="Geometry" class="panel-menu-title">Geometry</a>
+
+            <a data-submenu="Lists and Text" class="panel-menu-title">Lists and Text</a>
+            
+        </div>
+
+        <div class="panel-menu-submenu" id="panelMenu-variables">
+            <a data-submenu="Variables" class="panel-menu-title">Variables</a>
+
+            <a data-submenu="Imports" class="panel-menu-title">Imports</a>
+
+            <a data-submenu="Classes" class="panel-menu-title">Classes</a>
+
+        </div>
+
+        <div class="panel-menu-submenu" id="panelMenu-other">
+            <a data-submenu="Comments" class="panel-menu-title">Comments</a>
+
+            <a data-submenu="Stopping the program" class="panel-menu-title">Stopping the program</a>
+
+            
+        </div>
+        
+    </div>
+
+    <!-- toile d'element -->
+    <div id="mainCanvas" class="canvas">
+
+        <span class="canva-base-block canva-end-block-setup color-output">
+            <span class="canva-global-blocks-setup"></span>
+            <object class="canva-global-blocks-icon" data="../../assets/images/blockMode/blocks/outputMotor.svg" type="image/svg+xml"></object>
+            <span class="separator">
+                <select name="inputElement" class="canva-global-block-default canva-global-block-number-case">
+                    <option disabled selected value>motor</option>
+                    <!-- temporaire -->
+                    <option value="Spike prime">left</option>
+                </select>
+                run at &nbsp
+                <div class="canva-global-block-default canva-global-block-number-case">
+                    <span class="canva-global-block-default canva-global-block-number-input" contenteditable="true" spellcheck="false">500</span>
+                    °/s &nbsp
+                </div>
+                <select name="inputElement" class="canva-global-block-default canva-global-block-text-case">
+                    <option>rotate forever</option>
+                    <option selected value>rotate by the given angle</option>
+                    <option>rotate towards the angle target</option>
+                    <option>rotate to the end stop</option>
+                </select>
+                <div class="canva-global-block-default canva-global-block-number-case">
+                    <span class="canva-global-block-default canva-global-block-number-input" contenteditable="true" spellcheck="false">360</span>
+                    ° &nbsp
+                </div>
+                then &nbsp
+                <select name="inputElement" class="canva-global-block-default canva-global-block-number-case">
+                    <option>coast freely</option>
+                    <option>brake by friction</option>
+                    <option selected value>hold this position</option>
+                    <option>continue moving</option>
+                </select>
+            </span>
+        </span>
+
+        <span class="canva-base-block canva-end-block-setup color-flow">
+            <span class="canva-global-blocks-setup"></span>
+            <object class="canva-global-blocks-icon" data="../../assets/images/blockMode/blocks/outputMotor.svg" type="image/svg+xml"></object>
+            <span class="separator">
+                <select name="inputElement" class="canva-global-block-default canva-global-block-number-case">
+                    <option disabled selected value>motor</option>
+                    <!-- temporaire -->
+                    <option value="Spike prime">left</option>
+                </select>
+                run at &nbsp
+                <div class="canva-global-block-default canva-global-block-number-case">
+                    <span class="canva-global-block-default canva-global-block-number-input" contenteditable="true" spellcheck="false">500</span>
+                    °/s &nbsp
+                </div>
+                <select name="inputElement" class="canva-global-block-default canva-global-block-text-case">
+                    <option>rotate forever</option>
+                    <option selected value>rotate by the given angle</option>
+                    <option>rotate towards the angle target</option>
+                    <option>rotate to the end stop</option>
+                </select>
+                <div class="canva-global-block-default canva-global-block-number-case">
+                    <span class="canva-global-block-default canva-global-block-number-input" contenteditable="true" spellcheck="false">360</span>
+                    ° &nbsp
+                </div>
+                then &nbsp
+                <select name="inputElement" class="canva-global-block-default canva-global-block-number-case">
+                    <option>coast freely</option>
+                    <option>brake by friction</option>
+                    <option selected value>hold this position</option>
+                    <option>continue moving</option>
+                </select>
+            </span>
+        </span>
+
+    </div>
+
+    <!-- ------------------------------------------- -->
+    <!--                  Scripts                    -->
+    <!-- ------------------------------------------- -->
+
+    <!-- script background mouvement -->
+    <script src="../js/mouvementBackground.js"></script>
+
+    <!-- changement couleur boutons menu catégorie -->
+    <script src="../js/menuGestion.js"></script>
+
+    <!-- gestion des paramêtres des blocs -->
+    <script src="../js/blocksInteraction.js"></script>
+
+    <!-- gestion des paramêtres des blocs -->
+    <script src="../js/blockGeneration.js"></script>
+</body>

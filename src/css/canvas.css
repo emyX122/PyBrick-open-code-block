@@ -1,0 +1,26 @@
+.canvas {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    align-items: left;
+
+    --position-x: 0px;
+    --position-y: 0px;
+    --zoom: 1;
+   
+    border-color: rgb(255, 0, 0);
+    border-style: solid;
+    
+    left: 268px;
+    top: 268px;
+
+    height: fit-content;
+    width: 0px;
+    
+    z-index: 1;
+
+    transform-origin: 0% 0%;
+
+    transform: translate(var(--position-x), var(--position-y)) scale(var(--zoom));
+}
