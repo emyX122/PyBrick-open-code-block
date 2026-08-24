@@ -1,17 +1,17 @@
 function fetchJSONData(file) {
     fetch(file)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json();  
-        })
-        .then(data => {
-            console.log("fichier json:", file);
-            console.log("json decompacté :", data);
-            blockInitialisation(false, data);
-        })  
-        .catch(error => console.error('Failed to fetch data:', error)); 
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();  
+    })
+    .then(data => {
+        console.log("fichier json:", file);
+        console.log("json decompacté :", data);
+        blockInitialisation(false, data);
+    })  
+    .catch(error => console.error('Failed to fetch data:', error)); 
 }
 
 //initialisation des bloques
@@ -189,6 +189,7 @@ function blockInitialisation(jsonExtract, data, file) {
                 console.log("erreur json : ce container n'existe pas : "+menuEmplacementID+"-"+data[String(key)][0].categorie);
             }
         }
+        blockAssignScript();
     }
 }
 
