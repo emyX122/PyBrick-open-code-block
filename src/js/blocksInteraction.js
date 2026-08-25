@@ -2,7 +2,15 @@
 function blockAssignScript() {
     document.querySelectorAll(".canva-base-block").forEach(element => {
         element.addEventListener('click', () => {
-            document.getElementById("mainCanvas").insertAdjacentElement('beforeend', element.cloneNode(true));
+            const clonedElement = element.cloneNode(true);
+            clonedElement.addEventListener('click', () => {
+                moveGrapedBlocks(clonedElement);
+            });
+            document.getElementById("mainCanvas").insertAdjacentElement('beforeend', clonedElement);
         });
     });
+}
+
+function moveGrapedBlocks(element) {
+    console.log(element);
 }
