@@ -1,5 +1,5 @@
 function fetchJSONData(file) {
-    fetch(file)
+    return fetch(file)
     .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -17,7 +17,7 @@ function fetchJSONData(file) {
 //initialisation des bloques
 function blockInitialisation(jsonExtract, data, file) {
     if (jsonExtract) {
-        fetchJSONData(file);
+        return fetchJSONData(file);
     } else {
         console.log("json decompacté reçu :", data);
 
@@ -189,12 +189,18 @@ function blockInitialisation(jsonExtract, data, file) {
                 console.log("erreur json : ce container n'existe pas : "+menuEmplacementID+"-"+data[String(key)][0].categorie);
             }
         }
-        blockAssignScript();
     }
 }
 
+//initialisation des fichiers json
 const jsonPath = "../../assets/json/blocks/";
 const jsonFiles = ["tasks", "other", "flow", "output", "setup"];
-for (let file = 0; file < jsonFiles.length; file++) {
-    blockInitialisation(true, null, jsonPath+jsonFiles[file]+".json");
-}
+
+const promises = jsonFiles.map(file => 
+    blockInitialisation(true, null, jsonPath + file + ".json")
+);
+
+//ajout des option onclick
+Promise.all(promises).then(() => {
+    blockAssignScript();
+});

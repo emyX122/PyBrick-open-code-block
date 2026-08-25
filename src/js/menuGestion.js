@@ -57,7 +57,6 @@ for (let i = 0; i < nameMenu.length; i++) {
                 const oldSubmenuPanel = document.getElementById("panelMenu-"+nameMenu[menuActif]);
 
                 oldSubmenuPanel.classList.remove("active");
-                console.log("panelMenu-"+nameMenu[menuActif]);
 
                 oldMenuCategorieClass.classList.toggle("active");
                 changeColor(menuActif, oldMenuCategorieClass.classList.contains("active"));
