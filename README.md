@@ -17,8 +17,12 @@ Installing this extension is relatively simple:
 # Usage:
 Once you're on the site, everything should work as expected.
 - If you create a new program, the site will only offer you a hybrid coding mode:
-![[READNE.assets/Create a new file.png|390]]
+<div align="center">
+    <img src="https://github.com/emyX122/PyBrick-open-code-block/blob/main/README.assets/Create%20a%20new%20file.png?raw=true" width="50%"/>
+</div>
 - This will open a new project in Python mode, but with an additional button in the lower-right corner that you can use to switch modes at any time:
-![[READNE.assets/mode python.png]]
-
-![[READNE.assets/mode block.png]]
+<div align="center">
+    <img src="https://github.com/emyX122/PyBrick-open-code-block/blob/main/README.assets/mode%20python.png?raw=true" width="90%"/>
+    <br>
+    <img src="https://github.com/emyX122/PyBrick-open-code-block/blob/main/README.assets/mode%20block.png?raw=true" width="60%"/>
+</div>
