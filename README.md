@@ -1,7 +1,7 @@
 # PyBrick-open-code-block
 A web extension that offers a more customizable and open alternative to Pybrick's paid block-based coding platform.
 
-> [!warning] Warning !
+> [!WARNING] 
 > This extension is currently under development, so it is not yet officially available on Chromium.
 > It is therefore not yet fully functional, and most features are not yet available. At this time, you can only test the extension to get an idea of what it will look like.
 
@@ -9,7 +9,8 @@ A web extension that offers a more customizable and open alternative to Pybrick'
 Installing this extension is relatively simple:
 1. Download the extension from this repository.
 2. Open your browser and go to `Manage Extensions`.
-> [!info] Not all browsers are supported:
+> [!IMPORTANT]  
+> **Not all browsers are supported:**
 > You must use a browser that supports USB devices, such as Chrome or Chromium.
 3. Go to `Debug an extension`, `Add an extension`, then select the `manifest.json` file.
 4. You can then go to Pybrick Code (beta version) ([Pybricks Beta](https://beta.pybricks.com/)).
@@ -19,10 +20,11 @@ Once you're on the site, everything should work as expected.
 - If you create a new program, the site will only offer you a hybrid coding mode:
 <div align="center">
     <img src="https://github.com/emyX122/PyBrick-open-code-block/blob/main/README.assets/Create%20a%20new%20file.png?raw=true" width="50%"/>
+    <br>
 </div>
 - This will open a new project in Python mode, but with an additional button in the lower-right corner that you can use to switch modes at any time:
 <div align="center">
-    <img src="https://github.com/emyX122/PyBrick-open-code-block/blob/main/README.assets/mode%20python.png?raw=true" width="90%"/>
+    <img src="https://github.com/emyX122/PyBrick-open-code-block/blob/main/README.assets/mode%20python.png?raw=true" width="100%"/>
     <br>
-    <img src="https://github.com/emyX122/PyBrick-open-code-block/blob/main/README.assets/mode%20block.png?raw=true" width="60%"/>
+    <img src="https://github.com/emyX122/PyBrick-open-code-block/blob/main/README.assets/mode%20block.png?raw=true" width="100%"/>
 </div>
