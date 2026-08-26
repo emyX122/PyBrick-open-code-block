@@ -105,12 +105,10 @@
     
     background-color: rgba(75, 73, 73, 0.527);
 
-    min-width: 250px;
+    min-width: 150px;
     top: 0px;
     bottom: 0px;
     left: 120px;
-
-    overflow-y: scroll;
 
     padding: 10px;
 
@@ -118,19 +116,30 @@
 
     transition: all 0.5s;
 
+    overflow: hidden;
+
     z-index: 9;
 }
 
 .panel-menu-submenu {
-    display: none;
+    display: flex;
+
+    height: 0%;
+    margin-right: -500px;
+
+    opacity: 0;
 
     flex-direction: column;
     row-gap: 30px;
 
+    overflow-y: scroll;
+
     transition: all 0.5s;
 }
 .panel-menu-submenu.active {
-    display: flex;
+    height: 100%;
+    margin-right: 0px;
+    opacity: 1;
 }
 
 .panel-menu-title {

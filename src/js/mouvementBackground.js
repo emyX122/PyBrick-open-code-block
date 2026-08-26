@@ -35,6 +35,7 @@ window.addEventListener('wheel', () => {
         // Appliquer la nouvelle valeur à la variable CSS
         document.body.style.setProperty('--scrollZoom', `${currentZoom}`);
         document.getElementById("mainCanvas").style.setProperty('--zoom', `${currentZoom}`);
+        document.getElementById("canvaHand").style.setProperty('--zoom', `${currentZoom}`);
     }
 });
 
@@ -47,6 +48,7 @@ let mouseGrab = false;
 let oldPositionX = 0;
 let oldPositionY = 0;
 document.addEventListener('mousedown', () => {
+    //relachement au dessus du menu
     if (mouseNotOnMenu) {
         mouseGrab = true;
         oldPositionX = event.clientX;
@@ -54,18 +56,26 @@ document.addEventListener('mousedown', () => {
     }
 });
 document.addEventListener('mouseup', () => {
+    //enregistrement des positions au relachement
     mouseGrab = false;
     oldCurrentX = currentX;
     oldCurrentY = currentY;
 });
 document.addEventListener('mousemove', () => {
     if (mouseGrab) {
+        //calcul de la position en grab
         currentX = oldCurrentX + event.clientX - oldPositionX;
         currentY = oldCurrentY + event.clientY - oldPositionY;
 
+        //mouvement du fond
         document.body.style.setProperty('--xPosition', `${currentX}px`);
         document.body.style.setProperty('--yPosition', `${currentY}px`);
+        //mouvement de la zone initial
         document.getElementById("mainCanvas").style.setProperty('--position-x', `${currentX}px`);
         document.getElementById("mainCanvas").style.setProperty('--position-y', `${currentY}px`);
     }
+
+    //mouvement de la zone de main
+    document.getElementById("canvaHand").style.setProperty('--position-x', `${event.clientX}px`);
+    document.getElementById("canvaHand").style.setProperty('--position-y', `${event.clientY}px`);
 });

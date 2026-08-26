@@ -24,3 +24,30 @@
 
     transform: translate(var(--position-x), var(--position-y)) scale(var(--zoom));
 }
+
+.canva-hand{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    align-items: left;
+
+    --position-x: 0px;
+    --position-y: 0px;
+    --zoom: 1;
+   
+    border-color: rgb(60, 255, 0);
+    border-style: solid;
+    
+    left: calc(-25px * var(--zoom));
+    top: calc(-25px * var(--zoom));
+
+    height: fit-content;
+    width: 0px;
+    
+    z-index: 3;
+
+    transform-origin: 0% 0%;
+
+    transform: translate(var(--position-x), var(--position-y)) scale(var(--zoom));
+}

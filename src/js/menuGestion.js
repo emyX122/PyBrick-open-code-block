@@ -4,6 +4,7 @@ const selectedColor = "rgb(255, 255, 255)";
 const nameMenu =       ["setup"               , "output"             , "input"              , "flow"               , "tasks"             , "data"              , "variables"           , "other"];
 const menuBaseColors = ["rgb(170, 170, 170)", "rgb(76, 151, 255)", "rgb(92, 177, 214)", "rgb(255, 171, 25)", "rgb(255, 191, 0)", "rgb(89, 192, 89)", "rgb(255, 102, 128)", "rgb(154, 114, 162)"];
 
+//chargement des menus
 for (let i = 0; i < nameMenu.length; i++) {
     const svgObjectX = document.querySelector('.menu-categorie-image-'+nameMenu[i]);
 
