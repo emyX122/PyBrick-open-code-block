@@ -17,8 +17,8 @@ Installing this extension is relatively simple:
 # Usage:
 Once you're on the site, everything should work as expected.
 - If you create a new program, the site will only offer you a hybrid coding mode:
-![[Create a new file.png|390]]
+![[READNE.assets/Create a new file.png|390]]
 - This will open a new project in Python mode, but with an additional button in the lower-right corner that you can use to switch modes at any time:
-![[mode python.png]]
+![[READNE.assets/mode python.png]]
 
-![[mode block.png]]
+![[READNE.assets/mode block.png]]
