@@ -5,15 +5,15 @@
 
     align-items: left;
 
-    --position-x: 0px;
-    --position-y: 0px;
+    --position-x: 268px;
+    --position-y: 268px;
     --zoom: 1;
    
     border-color: rgb(255, 0, 0);
     border-style: solid;
     
-    left: 268px;
-    top: 268px;
+    left: 0px;
+    top: 0px;
 
     height: fit-content;
     width: 0px;
@@ -34,13 +34,15 @@
 
     --position-x: 0px;
     --position-y: 0px;
+    --offset-x: -25px;
+    --offset-y: -25px;
     --zoom: 1;
    
     border-color: rgb(60, 255, 0);
     border-style: solid;
     
-    left: calc(-25px * var(--zoom));
-    top: calc(-25px * var(--zoom));
+    left: 0px;
+    top: 0px;
 
     height: fit-content;
     width: 0px;
@@ -49,5 +51,5 @@
 
     transform-origin: 0% 0%;
 
-    transform: translate(var(--position-x), var(--position-y)) scale(var(--zoom));
+    transform: translate(calc(var(--position-x) + var(--offset-x)), calc(var(--position-y) + var(--offset-y))) scale(var(--zoom));
 }

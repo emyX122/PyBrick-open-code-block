@@ -136,6 +136,8 @@
     color: #ffffff;
     font: bold 12pt "Helvetica Neue", "Segoe UI", Helvetica, sans-serif;
     white-space: nowrap;
+
+    user-select: none;
 }
 
 .canva-global-block-text {

@@ -47,7 +47,7 @@ let oldCurrentY = 0;
 let mouseGrab = false;
 let oldPositionX = 0;
 let oldPositionY = 0;
-document.addEventListener('mousedown', () => {
+document.getElementById("backgroundMouseJS").addEventListener('mousedown', () => {
     //relachement au dessus du menu
     if (mouseNotOnMenu) {
         mouseGrab = true;
@@ -61,7 +61,7 @@ document.addEventListener('mouseup', () => {
     oldCurrentX = currentX;
     oldCurrentY = currentY;
 });
-document.addEventListener('mousemove', () => {
+document.getElementById("backgroundMouseJS").addEventListener('mousemove', () => {
     if (mouseGrab) {
         //calcul de la position en grab
         currentX = oldCurrentX + event.clientX - oldPositionX;
@@ -75,6 +75,12 @@ document.addEventListener('mousemove', () => {
         document.getElementById("mainCanvas").style.setProperty('--position-y', `${currentY}px`);
     }
 
+    //mouvement de la zone de main
+    document.getElementById("canvaHand").style.setProperty('--position-x', `${event.clientX}px`);
+    document.getElementById("canvaHand").style.setProperty('--position-y', `${event.clientY}px`);
+});
+//lecture continu de la position du curseur
+document.addEventListener('mousemove', () => {
     //mouvement de la zone de main
     document.getElementById("canvaHand").style.setProperty('--position-x', `${event.clientX}px`);
     document.getElementById("canvaHand").style.setProperty('--position-y', `${event.clientY}px`);

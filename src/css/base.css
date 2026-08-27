@@ -17,3 +17,16 @@ body {
         calc(250px - var(--zoomOffset) + var(--yPosition));
 
 }
+
+.background-mouse-js {
+    position: absolute;
+
+    background-color: #00000000;
+
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+
+    z-index: 0;
+}
