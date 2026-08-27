@@ -5,15 +5,15 @@
 
     align-items: left;
 
-    --position-x: 268px;
-    --position-y: 268px;
+    --position-x: 0px;
+    --position-y: 0px;
     --zoom: 1;
    
     border-color: rgb(255, 0, 0);
     border-style: solid;
     
-    left: 0px;
-    top: 0px;
+    left: 268px;
+    top: 268px;
 
     height: fit-content;
     width: 0px;
