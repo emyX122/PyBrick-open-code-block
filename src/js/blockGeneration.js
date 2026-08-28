@@ -197,7 +197,7 @@ const promises = jsonFiles.map(file =>
     blockInitialisation(true, null, jsonPath + file + ".json")
 );
 
-//ajout des option onclick
+//code à la suite
 Promise.all(promises).then(() => {
-    blockAssignScript();
+    console.log("generation finished");
 });

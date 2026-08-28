@@ -21,6 +21,13 @@ const menuBaseColors = ["rgb(170, 170, 170)", "rgb(76, 151, 255)", "rgb(92, 177,
 let cursorIsDown = false;
 let blockMoved = null;
 
+//position du canva de la main
+let positionHandCanvaX = null;
+let positionHandCanvaY = null;
+
+//element selectionner
+let selectedElement = null;
+
 // -------------------------------
 //   Mouvement du background   (src/js/mouvementBackground.js)
 // -------------------------------

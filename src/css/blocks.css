@@ -138,6 +138,8 @@
     white-space: nowrap;
 
     user-select: none;
+
+    pointer-events: none;
 }
 
 .canva-global-block-text {
@@ -164,6 +166,8 @@
 
     font: inherit;
     white-space: inherit;
+
+    pointer-events: all;
 }
 .canva-global-block-number-case {
     padding: 0px 0px 0px 5px;

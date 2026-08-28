@@ -10,9 +10,25 @@ function blockAssignScript() {
 // gestion de la variable d'état de la sourie
 document.addEventListener("mousedown", () => {
     cursorIsDown = true;
+    selectedElement = document.elementFromPoint(event.clientX, event.clientY);
+
+    //control si l'élément n'est pas dans le menu
+    if (!selectedElement.parentElement.classList.contains("panel-menu-submenu")) {
+        //fonction si c'est un bloque
+        if (selectedElement.classList.contains("canva-base-block")) {
+            // !!!!! ajouter les option pour le déplacement de base
+        }  
+    } else {
+        //fonction si c'est un bloque
+        if (selectedElement.classList.contains("canva-base-block")) {
+            cloneMenuBlocks(selectedElement);
+        }  
+    }
 });
+
 document.addEventListener("mouseup", () => {
     cursorIsDown = false;
+    selectedElement = null;
 
     if (blockMoved) {
         //placement du bloque dans le main
@@ -24,8 +40,6 @@ document.addEventListener("mouseup", () => {
 });
 
 //position de la main 
-let positionHandCanvaX = null;
-let positionHandCanvaY = null;
 function setOffsetHandCanva(element) {
     positionHandCanvaX = element.getBoundingClientRect().left - event.clientX;
     positionHandCanvaY = element.getBoundingClientRect().top - event.clientY;
