@@ -36,6 +36,8 @@ document.addEventListener("mouseup", () => {
         if (!oldHoverHandZoneElement?.parentElement?.classList.contains("panel-menu-submenu") && oldHoverHandZoneElement?.classList.contains("canva-base-block")) {
             //placement après le survolé
             oldHoverHandZoneElement.insertAdjacentElement('afterend', blockMoved);
+            //mise à null de l'élément survolé
+            oldHoverHandZoneElement = null;
         } else {
             //placement du bloque dans le main
             document.getElementById("mainCanvas").insertAdjacentElement('beforeend', blockMoved);
