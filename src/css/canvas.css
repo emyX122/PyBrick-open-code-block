@@ -49,6 +49,8 @@
     
     z-index: 3;
 
+    pointer-events: none;
+
     transform-origin: 0% 0%;
 
     transform: translate(calc(var(--position-x) + var(--offset-x)), calc(var(--position-y) + var(--offset-y))) scale(var(--zoom));

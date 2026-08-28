@@ -13,7 +13,7 @@ document.addEventListener("mousedown", () => {
     selectedElement = document.elementFromPoint(event.clientX, event.clientY);
 
     //control si l'élément n'est pas dans le menu
-    if (!selectedElement.parentElement.classList.contains("panel-menu-submenu")) {
+    if (!selectedElement.parentElement?.classList.contains("panel-menu-submenu")) {
         //fonction si c'est un bloque
         if (selectedElement.classList.contains("canva-base-block")) {
             moveGrapedBlocks(selectedElement);
@@ -33,9 +33,9 @@ document.addEventListener("mouseup", () => {
 
     if (blockMoved) {
         // control du survollement du bloque
-        if (!hoverHandZoneElement.parentElement.classList.contains("panel-menu-submenu") && hoverHandZoneElement.classList.contains("canva-base-block")) {
+        if (!oldHoverHandZoneElement?.parentElement?.classList.contains("panel-menu-submenu") && oldHoverHandZoneElement?.classList.contains("canva-base-block")) {
             //placement après le survolé
-            hoverHandZoneElement.insertAdjacentElement('afterend', blockMoved);
+            oldHoverHandZoneElement.insertAdjacentElement('afterend', blockMoved);
         } else {
             //placement du bloque dans le main
             document.getElementById("mainCanvas").insertAdjacentElement('beforeend', blockMoved);
@@ -60,15 +60,17 @@ document.addEventListener('mousemove', () => {
         //prend l'élément qui est survolé par la zone de main
         hoverHandZoneElement = document.elementFromPoint(handCanvaElement.getBoundingClientRect().left - 1, handCanvaElement.getBoundingClientRect().top);
 
-        //control que la cible n'est pas dans le menu et que c'est un bloque 
-        if (!hoverHandZoneElement.parentElement.classList.contains("panel-menu-submenu") && hoverHandZoneElement.classList.contains("canva-base-block")) {
+        //control que la cible à un parent et qui n'est pas dans le menu et que c'est un bloque 
+        if (!hoverHandZoneElement.parentElement?.classList.contains("panel-menu-submenu") && hoverHandZoneElement.classList.contains("canva-base-block")) {
             //taille du placeholder
-            widthPlaceholder = blockMoved.getBoundingClientRect().width;
-            heightPlaceholder = blockMoved.getBoundingClientRect().height;
+            widthPlaceholder = blockMoved.getBoundingClientRect().width / currentZoom;
+            heightPlaceholder = blockMoved.getBoundingClientRect().height / currentZoom;
             placeholder.style.setProperty('--width', `${widthPlaceholder}px`);
             placeholder.style.setProperty('--height', `${heightPlaceholder}px`);
             // insertion du placeholder
             hoverHandZoneElement.insertAdjacentElement('afterend', placeholder);
+            //enregistre dernier élément valide
+            oldHoverHandZoneElement = hoverHandZoneElement;
         }
     }
 });
