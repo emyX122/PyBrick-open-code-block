@@ -16,7 +16,7 @@ document.addEventListener("mousedown", () => {
     if (!selectedElement.parentElement.classList.contains("panel-menu-submenu")) {
         //fonction si c'est un bloque
         if (selectedElement.classList.contains("canva-base-block")) {
-            // !!!!! ajouter les option pour le déplacement de base
+            moveGrapedBlocks(selectedElement);
         }  
     } else {
         //fonction si c'est un bloque
@@ -61,14 +61,6 @@ function cloneMenuBlocks(element) {
 
     //initilisation du bloque à déplacer
     blockMoved = clonedElement;
-  
-    //ajout des fonctions event listener
-    clonedElement.addEventListener('mousedown', () => {
-        moveGrapedBlocks(clonedElement);
-    });
-    clonedElement.addEventListener('mouseup', () => {
-        moveLeaveBlocks(clonedElement);
-    });
 }
 
 //fonction au grap du bloque du canva
@@ -84,9 +76,4 @@ function moveGrapedBlocks(element) {
 
     //initialisation de la variable de déplacement
     blockMoved = element;
-}
-
-//fonction au relachement du bloque du canva
-function moveLeaveBlocks(element) {
-    console.log(element);
 }
