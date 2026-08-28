@@ -13,8 +13,9 @@
     {
       "matches": ["https://beta.pybricks.com/*"],
       "js": [
-        "src/js/basicRemover.js", 
-        "src/js/SwitchCodeMode.js"
+        "initialSetup/js/initialisationVariables.js",
+        "initialSetup/js/basicRemover.js", 
+        "initialSetup/js/SwitchCodeMode.js"
       ],
       "run_at": "document_idle"
     }

@@ -193,9 +193,6 @@ function blockInitialisation(jsonExtract, data, file) {
 }
 
 //initialisation des fichiers json
-const jsonPath = "../../assets/json/blocks/";
-const jsonFiles = ["tasks", "other", "flow", "output", "setup"];
-
 const promises = jsonFiles.map(file => 
     blockInitialisation(true, null, jsonPath + file + ".json")
 );

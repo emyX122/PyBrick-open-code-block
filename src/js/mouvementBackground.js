@@ -1,12 +1,4 @@
-//control du scroll de la souris
-let currentZoom = 1;
-const minZoom = 0.1;
-const maxZoom = 4;
-const sensitivity = 0.2;
-
 //contrôle d'utilisation du menu
-let mouseNotOnMenu = true;
-
 document.getElementById('menu').addEventListener('mouseover', () => {
     mouseNotOnMenu = false;
 });
@@ -20,7 +12,7 @@ document.getElementById('panelMenu').addEventListener('mouseleave', () => {
     mouseNotOnMenu = true;
 });
 
-
+//control du zoom de la sourie
 window.addEventListener('wheel', () => {
     if (mouseNotOnMenu) {
         // deltaY : positif si on roule vers le bas, négatif vers le haut
@@ -40,13 +32,6 @@ window.addEventListener('wheel', () => {
 });
 
 //controle du grab du background
-let currentX = 0;
-let currentY = 0;
-let oldCurrentX = 0;
-let oldCurrentY = 0;
-let mouseGrab = false;
-let oldPositionX = 0;
-let oldPositionY = 0;
 document.getElementById("backgroundMouseJS").addEventListener('mousedown', () => {
     //relachement au dessus du menu
     if (mouseNotOnMenu) {

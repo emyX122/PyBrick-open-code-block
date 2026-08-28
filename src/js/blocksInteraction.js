@@ -7,9 +7,7 @@ function blockAssignScript() {
     });
 }
 
-//variable d'état de la sourie
-let cursorIsDown = false;
-let blockMoved = null;
+// gestion de la variable d'état de la sourie
 document.addEventListener("mousedown", () => {
     cursorIsDown = true;
 });

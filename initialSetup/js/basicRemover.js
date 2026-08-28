@@ -59,7 +59,7 @@ addHtmlElement();
 // Surveillance des changements dynamiques avec MutationObserver
 const observer = new MutationObserver((mutations) => {
     if (document.querySelector('#panelBlockMode')) {
-        if (document.getElementById('panelBlockMode').style.display != "none" && !sessionStorage.getItem(matchingKeys)[3]) {
+        if (document.getElementById('panelBlockMode').style.display != "none" && !document.querySelector('.pb-editor-tablist-tab')) {
             switchCodeMode(true);
         }
     }

@@ -1,7 +1,4 @@
-//récupération clé code
-let allKeys = "";
-let matchingKeys = "";
-
+//récupération des clés
 function reloadKeys() {
     allKeys = Object.keys(sessionStorage);
     matchingKeys = allKeys.filter(key => key.startsWith('editor.activeFileHistory.'));
@@ -13,21 +10,19 @@ function switchCodeMode(brutForce) {
     const panelPythonMode = document.querySelector('.pb-editor-split');
     let panelBlockMode = document.getElementById('panelBlockMode');
 
-    if (!allKeys[1]) {
-        reloadKeys();
-    }
+    reloadKeys();
     console.log("Key :"+allKeys[1]);
 
-    const controleActivCode = sessionStorage.getItem(matchingKeys);
+    controleActivCode = sessionStorage.getItem(matchingKeys[1])[2];
 
-    if (!panelBlockMode) {
+    if (!panelBlockMode && controleActivCode) {
         //initialisation du menu
         panelCoding.insertAdjacentHTML('afterbegin', '<iframe id="panelBlockMode" style="height: 100%; width: 100%; display: none;" src="src/html/panelBlockMode.html"></iframe>');
         document.getElementById("panelBlockMode").src = chrome.runtime.getURL('src/html/panelBlockMode.html');
         panelBlockMode = document.getElementById('panelBlockMode'); 
     }
 
-    if ((panelCoding && controleActivCode.length) || brutForce) {
+    if ((panelCoding && controleActivCode) || brutForce) {
         if (panelPythonMode.style.display == "none"){
             panelPythonMode.style.display = "";
             panelBlockMode.style.display = "none";
