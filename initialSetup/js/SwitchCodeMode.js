@@ -10,10 +10,12 @@ function switchCodeMode(brutForce) {
     const panelPythonMode = document.querySelector('.pb-editor-split');
     let panelBlockMode = document.getElementById('panelBlockMode');
 
-    reloadKeys();
-    console.log("Key :"+allKeys[1]);
+    if (!brutForce) {
+        reloadKeys();
+        console.log("Key :"+allKeys[1]);
 
-    controleActivCode = sessionStorage.getItem(matchingKeys[1])[2];
+        controleActivCode = sessionStorage.getItem(matchingKeys[0])[2];
+    }
 
     if (!panelBlockMode && controleActivCode) {
         //initialisation du menu
