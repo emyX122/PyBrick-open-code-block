@@ -28,3 +28,5 @@ Once you're on the site, everything should work as expected.
     <br>
     <img src="https://github.com/emyX122/PyBrick-open-code-block/blob/main/README.assets/mode%20block.png?raw=true" width="100%"/>
 </div>
+
+© 2026 emyX122
