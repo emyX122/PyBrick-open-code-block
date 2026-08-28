@@ -64,9 +64,3 @@ document.getElementById("backgroundMouseJS").addEventListener('mousemove', () =>
     document.getElementById("canvaHand").style.setProperty('--position-x', `${event.clientX}px`);
     document.getElementById("canvaHand").style.setProperty('--position-y', `${event.clientY}px`);
 });
-//lecture continu de la position du curseur
-document.addEventListener('mousemove', () => {
-    //mouvement de la zone de main
-    document.getElementById("canvaHand").style.setProperty('--position-x', `${event.clientX}px`);
-    document.getElementById("canvaHand").style.setProperty('--position-y', `${event.clientY}px`);
-});

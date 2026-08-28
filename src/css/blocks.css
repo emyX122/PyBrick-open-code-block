@@ -1,3 +1,20 @@
+/* Base du bloque placholder */
+.canva-placeholder-block {
+    position: relative;
+
+    --height: 50px;
+    --width: 50px;
+
+    height: var(--height);
+    width: var(--width);
+    
+    background-color: var(--color-blocks);
+
+    border-radius: 4px;
+
+    user-select: none;
+}
+
 /* Bases des bloques */
 .canva-base-block {
     position: relative;
@@ -81,6 +98,11 @@
     --color-blocks: #ffab19;
     --color-intermediate: #d99115;
     --color-alterntive: #bf8013;
+}
+.color-nothing {
+    --color-blocks: #00000039;
+    --color-intermediate: var(--color-blocks);
+    --color-alterntive: var(--color-blocks);
 }
 
 /* Element principaux des bloques */

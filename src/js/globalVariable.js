@@ -21,12 +21,22 @@ const menuBaseColors = ["rgb(170, 170, 170)", "rgb(76, 151, 255)", "rgb(92, 177,
 let cursorIsDown = false;
 let blockMoved = null;
 
+//référence du canva main, bloque placeholder et du canva invisible 
+const handCanvaElement = document.getElementById("canvaHand");
+const placeholder = document.getElementById("placeholderCode");
+const invisibleCanva = document.getElementById("canvaInvisible");
+
+//taille du placeholder
+let widthPlaceholder = null;
+let heightPlaceholder = null;
+
 //position du canva de la main
 let positionHandCanvaX = null;
 let positionHandCanvaY = null;
 
-//element selectionner
+//element selectionner et chevauché
 let selectedElement = null;
+let hoverHandZoneElement = null;
 
 // -------------------------------
 //   Mouvement du background   (src/js/mouvementBackground.js)

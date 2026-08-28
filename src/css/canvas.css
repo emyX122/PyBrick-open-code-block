@@ -53,3 +53,11 @@
 
     transform: translate(calc(var(--position-x) + var(--offset-x)), calc(var(--position-y) + var(--offset-y))) scale(var(--zoom));
 }
+
+.canva-invisible {
+    position: absolute;
+
+    display: none;
+
+    z-index: 0;
+}
