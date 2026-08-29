@@ -47,7 +47,7 @@ document.addEventListener('mouseup', () => {
     oldCurrentY = currentY;
 });
 document.getElementById("backgroundMouseJS").addEventListener('mousemove', () => {
-    if (mouseGrab) {
+    if (mouseGrab && !blockMoved) {
         //calcul de la position en grab
         currentX = oldCurrentX + event.clientX - oldPositionX;
         currentY = oldCurrentY + event.clientY - oldPositionY;
