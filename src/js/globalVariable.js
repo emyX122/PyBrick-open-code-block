@@ -21,10 +21,12 @@ const menuBaseColors = ["rgb(170, 170, 170)", "rgb(76, 151, 255)", "rgb(92, 177,
 let cursorIsDown = false;
 let blockMoved = null;
 
-//référence du canva main, bloque placeholder et du canva invisible 
+//référence du canva main, bloque placeholder et du canva invisible
+const canvasContainers = document.getElementById("mainCanvas");
 const handCanvaElement = document.getElementById("canvaHand");
 const placeholder = document.getElementById("placeholderCode");
 const invisibleCanva = document.getElementById("canvaInvisible");
+const invisibleCodeCanva = document.getElementById("canvaCodeInvisible");
 
 //taille du placeholder
 let widthPlaceholder = null;
