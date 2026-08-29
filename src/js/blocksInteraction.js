@@ -74,6 +74,14 @@ document.addEventListener('mousemove', () => {
             //enregistre dernier élément valide
             oldHoverHandZoneElement = hoverHandZoneElement;
         }
+        //control si c'est le background
+        if (hoverHandZoneElement.classList.contains("background-mouse-js")) {
+            //réduit la zone de placeholder
+            placeholder.style.setProperty('--width', `0px`);
+            placeholder.style.setProperty('--height', `0px`);
+            //enregistre dernier élément valide
+            oldHoverHandZoneElement = hoverHandZoneElement;
+        }
     }
 });
 
