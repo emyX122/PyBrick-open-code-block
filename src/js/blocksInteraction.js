@@ -82,16 +82,18 @@ document.addEventListener('mousemove', () => {
 
         //control que la cible à un parent et qui n'est pas dans le menu et que c'est un bloque 
         if (!hoverHandZoneElement.parentElement?.classList.contains("panel-menu-submenu") && hoverHandZoneElement.classList.contains("canva-base-block")) {
-            //taille du placeholder
-            widthPlaceholder = blockMoved.getBoundingClientRect().width / currentZoom;
-            heightPlaceholder = blockMoved.getBoundingClientRect().height / currentZoom;
-            placeholder.style.setProperty('--width', `${widthPlaceholder}px`);
-            placeholder.style.setProperty('--height', `${heightPlaceholder}px`);
-            console.log(placeholder);
-            // insertion du placeholder
-            hoverHandZoneElement.insertAdjacentElement('afterend', placeholder);
-            //enregistre dernier élément valide
-            oldHoverHandZoneElement = hoverHandZoneElement;
+            //control si le bloque bouger est du même type que celui survolé
+            if (hoverHandZoneElement.getAttribute('data-type') == blockMoved.getAttribute('data-type')) {
+                //taille du placeholder
+                widthPlaceholder = blockMoved.getBoundingClientRect().width / currentZoom;
+                heightPlaceholder = blockMoved.getBoundingClientRect().height / currentZoom;
+                placeholder.style.setProperty('--width', `${widthPlaceholder}px`);
+                placeholder.style.setProperty('--height', `${heightPlaceholder}px`);
+                // insertion du placeholder
+                hoverHandZoneElement.insertAdjacentElement('afterend', placeholder);
+                //enregistre dernier élément valide
+                oldHoverHandZoneElement = hoverHandZoneElement;
+            }
         }
         //control si c'est le background
         if (hoverHandZoneElement.classList.contains("background-mouse-js")) {
