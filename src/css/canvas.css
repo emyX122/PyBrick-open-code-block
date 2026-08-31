@@ -67,7 +67,7 @@
     height: fit-content;
     width: 0px;
     
-    z-index: 3;
+    z-index: 100;
 
     pointer-events: none;
 

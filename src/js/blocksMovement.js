@@ -33,26 +33,30 @@ document.addEventListener("mouseup", () => {
 
     //control que un bloque est bien déplacé
     if (blockMoved) {
-        // control que le bloque survolé n'est pas dans le menu et est un bloque
-        if (!oldHoverHandZoneElement?.parentElement?.classList.contains("panel-menu-submenu") && oldHoverHandZoneElement?.classList.contains("canva-base-block")) {
-            //placement du fragment de la main après le survolé
-            insertFragment(oldHoverHandZoneElement, blockMoved, movedBlockInput);
-            //mise à null de l'élément survolé
-            oldHoverHandZoneElement = null;
+
+        if (oldHoverHandZoneElement) {
+            // control que le bloque survolé n'est pas dans le menu et est un bloque
+            if (!oldHoverHandZoneElement?.parentElement?.classList.contains("panel-menu-submenu") && oldHoverHandZoneElement?.classList.contains("canva-base-block")) {
+                //placement du fragment de la main après le survolé
+                insertFragment(oldHoverHandZoneElement, blockMoved, movedBlockInput);
+            } else {
+                //création du canva à cloner
+                const clonedCanva = invisibleCodeCanva.children[0].cloneNode(true);
+
+                //définir la position du canva
+                clonedCanva.style.setProperty('--position-x', `${(event.clientX - currentX - 268 + positionHandCanvaX)/currentZoom}px`);
+                clonedCanva.style.setProperty('--position-y', `${(event.clientY - currentY - 268 + positionHandCanvaY)/currentZoom}px`);
+
+                // insertion du canva dans le container
+                canvasContainers.insertAdjacentElement('beforeend', clonedCanva);
+
+                //placement du fragment de la main dans le nouveau canva
+                clonedCanva.appendChild(makeFragmentElement(blockMoved));
+            }
         } else {
-            //création du canva à cloner
-            const clonedCanva = invisibleCodeCanva.children[0].cloneNode(true);
-
-            //définir la position du canva
-            clonedCanva.style.setProperty('--position-x', `${(event.clientX - currentX - 268 + positionHandCanvaX)/currentZoom}px`);
-            clonedCanva.style.setProperty('--position-y', `${(event.clientY - currentY - 268 + positionHandCanvaY)/currentZoom}px`);
-
-            // insertion du canva dans le container
-            canvasContainers.insertAdjacentElement('beforeend', clonedCanva);
-
-            //placement du fragment de la main dans le nouveau canva
-            clonedCanva.appendChild(makeFragmentElement(blockMoved));
+            handCanvaElement.innerHTML = "";
         }
+        
         
         //control tout les canva pour supprimer les vides
         canvasContainers.querySelectorAll(".canvas-code").forEach(element => {
@@ -105,10 +109,16 @@ document.addEventListener('mousemove', () => {
                     }
                     //enregistre dernier élément valide
                     oldHoverHandZoneElement = hoverHandZoneElement;
-                    
                 }
             }
         }
+
+        console.log(hoverHandZoneElement);
+        //control si le bloque survol le menu
+        if (hoverHandZoneElement.classList.contains("menu-categorie") || hoverHandZoneElement.classList.contains("menu")) {
+            oldHoverHandZoneElement = false;
+        }
+
         //control si c'est le background
         if (hoverHandZoneElement.classList.contains("background-mouse-js")) {
             //réduit la zone de placeholder

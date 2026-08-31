@@ -41,7 +41,7 @@ let positionHandCanvaY = null;
 //element selectionner et chevauché
 let selectedElement = null;
 let hoverHandZoneElement = null;
-let oldHoverHandZoneElement = null;
+let oldHoverHandZoneElement = canvasContainers;
 
 // -------------------------------
 //   Mouvement du background   (src/js/mouvementBackground.js)
