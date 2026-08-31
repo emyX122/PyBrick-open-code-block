@@ -9,6 +9,11 @@ function blockAssignScript() {
 
 // gestion des événement au click de la sourie
 document.addEventListener("mousedown", () => {
+    //fermetur potentiel du menu
+    if (event.clientX > document.getElementById("panelMenu").getBoundingClientRect().right) {
+        closeMenu();
+    }
+
     cursorIsDown = true;
     selectedElement = document.elementFromPoint(event.clientX, event.clientY);
 

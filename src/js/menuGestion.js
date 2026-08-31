@@ -37,20 +37,25 @@ function changeColor(numberCategorie, display) {
 //ajout des action au click
 for (let i = 0; i < nameMenu.length; i++) {
     document.getElementById('menuCase-'+nameMenu[i]).addEventListener("click", () => {
+        //initialisation des élément de la sous-catégorie
         const menuCategorieClass = document.querySelector(".menu-categorie-"+nameMenu[i]);
         const menuPanel = document.getElementById("panelMenu");
         const submenuPanel = document.getElementById("panelMenu-"+nameMenu[i]);
 
+        //fermeture si le même ou switch avec un autre
         if (menuActif == i) {
             menuActif = null;
+            //fermeture du sous-panel
             menuPanel.style.transform = "translateX(-100%)";
             submenuPanel.classList.remove("active");
             
         } else {
+            //si un menu est déjà ouvert
             if (menuActif != null) {
                 const oldMenuCategorieClass = document.querySelector(".menu-categorie-"+nameMenu[menuActif]);
                 const oldSubmenuPanel = document.getElementById("panelMenu-"+nameMenu[menuActif]);
 
+                //fermeture de l'ancien
                 oldSubmenuPanel.classList.remove("active");
 
                 oldMenuCategorieClass.classList.toggle("active");
@@ -59,10 +64,27 @@ for (let i = 0; i < nameMenu.length; i++) {
 
             submenuPanel.classList.add("active");
             
+            //changement de la référence du menu ouvert
             menuActif = i;
             menuPanel.style.transform = "translateX(0%)";
         }
         menuCategorieClass.classList.toggle("active");
         changeColor(i, menuCategorieClass.classList.contains("active"));
     });
+}
+
+function closeMenu() {
+    //initialisation des élément de la sous-catégorie
+    const menuCategorieClass = document.querySelector(".menu-categorie-"+nameMenu[menuActif]);
+    const menuPanel = document.getElementById("panelMenu");
+    const submenuPanel = document.getElementById("panelMenu-"+nameMenu[menuActif]);
+
+    //fermeture du menu
+    menuPanel.style.transform = "translateX(-100%)";
+    submenuPanel.classList.remove("active");
+    menuCategorieClass.classList.toggle("active");
+    changeColor(menuActif, menuCategorieClass.classList.contains("active"));
+
+    //changement de la référence du menu ouvert vers null
+    menuActif = null;
 }
