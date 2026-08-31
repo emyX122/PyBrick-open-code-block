@@ -79,22 +79,22 @@ document.addEventListener('mousemove', () => {
     if (selectedElement) {
         //prend l'élément qui est survolé par la zone de main
         if (Number(blockMoved.getAttribute('data-input'))) {
-            movedBlockInput = true;
             hoverHandZoneElement = document.elementFromPoint(handCanvaElement.getBoundingClientRect().left - 1, handCanvaElement.getBoundingClientRect().top);
         } else {
-            movedBlockInput = false;
             hoverHandZoneElement = document.elementFromPoint(handCanvaElement.getBoundingClientRect().left - 1, handCanvaElement.getBoundingClientRect().bottom);
         }
+        movedBlockInput = Number(blockMoved.getAttribute('data-input'));
+        movedBlockOutput = Number(blockMoved.getAttribute('data-output'));
 
         //control que la cible à un parent et qui n'est pas dans le menu et que c'est un bloque 
         if (!hoverHandZoneElement.parentElement?.classList.contains("panel-menu-submenu") && hoverHandZoneElement.classList.contains("canva-base-block")) {
-            //control que le bloque survolé à une sortie
+            //control que le bloque survolé et porter on soit une sortie et une entrée soit l'inverse
             if ((Number(hoverHandZoneElement.getAttribute('data-output')) && Number(blockMoved.getAttribute('data-input')) || (Number(hoverHandZoneElement.getAttribute('data-input')) && Number(blockMoved.getAttribute('data-output'))))) {
                 //control si le bloque bouger est du même type que celui survolé
                 if (hoverHandZoneElement.getAttribute('data-type') == blockMoved.getAttribute('data-type')) {
                     //taille du placeholder
                     widthPlaceholder = blockMoved.getBoundingClientRect().width / currentZoom;
-                    heightPlaceholder = blockMoved.getBoundingClientRect().height / currentZoom;
+                    heightPlaceholder = handCanvaElement.getBoundingClientRect().height / currentZoom;
                     placeholder.style.setProperty('--width', `${widthPlaceholder}px`);
                     placeholder.style.setProperty('--height', `${heightPlaceholder}px`);
                     // insertion du placeholder avant ou après le bloque
