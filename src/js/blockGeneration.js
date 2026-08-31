@@ -43,9 +43,20 @@ function blockInitialisation(jsonExtract, data, file) {
                     
                     //base color
                     htmlBlock.classList.add('color-'+data[String(key)][0].class);
+                    //génération des data input/output
+                    if (data[String(key)][0].connection[0].input) {
+                        htmlBlock.dataset.input = 1; //true
+                    }else{
+                        htmlBlock.dataset.input = 0; //false
+                    }
+                    if (data[String(key)][0].connection[0].output) {
+                        htmlBlock.dataset.output = 1; //true
+                    }else{
+                        htmlBlock.dataset.output = 0; //false
+                    }
                     //base de type code ou setup
                     if (data[String(key)][0].connection[0].type == "code") {
-                        //ajout d'un data type code
+                        //ajout des data
                         htmlBlock.dataset.type = "code";
                         //ajouter la class de base
                         htmlBlock.classList.add('canva-base-block');
@@ -59,7 +70,7 @@ function blockInitialisation(jsonExtract, data, file) {
                             htmlChild[htmlChild.length-1].classList.add('canva-global-blocks-output');
                         }
                     } else if (data[String(key)][0].connection[0].type == "setup") {
-                        //ajout d'un data type setup
+                        //ajout des data
                         htmlBlock.dataset.type = "setup";
                         //ajouter la class de base
                         htmlBlock.classList.add('canva-base-block');

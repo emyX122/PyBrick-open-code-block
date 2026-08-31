@@ -36,7 +36,7 @@ document.addEventListener("mouseup", () => {
         // control que le bloque survolé n'est pas dans le menu et est un bloque
         if (!oldHoverHandZoneElement?.parentElement?.classList.contains("panel-menu-submenu") && oldHoverHandZoneElement?.classList.contains("canva-base-block")) {
             //placement du fragment de la main après le survolé
-            insertFragmentAfter(oldHoverHandZoneElement, blockMoved);
+            insertFragment(oldHoverHandZoneElement, blockMoved, movedBlockInput);
             //mise à null de l'élément survolé
             oldHoverHandZoneElement = null;
         } else {
@@ -78,21 +78,35 @@ document.addEventListener('mousemove', () => {
     //control si un bloque est actuelement bougé
     if (selectedElement) {
         //prend l'élément qui est survolé par la zone de main
-        hoverHandZoneElement = document.elementFromPoint(handCanvaElement.getBoundingClientRect().left - 1, handCanvaElement.getBoundingClientRect().top);
+        if (Number(blockMoved.getAttribute('data-input'))) {
+            movedBlockInput = true;
+            hoverHandZoneElement = document.elementFromPoint(handCanvaElement.getBoundingClientRect().left - 1, handCanvaElement.getBoundingClientRect().top);
+        } else {
+            movedBlockInput = false;
+            hoverHandZoneElement = document.elementFromPoint(handCanvaElement.getBoundingClientRect().left - 1, handCanvaElement.getBoundingClientRect().bottom);
+        }
 
         //control que la cible à un parent et qui n'est pas dans le menu et que c'est un bloque 
         if (!hoverHandZoneElement.parentElement?.classList.contains("panel-menu-submenu") && hoverHandZoneElement.classList.contains("canva-base-block")) {
-            //control si le bloque bouger est du même type que celui survolé
-            if (hoverHandZoneElement.getAttribute('data-type') == blockMoved.getAttribute('data-type')) {
-                //taille du placeholder
-                widthPlaceholder = blockMoved.getBoundingClientRect().width / currentZoom;
-                heightPlaceholder = blockMoved.getBoundingClientRect().height / currentZoom;
-                placeholder.style.setProperty('--width', `${widthPlaceholder}px`);
-                placeholder.style.setProperty('--height', `${heightPlaceholder}px`);
-                // insertion du placeholder
-                hoverHandZoneElement.insertAdjacentElement('afterend', placeholder);
-                //enregistre dernier élément valide
-                oldHoverHandZoneElement = hoverHandZoneElement;
+            //control que le bloque survolé à une sortie
+            if ((Number(hoverHandZoneElement.getAttribute('data-output')) && Number(blockMoved.getAttribute('data-input')) || (Number(hoverHandZoneElement.getAttribute('data-input')) && Number(blockMoved.getAttribute('data-output'))))) {
+                //control si le bloque bouger est du même type que celui survolé
+                if (hoverHandZoneElement.getAttribute('data-type') == blockMoved.getAttribute('data-type')) {
+                    //taille du placeholder
+                    widthPlaceholder = blockMoved.getBoundingClientRect().width / currentZoom;
+                    heightPlaceholder = blockMoved.getBoundingClientRect().height / currentZoom;
+                    placeholder.style.setProperty('--width', `${widthPlaceholder}px`);
+                    placeholder.style.setProperty('--height', `${heightPlaceholder}px`);
+                    // insertion du placeholder avant ou après le bloque
+                    if (movedBlockInput) {
+                        hoverHandZoneElement.insertAdjacentElement('afterend', placeholder);
+                    } else {
+                        hoverHandZoneElement.insertAdjacentElement('beforebegin', placeholder);
+                    }
+                    //enregistre dernier élément valide
+                    oldHoverHandZoneElement = hoverHandZoneElement;
+                    
+                }
             }
         }
         //control si c'est le background
@@ -162,9 +176,13 @@ function makeFragmentElement(element) {
 }
 
 //insertion d'un fragment après un élément de référence
-function insertFragmentAfter(referenceElement, element) {
+function insertFragment(referenceElement, element, position) {
     // initialisation du fragment
     const fragment = makeFragmentElement(element);
-    //insertion par apport à la cible
-    referenceElement.parentNode.insertBefore(fragment, referenceElement.nextSibling);
+    //insertion par apport à la cible avant ou après (position)
+    if (position) {
+        referenceElement.parentNode.insertBefore(fragment, referenceElement.nextSibling);
+    } else {
+        referenceElement.parentNode.insertBefore(fragment, referenceElement);
+    }
 }
