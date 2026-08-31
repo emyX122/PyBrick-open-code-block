@@ -10,7 +10,7 @@ function blockAssignScript() {
 // gestion des événement au click de la sourie
 document.addEventListener("mousedown", () => {
     //fermetur potentiel du menu
-    if (event.clientX > document.getElementById("panelMenu").getBoundingClientRect().right) {
+    if (menuActif && (event.clientX > document.getElementById("panelMenu").getBoundingClientRect().right)) {
         closeMenu();
     }
 
