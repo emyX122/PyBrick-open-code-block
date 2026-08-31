@@ -10,7 +10,7 @@ function blockAssignScript() {
 // gestion des événement au click de la sourie
 document.addEventListener("mousedown", () => {
     //fermetur potentiel du menu
-    if (menuActif && (event.clientX > document.getElementById("panelMenu").getBoundingClientRect().right)) {
+    if (menuActif != null && (event.clientX > document.getElementById("panelMenu").getBoundingClientRect().right)) {
         closeMenu();
     }
 
@@ -62,6 +62,7 @@ document.addEventListener("mouseup", () => {
             handCanvaElement.innerHTML = "";
         }
         
+        oldHoverHandZoneElement = elementBackground;
         
         //control tout les canva pour supprimer les vides
         canvasContainers.querySelectorAll(".canvas-code").forEach(element => {
@@ -86,8 +87,12 @@ document.addEventListener('mousemove', () => {
 
     //control si un bloque est actuelement bougé
     if (selectedElement) {
+        //type d'élément (début/fin)
+        const elementEnd = !Number(blockMoved.getAttribute('data-output'));
+        const elementStart = !Number(blockMoved.getAttribute('data-input'));
+
         //prend l'élément qui est survolé par la zone de main
-        if (Number(blockMoved.getAttribute('data-input'))) {
+        if (!elementStart) {
             hoverHandZoneElement = document.elementFromPoint(handCanvaElement.getBoundingClientRect().left - 1, handCanvaElement.getBoundingClientRect().top);
         } else {
             hoverHandZoneElement = document.elementFromPoint(handCanvaElement.getBoundingClientRect().left - 1, handCanvaElement.getBoundingClientRect().bottom);
@@ -96,9 +101,13 @@ document.addEventListener('mousemove', () => {
         movedBlockOutput = Number(blockMoved.getAttribute('data-output'));
 
         //control que la cible à un parent et qui n'est pas dans le menu et que c'est un bloque 
-        if (!hoverHandZoneElement.parentElement?.classList.contains("panel-menu-submenu") && hoverHandZoneElement.classList.contains("canva-base-block")) {
+        if (!hoverHandZoneElement.parentElement?.classList.contains("panel-menu-submenu") 
+            && hoverHandZoneElement.classList.contains("canva-base-block")) {
+
             //control que le bloque survolé et porter on soit une sortie et une entrée soit l'inverse
-            if ((Number(hoverHandZoneElement.getAttribute('data-output')) && Number(blockMoved.getAttribute('data-input')) || (Number(hoverHandZoneElement.getAttribute('data-input')) && Number(blockMoved.getAttribute('data-output'))))) {
+            if ((Number(hoverHandZoneElement.getAttribute('data-output')) && Number(blockMoved.getAttribute('data-input'))) ||
+                (Number(hoverHandZoneElement.getAttribute('data-input')) && Number(blockMoved.getAttribute('data-output')))) {
+
                 //control si le bloque bouger est du même type que celui survolé
                 if (hoverHandZoneElement.getAttribute('data-type') == blockMoved.getAttribute('data-type')) {
                     //taille du placeholder

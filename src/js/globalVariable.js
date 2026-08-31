@@ -29,6 +29,7 @@ const handCanvaElement = document.getElementById("canvaHand");
 const placeholder = document.getElementById("placeholderCode");
 const invisibleCanva = document.getElementById("canvaInvisible");
 const invisibleCodeCanva = document.getElementById("canvaCodeInvisible");
+const elementBackground = document.getElementById("backgroundMouseJS");
 
 //taille du placeholder
 let widthPlaceholder = null;
