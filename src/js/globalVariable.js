@@ -20,6 +20,7 @@ const menuBaseColors = ["rgb(170, 170, 170)", "rgb(76, 151, 255)", "rgb(92, 177,
 //Variable d'état de la sourit
 let cursorIsDown = false;
 let blockMoved = null;
+let groupMoved = null;
 
 //référence du canva main, bloque placeholder et du canva invisible
 const canvasContainers = document.getElementById("mainCanvas");

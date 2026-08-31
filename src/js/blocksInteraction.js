@@ -19,7 +19,7 @@ document.addEventListener("mousedown", () => {
             moveGrapedBlocks(selectedElement);
         }  
     } else {
-        //fonction si c'est un bloque
+        //fonction si c'est un bloque dans le menu
         if (selectedElement.classList.contains("canva-base-block")) {
             cloneMenuBlocks(selectedElement);
         }  
@@ -35,8 +35,8 @@ document.addEventListener("mouseup", () => {
     if (blockMoved) {
         // control que le bloque survolé n'est pas dans le menu et est un bloque
         if (!oldHoverHandZoneElement?.parentElement?.classList.contains("panel-menu-submenu") && oldHoverHandZoneElement?.classList.contains("canva-base-block")) {
-            //placement après le survolé
-            oldHoverHandZoneElement.insertAdjacentElement('afterend', blockMoved);
+            //placement du fragment de la main après le survolé
+            insertFragmentAfter(oldHoverHandZoneElement, blockMoved);
             //mise à null de l'élément survolé
             oldHoverHandZoneElement = null;
         } else {
@@ -50,8 +50,8 @@ document.addEventListener("mouseup", () => {
             // insertion du canva dans le container
             canvasContainers.insertAdjacentElement('beforeend', clonedCanva);
 
-            //placement du bloque dans le nouveau canva
-            clonedCanva.insertAdjacentElement('beforeend', blockMoved);
+            //placement du fragment de la main dans le nouveau canva
+            clonedCanva.appendChild(makeFragmentElement(blockMoved));
         }
         
         //control tout les canva pour supprimer les vides
@@ -138,8 +138,33 @@ function moveGrapedBlocks(element) {
     setOffsetHandCanva(element);
 
     //placement du bloque dans la main
-    handCanvaElement.insertAdjacentElement('beforeend', element);
+    handCanvaElement.appendChild(makeFragmentElement(element));
 
     //initialisation de la variable de déplacement
     blockMoved = element;
+}
+
+//scan des élément en dessous d'un autre
+function makeFragmentElement(element) {
+    //initialisation du fragment
+    const fragment = document.createDocumentFragment();
+
+    //scan tout les élément
+    while (element) {
+        //prend l'élément suivant à l'avance
+        let bufferElement = element.nextElementSibling;
+        fragment.appendChild(element);
+        element = bufferElement;
+    }
+
+    //retourne le fragment
+    return fragment;
+}
+
+//insertion d'un fragment après un élément de référence
+function insertFragmentAfter(referenceElement, element) {
+    // initialisation du fragment
+    const fragment = makeFragmentElement(element);
+    //insertion par apport à la cible
+    referenceElement.parentNode.insertBefore(fragment, referenceElement.nextSibling);
 }
