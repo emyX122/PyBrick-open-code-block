@@ -15,7 +15,8 @@
       "js": [
         "initialSetup/js/initialisationVariables.js",
         "initialSetup/js/basicRemover.js", 
-        "initialSetup/js/SwitchCodeMode.js"
+        "initialSetup/js/SwitchCodeMode.js",
+        "initialSetup/js/injected.js"
       ],
       "run_at": "document_idle"
     }
