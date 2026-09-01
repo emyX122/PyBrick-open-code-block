@@ -120,14 +120,14 @@ function blockInitialisation(jsonExtract, data, file) {
                                         htmlSeparatorChild[htmlSeparatorChild.length-1].classList.add('canva-global-block-text-case');                                    
                                     }
 
-                                    //valeur par default
+                                    //valeur par default désactivé
                                     if (actualJsonPath.text) {
                                         htmlSelectorChild.push(document.createElement('option'));
                                         htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('selected', '');
                                         htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('disabled', '');
                                         htmlSelectorChild[htmlSelectorChild.length-1].textContent = getTraduction(actualJsonPath.text);
                                     }
-                                    //création des options
+                                    //création des options selectionnable
                                     for (let keySelector = 0; keySelector < (actualJsonPath.selector).length; keySelector++) {
                                         htmlSelectorChild.push(document.createElement('option'));
                                         if (actualJsonPath.selector[keySelector].selected) {
@@ -137,6 +137,9 @@ function blockInitialisation(jsonExtract, data, file) {
                                                 selection = actualJsonPath.selector[keySelector].redirect;
                                             }
                                         }
+                                        //ajout des data pour le text réduit
+                                        htmlSelectorChild[htmlSelectorChild.length-1].dataset.subtext = getTraduction(actualJsonPath.selector[keySelector].subtext);
+                                        //insertion du text complet de l'option
                                         htmlSelectorChild[htmlSelectorChild.length-1].textContent = getTraduction(actualJsonPath.selector[keySelector].option);
                                     }
                                     //ajout des entrées du selecteur
@@ -220,4 +223,7 @@ const promises = jsonFiles.map(file =>
 //attendre que tout est terminé
 Promise.all(promises).then(() => {
     console.log("generation finished");
+    //initialisation des taille des select
+    initialisationResizeSelectElement("canva-global-block-text-case");
+    initialisationResizeSelectElement("canva-global-block-number-case");
 });
