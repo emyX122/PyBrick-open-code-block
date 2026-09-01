@@ -15,7 +15,7 @@
             {
                 "type": "text",
                 "input": true,
-                "text": "Describle your program."
+                "text": "Describe your program."
             }
         ]
     }],
