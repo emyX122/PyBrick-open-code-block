@@ -49,8 +49,8 @@ document.addEventListener("mouseup", () => {
                 const clonedCanva = invisibleCodeCanva.children[0].cloneNode(true);
 
                 //définir la position du canva
-                clonedCanva.style.setProperty('--position-x', `${(event.clientX - currentX - 268 + positionHandCanvaX)/currentZoom}px`);
-                clonedCanva.style.setProperty('--position-y', `${(event.clientY - currentY - 268 + positionHandCanvaY)/currentZoom}px`);
+                clonedCanva.style.setProperty('--position-x', `${(event.clientX - currentX - 271 + positionHandCanvaX)/currentZoom}px`);
+                clonedCanva.style.setProperty('--position-y', `${(event.clientY - currentY - 271 + positionHandCanvaY)/currentZoom}px`);
 
                 // insertion du canva dans le container
                 canvasContainers.insertAdjacentElement('beforeend', clonedCanva);
@@ -146,8 +146,8 @@ document.addEventListener('mousemove', () => {
 
 //position de la main 
 function setOffsetHandCanva(element) {
-    positionHandCanvaX = element.getBoundingClientRect().left - event.clientX;
-    positionHandCanvaY = element.getBoundingClientRect().top - event.clientY;
+    positionHandCanvaX = element.getBoundingClientRect().left - event.clientX - 3;
+    positionHandCanvaY = element.getBoundingClientRect().top - event.clientY - 3;
     handCanvaElement.style.setProperty('--offset-x', `${positionHandCanvaX}px`);
     handCanvaElement.style.setProperty('--offset-y', `${positionHandCanvaY}px`);
 }
