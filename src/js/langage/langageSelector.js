@@ -15,16 +15,15 @@ async function extractLangageFile(file) {
 }
 
 //génération de la langue (appeler dans blockGeneration.js)
-function generatLangage() {
+async function generatLangage() {
     const filename = langageFileLocalisation + selectedLangage +".json";
-    extractLangageFile(filename);
+    await extractLangageFile(filename);
+    generateTitleMenu()
 }
 
 //fonction pour récupérer la traduction d'un text
 function getTraduction(text) {
-    if (extractLangage.Default_Langage) {
-        return text;
-    } else if (extractLangage[text]) {
+    if (extractLangage[text]) {
         return extractLangage[text];
     } else {
         return text;

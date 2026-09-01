@@ -32,7 +32,7 @@ document.getElementById("saveButton").addEventListener("click", () => {
     //enregistrement de la langue dans le storage local
     localStorage.setItem("langage", langage);
     //message de rechargement
-    alert("To change the language, we need to reload the page");
+    alert("To change the langage, we need to reload the page");
     chrome.tabs.reload(); 
 });
 

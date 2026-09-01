@@ -1,7 +1,16 @@
 {
     "Default_Langage": false,
 
-    "wait forever": "attendre pour toujour",
+    "setup": "Configuration",
+    "output": "Sorties",
+    "input": "Entrées",
+    "flow": "Contrôle",
+    "tasks": "Événements", 
+    "data": "Opération",
+    "variables": "Variables",
+    "other": "Autre",
+
+    "wait forever": "attendre à l'infini",
     "Describle your program.": "Décrivez votre programme.",
     "stop button is": "le bouton d'arrêt est",
     "then": "puis",

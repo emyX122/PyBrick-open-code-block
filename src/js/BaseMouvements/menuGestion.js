@@ -1,4 +1,4 @@
-//chargement des menus
+//chargement des ouleurs du menus
 for (let i = 0; i < nameMenu.length; i++) {
     const svgObjectX = document.querySelector('.menu-categorie-image-'+nameMenu[i]);
 
@@ -14,6 +14,17 @@ for (let i = 0; i < nameMenu.length; i++) {
     });
 }
 
+//chargement des titres des menu (dans langageSelector.js)
+function generateTitleMenu() {
+    for (let i = 0; i < nameMenu.length; i++) {
+        const textMenuElement = document.getElementById("textMenu-"+nameMenu[i]);
+
+        //changement du texte par apport à la langue
+        textMenuElement.innerHTML = getTraduction(nameMenu[i]);
+    }
+}
+
+//changement des couleur du menu actif
 function changeColor(numberCategorie, display) {
     const svgObjectX = document.querySelector('.menu-categorie-image-'+nameMenu[numberCategorie]);
     const textObjectX = document.querySelector('.menu-categorie-'+nameMenu[numberCategorie]);

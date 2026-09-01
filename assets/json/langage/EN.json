@@ -1,3 +1,12 @@
 {
-    "Default_Langage": true
+    "Default_Langage": true,
+
+    "setup": "Setup",
+    "output": "Output",
+    "input": "Input",
+    "flow": "Flow",
+    "tasks": "Tasks", 
+    "data": "Data",
+    "variables": "Variables",
+    "other": "Other"
 }
