@@ -72,6 +72,8 @@ let mouseNotOnMenu = true;
 const allLangage = ["EN", "FR"];
 let selectedLangage = allLangage[0];
 
+console.log(selectedLangage);
+
 //fichier extrait
 let extractLangage = null;
 

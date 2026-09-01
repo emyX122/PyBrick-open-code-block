@@ -9,6 +9,25 @@
   justify-content: center;
 }
 
+.image-settings {
+  position: absolute;
+
+  right: 10px;
+  top: 10px;
+
+  height: 30px;
+
+  cursor: pointer;
+
+  transition: all 0.5s;
+
+  z-index: 100;
+}
+.image-settings:hover {
+  transform: scale(1.1);
+}
+
+
 .image-avatar {
   height: 150px;
 
@@ -16,6 +35,8 @@
   
   border: 4px solid #000000;
   border-radius: 50%;
+
+  cursor: pointer;
 
   transition: all 0.7s;
 }
@@ -38,7 +59,8 @@
   font-size: 15px;
 }
 
-.button-support {
+.button-report {
+  position: absolute;
   display: block;
   align-items: center;
   justify-content: center;
@@ -53,7 +75,7 @@
 
   width: 300px;
   height: 45px;
-  margin-top: 25px;
+  bottom: 110px;
 
   border-radius: 15px 30px;
   
@@ -66,7 +88,7 @@
 
   transition: all 0.7s;
 }
-.button-support:hover {
+.button-report:hover {
   box-shadow: 0px 0px 15px white;
   width: 315px;
   height: 50px;

@@ -30,3 +30,8 @@ function getTraduction(text) {
         return text;
     }
 }
+
+//au démarrage si le langage est selectionné, l'utiliser
+if (localStorage.getItem("langage")) {
+    selectedLangage = localStorage.getItem("langage");
+}

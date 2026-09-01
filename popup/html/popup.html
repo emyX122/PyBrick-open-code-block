@@ -6,15 +6,18 @@
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/content.css">
     <link rel="stylesheet" href="../css/animation.css">
+    <link rel="stylesheet" href="../css/menu.css">
 
   </head>
   <body>
     <h1 class="title">PyBrick Code Block</h1>
 
+    <img id="settingsButton" class="image-settings" src="../../assets/images/settings.svg">
+
     <img id="avatarImage" class="image-avatar" src="https://avatars.githubusercontent.com/u/217378729?v=4">
     <a class="avatar-name"><i class="avatar-name-madeby">Made by : </i>emyX122</a>
 
-    <div class="button-support" id="issueButton">
+    <div class="button-report" id="issueButton">
       <div class="button-border"></div>
       <a class="text-support">Report an issue</a>
     </div>
@@ -24,6 +27,18 @@
     </div>
 
     <a class="copyright">© 2026 emyX122</a>
+
+    <!-- menu de droite -->
+    <div id="leftMenu" class="left-menu">
+      <a class="menu-title">Settings</a><br>
+      <a class="menu-subtitle">Langage :</a>
+      <select id="langageSelector" class="langage-selector">
+        <option value="EN">English</option>
+        <option value="FR">Français</option>
+      </select>
+
+      <div id="saveButton" class="save-button"><a>Apply</a></div>
+    </div>
 
     <!-- ------------------------------------------- -->
     <!--                  Scripts                    -->

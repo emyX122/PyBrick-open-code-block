@@ -1,0 +1,97 @@
+.left-menu{
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+
+    flex-direction: column;
+
+    padding: 5px;
+
+    right: 0px;
+    top: 0px;
+
+    height: 100%;
+    min-width: 200px;
+
+    background-color: rgba(30, 0, 68, 0.678);
+
+    z-index: 10;
+
+    transform: translateX(100%);
+
+    transition: all 0.7s;
+}
+.left-menu.active{
+    transform: translateX(0%);
+}
+
+.menu-title{
+    position: relative;
+    display: flex;
+    align-self: center;
+
+    transform: translateX(-25px);
+
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.menu-subtitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.langage-selector{
+    background-color: rgb(58, 4, 94);
+
+    width: fit-content;
+
+    font-weight: bold;
+    font-size: 15px;
+    color: inherit;
+    text-align-last: center;
+
+    height: 30px;
+
+    border-radius: 100px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: antiquewhite;
+
+    cursor: pointer;
+
+    transition: all 0.5s;
+}
+
+
+.save-button {
+    position: absolute;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    bottom: 25px;
+    right: 25px;
+    height: 35px;
+    width: 100px;
+
+    color: rgb(212, 247, 161);
+    font-weight: bold;
+    font-size: 20px;
+
+    background-color: rgba(13, 150, 13, 0.685);
+
+    border-radius: 10px;
+    border: 2px solid rgb(53, 255, 53);
+    box-shadow: 0px 0px 5px rgb(53, 255, 53);
+
+    cursor: pointer;
+
+    transition: all 0.5s;
+}
+.save-button:hover {
+    box-shadow: 0px 0px 15px rgb(53, 255, 53);
+    transform: scale(1.05);
+}
