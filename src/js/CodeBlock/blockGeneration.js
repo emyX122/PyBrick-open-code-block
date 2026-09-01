@@ -1,3 +1,4 @@
+//extraction des fichiers json des blocks
 function fetchJSONData(file) {
     return fetch(file)
     .then(response => {
@@ -124,7 +125,7 @@ function blockInitialisation(jsonExtract, data, file) {
                                         htmlSelectorChild.push(document.createElement('option'));
                                         htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('selected', '');
                                         htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('disabled', '');
-                                        htmlSelectorChild[htmlSelectorChild.length-1].textContent = actualJsonPath.text;
+                                        htmlSelectorChild[htmlSelectorChild.length-1].textContent = getTraduction(actualJsonPath.text);
                                     }
                                     //création des options
                                     for (let keySelector = 0; keySelector < (actualJsonPath.selector).length; keySelector++) {
@@ -136,7 +137,7 @@ function blockInitialisation(jsonExtract, data, file) {
                                                 selection = actualJsonPath.selector[keySelector].redirect;
                                             }
                                         }
-                                        htmlSelectorChild[htmlSelectorChild.length-1].textContent = actualJsonPath.selector[keySelector].option;
+                                        htmlSelectorChild[htmlSelectorChild.length-1].textContent = getTraduction(actualJsonPath.selector[keySelector].option);
                                     }
                                     //ajout des entrées du selecteur
                                     for (let i = 0; i < htmlSelectorChild.length; i++) {
@@ -149,7 +150,7 @@ function blockInitialisation(jsonExtract, data, file) {
                                         htmlSeparatorChild[htmlSeparatorChild.length-1].classList.add('canva-global-block-text-input');
                                         htmlSeparatorChild[htmlSeparatorChild.length-1].setAttribute('contenteditable', 'true');
                                         htmlSeparatorChild[htmlSeparatorChild.length-1].setAttribute('spellcheck', 'false');
-                                        htmlSeparatorChild[htmlSeparatorChild.length-1].textContent = actualJsonPath.text;
+                                        htmlSeparatorChild[htmlSeparatorChild.length-1].textContent = getTraduction(actualJsonPath.text);
                                     }
 
                                     //number
@@ -164,7 +165,7 @@ function blockInitialisation(jsonExtract, data, file) {
                                         htmlSelectorChild[htmlSelectorChild.length-1].textContent = actualJsonPath.value;
                                         htmlSelectorChild.push(document.createElement('a')); //texte unitée de la valeur
                                         htmlSelectorChild[htmlSelectorChild.length-1].classList.add('canva-global-block-text');
-                                        htmlSelectorChild[htmlSelectorChild.length-1].textContent = actualJsonPath.text;
+                                        htmlSelectorChild[htmlSelectorChild.length-1].textContent = getTraduction(actualJsonPath.text);
                                         //ajout des entrées du selecteur
                                         for (let i = 0; i < htmlSelectorChild.length; i++) {
                                             htmlSeparatorChild[htmlSeparatorChild.length-1].appendChild(htmlSelectorChild[i]);
@@ -180,7 +181,7 @@ function blockInitialisation(jsonExtract, data, file) {
                                 if (actualJsonPath.type == "text") {
                                     htmlSeparatorChild.push(document.createElement('a'));
                                     htmlSeparatorChild[htmlSeparatorChild.length-1].classList.add('canva-global-block-text');
-                                    htmlSeparatorChild[htmlSeparatorChild.length-1].textContent = actualJsonPath.text;
+                                    htmlSeparatorChild[htmlSeparatorChild.length-1].textContent = getTraduction(actualJsonPath.text);
                                 }
                             }
                         }
@@ -208,12 +209,15 @@ function blockInitialisation(jsonExtract, data, file) {
     }
 }
 
+//génération de la langue
+generatLangage();
+
 //initialisation des fichiers json
 const promises = jsonFiles.map(file => 
     blockInitialisation(true, null, jsonPath + file + ".json")
 );
 
-//code à la suite
+//attendre que tout est terminé
 Promise.all(promises).then(() => {
     console.log("generation finished");
 });

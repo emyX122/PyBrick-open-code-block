@@ -1,12 +1,12 @@
 // -------------------------------
-//       block génération       (src/js/blockGeneration.js)
+//       block génération       (src/js/CodeBlock/blockGeneration.js)
 // -------------------------------
 //initialisation des fichier json
-const jsonPath = "../../assets/json/blocks/";
+const jsonPath = "../../../assets/json/blocks/";
 const jsonFiles = ["tasks", "other", "flow", "output", "setup"];
 
 // -------------------------------
-//    Initialisation du menu    (src/js/menuGestion.js)
+//    Initialisation du menu    (src/js/BaseMouvements/menuGestion.js)
 // -------------------------------
 //changement des couleur de bases
 let menuActif = null;
@@ -15,7 +15,7 @@ const nameMenu =       ["setup"               , "output"             , "input"  
 const menuBaseColors = ["rgb(170, 170, 170)", "rgb(76, 151, 255)", "rgb(92, 177, 214)", "rgb(255, 171, 25)", "rgb(255, 191, 0)", "rgb(89, 192, 89)", "rgb(255, 102, 128)", "rgb(154, 114, 162)"];
 
 // -------------------------------
-//  Intéraction avec les blocs    (src/js/blocksInteraction.js)
+//  Intéraction avec les blocs    (src/js/CodeBlock/blocksInteraction.js)
 // -------------------------------
 //Variable d'état de la sourit
 let cursorIsDown = false;
@@ -45,7 +45,7 @@ let hoverHandZoneElement = null;
 let oldHoverHandZoneElement = canvasContainers;
 
 // -------------------------------
-//   Mouvement du background   (src/js/mouvementBackground.js)
+//   Mouvement du background   (src/js/BaseMouvements/movementBackground.js)
 // -------------------------------
 //control du scroll de la souris
 let currentZoom = 1;
@@ -64,3 +64,16 @@ let oldPositionY = 0;
 
 //contrôle d'utilisation du menu
 let mouseNotOnMenu = true;
+
+// -------------------------------
+//    Langue et interface   (src/js/langage/langageSelector.js)
+// -------------------------------
+//langue par défault
+const allLangage = ["EN", "FR"];
+let selectedLangage = allLangage[0];
+
+//fichier extrait
+let extractLangage = null;
+
+//emplacement des fichiers
+const langageFileLocalisation = "../../../assets/json/langage/"
