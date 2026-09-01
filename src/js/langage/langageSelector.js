@@ -31,6 +31,6 @@ function getTraduction(text) {
 }
 
 //au démarrage si le langage est selectionné, l'utiliser
-if (localStorage.getItem("langage")) {
+if (allLangage.includes(localStorage.getItem("langage"))) {
     selectedLangage = localStorage.getItem("langage");
 }
