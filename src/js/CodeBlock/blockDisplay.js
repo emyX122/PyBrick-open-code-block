@@ -38,6 +38,9 @@ function toggleDisplaySelectionBlock(elementSelect) {
       if (element.hasAttribute("data-selection")) {
         if (element.getAttribute("data-selection") == selection) {
           element.style.display = "";
+          if (element.nodeName == "SELECT"){
+            resize(element);
+          }
         } else {
           element.style.display = "none";
         }
@@ -49,8 +52,9 @@ function toggleDisplaySelectionBlock(elementSelect) {
 //resizing au changement d'un élément avec data-resize
 document.addEventListener('change', (element) => {
   if (element.target.hasAttribute('data-resize')) {
+    //mise à jour des éléments afficher ou pas
+    toggleDisplaySelectionBlock(element.target);
     //mise à jour de la taille du selecteur
     resize(element.target);
-    toggleDisplaySelectionBlock(element.target);
   }
 });
