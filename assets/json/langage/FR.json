@@ -39,6 +39,12 @@
     "at": "à",
     "beep at": "émettre un son à ",
     "print": "écrire",
+    "on": "sur",
+    "with forward": "dans le sens",
+    "with diameter": "diamètre :",
+    "and space": "espacement :",
+    "with steering": "direction sur",
+    "and drive with": "motorisé avec",
 
     "inventor hub": "hub inventor",
     "prime hub": "hub spike prime",
@@ -57,6 +63,7 @@
     "stop program": "arrêter le programme",
     "motor": "moteur",
     "drive base": "paire de moteurs",
+    "car": "véhicule",
     
     "°/s": "°/s",
     "°": "°",
@@ -118,14 +125,19 @@
     "drive acceleration": "accélération de déplacement",
     "turn acceleration": "accélération de rotation",
     "power": "puissance",
-    "on": "allumé",
-    "off": "éteint",
+    "ON": "allumé",
+    "OFF": "éteint",
     "number from 0 to 99": "nombre entre 0 et 99",
     "number": "nombre",
     "letter (A-Z) or synbol (!#$%<=>?@)": "lettre (A-Z) et symbole (!#$%<=>?@)",
     "letter": "lettre",
     "pixel (one light)": "pixel par pixel",
     "pixel": "pixel",
-    "turn display off": "éteindre l'écran"
-    
+    "turn display OFF": "éteindre l'écran",
+    "↻ clockwise": "↻ horaire",
+    "↺ anticlockwise": "↺ antihoraire",
+    "one motor": "un moteur",
+    "one": "un",
+    "two motors": "deux moteurs",
+    "two": "deux"
 }

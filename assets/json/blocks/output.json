@@ -857,14 +857,14 @@
                 "input": true,
                 "selector": [
                     {
-                        "option": "on",
-                        "subtext": "on",
+                        "option": "ON",
+                        "subtext": "ON",
                         "selected": true,
                         "redirect": "0"
                     },
                     {
-                        "option": "off",
-                        "subtext": "off",
+                        "option": "OFF",
+                        "subtext": "OFF",
                         "redirect": "1"
                     }
                 ]
@@ -911,14 +911,14 @@
                 "input": true,
                 "selector": [
                     {
-                        "option": "on",
-                        "subtext": "on",
+                        "option": "ON",
+                        "subtext": "ON",
                         "selected": true,
                         "redirect": "0"
                     },
                     {
-                        "option": "off",
-                        "subtext": "off",
+                        "option": "OFF",
+                        "subtext": "OFF",
                         "redirect": "1"
                     }
                 ]
@@ -1023,7 +1023,7 @@
                     },
                     {
                         "option": "turn display off",
-                        "subtext": "off",
+                        "subtext": "OFF",
                         "redirect": "3"
                     }
                 ]

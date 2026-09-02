@@ -123,5 +123,241 @@
                 "text": "move hub"
             }
         ]
+    }],
+
+    "6": [{
+        "version": 1.0,
+        "name": "simpleMotor",
+        "class": "output",
+        "categorie": "setup",
+        "submenu": "Set smart motors",
+        "icon": "simpleMotor",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "motor"
+            },
+            {
+                "type": "text",
+                "text": "on"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "port A",
+                        "subtext": "A",
+                        "selected": true
+                    },
+                    {
+                        "option": "port B",
+                        "subtext": "B"
+                    },
+                    {
+                        "option": "port C",
+                        "subtext": "C"
+                    },
+                    {
+                        "option": "port D",
+                        "subtext": "D"
+                    },
+                    {
+                        "option": "port E",
+                        "subtext": "E"
+                    },
+                    {
+                        "option": "port F",
+                        "subtext": "F"
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "with forward"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "↻ clockwise",
+                        "subtext": "↻",
+                        "selected": true
+                    },
+                    {
+                        "option": "↺ anticlockwise",
+                        "subtext": "↺"
+                    }
+                ]
+            }
+        ]
+    }],
+
+    "7": [{
+        "version": 1.0,
+        "name": "driveBase",
+        "class": "output",
+        "categorie": "setup",
+        "submenu": "Set smart motors",
+        "icon": "outputDrive",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "drive base"
+            },
+            {
+                "type": "text",
+                "text": "left"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!left!"
+                    },
+                    {
+                        "option": "!right!"
+                    }
+                ],
+                "text": "motor"
+            },
+            {
+                "type": "text",
+                "text": "right"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!left!"
+                    },
+                    {
+                        "option": "!right!"
+                    }
+                ],
+                "text": "motor"
+            },
+            {
+                "type": "text",
+                "text": "with diameter"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 56,
+                "text": "mm"
+            },
+            {
+                "type": "text",
+                "text": "and space"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 114,
+                "text": "mm"
+            }
+        ]
+    }],
+
+    "8": [{
+        "version": 1.0,
+        "name": "carDrive",
+        "class": "output",
+        "categorie": "setup",
+        "submenu": "Set smart motors",
+        "icon": "car",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "car"
+            },
+            {
+                "type": "text",
+                "text": "with steering"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!left!"
+                    },
+                    {
+                        "option": "!right!"
+                    }
+                ],
+                "text": "motor"
+            },
+            {
+                "type": "text",
+                "text": "and drive with"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "one motor",
+                        "subtext": "one",
+                        "selected": true,
+                        "redirect": "0"
+                    },
+                    {
+                        "option": "two motors",
+                        "subtext": "two",
+                        "redirect": "1"
+                    }
+                ]
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!left!"
+                    },
+                    {
+                        "option": "!right!"
+                    }
+                ],
+                "text": "motor"
+            },
+            {
+                "selection": "1",
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!left!"
+                    },
+                    {
+                        "option": "!right!"
+                    }
+                ],
+                "text": "motor"
+            }
+        ]
     }]
 }
