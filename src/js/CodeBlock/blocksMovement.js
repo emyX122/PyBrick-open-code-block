@@ -88,8 +88,8 @@ document.addEventListener('mousemove', () => {
     //control si un bloque est actuelement bougé
     if (selectedElement) {
         //type d'élément (début/fin)
-        const elementEnd = !Number(blockMoved.getAttribute('data-output'));
-        const elementStart = !Number(blockMoved.getAttribute('data-input'));
+        const elementEnd = !Number(blockMoved?.getAttribute('data-output'));
+        const elementStart = !Number(blockMoved?.getAttribute('data-input'));
 
         //prend l'élément qui est survolé par la zone de main
         if (!elementStart) {
@@ -97,12 +97,12 @@ document.addEventListener('mousemove', () => {
         } else {
             hoverHandZoneElement = document.elementFromPoint(handCanvaElement.getBoundingClientRect().left - 1, handCanvaElement.getBoundingClientRect().bottom);
         }
-        movedBlockInput = Number(blockMoved.getAttribute('data-input'));
-        movedBlockOutput = Number(blockMoved.getAttribute('data-output'));
+        movedBlockInput = Number(blockMoved?.getAttribute('data-input'));
+        movedBlockOutput = Number(blockMoved?.getAttribute('data-output'));
 
         //control que la cible à un parent et qui n'est pas dans le menu et que c'est un bloque 
-        if (!hoverHandZoneElement.parentElement?.classList.contains("panel-menu-submenu") 
-            && hoverHandZoneElement.classList.contains("canva-base-block")) {
+        if (!hoverHandZoneElement?.parentElement?.classList.contains("panel-menu-submenu") 
+            && hoverHandZoneElement?.classList.contains("canva-base-block")) {
 
             //control que le bloque survolé et porter on soit une sortie et une entrée soit l'inverse
             if ((Number(hoverHandZoneElement.getAttribute('data-output')) && Number(blockMoved.getAttribute('data-input'))) ||
@@ -127,14 +127,13 @@ document.addEventListener('mousemove', () => {
             }
         }
 
-        console.log(hoverHandZoneElement);
         //control si le bloque survol le menu
-        if (hoverHandZoneElement.classList.contains("menu-categorie") || hoverHandZoneElement.classList.contains("menu")) {
+        if (hoverHandZoneElement?.classList.contains("menu-categorie") || hoverHandZoneElement?.classList.contains("menu")) {
             oldHoverHandZoneElement = false;
         }
 
         //control si c'est le background
-        if (hoverHandZoneElement.classList.contains("background-mouse-js")) {
+        if (hoverHandZoneElement?.classList.contains("background-mouse-js")) {
             //réduit la zone de placeholder
             placeholder.style.setProperty('--width', `0px`);
             placeholder.style.setProperty('--height', `0px`);

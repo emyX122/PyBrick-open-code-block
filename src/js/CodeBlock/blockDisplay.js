@@ -1,34 +1,33 @@
-//Code by Gert Arnold on (https://stackoverflow.com/questions/20091481/auto-resizing-the-select-element-according-to-selected-options-width)
-
 //fonction de resizing par element select
-function resize(event) {
-  const fakeEl = document.createElement('select');
-  const option = event.target.options[event.target.selectedIndex];
+function resize(elementSelect) {
+  //element display
+  const elementDisplay = elementSelect.previousElementSibling;
 
-  fakeEl.style.visibility = 'hidden';
-  fakeEl.style.position = 'absolute';
-  fakeEl.style.top = '-9999px';
-  fakeEl.style.left = '-9999px';
-  fakeEl.style.width = 'auto';
-  fakeEl.style.font = window.getComputedStyle(event.target).font;
-  fakeEl.style.padding = window.getComputedStyle(event.target).padding;
-  fakeEl.style.border = window.getComputedStyle(event.target).border;
+  // Vérifier qu'il y a au moins une option
+  if (!elementSelect.options || elementSelect.options.length === 0) {
+    //retour si l'élément n'as pas d'option
+    return;
+  }
 
-  const fakeOption = document.createElement('option');
-  fakeOption.innerHTML = option.innerHTML;
-  fakeEl.appendChild(fakeOption);
-  document.body.appendChild(fakeEl);
+  //control si l'option contien un subtext 
+  if (elementSelect.options[elementSelect.selectedIndex].hasAttribute("data-subtext")) {
+    //insertion du subtext
+    elementDisplay.innerHTML = elementSelect.options[elementSelect.selectedIndex].getAttribute("data-subtext") + " ▾";
+  } else {
+    //insertion du conttenu à la place du subtext
+    elementDisplay.innerHTML = elementSelect.options[elementSelect.selectedIndex].innerHTML + " ▾";
+  }
 
-  event.target.style.width = fakeEl.getBoundingClientRect().width + 'px';
-  fakeEl.remove();
+  //définition de la taille
+  elementSelect.style.width = elementDisplay.getBoundingClientRect().width+"px";
+  elementDisplay.style.marginRight = "-"+elementDisplay.getBoundingClientRect().width+"px";
+  elementSelect.style.color = "transparent";
 }
 
-//initialisation des select à auto resize
-function initialisationResizeSelectElement(classSelect) {
-    for (let e of document.querySelectorAll('select.'+classSelect)) {
-        e.onchange = resize;
-        e.dispatchEvent(new Event('change'));
-    }
-}
-
-
+//resizing au changement d'un élément avec data-resize
+document.addEventListener('change', (element) => {
+  if (element.target.hasAttribute('data-resize')) {
+    //lancement de la fonction
+    resize(element.target);
+  }
+});

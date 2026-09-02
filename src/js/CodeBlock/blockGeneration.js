@@ -110,14 +110,26 @@ function blockInitialisation(jsonExtract, data, file) {
                                 if (actualJsonPath.selector) {
                                     //number
                                     if (actualJsonPath.type == "number") {
+                                        //création du display du bloque de selection
+                                        htmlSeparatorChild.push(document.createElement('span'))
+                                        htmlSeparatorChild[htmlSeparatorChild.length-1].classList.add('canva-global-case-display');
+                                        //création du bloque de selection
                                         htmlSeparatorChild.push(document.createElement('select'));
                                         htmlSeparatorChild[htmlSeparatorChild.length-1].classList.add('canva-global-block-number-case');
+
+                                        htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.resize = ""; 
                                     }
 
                                     //text
                                     if (actualJsonPath.type == "text") {
+                                        //création du display du bloque de selection
+                                        htmlSeparatorChild.push(document.createElement('span'))
+                                        htmlSeparatorChild[htmlSeparatorChild.length-1].classList.add('canva-global-case-display');
+                                        //création du bloque de selection
                                         htmlSeparatorChild.push(document.createElement('select'));
-                                        htmlSeparatorChild[htmlSeparatorChild.length-1].classList.add('canva-global-block-text-case');                                    
+                                        htmlSeparatorChild[htmlSeparatorChild.length-1].classList.add('canva-global-block-text-case');    
+ 
+                                        htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.resize = "";                          
                                     }
 
                                     //valeur par default désactivé
@@ -137,8 +149,11 @@ function blockInitialisation(jsonExtract, data, file) {
                                                 selection = actualJsonPath.selector[keySelector].redirect;
                                             }
                                         }
-                                        //ajout des data pour le text réduit
-                                        htmlSelectorChild[htmlSelectorChild.length-1].dataset.subtext = getTraduction(actualJsonPath.selector[keySelector].subtext);
+                                        //ajout des data pour le text réduit si exitants
+                                        if (actualJsonPath.selector[keySelector].subtext) {
+                                            htmlSelectorChild[htmlSelectorChild.length-1].dataset.subtext = getTraduction(actualJsonPath.selector[keySelector].subtext);
+                                        }
+                                        
                                         //insertion du text complet de l'option
                                         htmlSelectorChild[htmlSelectorChild.length-1].textContent = getTraduction(actualJsonPath.selector[keySelector].option);
                                     }
@@ -190,10 +205,12 @@ function blockInitialisation(jsonExtract, data, file) {
                         }
                     }
 
+                    //compression des élément du separator
                     for (let i = 0; i < htmlSeparatorChild.length; i++) {
                         htmlChild[htmlChild.length-1].appendChild(htmlSeparatorChild[i]);
                     }
 
+                    //insersion du séparator dans le bloque
                     for (let i = 0; i < htmlChild.length; i++) {
                         htmlBlock.appendChild(htmlChild[i]);
                     }                
@@ -223,7 +240,13 @@ const promises = jsonFiles.map(file =>
 //attendre que tout est terminé
 Promise.all(promises).then(() => {
     console.log("generation finished");
-    //initialisation des taille des select
-    initialisationResizeSelectElement("canva-global-block-text-case");
-    initialisationResizeSelectElement("canva-global-block-number-case");
+
+    //initialisation des tailles des selects
+    document.querySelectorAll(".canva-global-block-text-case").forEach(element=>{
+        console.log(element);
+        resize(element);
+    });
+    document.querySelectorAll(".canva-global-block-number-case").forEach(element=>{
+        resize(element);
+    });
 });

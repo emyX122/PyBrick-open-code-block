@@ -194,6 +194,19 @@
 
     pointer-events: all;
 }
+.canva-global-case-display{
+    color: inherit;
+
+    padding: 0px 10px;
+
+    margin-right: 0px;
+
+    color: inherit;
+
+    pointer-events: none;
+
+    z-index: +1;
+}
 .canva-global-block-number-case {
     padding: 0px 0px 0px 5px;
     border-radius: 500px;
@@ -204,6 +217,9 @@
 
     user-select: none;
 }
+.canva-global-block-number-case option {
+    color: #ffffff;
+}
 .canva-global-block-text-case {
     padding: 0px 0px 0px 5px;
     border-radius: 5px;
@@ -213,6 +229,9 @@
     color: inherit;
 
     user-select: none;
+}
+.canva-global-block-text-case option {
+    color: #ffffff;
 }
 .canva-global-block-number-input {
     padding: 0px 5px 0px 5px;
