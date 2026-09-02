@@ -36,7 +36,7 @@ function toggleDisplaySelectionBlock(elementSelect) {
     elementContainer.childNodes.forEach(element => {
       //contrôle si l'élément à la data selection
       if (element.hasAttribute("data-selection")) {
-        if (element.getAttribute("data-selection") == selection) {
+        if (element.getAttribute("data-selection").includes(String(selection))) {
           element.style.display = "";
           if (element.nodeName == "SELECT"){
             resize(element);
