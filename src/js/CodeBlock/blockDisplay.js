@@ -26,21 +26,24 @@ function resize(elementSelect) {
 
 //afficher/masquer les éléments selon la selection actuel
 function toggleDisplaySelectionBlock(elementSelect) {
-  //detection du container
-  const elementContainer = elementSelect.parentElement;
-  const selection = elementSelect.options[elementSelect.selectedIndex].getAttribute("data-redirect")
+  //control si l'élément à bien un redirect
+  if (elementSelect.options[elementSelect.selectedIndex].hasAttribute("data-redirect")) {
+    //detection du container
+    const elementContainer = elementSelect.parentElement;
+    const selection = elementSelect.options[elementSelect.selectedIndex].getAttribute("data-redirect");
 
-  //récupère tout les élément du parent
-  elementContainer.childNodes.forEach(element => {
-    //contrôle si l'élément à la data selection
-    if (element.hasAttribute("data-selection")) {
-      if (element.getAttribute("data-selection") == selection) {
-        element.style.display = "";
-      } else {
-        element.style.display = "none";
+    //récupère tout les élément du parent
+    elementContainer.childNodes.forEach(element => {
+      //contrôle si l'élément à la data selection
+      if (element.hasAttribute("data-selection")) {
+        if (element.getAttribute("data-selection") == selection) {
+          element.style.display = "";
+        } else {
+          element.style.display = "none";
+        }
       }
-    }
-  });
+    });
+  }
 }
 
 //resizing au changement d'un élément avec data-resize
