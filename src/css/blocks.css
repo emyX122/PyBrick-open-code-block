@@ -219,6 +219,7 @@
 }
 .canva-global-block-number-case option {
     color: #ffffff;
+    font-weight: bold;
 }
 .canva-global-block-text-case {
     padding: 0px 0px 0px 5px;
@@ -232,6 +233,7 @@
 }
 .canva-global-block-text-case option {
     color: #ffffff;
+    font-weight: bold;
 }
 .canva-global-block-number-input {
     padding: 0px 5px 0px 5px;

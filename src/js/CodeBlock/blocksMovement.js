@@ -130,6 +130,8 @@ document.addEventListener('mousemove', () => {
         //control si le bloque est en dehors de l'écran à gauche
         if (handCanvaElement.getBoundingClientRect().left < 0) {
             oldHoverHandZoneElement = false;
+        } else if (!oldHoverHandZoneElement) {
+            oldHoverHandZoneElement = elementBackground;
         }
 
         //control si c'est le background
