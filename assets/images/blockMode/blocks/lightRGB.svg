@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 28 30" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(3, 5)">
+    <g>
+<circle cx="17.5" cy="17.5" r="7.5" fill="#1ff500" style="-webkit-font-smoothing:antialiased"/>
+<circle cx="7.5" cy="17.5" r="7.5" fill="#f52900" style="-webkit-font-smoothing:antialiased"/>
+<circle cx="12.5" cy="7.5" r="7.5" fill="#0050f5" style="-webkit-font-smoothing:antialiased"/>
+</g>
+  </g>
+</svg>

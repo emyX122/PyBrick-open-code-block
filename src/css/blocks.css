@@ -239,6 +239,7 @@
     padding: 0px 5px 0px 5px;
     margin-left: 5px;
     border-radius: 5px;
+    justify-content: center;
 
     border: 1px solid var(--color-alterntive);
     background-color: #ffffff;
@@ -251,6 +252,7 @@
 .canva-global-block-text-input {
     padding: 0px 5px 0px 5px;
     border-radius: 5px;
+    justify-content: center;
 
     border: 1px solid var(--color-alterntive);
     background-color: var(--color-intermediate);

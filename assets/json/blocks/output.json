@@ -726,5 +726,425 @@
                 ]
             }
         ]
+    }],
+
+    "9": [{
+        "version": 1.0,
+        "name": "carDrive",
+        "class": "output",
+        "categorie": "output",
+        "submenu": "Car",
+        "icon": "car",
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!carbase!"
+                    }
+                ],
+                "text": "car"
+            },
+            {
+                "type": "text",
+                "text": "drive at"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "power",
+                        "subtext": "power",
+                        "selected": true,
+                        "redirect": "0"
+                    },
+                    {
+                        "option": "speed",
+                        "subtext": "speed",
+                        "redirect": "1"
+                    }
+                ]
+            },
+            {
+                "selection": "0",
+                "type": "number",
+                "input": true,
+                "value": 50,
+                "text": "%"
+            },
+            {
+                "selection": "1",
+                "type": "number",
+                "input": true,
+                "value": 500,
+                "text": "°/s"
+            }
+        ]
+    }],
+
+    "10": [{
+        "version": 1.0,
+        "name": "carSteer",
+        "class": "output",
+        "categorie": "output",
+        "submenu": "Car",
+        "icon": "car",
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!carbase!"
+                    }
+                ],
+                "text": "car"
+            },
+            {
+                "type": "text",
+                "text": "steer by"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "text": "%"
+            }
+        ]
+    }],
+
+    "11": [{
+        "version": 1.0,
+        "name": "light",
+        "class": "output",
+        "categorie": "output",
+        "submenu": "Light & Sound",
+        "icon": "light",
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!lightSensor!"
+                    }
+                ],
+                "text": "light"
+            },
+            {
+                "type": "text",
+                "text": "light"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "on",
+                        "subtext": "on",
+                        "selected": true,
+                        "redirect": "0"
+                    },
+                    {
+                        "option": "off",
+                        "subtext": "off",
+                        "redirect": "1"
+                    }
+                ]
+            },
+            {
+                "selection": "0",
+                "type": "number",
+                "input": true,
+                "value": 100,
+                "text": "%"
+            }
+        ]
+    }],
+
+    "12": [{
+        "version": 1.0,
+        "name": "lightRGB",
+        "class": "output",
+        "categorie": "output",
+        "submenu": "Light & Sound",
+        "icon": "lightRGB",
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!lightSensor!"
+                    }
+                ],
+                "text": "light"
+            },
+            {
+                "type": "text",
+                "text": "light"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "on",
+                        "subtext": "on",
+                        "selected": true,
+                        "redirect": "0"
+                    },
+                    {
+                        "option": "off",
+                        "subtext": "off",
+                        "redirect": "1"
+                    }
+                ]
+            },
+            {
+                "selection": "0",
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "none",
+                        "subtext": "none",
+                        "selected": true
+                    },
+                    {
+                        "option": "blue",
+                        "subtext": "blue"
+                    },
+                    {
+                        "option": "cyan",
+                        "subtext": "cyan"
+                    },
+                    {
+                        "option": "green",
+                        "subtext": "green"
+                    },
+                    {
+                        "option": "magenta",
+                        "subtext": "magenta"
+                    },
+                    {
+                        "option": "orange",
+                        "subtext": "orange"
+                    },
+                    {
+                        "option": "red",
+                        "subtext": "red"
+                    },
+                    {
+                        "option": "violet",
+                        "subtext": "violet"
+                    },
+                    {
+                        "option": "white",
+                        "subtext": "white"
+                    },
+                    {
+                        "option": "yellow",
+                        "subtext": "yellow"
+                    }
+                ]
+            }
+        ]
+    }],
+
+    "13": [{
+        "version": 1.0,
+        "name": "display",
+        "class": "output",
+        "categorie": "output",
+        "submenu": "Light & Sound",
+        "icon": "display",
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!prime!"
+                    }
+                ],
+                "text": "HUB"
+            },
+            {
+                "type": "text",
+                "text": "display"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "number from 0 to 99",
+                        "subtext": "number",
+                        "selected": true,
+                        "redirect": "0"
+                    },
+                    {
+                        "option": "letter (A-Z) or synbol (!#$%<=>?@)",
+                        "subtext": "letter",
+                        "redirect": "1"
+                    },
+                    {
+                        "option": "pixel (one light)",
+                        "subtext": "pixel",
+                        "redirect": "2"
+                    },
+                    {
+                        "option": "turn display off",
+                        "subtext": "off",
+                        "redirect": "3"
+                    }
+                ]
+            },
+            {
+                "selection": "0",
+                "type": "number",
+                "input": true,
+                "value": 42
+            },
+            {
+                "selection": "1",
+                "type": "number",
+                "input": true,
+                "value": "A"
+            },
+            {
+                "selection": "2",
+                "type": "text",
+                "text": "row"
+            },
+            {
+                "selection": "2",
+                "type": "number",
+                "input": true,
+                "value": 0
+            },
+            {
+                "selection": "2",
+                "type": "text",
+                "text": "column"
+            },
+            {
+                "selection": "2",
+                "type": "number",
+                "input": true,
+                "value": 0
+            },
+            {
+                "selection": "2",
+                "type": "text",
+                "text": "at"
+            },
+            {
+                "selection": "2",
+                "type": "number",
+                "input": true,
+                "value": 100,
+                "text": "%"
+            }
+        ]
+    }],
+
+    "14": [{
+        "version": 1.0,
+        "name": "beep",
+        "class": "output",
+        "categorie": "output",
+        "submenu": "Light & Sound",
+        "icon": "song",
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!prime!"
+                    }
+                ],
+                "text": "HUB"
+            },
+            {
+                "type": "text",
+                "text": "beep at"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 500,
+                "text": "Hz"
+            },
+            {
+                "type": "text",
+                "text": "for"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 100,
+                "text": "ms"
+            }
+        ]
+    }],
+
+    "15": [{
+        "version": 1.0,
+        "name": "print",
+        "class": "output",
+        "categorie": "output",
+        "submenu": "Communication",
+        "icon": "console",
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "text",
+                "text": "print"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": "abc"
+            }
+        ]
     }]
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 28 30" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(3, 5)">
+    <g transform="matrix(.94699 0 0 .94698 -654.16 -1373.2)" stroke-width=".99969" style="-webkit-font-smoothing:antialiased">
+<ellipse cx="703.97" cy="1463.3" rx="11.616" ry="11.616" fill="none" stroke="#fff" stroke-width="3.168" style="-webkit-font-smoothing:antialiased"/>
+<path d="m703.97 1475v-12.293" fill="none" stroke="#fff" stroke-width="3.168" style="-webkit-font-smoothing:antialiased"/>
+<path d="m705.08 1463.3h5.3503" fill="none" stroke="#fff" stroke-width="2.112" style="-webkit-font-smoothing:antialiased"/>
+<path d="m692.33 1463.3h23.131" fill="none" stroke="#fff" stroke-width="3.168" style="-webkit-font-smoothing:antialiased"/>
+<ellipse cx="703.97" cy="1463.3" rx="4.2239" ry="4.224" fill="#fff"/>
+</g>
+  </g>
+</svg>

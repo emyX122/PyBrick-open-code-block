@@ -30,6 +30,15 @@
     "and": "et",
     "set up": "configurer",
     "program": "début du programme",
+    "drive at": "rouler à",
+    "steer by": "tourner de",
+    "light": "lumière",
+    "display": "afficher",
+    "row": "ligne",
+    "column": "colonne",
+    "at": "à",
+    "beep at": "émettre un son à ",
+    "print": "écrire",
 
     "inventor hub": "hub inventor",
     "prime hub": "hub spike prime",
@@ -60,6 +69,18 @@
     "Δ Y": "Δ Y",
     "mm/s": "mm/s",
     "mm/s²": "mm/s²",
+    "Hz": "Hz",
+    "ms": "ms",
+
+    "blue": "bleu",
+    "cyan": "cyan",
+    "green": "vert",
+    "magenta": "magenta",
+    "orange": "orange",
+    "red": "rouge",
+    "violet": "violet",
+    "white": "blanc",
+    "yellow": "jaune",
 
     "rotate forever": "démarrer",
     "forever": "démarrer",
@@ -95,6 +116,16 @@
     "drive speed": "vitesse de déplacement",
     "turn speed": "vitesse de rotation",
     "drive acceleration": "accélération de déplacement",
-    "turn acceleration": "accélération de rotation"
-
+    "turn acceleration": "accélération de rotation",
+    "power": "puissance",
+    "on": "allumé",
+    "off": "éteint",
+    "number from 0 to 99": "nombre entre 0 et 99",
+    "number": "nombre",
+    "letter (A-Z) or synbol (!#$%<=>?@)": "lettre (A-Z) et symbole (!#$%<=>?@)",
+    "letter": "lettre",
+    "pixel (one light)": "pixel par pixel",
+    "pixel": "pixel",
+    "turn display off": "éteindre l'écran"
+    
 }

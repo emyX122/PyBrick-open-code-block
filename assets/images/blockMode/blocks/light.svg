@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 28 30" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(3, 5)">
+    <defs>
+<radialGradient id="b" cx="-17.638" cy="-14.986" r="15.686" gradientTransform="matrix(1.0475 0 0 1.3064 30.977 32.077)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#fff" offset="0"/>
+<stop stop-color="#fff" stop-opacity="0" offset="1"/>
+</radialGradient>
+<radialGradient id="a" cx="12.714" cy="12.363" r="8.657" gradientTransform="matrix(2.0187 0 0 2.5996 -13.166 -19.639)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#fff" offset="0"/>
+<stop stop-color="#fff" stop-opacity="0" offset="1"/>
+</radialGradient>
+</defs>
+<ellipse cx="12.5" cy="12.5" rx="7.5" ry="7.5" fill="url(#a)" stop-color="#000000" stroke-linecap="round" stroke-width="5"/>
+<ellipse cx="-17.73" cy="-48.12" rx=".15441" ry=".30883" fill="none" stop-color="#000000" stroke-linecap="round" stroke-width=".378"/>
+<circle cx="12.5" cy="12.5" r="10" fill="none" stop-color="#000000" stroke="url(#b)" stroke-linecap="round" stroke-width="5"/>
+  </g>
+</svg>
