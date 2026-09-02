@@ -105,11 +105,11 @@ document.addEventListener('mousemove', () => {
             && hoverHandZoneElement?.classList.contains("canva-base-block")) {
 
             //control que le bloque survolé et porter on soit une sortie et une entrée soit l'inverse
-            if ((Number(hoverHandZoneElement.getAttribute('data-output')) && Number(blockMoved.getAttribute('data-input'))) ||
-                (Number(hoverHandZoneElement.getAttribute('data-input')) && Number(blockMoved.getAttribute('data-output')))) {
+            if ((Number(hoverHandZoneElement?.getAttribute('data-output')) && Number(blockMoved?.getAttribute('data-input'))) ||
+                (Number(hoverHandZoneElement?.getAttribute('data-input')) && Number(blockMoved?.getAttribute('data-output')))) {
 
                 //control si le bloque bouger est du même type que celui survolé
-                if (hoverHandZoneElement.getAttribute('data-type') == blockMoved.getAttribute('data-type')) {
+                if (hoverHandZoneElement?.getAttribute('data-type') == blockMoved?.getAttribute('data-type')) {
                     //taille du placeholder
                     widthPlaceholder = blockMoved.getBoundingClientRect().width / currentZoom;
                     heightPlaceholder = handCanvaElement.getBoundingClientRect().height / currentZoom;
@@ -127,8 +127,8 @@ document.addEventListener('mousemove', () => {
             }
         }
 
-        //control si le bloque survol le menu
-        if (hoverHandZoneElement?.classList.contains("menu-categorie") || hoverHandZoneElement?.classList.contains("menu")) {
+        //control si le bloque est en dehors de l'écran à gauche
+        if (handCanvaElement.getBoundingClientRect().left < 0) {
             oldHoverHandZoneElement = false;
         }
 

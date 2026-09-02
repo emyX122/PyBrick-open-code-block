@@ -116,7 +116,6 @@ function blockInitialisation(jsonExtract, data, file) {
                                         //création du bloque de selection
                                         htmlSeparatorChild.push(document.createElement('select'));
                                         htmlSeparatorChild[htmlSeparatorChild.length-1].classList.add('canva-global-block-number-case');
-
                                         htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.resize = ""; 
                                     }
 
@@ -128,7 +127,6 @@ function blockInitialisation(jsonExtract, data, file) {
                                         //création du bloque de selection
                                         htmlSeparatorChild.push(document.createElement('select'));
                                         htmlSeparatorChild[htmlSeparatorChild.length-1].classList.add('canva-global-block-text-case');    
- 
                                         htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.resize = "";                          
                                     }
 
