@@ -218,19 +218,19 @@ function updateAllCanva() {
         }
 
         //regarde si la div contient une fin et un début
-        element.dataset.ended = false;
-        element.dataset.started = false;
+        element.dataset.ended = 0;
+        element.dataset.started = 0;
         element.dataset.type = null;
         //regarde s'il exist soit un bloque de fin soit de début
         Array.from(element.children).forEach(subElement=>{
             if (subElement.hasAttribute("data-output")) {
                 if (!Number(subElement.getAttribute('data-output'))) {
-                    element.dataset.ended = true;
+                    element.dataset.ended = 1;
                 }
             }
             if (subElement.hasAttribute("data-input")) {
                 if (!Number(subElement.getAttribute('data-input'))) {
-                    element.dataset.started = true;
+                    element.dataset.started = 1;
                 }
             }
             //mise à jour d type de container

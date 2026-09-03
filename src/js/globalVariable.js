@@ -83,3 +83,4 @@ const langageFileLocalisation = "../../assets/json/langage/"
 // -------------------------------
 //emplacement du code enregistré
 let scannedCode = null;
+let compiledCode = null;
