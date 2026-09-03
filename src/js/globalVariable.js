@@ -77,3 +77,9 @@ let extractLangage = null;
 
 //emplacement des fichiers
 const langageFileLocalisation = "../../assets/json/langage/"
+
+// -------------------------------
+//        scann du code   (src/js/entryCodeDB/codeGeneration.js)
+// -------------------------------
+//emplacement du code enregistré
+let scannedCode = null;

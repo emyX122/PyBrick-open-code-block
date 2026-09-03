@@ -65,30 +65,8 @@ document.addEventListener("mouseup", () => {
         //vider la variable de selection
         oldHoverHandZoneElement = elementBackground;
         
-        //control tout les canva pour supprimer les vides
-        canvasContainers.querySelectorAll(".canvas-code").forEach(element => {
-            //supprimer si le canva est vide
-            if (!element.childElementCount) {
-                element.remove();
-            }
-
-            //regarde si la div contient une fin et un début
-            element.dataset.ended = false;
-            element.dataset.started = false;
-            //regarde s'il exist soit un bloque de fin soit de début
-            Array.from(element.children).forEach(subElement=>{
-                if (subElement.hasAttribute("data-output")) {
-                    if (!Number(subElement.getAttribute('data-output'))) {
-                        element.dataset.ended = true;
-                    }
-                }
-                if (subElement.hasAttribute("data-input")) {
-                    if (!Number(subElement.getAttribute('data-input'))) {
-                        element.dataset.started = true;
-                    }
-                }
-            });
-        });
+        //mise à jour des canva-code vide et de type setup
+        updateAllCanva()
 
         //retirer le bloque de la variable de déplacement
         blockMoved = null;
@@ -229,4 +207,39 @@ function insertFragment(referenceElement, element, position) {
     } else {
         referenceElement.parentNode.insertBefore(fragment, referenceElement);
     }
+}
+
+//mise à jour de tout les élément canva-code existant
+function updateAllCanva() {
+    canvasContainers.querySelectorAll(".canvas-code").forEach(element => {
+        //supprimer si le canva est vide
+        if (!element.childElementCount) {
+            element.remove();
+        }
+
+        //regarde si la div contient une fin et un début
+        element.dataset.ended = false;
+        element.dataset.started = false;
+        element.dataset.type = null;
+        //regarde s'il exist soit un bloque de fin soit de début
+        Array.from(element.children).forEach(subElement=>{
+            if (subElement.hasAttribute("data-output")) {
+                if (!Number(subElement.getAttribute('data-output'))) {
+                    element.dataset.ended = true;
+                }
+            }
+            if (subElement.hasAttribute("data-input")) {
+                if (!Number(subElement.getAttribute('data-input'))) {
+                    element.dataset.started = true;
+                }
+            }
+            //mise à jour d type de container
+            if (subElement.hasAttribute("data-type")) {
+                element.dataset.type = subElement.getAttribute("data-type");
+            }
+        });
+    });
+
+    //scanning du code
+    codeScanning()
 }
