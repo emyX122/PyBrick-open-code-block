@@ -129,7 +129,7 @@
     "OFF": "éteint",
     "number from 0 to 99": "nombre entre 0 et 99",
     "number": "nombre",
-    "letter (A-Z) or synbol (!#%<=>?@)": "lettre (A-Z) et symbole (!#%<=>?@)",
+    "letter (A-Z) or synbol (!%<=>?@)": "lettre (A-Z) et symbole (!%<=>?@)",
     "letter": "lettre",
     "pixel (one light)": "pixel par pixel",
     "pixel": "pixel",

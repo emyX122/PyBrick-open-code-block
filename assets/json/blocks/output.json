@@ -1012,7 +1012,7 @@
                         "redirect": "0"
                     },
                     {
-                        "option": "letter (A-Z) or synbol (!#%<=>?@)",
+                        "option": "letter (A-Z) or synbol (!%<=>?@)",
                         "subtext": "letter",
                         "redirect": "1"
                     },

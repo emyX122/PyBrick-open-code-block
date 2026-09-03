@@ -22,7 +22,8 @@ function blockCodeScanning(element) {
         element.querySelectorAll(".canva-global-block-default").forEach(subElement=>{
             if (subElement.hasAttribute("data-variable")) {
                 if (subElement.getAttribute("data-code") == "content-text") {
-                    setupCodeCompiled = setupCodeCompiled.replace(subElement.getAttribute("data-variable"), subElement.innerHTML.replace(" ", "_"));
+                    //insertion en remplacent les espace, les $ et les #
+                    setupCodeCompiled = setupCodeCompiled.replace(subElement.getAttribute("data-variable"), subElement.innerHTML.replaceAll(" ", "_").replaceAll("$", "§").replaceAll("#", "-"));
                 }
             }
         });
