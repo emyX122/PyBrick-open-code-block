@@ -1,3 +1,16 @@
+//fonction pour trouvé tout les éléments à recharger
+function findBlockToScan(element) {
+    let elementParent = element.target;
+    //recherche l'élément à un parent qui montre que c'est un bloque
+    while(elementParent.parentElement && !elementParent.classList.contains("canva-base-block")){
+        elementParent = elementParent.parentElement;
+    }
+    if (elementParent.classList.contains("canva-base-block")){
+        //rechargement du code source
+        blockCodeScanning(elementParent)
+    }
+}
+
 //fonction scann des blocks pour code
 function blockCodeScanning(element) {
     let setupCodeCompiled = "";

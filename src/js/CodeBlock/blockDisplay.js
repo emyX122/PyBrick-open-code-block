@@ -57,4 +57,15 @@ document.addEventListener('change', (element) => {
     //mise à jour de la taille du selecteur
     resize(element.target);
   }
+
+  //cherche s'il faut mettre à jour le code
+  findBlockToScan(element);
+});
+
+//Rechargement du code si une div commenditable est modifier
+document.addEventListener('input', (element) => {
+  if (element.target.hasAttribute('contenteditable')) {
+    //cherche s'il faut mettre à jour le code
+    findBlockToScan(element);
+  }
 });

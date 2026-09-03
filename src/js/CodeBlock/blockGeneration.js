@@ -280,6 +280,11 @@ async function blockGeneration() {
     //attendre que tout est terminé
     console.log("generation finished");
 
+    //initialisation des codes de tout les bloques
+    document.querySelectorAll(".canva-base-block").forEach(blocks=>{
+        blockCodeScanning(blocks);
+    });
+
     //initialisation des tailles des selects
     document.querySelectorAll(".canva-global-block-text-case").forEach(element=>{
         resize(element);
