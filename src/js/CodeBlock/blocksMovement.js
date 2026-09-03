@@ -44,6 +44,7 @@ document.addEventListener("mouseup", () => {
             if (!oldHoverHandZoneElement?.parentElement?.classList.contains("panel-menu-submenu") && oldHoverHandZoneElement?.classList.contains("canva-base-block")) {
                 //placement du fragment de la main après le survolé
                 insertFragment(oldHoverHandZoneElement, blockMoved, movedBlockInput);
+
             } else {
                 //création du canva à cloner
                 const clonedCanva = invisibleCodeCanva.children[0].cloneNode(true);

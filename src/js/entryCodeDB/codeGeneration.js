@@ -1,4 +1,24 @@
-//Fonction scann code
+//fonction scann des blocks pour code
+function blockCodeScanning(element) {
+    let setupCodeCompiled = "";
+    let globalCodeCompiled = "";
+
+    if (element.hasAttribute("data-code-setup")) {
+        setupCodeCompiled = element.getAttribute("data-code-setup");
+
+        element.querySelectorAll(".canva-global-block-default").forEach(subElement=>{
+            if (subElement.hasAttribute("data-variable")) {
+                if (subElement.getAttribute("data-code") == "content-text") {
+                    setupCodeCompiled = setupCodeCompiled.replace(subElement.getAttribute("data-variable"), subElement.innerHTML.replace(" ", "_"));
+                }
+            }
+        });
+    }
+
+    element.dataset.compiledCodeSetup = setupCodeCompiled;
+}
+
+//Fonction scann code pour compilation
 function codeScanning() {
     scannedCode = [];
     compiledCode = "";

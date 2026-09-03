@@ -6,6 +6,17 @@
         "categorie": "setup",
         "submenu": "Set up hub",
         "icon": "primeHub",
+        "import": [
+            {
+                "from": "pybricks.hubs",
+                "import": [
+                    "InventorHub"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = InventorHub()"
+        }],
         "connection": [{
             "type": "setup",
             "input": true,
@@ -15,7 +26,9 @@
             {
                 "type": "text",
                 "input": true,
-                "text": "inventor hub"
+                "text": "inventor hub",
+                "variable": "$A",
+                "code": "content-text"
             }
         ]
     }],

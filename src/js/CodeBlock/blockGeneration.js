@@ -55,6 +55,22 @@ function blockInitialisation(jsonExtract, data, file) {
                     }else{
                         htmlBlock.dataset.output = 0; //false
                     }
+                    //génération du import code
+                    if (data[String(key)][0].import) {
+                        htmlBlock.dataset.import = JSON.stringify(data[String(key)][0].import);
+                    }
+                    //génération du code setup/code
+                    if (data[String(key)][0].code) {
+                        //code de setup
+                        if (data[String(key)][0].code[0].setup) {
+                            htmlBlock.dataset.codeSetup = JSON.stringify(data[String(key)][0].code[0].setup);
+                        }
+                        //code global
+                        if (data[String(key)][0].code[0].code) {
+                            htmlBlock.dataset.CodeGlobal = JSON.stringify(data[String(key)][0].code[0].code);
+                        }
+                    }
+                    
                     //base de type code ou setup
                     if (data[String(key)][0].connection[0].type == "code") {
                         //ajout des data
@@ -172,6 +188,10 @@ function blockInitialisation(jsonExtract, data, file) {
                                     htmlSeparatorChild[htmlSeparatorChild.length-1].setAttribute('contenteditable', 'true');
                                     htmlSeparatorChild[htmlSeparatorChild.length-1].setAttribute('spellcheck', 'false');
                                     htmlSeparatorChild[htmlSeparatorChild.length-1].textContent = getTraduction(actualJsonPath.text);
+                                    if (actualJsonPath.variable) {
+                                        htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.variable = actualJsonPath.variable;
+                                        htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.code = actualJsonPath.code;
+                                    }
                                 }
 
                                 //number
