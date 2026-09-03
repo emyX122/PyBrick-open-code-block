@@ -18,7 +18,7 @@ async function extractLangageFile(file) {
 async function generatLangage() {
     const filename = langageFileLocalisation + selectedLangage +".json";
     await extractLangageFile(filename);
-    generateTitleMenu()
+    generateTitleMenu();
 }
 
 //fonction pour récupérer la traduction d'un text

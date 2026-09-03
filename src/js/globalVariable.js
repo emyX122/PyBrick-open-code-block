@@ -2,7 +2,7 @@
 //       block génération       (src/js/CodeBlock/blockGeneration.js)
 // -------------------------------
 //initialisation des fichier json
-const jsonPath = "../../../assets/json/blocks/";
+const jsonPath = "../../assets/json/blocks/";
 const jsonFiles = ["tasks", "other", "flow", "output", "setup"];
 
 // -------------------------------
@@ -76,4 +76,4 @@ let selectedLangage = allLangage[0];
 let extractLangage = null;
 
 //emplacement des fichiers
-const langageFileLocalisation = "../../../assets/json/langage/"
+const langageFileLocalisation = "../../assets/json/langage/"

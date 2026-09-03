@@ -248,24 +248,25 @@ function controlElementIsDisplay(jsonPath, element, selection) {
     }
 }
 
-//génération de la langue
-generatLangage();
+async function blockGeneration() {
+    //génération de la langue
+    await generatLangage();
 
-//initialisation des fichiers json
-const promises = jsonFiles.map(file => 
-    blockInitialisation(true, null, jsonPath + file + ".json")
-);
-
-//attendre que tout est terminé
-Promise.all(promises).then(() => {
+    //initialisation des fichiers json
+    for (const file of jsonFiles) {
+        await blockInitialisation(true, null, jsonPath + file + ".json");
+    }
+        
+    //attendre que tout est terminé
     console.log("generation finished");
 
     //initialisation des tailles des selects
     document.querySelectorAll(".canva-global-block-text-case").forEach(element=>{
-        console.log(element);
         resize(element);
     });
     document.querySelectorAll(".canva-global-block-number-case").forEach(element=>{
         resize(element);
     });
-});
+}
+
+blockGeneration()

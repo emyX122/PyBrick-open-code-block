@@ -62,13 +62,32 @@ document.addEventListener("mouseup", () => {
             handCanvaElement.innerHTML = "";
         }
         
+        //vider la variable de selection
         oldHoverHandZoneElement = elementBackground;
         
         //control tout les canva pour supprimer les vides
         canvasContainers.querySelectorAll(".canvas-code").forEach(element => {
+            //supprimer si le canva est vide
             if (!element.childElementCount) {
                 element.remove();
             }
+
+            //regarde si la div contient une fin et un début
+            element.dataset.ended = false;
+            element.dataset.started = false;
+            //regarde s'il exist soit un bloque de fin soit de début
+            Array.from(element.children).forEach(subElement=>{
+                if (subElement.hasAttribute("data-output")) {
+                    if (!Number(subElement.getAttribute('data-output'))) {
+                        element.dataset.ended = true;
+                    }
+                }
+                if (subElement.hasAttribute("data-input")) {
+                    if (!Number(subElement.getAttribute('data-input'))) {
+                        element.dataset.started = true;
+                    }
+                }
+            });
         });
 
         //retirer le bloque de la variable de déplacement
