@@ -8,7 +8,7 @@ function codeScanning() {
             if (container.getAttribute("data-started")) {
                 //génération d'un code d'exemple
                 scannedCode = "#block started";
-                injectCodeToPybricks("test.py", scannedCode)
+                injectCodeToPybricks(scannedCode)
             }
         } else {
             console.error("error : div canva blocks without any type");

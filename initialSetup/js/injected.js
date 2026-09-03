@@ -4,15 +4,19 @@ window.addEventListener('message', async (event) => {
     if (event.data.type === 'INJECT_CODE') {
 
         //insertion des données reçu
-        injectCodeToPybricks(event.data.filename, event.data.code)
-            .then(() => console.log('✅ Code injecté!'))
-            .catch(err => console.error('❌ Erreur:', err));
+        injectCodeToPybricks(event.data.code)
+            .then(() => console.log('Code injecté!'))
+            .catch(err => console.error('Erreur:', err));
         
     }
 });
 
 //fonction d'insertion du code dans la base de donnée
-async function injectCodeToPybricks(filePath, pythonCode) {
+async function injectCodeToPybricks(pythonCode) {
+    //récupération du script actif
+    const filePath = document.querySelector('[role="tabpanel"]').getAttribute('aria-label');
+    console.log(filePath);
+
     //attendre que tout soit terminé avant de retourné
     return new Promise((resolve, reject) => {
         //initilaisation de la base de donné
