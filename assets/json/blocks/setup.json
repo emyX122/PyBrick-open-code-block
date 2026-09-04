@@ -40,6 +40,17 @@
         "categorie": "setup",
         "submenu": "Set up hub",
         "icon": "primeHub",
+        "import": [
+            {
+                "from": "pybricks.hubs",
+                "import": [
+                    "PrimeHub"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = PrimeHub()"
+        }],
         "connection": [{
             "type": "setup",
             "input": true,
@@ -49,7 +60,9 @@
             {
                 "type": "text",
                 "input": true,
-                "text": "prime hub"
+                "text": "prime hub",
+                "variable": "$A",
+                "code": "content-text"
             }
         ]
     }],

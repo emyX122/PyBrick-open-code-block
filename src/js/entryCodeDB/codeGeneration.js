@@ -9,6 +9,9 @@ function findBlockToScan(element) {
         //rechargement du code source
         blockCodeScanning(elementParent)
     }
+
+    //mise à jour du code
+    updateAllCanva();
 }
 
 //fonction scann des blocks pour code
@@ -36,6 +39,59 @@ function blockCodeScanning(element) {
 function codeScanning() {
     scannedCode = [];
     compiledCode = "";
+
+    //scan des élément import
+    importScan();
+
+    //scan des élément setup 
+    setupScan();
+
+    //injection du code
+    injectCodeToPybricks(compiledCode);
+
+}
+
+//sous-fonction scan des div setup
+function importScan() {
+    let allImport = [];
+
+    //scann tout les élément qui on un form import
+    canvasContainers.querySelectorAll(".canva-base-block").forEach(container => {
+        //contrôle si le container à bien un import
+        if (container.hasAttribute("data-import")) {
+            //contrôle que le import n'est pas vide
+            if (container.getAttribute("data-import")) {
+                JSON.parse(container.getAttribute("data-import")).forEach(fromImport=>{
+                    //control si le from existe déjà
+                    if (fromImport.from in allImport) {
+                        //scan de tout les imports
+                        fromImport.import.forEach(dataImport=>{
+                            //control si l'élément existe déjà
+                            if (!allImport[fromImport.from].includes(dataImport)) {
+                                //insertion du import
+                                allImport[fromImport.from].push(dataImport);
+                            }
+                        });
+                        
+                    } else {
+                        //ajout du from
+                        allImport[fromImport.from] = [];
+                        //ajout des import
+                        fromImport.import.forEach(dataImport=>{
+                            allImport[fromImport.from].push(dataImport);
+                        });
+                    }
+                })
+            }
+        }
+    });
+
+    console.log(allImport);
+}
+
+
+//sous-fonction scan des blocks setup
+function setupScan() {
     //scann tout les élément div en mode setup
     canvasContainers.querySelectorAll(".canvas-code").forEach(container => {
         //contrôle si le container à bien un type
@@ -64,7 +120,6 @@ function codeScanning() {
                 scannedCode.forEach(code=>{
                     compiledCode = compiledCode + code + "\n";
                 });
-                injectCodeToPybricks(compiledCode);
             }
         } else {
             console.error("error : div canva blocks without any type");
