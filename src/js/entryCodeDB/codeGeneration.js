@@ -29,8 +29,19 @@ function blockCodeScanning(element) {
             if (subElement.hasAttribute("data-variable")) {
                 //entré de type text
                 if (subElement.getAttribute("data-code") == "content-text") {
-                    //insertion en remplacent les espace, les $ et les #
-                    setupCodeCompiled = setupCodeCompiled.replace(subElement.getAttribute("data-variable"), subElement.innerHTML.replaceAll(" ", "_").replaceAll("$", "§").replaceAll("#", "-"));
+                    //contenu scanné en remplacent les espace, les $ et les #
+                    const elementToCompile = subElement.innerHTML.replaceAll(" ", "_").replaceAll("$", "§").replaceAll("#", "-");
+                    //control si l'élément à des settings
+                    if (subElement.hasAttribute("data-settings")) {
+                        //Majuscule
+                        if (subElement.getAttribute("data-settings") == "uppercase") {
+                            //insertion en mettant tout en majuscule
+                            setupCodeCompiled = setupCodeCompiled.replace(subElement.getAttribute("data-variable"), elementToCompile.toUpperCase());
+                        }
+                    } else {
+                        //insertion simple
+                        setupCodeCompiled = setupCodeCompiled.replace(subElement.getAttribute("data-variable"), elementToCompile);
+                    }
                 }
                 //entré de type value
                 if (subElement.getAttribute("data-code") == "content-value") {

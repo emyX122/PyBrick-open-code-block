@@ -1505,5 +1505,282 @@
                 "code": "content-text"
             }
         ]
+    }],
+
+    "20": [{
+        "version": 1.0,
+        "name": "myRed",
+        "class": "input",
+        "categorie": "setup",
+        "submenu": "Set up other sensors",
+        "icon": "lightRGB",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "import": [
+            {
+                "from": "pybricks.parameters",
+                "import": [
+                    "Color"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "Color.$A = Color($B, $C, $D)"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "my red",
+                "variable": "$A",
+                "code": "content-text",
+                "settings": "uppercase"
+            },
+            {
+                "type": "text",
+                "text": "Hue"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "text": "°",
+                "variable": "$B",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "Saturation"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 100,
+                "text": "%",
+                "variable": "$C",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "Brightness"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 100,
+                "text": "%",
+                "variable": "$D",
+                "code": "content-text"
+            }
+        ]
+    }],
+
+    "21": [{
+        "version": 1.0,
+        "name": "controller",
+        "class": "input",
+        "categorie": "setup",
+        "submenu": "Set up other sensors",
+        "icon": "controller",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "import": [
+            {
+                "from": "pybricks.iodevices",
+                "import": [
+                    "XboxController"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = XboxController()"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "controller",
+                "variable": "$A",
+                "code": "content-text"
+            }
+        ]
+    }],
+
+    "22": [{
+        "version": 1.0,
+        "name": "watch",
+        "class": "input",
+        "categorie": "setup",
+        "submenu": "Set up other sensors",
+        "icon": "watch",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "import": [
+            {
+                "from": "pybricks.tools",
+                "import": [
+                    "StopWatch"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = StopWatch()"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "watch",
+                "variable": "$A",
+                "code": "content-text"
+            }
+        ]
+    }],
+
+    "23": [{
+        "version": 1.0,
+        "name": "radio",
+        "class": "input",
+        "categorie": "setup",
+        "submenu": "Set up other sensors",
+        "icon": "radio",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "import": [
+            {
+                "from": "pybricks.messaging",
+                "import": [
+                    "BLERadio"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = BLERadio(broadcast_channel=$B, observe_channels=[$C])"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "radio",
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "broadcast channel"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$B",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "observe"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "one",
+                        "subtext": "one",
+                        "selected": true,
+                        "redirect": "0",
+                        "value": "$D"
+                    },
+                    {
+                        "option": "two",
+                        "subtext": "two",
+                        "redirect": "1",
+                        "value": "$D, $E"
+                    },
+                    {
+                        "option": "three",
+                        "subtext": "three",
+                        "redirect": "2",
+                        "value": "$D, $E, $F"
+                    },
+                    {
+                        "option": "four",
+                        "subtext": "four",
+                        "redirect": "3",
+                        "value": "$D, $E, $F, $G"
+                    },
+                    {
+                        "option": "five",
+                        "subtext": "five",
+                        "redirect": "4",
+                        "value": "$D, $E, $F, $G, $H"
+                    }
+                ],
+                "variable": "$C",
+                "code": "content-value"
+            },
+            {
+                "selection": "0",
+                "type": "text",
+                "text": "channel"
+            },
+            {
+                "selection": "1234",
+                "type": "text",
+                "text": "channels"
+            },
+            {
+                "selection": "01234",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$D",
+                "code": "content-text"
+            },
+            {
+                "selection": "1234",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$E",
+                "code": "content-text"
+            },
+            {
+                "selection": "234",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$F",
+                "code": "content-text"
+            },
+            {
+                "selection": "34",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$G",
+                "code": "content-text"
+            },
+            {
+                "selection": "4",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$H",
+                "code": "content-text"
+            }
+        ]
     }]
 }

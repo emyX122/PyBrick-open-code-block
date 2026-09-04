@@ -45,6 +45,15 @@
     "and space": "espacement :",
     "with steering": "direction sur",
     "and drive with": "motorisé avec",
+    "my remote": "ma manette",
+    "new name": "nouveau nom",
+    "Hue": "Teinte",
+    "Saturation": "Saturation",
+    "Brightness": "Luminosité",
+    "broadcast channel": "diffuser sur la chaine",
+    "observe": "observer",
+    "channel": "chaine",
+    "channels": "chaines",
 
     "inventor hub": "hub inventor",
     "prime hub": "hub spike prime",
@@ -74,6 +83,10 @@
     "force sensor": "capteur tactile",
     "infrared sensor": "capteur infrarouge",
     "remote": "télécommande",
+    "my red": "référence rouge",
+    "controller": "contrôleur",
+    "watch": "tempo",
+    "radio": "radio",
     
     "°/s": "°/s",
     "°": "°",
@@ -150,6 +163,9 @@
     "one": "un",
     "two motors": "deux moteurs",
     "two": "deux",
+    "three": "trois",
+    "four": "quatre",
+    "five": "cinq",
     "channel 1, blue": "chaine 1, bleu",
     "blue 1": "bleu 1",
     "channel 1, red": "chaine 1, rouge",
@@ -165,5 +181,12 @@
     "channel 4, blue": "chaine 4, bleu",
     "blue 4": "bleu 4",
     "channel 4, red": "chaine 4, rouge",
-    "red 4": "rouge 4"
+    "red 4": "rouge 4",
+    "scan and connect to the first available remote": "cherche et se connecte à la première manette disponible",
+    "scan and connect": "cherche et se connecte",
+    "connect to a specific remote": "se connecter à une manette spécifique",
+    "connect to": "connecter à",
+    "scan and connect to the first available remote, then rename it": "cherche et se connecte à la première manette disponible, et la renommer",
+    "connect and rename to": "connecter et renommer"
+
 }

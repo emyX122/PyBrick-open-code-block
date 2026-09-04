@@ -206,6 +206,9 @@ function blockInitialisation(jsonExtract, data, file) {
                                     if (actualJsonPath.variable) {
                                         htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.variable = actualJsonPath.variable;
                                         htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.code = actualJsonPath.code;
+                                        if (actualJsonPath.settings) {
+                                            htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.settings = actualJsonPath.settings;
+                                        }
                                     }
                                 }
 
@@ -218,7 +221,7 @@ function blockInitialisation(jsonExtract, data, file) {
                                     htmlSelectorChild[htmlSelectorChild.length-1].classList.add('canva-global-block-number-input');
                                     htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('contenteditable', 'true');
                                     htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('spellcheck', 'false');
-                                    htmlSelectorChild[htmlSelectorChild.length-1].textContent = actualJsonPath.value;
+                                    htmlSelectorChild[htmlSelectorChild.length-1].textContent = getTraduction(actualJsonPath.value);
                                     //ajout des donné qui montre que c'est du code
                                     if (actualJsonPath.variable) {
                                         htmlSelectorChild[htmlSelectorChild.length-1].dataset.variable = actualJsonPath.variable;
