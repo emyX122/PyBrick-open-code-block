@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 25 26" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0, 0)">
+    <g>
+<g transform="translate(-.003607 -.020174)" fill="#adadad" stroke="#1b2933" stroke-linecap="square" stroke-width=".16723">
+<rect x="19.41" y="3.3112" width="3.9243" height="2.212"/>
+<rect x="1.6732" y="3.3112" width="3.9243" height="2.212"/>
+</g>
+<rect x=".083615" y="4.7624" width="24.833" height="15.877" rx=".72839" ry=".74326" fill="#adadad" stroke="#1b2933" stroke-linecap="square" stroke-width=".16723"/>
+<path d="m24.916 19.584v4.7091c0 0.3456-0.35532 0.62382-0.79669 0.62382h-23.239c-0.44136 0-0.79669-0.27822-0.79669-0.62382v-4.7091s12.977 0.0076 24.833-3e-6z" fill="#646464" stroke="#1b2933" stroke-linecap="square" stroke-width=".167"/>
+<rect x="6.8562" width="11.288" height="22.605" rx="5.6438" ry="5.6438" fill="#010202" stop-color="#000000"/>
+<rect x="9.6178" y="7.5614" width="5.7645" height="11.727" rx="2.8632" ry="2.8632" fill="#d67923" stop-color="#000000"/>
+</g>
+  </g>
+</svg>

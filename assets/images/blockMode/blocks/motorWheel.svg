@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 25 26" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0, 0)">
+    <g transform="matrix(.26466 0 0 .26466 -190.81 -405.79)" style="-webkit-font-smoothing:antialiased">
+<path d="m895.71 1559.5c21.893-18.026 45.817-30.722 69.007-1.8736" fill="none" stroke="#333" stroke-width="3.8085px"/>
+<path d="m938.84 1600.8v-41.185h-3.9202v-4.4288h-12.956v4.2768h-26.255v-16.835h-130.44v16.848h-25.492v-4.0383h-13.433v4.0668h-4.7781l-0.0305 41.293z" fill="#333" stroke="#d6d6d6" stroke-width="1.1425"/>
+<rect x="748.31" y="1572.8" width="33.213" height="29.51" fill="#fff"/>
+<rect x="748.31" y="1572.8" width="33.213" height="29.51" fill="#fff"/>
+<g transform="matrix(2.8886 0 0 2.8886 -1368.8 -2870.6)" stroke="#d6d6d6">
+<g transform="matrix(1.0292 0 0 1.0291 15.391 -43.371)" fill="#333" stroke-width=".38432" style="-webkit-font-smoothing:antialiased">
+<path d="m702.86 1530.5c-6.6263-5e-4 -11.998 5.3712-11.997 11.997 4.6e-4 6.6254 5.3719 11.996 11.997 11.995 6.6247-6e-4 11.995-5.3708 11.995-11.995 6.4e-4 -6.6254-5.3699-11.997-11.995-11.997zm-0.6838 9.625h1.3656v1.6906h1.6886v1.3656h-1.6886v1.6886h-1.3656v-1.6886h-1.6886v-1.3656h1.6886z" fill="#333" stroke="#d6d6d6" stroke-width=".38432" style="-webkit-font-smoothing:antialiased"/>
+</g>
+<ellipse cx="738.75" cy="1544" rx="8.5493" ry="8.5485" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width=".39553"/>
+</g>
+<rect x="882.62" y="1574.7" width="33.213" height="29.51" fill="#fff"/>
+<g transform="matrix(2.8886 0 0 2.8886 -1236.3 -2870.6)" stroke="#d6d6d6">
+<g transform="matrix(1.0292 0 0 1.0291 15.391 -43.371)" fill="#333" stroke-width=".38432" style="-webkit-font-smoothing:antialiased">
+<path d="m702.86 1530.5c-6.6263-5e-4 -11.998 5.3712-11.997 11.997 4.6e-4 6.6254 5.3719 11.996 11.997 11.995 6.6247-6e-4 11.995-5.3708 11.995-11.995 6.4e-4 -6.6254-5.3699-11.997-11.995-11.997zm-0.6838 9.625h1.3656v1.6906h1.6886v1.3656h-1.6886v1.6886h-1.3656v-1.6886h-1.6886v-1.3656h1.6886z" fill="#333" stroke="#d6d6d6" stroke-width=".38432" style="-webkit-font-smoothing:antialiased"/>
+</g>
+<ellipse cx="738.75" cy="1544" rx="8.5493" ry="8.5485" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width=".39553"/>
+</g>
+<g transform="matrix(-30.085 10.256 10.256 30.085 1390.9 1309.4)" fill="#d6d6d6" stroke-width=".45286">
+<rect transform="rotate(100.07)" x=".15807" y="-15.897" width=".85794" height=".76524" rx=".036358" ry=".036358"/>
+<rect transform="rotate(100.07)" x=".8506" y="-15.748" width=".48441" height=".45742" rx=".042002" ry=".042002"/>
+</g>
+</g>
+  </g>
+</svg>

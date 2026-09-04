@@ -96,6 +96,11 @@
     --color-intermediate: #4180d9;
     --color-alterntive: #386fbc;
 }
+.color-input {
+    --color-blocks: #5cb1d6;
+    --color-intermediate: #4e96b6;
+    --color-alterntive: #4585a1;
+}
 .color-flow {
     --color-blocks: #ffab19;
     --color-intermediate: #d99115;

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 25 26" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0, 0)">
+    <g>
+<rect width="8.3333" height="8.3333" fill="#e86969" stop-color="#000000"/>
+<rect x="8.3333" width="8.3333" height="8.3333" fill="#59c65c" stop-color="#000000"/>
+<rect x="16.667" width="8.3333" height="8.3333" fill="#5983f6" stop-color="#000000"/>
+<rect y="8.3333" width="8.3333" height="8.3333" fill="#e79e68" stop-color="#000000"/>
+<rect x="8.3333" y="8.3333" width="8.3333" height="8.3333" fill="#5dffe2" stop-color="#000000"/>
+<rect x="16.667" y="8.3333" width="8.3333" height="8.3333" fill="#b569e8" stop-color="#000000"/>
+<rect y="16.667" width="8.3333" height="8.3333" fill="#e8d069" stop-color="#000000"/>
+<rect x="8.3333" y="16.667" width="8.3333" height="8.3333" fill="#69dae8" stop-color="#000000"/>
+<rect x="16.667" y="16.667" width="8.3333" height="8.3333" fill="#e869b9" stop-color="#000000"/>
+</g>
+  </g>
+</svg>

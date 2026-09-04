@@ -205,7 +205,7 @@
 
     "6": [{
         "version": 1.0,
-        "name": "simpleMotor",
+        "name": "motor",
         "class": "output",
         "categorie": "setup",
         "submenu": "Set smart motors",
@@ -520,6 +520,989 @@
                 "value": "None",
                 "variable": "$E",
                 "code": "content-value"
+            }
+        ]
+    }],
+
+    "9": [{
+        "version": 1.0,
+        "name": "simpleMotor",
+        "class": "output",
+        "categorie": "setup",
+        "submenu": "Set up basic motors",
+        "icon": "motorWheel",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "import": [
+            {
+                "from": "pybricks.parameters",
+                "import": [
+                    "Direction",
+                    "Port"
+                ]
+            },
+            {
+                "from": "pybricks.pupdevices",
+                "import": [
+                    "DCMotor"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = DCMotor(Port.$B, Direction.$C)"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "simple motor",
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "on"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "port A",
+                        "subtext": "A",
+                        "selected": true,
+                        "value": "A"
+                    },
+                    {
+                        "option": "port B",
+                        "subtext": "B",
+                        "value": "B"
+                    },
+                    {
+                        "option": "port C",
+                        "subtext": "C",
+                        "value": "C"
+                    },
+                    {
+                        "option": "port D",
+                        "subtext": "D",
+                        "value": "D"
+                    },
+                    {
+                        "option": "port E",
+                        "subtext": "E",
+                        "value": "E"
+                    },
+                    {
+                        "option": "port F",
+                        "subtext": "F",
+                        "value": "F"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "with forward"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "↻ clockwise",
+                        "subtext": "↻",
+                        "selected": true,
+                        "value": "CLOCKWISE"
+                    },
+                    {
+                        "option": "↺ anticlockwise",
+                        "subtext": "↺",
+                        "value": "COUNTERCLOCKWISE"
+                    }
+                ],
+                "variable": "$C",
+                "code": "content-value"
+            }
+        ]
+    }],
+
+    "10": [{
+        "version": 1.0,
+        "name": "infraredMotor",
+        "class": "output",
+        "categorie": "setup",
+        "submenu": "Set up basic motors",
+        "icon": "infraredMotor",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "import": [
+            {
+                "from": "pybricks.parameters",
+                "import": [
+                    "Color",
+                    "Direction"
+                ]
+            },
+            {
+                "from": "pybricks.pupdevices",
+                "import": [
+                    "PFMotor"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = PFMotor($B, $C, Direction.$D)"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "pf motor",
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "on"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "!infrared!",
+                        "value": "!infrared!"
+                    },
+                    {
+                        "option": "!color!",
+                        "value": "!color!"
+                    }
+                ],
+                "text": "sensor",
+                "value": "None",
+                "variable": "$B",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "channel 1, blue",
+                        "subtext": "blue 1",
+                        "selected": true,
+                        "value": "1, Color.BLUE"
+                    },
+                    {
+                        "option": "channel 1, red",
+                        "subtext": "red 1",
+                        "value": "1, Color.RED"
+                    },
+                    {
+                        "option": "channel 2, blue",
+                        "subtext": "blue 2",
+                        "value": "2, Color.BLUE"
+                    },
+                    {
+                        "option": "channel 2, red",
+                        "subtext": "red 2",
+                        "value": "2, Color.RED"
+                    },
+                    {
+                        "option": "channel 3, blue",
+                        "subtext": "blue 3",
+                        "value": "3, Color.BLUE"
+                    },
+                    {
+                        "option": "channel 3, red",
+                        "subtext": "red 3",
+                        "value": "3, Color.RED"
+                    },
+                    {
+                        "option": "channel 4, blue",
+                        "subtext": "blue 4",
+                        "value": "4, Color.BLUE"
+                    },
+                    {
+                        "option": "channel 4, red",
+                        "subtext": "red 4",
+                        "value": "4, Color.RED"
+                    }
+                ],
+                "variable": "$C",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "with forward"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "↻ clockwise",
+                        "subtext": "↻",
+                        "selected": true,
+                        "value": "CLOCKWISE"
+                    },
+                    {
+                        "option": "↺ anticlockwise",
+                        "subtext": "↺",
+                        "value": "COUNTERCLOCKWISE"
+                    }
+                ],
+                "variable": "$D",
+                "code": "content-value"
+            }
+        ]
+    }],
+
+    "11": [{
+        "version": 1.0,
+        "name": "externalLight",
+        "class": "output",
+        "categorie": "setup",
+        "submenu": "Set up lights",
+        "icon": "elight",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "import": [
+            {
+                "from": "pybricks.parameters",
+                "import": [
+                    "Port"
+                ]
+            },
+            {
+                "from": "pybricks.pupdevices",
+                "import": [
+                    "Light"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = Light(Port.$B)"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "light",
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "on"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "port A",
+                        "subtext": "A",
+                        "selected": true,
+                        "value": "A"
+                    },
+                    {
+                        "option": "port B",
+                        "subtext": "B",
+                        "value": "B"
+                    },
+                    {
+                        "option": "port C",
+                        "subtext": "C",
+                        "value": "C"
+                    },
+                    {
+                        "option": "port D",
+                        "subtext": "D",
+                        "value": "D"
+                    },
+                    {
+                        "option": "port E",
+                        "subtext": "E",
+                        "value": "E"
+                    },
+                    {
+                        "option": "port F",
+                        "subtext": "F",
+                        "value": "F"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            }
+        ]
+    }],
+
+    "12": [{
+        "version": 1.0,
+        "name": "matrix",
+        "class": "output",
+        "categorie": "setup",
+        "submenu": "Set up lights",
+        "icon": "matrix",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "import": [
+            {
+                "from": "pybricks.parameters",
+                "import": [
+                    "Port"
+                ]
+            },
+            {
+                "from": "pybricks.pupdevices",
+                "import": [
+                    "ColorLightMatrix"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = ColorLightMatrix(Port.$B)"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "matrix",
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "on"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "port A",
+                        "subtext": "A",
+                        "selected": true,
+                        "value": "A"
+                    },
+                    {
+                        "option": "port B",
+                        "subtext": "B",
+                        "value": "B"
+                    },
+                    {
+                        "option": "port C",
+                        "subtext": "C",
+                        "value": "C"
+                    },
+                    {
+                        "option": "port D",
+                        "subtext": "D",
+                        "value": "D"
+                    },
+                    {
+                        "option": "port E",
+                        "subtext": "E",
+                        "value": "E"
+                    },
+                    {
+                        "option": "port F",
+                        "subtext": "F",
+                        "value": "F"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            }
+        ]
+    }],
+
+    "13": [{
+        "version": 1.0,
+        "name": "colorSensor",
+        "class": "input",
+        "categorie": "setup",
+        "submenu": "Set up powered up sensors",
+        "icon": "sensorColor",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "import": [
+            {
+                "from": "pybricks.parameters",
+                "import": [
+                    "Port"
+                ]
+            },
+            {
+                "from": "pybricks.pupdevices",
+                "import": [
+                    "ColorSensor"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = ColorSensor(Port.$B)"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "color sensor",
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "on"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "port A",
+                        "subtext": "A",
+                        "selected": true,
+                        "value": "A"
+                    },
+                    {
+                        "option": "port B",
+                        "subtext": "B",
+                        "value": "B"
+                    },
+                    {
+                        "option": "port C",
+                        "subtext": "C",
+                        "value": "C"
+                    },
+                    {
+                        "option": "port D",
+                        "subtext": "D",
+                        "value": "D"
+                    },
+                    {
+                        "option": "port E",
+                        "subtext": "E",
+                        "value": "E"
+                    },
+                    {
+                        "option": "port F",
+                        "subtext": "F",
+                        "value": "F"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            }
+        ]
+    }],
+
+    "14": [{
+        "version": 1.0,
+        "name": "sensor",
+        "class": "input",
+        "categorie": "setup",
+        "submenu": "Set up powered up sensors",
+        "icon": "sensor",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "import": [
+            {
+                "from": "pybricks.parameters",
+                "import": [
+                    "Port"
+                ]
+            },
+            {
+                "from": "pybricks.pupdevices",
+                "import": [
+                    "ColorDistanceSensor"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = ColorDistanceSensor(Port.$B)"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "sensor",
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "on"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "port A",
+                        "subtext": "A",
+                        "selected": true,
+                        "value": "A"
+                    },
+                    {
+                        "option": "port B",
+                        "subtext": "B",
+                        "value": "B"
+                    },
+                    {
+                        "option": "port C",
+                        "subtext": "C",
+                        "value": "C"
+                    },
+                    {
+                        "option": "port D",
+                        "subtext": "D",
+                        "value": "D"
+                    },
+                    {
+                        "option": "port E",
+                        "subtext": "E",
+                        "value": "E"
+                    },
+                    {
+                        "option": "port F",
+                        "subtext": "F",
+                        "value": "F"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            }
+        ]
+    }],
+
+    "15": [{
+        "version": 1.0,
+        "name": "distanceSensor",
+        "class": "input",
+        "categorie": "setup",
+        "submenu": "Set up powered up sensors",
+        "icon": "sensorUltrasonic",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "import": [
+            {
+                "from": "pybricks.parameters",
+                "import": [
+                    "Port"
+                ]
+            },
+            {
+                "from": "pybricks.pupdevices",
+                "import": [
+                    "UltrasonicSensor"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = UltrasonicSensor(Port.$B)"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "distance sensor",
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "on"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "port A",
+                        "subtext": "A",
+                        "selected": true,
+                        "value": "A"
+                    },
+                    {
+                        "option": "port B",
+                        "subtext": "B",
+                        "value": "B"
+                    },
+                    {
+                        "option": "port C",
+                        "subtext": "C",
+                        "value": "C"
+                    },
+                    {
+                        "option": "port D",
+                        "subtext": "D",
+                        "value": "D"
+                    },
+                    {
+                        "option": "port E",
+                        "subtext": "E",
+                        "value": "E"
+                    },
+                    {
+                        "option": "port F",
+                        "subtext": "F",
+                        "value": "F"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            }
+        ]
+    }],
+
+    "16": [{
+        "version": 1.0,
+        "name": "tiltSensor",
+        "class": "input",
+        "categorie": "setup",
+        "submenu": "Set up powered up sensors",
+        "icon": "sensorTilt",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "import": [
+            {
+                "from": "pybricks.parameters",
+                "import": [
+                    "Port"
+                ]
+            },
+            {
+                "from": "pybricks.pupdevices",
+                "import": [
+                    "TiltSensor"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = TiltSensor(Port.$B)"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "tilt sensor",
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "on"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "port A",
+                        "subtext": "A",
+                        "selected": true,
+                        "value": "A"
+                    },
+                    {
+                        "option": "port B",
+                        "subtext": "B",
+                        "value": "B"
+                    },
+                    {
+                        "option": "port C",
+                        "subtext": "C",
+                        "value": "C"
+                    },
+                    {
+                        "option": "port D",
+                        "subtext": "D",
+                        "value": "D"
+                    },
+                    {
+                        "option": "port E",
+                        "subtext": "E",
+                        "value": "E"
+                    },
+                    {
+                        "option": "port F",
+                        "subtext": "F",
+                        "value": "F"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            }
+        ]
+    }],
+
+    "17": [{
+        "version": 1.0,
+        "name": "forceSensor",
+        "class": "input",
+        "categorie": "setup",
+        "submenu": "Set up powered up sensors",
+        "icon": "sensorForce",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "import": [
+            {
+                "from": "pybricks.parameters",
+                "import": [
+                    "Port"
+                ]
+            },
+            {
+                "from": "pybricks.pupdevices",
+                "import": [
+                    "ForceSensor"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = ForceSensor(Port.$B)"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "force sensor",
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "on"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "port A",
+                        "subtext": "A",
+                        "selected": true,
+                        "value": "A"
+                    },
+                    {
+                        "option": "port B",
+                        "subtext": "B",
+                        "value": "B"
+                    },
+                    {
+                        "option": "port C",
+                        "subtext": "C",
+                        "value": "C"
+                    },
+                    {
+                        "option": "port D",
+                        "subtext": "D",
+                        "value": "D"
+                    },
+                    {
+                        "option": "port E",
+                        "subtext": "E",
+                        "value": "E"
+                    },
+                    {
+                        "option": "port F",
+                        "subtext": "F",
+                        "value": "F"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            }
+        ]
+    }],
+
+    "18": [{
+        "version": 1.0,
+        "name": "infraredSensor",
+        "class": "input",
+        "categorie": "setup",
+        "submenu": "Set up powered up sensors",
+        "icon": "sensorInfrared",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "import": [
+            {
+                "from": "pybricks.parameters",
+                "import": [
+                    "Port"
+                ]
+            },
+            {
+                "from": "pybricks.pupdevices",
+                "import": [
+                    "InfraredSensor"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = InfraredSensor(Port.$B)"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "infrared sensor",
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "on"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "port A",
+                        "subtext": "A",
+                        "selected": true,
+                        "value": "A"
+                    },
+                    {
+                        "option": "port B",
+                        "subtext": "B",
+                        "value": "B"
+                    },
+                    {
+                        "option": "port C",
+                        "subtext": "C",
+                        "value": "C"
+                    },
+                    {
+                        "option": "port D",
+                        "subtext": "D",
+                        "value": "D"
+                    },
+                    {
+                        "option": "port E",
+                        "subtext": "E",
+                        "value": "E"
+                    },
+                    {
+                        "option": "port F",
+                        "subtext": "F",
+                        "value": "F"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            }
+        ]
+    }],
+
+    "19": [{
+        "version": 1.0,
+        "name": "remote",
+        "class": "input",
+        "categorie": "setup",
+        "submenu": "Set up powered up sensors",
+        "icon": "remote",
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "import": [
+            {
+                "from": "pybricks.pupdevices",
+                "import": [
+                    "Remote"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = Remote($B"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "remote",
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "scan and connect to the first available remote",
+                        "subtext": "scan and connect",
+                        "selected": true,
+                        "redirect": "0",
+                        "value": "timeout=None)"
+                    },
+                    {
+                        "option": "connect to a specific remote",
+                        "subtext": "connect to",
+                        "redirect": "1",
+                        "value": "'$C', timeout=None)"
+                    },
+                    {
+                        "option": "scan and connect to the first available remote, then rename it",
+                        "subtext": "connect and rename to",
+                        "redirect": "2",
+                        "value": "timeout=None)\nremote.name('$D')"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            },
+            {
+                "selection": "1",
+                "type": "number",
+                "input": true,
+                "value": "my remote",
+                "variable": "$C",
+                "code": "content-text"
+            },
+            {
+                "selection": "2",
+                "type": "number",
+                "input": true,
+                "value": "new name",
+                "variable": "$D",
+                "code": "content-text"
             }
         ]
     }]

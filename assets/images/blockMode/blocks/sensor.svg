@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 25 26" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0, 0)">
+    <rect x="1.2245" y="2.3083" width="22.704" height="22.608" rx=".72839" ry=".74326" fill="#f4f4f4" stroke="#1b2933" stroke-linecap="square" stroke-width=".16723"/>
+<rect x="1.2245" y="11.527" width="22.704" height="13.389" rx=".72839" ry=".74326" fill="#969696" fill-opacity=".99057" stroke="#1b2933" stroke-linecap="square" stroke-width=".16723"/>
+<path d="m7.7131 7.6443c-2.4327 0-4.391 1.9584-4.391 4.391 0 2.4327 1.9584 4.391 4.391 4.391h0.026797v1.6125c0 2.4327 2.163 4.391 4.8518 4.391 2.6887 0 4.8535-1.9584 4.8535-4.391v-1.6125h0.20714c2.4327 0 4.391-1.9584 4.391-4.391 0-2.4327-1.9584-4.391-4.391-4.391z" fill="#1b2a34"/>
+<ellipse cx="7.3668" cy="11.915" rx="2.3402" ry="2.388" fill="#e9e9e9"/>
+<ellipse cx="12.527" cy="17.642" rx="3.3217" ry="3.3895" fill="#e9e9e9"/>
+<ellipse cx="18.189" cy="11.915" rx="2.3402" ry="2.388" fill="#e9e9e9"/>
+<rect x="3.0553" y=".083616" width="8.0564" height="2.212" fill="#f4f4f4" stroke="#1b2933" stroke-linecap="square" stroke-width=".16723"/>
+<rect x="14.154" y=".083616" width="8.0564" height="2.212" fill="#f4f4f4" stroke="#1b2933" stroke-linecap="square" stroke-width=".16723"/>
+  </g>
+</svg>

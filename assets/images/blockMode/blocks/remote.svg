@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 25 26" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0, 0)">
+    <circle cx="12.5" cy="12.5" r="12.4" fill="#f4f4f4" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".2"/>
+<rect x="6.6966" y=".41695" width="11.607" height="24.166" rx="6.0317" ry="6.0317" fill="#f4f4f4" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".2"/>
+<g transform="translate(-.39674 .10835)">
+<ellipse cx="12.5" cy="12.5" rx=".043957" ry=".044854" fill="#1b2a34"/>
+<rect x="9.5113" y="9.0018" width="6.7709" height="6.7797" fill="#d00" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".2"/>
+<path d="m9.5113 3.5982c0-3.5502 6.7709-3.5559 6.7709 0v5.4036h-6.7709z" fill="#b8b8b8" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".2"/>
+<path d="m16.282 21.185c0 3.5502-6.7709 3.5559-6.7709 0v-5.4036h6.7709z" fill="#b8b8b8" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".2"/>
+</g>
+<path d="m10.493 19.589h3.9965" fill="none" stroke="#505050" stroke-width=".9"/>
+<path d="m10.493 5.4845h3.9965" fill="none" stroke="#505050" stroke-width=".9"/>
+<path d="m12.492 3.4862v3.9965" fill="none" stroke="#505050" stroke-width=".9"/>
+  </g>
+</svg>

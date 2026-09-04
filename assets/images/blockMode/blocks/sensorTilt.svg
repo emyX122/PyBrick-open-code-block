@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 25 26" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0, 0)">
+    <rect x="1.2245" y="4.3324" width="22.704" height="18.5" rx=".72839" ry=".74326" fill="#f4f4f4" stroke="#1b2933" stroke-linecap="square" stroke-width=".16723"/>
+<path d="m5.3578 16.82h14.006l2.5702-2.5078 1.9944-0.0178v7.8074c0 0.41176-0.32486 0.74326-0.72839 0.74326h-21.247c-0.40353 0-0.72839-0.33149-0.72839-0.74326v-7.8074l2.2303-0.01673z" fill="#969696" fill-opacity=".99057" stroke="#1b2933" stroke-linecap="square" stroke-width=".16723"/>
+<rect x="3.0553" y="2.1077" width="8.0564" height="2.212" fill="#f4f4f4" stroke="#1b2933" stroke-linecap="square" stroke-width=".16723"/>
+<rect x="14.154" y="2.1077" width="8.0564" height="2.212" fill="#f4f4f4" stroke="#1b2933" stroke-linecap="square" stroke-width=".16723"/>
+<g transform="translate(.68531 1.6208)">
+<path d="m7.607 8.0876a6.6586 6.6586 0 0 1 4.7688-1.95 6.6586 6.6586 0 0 1 4.7326 2.0363" fill="none" stop-color="#000000" stroke="#979797" stroke-width="2"/>
+<path transform="matrix(.87515 0 0 .87515 2.715 1.1907)" d="m20.391 11.903-7.1492-1.9156 5.2336-5.2336z" fill="#979797" stop-color="#000000"/>
+<path transform="matrix(-.87515 0 0 .87515 21.744 1.1907)" d="m20.391 11.903-7.1492-1.9156 5.2336-5.2336z" fill="#979797" stop-color="#000000"/>
+</g>
+  </g>
+</svg>

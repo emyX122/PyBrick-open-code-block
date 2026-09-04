@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 25 26" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0, 0)">
+    <g>
+<rect x=".083616" y=".083616" width="59.833" height="24.833" rx=".72839" ry=".74326" fill="#f4f4f4" stroke="#1b2933" stroke-linecap="square" stroke-width=".16723"/>
+<rect x="12.099" y="4.1385" width="35.782" height="11.372" fill="#1b2a34"/>
+<rect x="4.3938" y="4.1221" width="16.212" height="16.756" rx="8.1062" ry="8.1062" fill="#1b2a34"/>
+<ellipse cx="12.5" cy="12.5" rx="6.2633" ry="6.3912" fill="#e9e9e9"/>
+<ellipse cx="12.5" cy="12.5" rx=".043957" ry=".044854" fill="#1b2a34"/>
+<rect x="39.597" y="4.1221" width="16.212" height="16.756" rx="8.1062" ry="8.1062" fill="#1b2a34"/>
+<ellipse cx="47.703" cy="12.5" rx="6.2633" ry="6.3912" fill="#e9e9e9"/>
+<ellipse cx="47.703" cy="12.5" rx=".043957" ry=".044854" fill="#1b2a34"/>
+<ellipse cx="12.5" cy="12.5" rx="4.4913" ry="4.583" fill="#9e9e9e"/>
+<ellipse cx="47.703" cy="12.5" rx="4.4913" ry="4.583" fill="#9e9e9e"/>
+</g>
+  </g>
+</svg>
