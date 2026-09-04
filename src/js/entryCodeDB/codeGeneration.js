@@ -19,14 +19,23 @@ function blockCodeScanning(element) {
     let setupCodeCompiled = "";
     let globalCodeCompiled = "";
 
+    //scan des élément avec du code setup
     if (element.hasAttribute("data-code-setup")) {
         setupCodeCompiled = element.getAttribute("data-code-setup");
 
+        //scan tout les élément qui peuvent avoir du code
         element.querySelectorAll(".canva-global-block-default").forEach(subElement=>{
+            //control si il y à un lien avec une variable
             if (subElement.hasAttribute("data-variable")) {
+                //entré de type text
                 if (subElement.getAttribute("data-code") == "content-text") {
                     //insertion en remplacent les espace, les $ et les #
                     setupCodeCompiled = setupCodeCompiled.replace(subElement.getAttribute("data-variable"), subElement.innerHTML.replaceAll(" ", "_").replaceAll("$", "§").replaceAll("#", "-"));
+                }
+                //entré de type value
+                if (subElement.getAttribute("data-code") == "content-value") {
+                    //insertion en remplacent les espace, les $ et les #
+                    setupCodeCompiled = setupCodeCompiled.replace(subElement.getAttribute("data-variable"), subElement.value);
                 }
             }
         });
@@ -48,6 +57,8 @@ function codeScanning() {
 
     //injection du code
     injectCodeToPybricks(compiledCode);
+
+    console.log(compiledCode);
 
 }
 
@@ -105,8 +116,6 @@ function importScan() {
 
     //ajout du à la ligne 
     compiledCode = compiledCode + "\n";
-
-    console.log(compiledCode);
 }
 
 

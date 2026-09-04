@@ -215,11 +215,25 @@
             "input": true,
             "output": true
         }],
+        "import": [
+            {
+                "from": "pybricks.parameters",
+                "import": [
+                    "Direction", 
+                    "Port"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = Motor(Port.$B, Direction.$C)"
+        }],
         "content": [
             {
                 "type": "text",
                 "input": true,
-                "text": "motor"
+                "text": "motor",
+                "variable": "$A",
+                "code": "content-text"
             },
             {
                 "type": "text",
@@ -232,29 +246,37 @@
                     {
                         "option": "port A",
                         "subtext": "A",
-                        "selected": true
+                        "selected": true,
+                        "value": "A"
                     },
                     {
                         "option": "port B",
-                        "subtext": "B"
+                        "subtext": "B",
+                        "value": "B"
                     },
                     {
                         "option": "port C",
-                        "subtext": "C"
+                        "subtext": "C",
+                        "value": "C"
                     },
                     {
                         "option": "port D",
-                        "subtext": "D"
+                        "subtext": "D",
+                        "value": "D"
                     },
                     {
                         "option": "port E",
-                        "subtext": "E"
+                        "subtext": "E",
+                        "value": "E"
                     },
                     {
                         "option": "port F",
-                        "subtext": "F"
+                        "subtext": "F",
+                        "value": "F"
                     }
-                ]
+                ],
+                "variable": "$B",
+                "code": "content-value"
             },
             {
                 "type": "text",
@@ -267,13 +289,17 @@
                     {
                         "option": "↻ clockwise",
                         "subtext": "↻",
-                        "selected": true
+                        "selected": true,
+                        "value": "CLOCKWISE"
                     },
                     {
                         "option": "↺ anticlockwise",
-                        "subtext": "↺"
+                        "subtext": "↺",
+                        "value": "COUNTERCLOCKWISE"
                     }
-                ]
+                ],
+                "variable": "$C",
+                "code": "content-value"
             }
         ]
     }],

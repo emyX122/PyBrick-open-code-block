@@ -148,12 +148,22 @@ function blockInitialisation(jsonExtract, data, file) {
                                     htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.resize = "";                          
                                 }
 
+                                //ajout des donné qui montre que c'est du code
+                                if (actualJsonPath.variable) {
+                                    htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.variable = actualJsonPath.variable;
+                                    htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.code = actualJsonPath.code;
+                                }
+
                                 //valeur par default désactivé
                                 if (actualJsonPath.text) {
                                     htmlSelectorChild.push(document.createElement('option'));
                                     htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('selected', '');
                                     htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('disabled', '');
                                     htmlSelectorChild[htmlSelectorChild.length-1].textContent = getTraduction(actualJsonPath.text);
+                                    //ajout d'une valeur à l'option
+                                    if (actualJsonPath.value) {
+                                        htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('value', actualJsonPath.value);
+                                    }
                                 }
                                 //création des options selectionnable
                                 for (let keySelector = 0; keySelector < (actualJsonPath.selector).length; keySelector++) {
@@ -172,6 +182,10 @@ function blockInitialisation(jsonExtract, data, file) {
                                     if (actualJsonPath.selector[keySelector].subtext) {
                                         htmlSelectorChild[htmlSelectorChild.length-1].dataset.subtext = getTraduction(actualJsonPath.selector[keySelector].subtext);
                                     }
+                                    //ajout d'une valeur à l'option
+                                    if (actualJsonPath.selector[keySelector].value) {
+                                        htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('value', actualJsonPath.selector[keySelector].value);
+                                    }
                                     
                                     //insertion du text complet de l'option
                                     htmlSelectorChild[htmlSelectorChild.length-1].textContent = getTraduction(actualJsonPath.selector[keySelector].option);
@@ -188,6 +202,7 @@ function blockInitialisation(jsonExtract, data, file) {
                                     htmlSeparatorChild[htmlSeparatorChild.length-1].setAttribute('contenteditable', 'true');
                                     htmlSeparatorChild[htmlSeparatorChild.length-1].setAttribute('spellcheck', 'false');
                                     htmlSeparatorChild[htmlSeparatorChild.length-1].textContent = getTraduction(actualJsonPath.text);
+                                    //ajout des donné qui montre que c'est du code
                                     if (actualJsonPath.variable) {
                                         htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.variable = actualJsonPath.variable;
                                         htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.code = actualJsonPath.code;
