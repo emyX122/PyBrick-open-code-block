@@ -79,11 +79,24 @@
             "input": true,
             "output": true
         }],
+        "import": [
+            {
+                "from": "pybricks.hubs",
+                "import": [
+                    "EssentialHub"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = EssentialHub()"
+        }],
         "content": [
             {
                 "type": "text",
                 "input": true,
-                "text": "essential hub"
+                "text": "essential hub",
+                "variable": "$A",
+                "code": "content-text"
             }
         ]
     }],
@@ -100,11 +113,24 @@
             "input": true,
             "output": true
         }],
+        "import": [
+            {
+                "from": "pybricks.hubs",
+                "import": [
+                    "TechnicHub"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = TechnicHub()"
+        }],
         "content": [
             {
                 "type": "text",
                 "input": true,
-                "text": "technic hub"
+                "text": "technic hub",
+                "variable": "$A",
+                "code": "content-text"
             }
         ]
     }],
@@ -121,11 +147,24 @@
             "input": true,
             "output": true
         }],
+        "import": [
+            {
+                "from": "pybricks.hubs",
+                "import": [
+                    "CityHub"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = CityHub()"
+        }],
         "content": [
             {
                 "type": "text",
                 "input": true,
-                "text": "city hub"
+                "text": "city hub",
+                "variable": "$A",
+                "code": "content-text"
             }
         ]
     }],
@@ -142,11 +181,24 @@
             "input": true,
             "output": true
         }],
+        "import": [
+            {
+                "from": "pybricks.hubs",
+                "import": [
+                    "MoveHub"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = MoveHub()"
+        }],
         "content": [
             {
                 "type": "text",
                 "input": true,
-                "text": "move hub"
+                "text": "move hub",
+                "variable": "$A",
+                "code": "content-text"
             }
         ]
     }],

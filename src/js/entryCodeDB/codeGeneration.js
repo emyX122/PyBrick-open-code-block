@@ -86,7 +86,27 @@ function importScan() {
         }
     });
 
-    console.log(allImport);
+    //génération d'un code compilé
+    for (const key in allImport) {
+        //ajout du from
+        compiledCode = compiledCode + "from " + key + " import ";
+
+        //ajout des imports
+        allImport[key].forEach(data=>{
+            if (allImport[key].indexOf(data)) {
+                compiledCode = compiledCode + ", ";
+            }
+            compiledCode = compiledCode + data;
+        });
+
+        //à la ligne
+        compiledCode = compiledCode + "\n";
+    }
+
+    //ajout du à la ligne 
+    compiledCode = compiledCode + "\n";
+
+    console.log(compiledCode);
 }
 
 
