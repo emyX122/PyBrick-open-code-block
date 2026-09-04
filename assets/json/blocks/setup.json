@@ -316,11 +316,24 @@
             "input": true,
             "output": true
         }],
+        "import": [
+            {
+                "from": "pybricks.robotics",
+                "import": [
+                    "DriveBase"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = DriveBase($B, $C, $D, $E)"
+        }],
         "content": [
             {
                 "type": "text",
                 "input": true,
-                "text": "drive base"
+                "text": "drive base",
+                "variable": "$A",
+                "code": "content-text"
             },
             {
                 "type": "text",
@@ -331,13 +344,18 @@
                 "input": true,
                 "selector": [
                     {
-                        "option": "!left!"
+                        "option": "!left!",
+                        "value": "!left!"
                     },
                     {
-                        "option": "!right!"
+                        "option": "!right!",
+                        "value": "!right!"
                     }
                 ],
-                "text": "motor"
+                "text": "motor",
+                "value": "None",
+                "variable": "$B",
+                "code": "content-value"
             },
             {
                 "type": "text",
@@ -348,13 +366,18 @@
                 "input": true,
                 "selector": [
                     {
-                        "option": "!left!"
+                        "option": "!left!",
+                        "value": "!left!"
                     },
                     {
-                        "option": "!right!"
+                        "option": "!right!",
+                        "value": "!right!"
                     }
                 ],
-                "text": "motor"
+                "text": "motor",
+                "value": "None",
+                "variable": "$C",
+                "code": "content-value"
             },
             {
                 "type": "text",
@@ -364,7 +387,9 @@
                 "type": "number",
                 "input": true,
                 "value": 56,
-                "text": "mm"
+                "text": "mm",
+                "variable": "$D",
+                "code": "content-text"
             },
             {
                 "type": "text",
@@ -374,7 +399,9 @@
                 "type": "number",
                 "input": true,
                 "value": 114,
-                "text": "mm"
+                "text": "mm",
+                "variable": "$E",
+                "code": "content-text"
             }
         ]
     }],
@@ -391,11 +418,24 @@
             "input": true,
             "output": true
         }],
+        "import": [
+            {
+                "from": "pybricks.robotics",
+                "import": [
+                    "Car"
+                ]
+            }
+        ],
+        "code": [{
+            "setup": "$A = Car($B, $C)"
+        }],
         "content": [
             {
                 "type": "text",
                 "input": true,
-                "text": "car"
+                "text": "car",
+                "variable": "$A",
+                "code": "content-text"
             },
             {
                 "type": "text",
@@ -406,13 +446,18 @@
                 "input": true,
                 "selector": [
                     {
-                        "option": "!left!"
+                        "option": "!left!",
+                        "value": "!left!"
                     },
                     {
-                        "option": "!right!"
+                        "option": "!right!",
+                        "value": "!right!"
                     }
                 ],
-                "text": "motor"
+                "text": "motor",
+                "value": "None",
+                "variable": "$B",
+                "code": "content-value"
             },
             {
                 "type": "text",
@@ -426,27 +471,36 @@
                         "option": "one motor",
                         "subtext": "one",
                         "selected": true,
-                        "redirect": "0"
+                        "redirect": "0",
+                        "value": "$D"
                     },
                     {
                         "option": "two motors",
                         "subtext": "two",
-                        "redirect": "1"
+                        "redirect": "1",
+                        "value": "[$D, $E]"
                     }
-                ]
+                ],
+                "variable": "$C",
+                "code": "content-value"
             },
             {
                 "type": "number",
                 "input": true,
                 "selector": [
                     {
-                        "option": "!left!"
+                        "option": "!left!",
+                        "value": "!left!"
                     },
                     {
-                        "option": "!right!"
+                        "option": "!right!",
+                        "value": "!right!"
                     }
                 ],
-                "text": "motor"
+                "text": "motor",
+                "value": "None",
+                "variable": "$D",
+                "code": "content-value"
             },
             {
                 "selection": "1",
@@ -454,13 +508,18 @@
                 "input": true,
                 "selector": [
                     {
-                        "option": "!left!"
+                        "option": "!left!",
+                        "value": "!left!"
                     },
                     {
-                        "option": "!right!"
+                        "option": "!right!",
+                        "value": "!right!"
                     }
                 ],
-                "text": "motor"
+                "text": "motor",
+                "value": "None",
+                "variable": "$E",
+                "code": "content-value"
             }
         ]
     }]

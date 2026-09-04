@@ -26,8 +26,7 @@ function switchCodeMode(brutForce) {
 
     if ((panelCoding && controleActivCode) || brutForce) {
         if (panelPythonMode.style.display == "none"){
-            panelPythonMode.style.display = "";
-            panelBlockMode.style.display = "none";
+            location.reload();
         }else{
             panelPythonMode.style.display = "none";
             panelBlockMode.style.display = "";

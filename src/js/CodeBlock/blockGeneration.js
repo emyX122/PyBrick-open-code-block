@@ -219,6 +219,11 @@ function blockInitialisation(jsonExtract, data, file) {
                                     htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('contenteditable', 'true');
                                     htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('spellcheck', 'false');
                                     htmlSelectorChild[htmlSelectorChild.length-1].textContent = actualJsonPath.value;
+                                    //ajout des donné qui montre que c'est du code
+                                    if (actualJsonPath.variable) {
+                                        htmlSelectorChild[htmlSelectorChild.length-1].dataset.variable = actualJsonPath.variable;
+                                        htmlSelectorChild[htmlSelectorChild.length-1].dataset.code = actualJsonPath.code;
+                                    }
                                     htmlSelectorChild.push(document.createElement('a')); //texte unitée de la valeur
                                     htmlSelectorChild[htmlSelectorChild.length-1].classList.add('canva-global-block-text');
                                     htmlSelectorChild[htmlSelectorChild.length-1].textContent = getTraduction(actualJsonPath.text);
