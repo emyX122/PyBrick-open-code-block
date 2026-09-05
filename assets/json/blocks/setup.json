@@ -30,8 +30,7 @@
                 "variable": "$A",
                 "code": "content-text",
                 "device": [
-                    "hub",
-                    "test"
+                    "hub"
                 ]
             }
         ]
@@ -588,7 +587,10 @@
                 "input": true,
                 "text": "simple motor",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "simplemotor"
+                ]
             },
             {
                 "type": "text",
@@ -695,7 +697,10 @@
                 "input": true,
                 "text": "pf motor",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "pfmotor"
+                ]
             },
             {
                 "type": "text",
@@ -829,7 +834,10 @@
                 "input": true,
                 "text": "light",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "light"
+                ]
             },
             {
                 "type": "text",
@@ -912,7 +920,10 @@
                 "input": true,
                 "text": "matrix",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "matrix"
+                ]
             },
             {
                 "type": "text",
@@ -995,7 +1006,10 @@
                 "input": true,
                 "text": "color sensor",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "colorsensor"
+                ]
             },
             {
                 "type": "text",
@@ -1078,7 +1092,10 @@
                 "input": true,
                 "text": "sensor",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "sensor"
+                ]
             },
             {
                 "type": "text",
@@ -1161,7 +1178,10 @@
                 "input": true,
                 "text": "distance sensor",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "distancesensor"
+                ]
             },
             {
                 "type": "text",
@@ -1244,7 +1264,10 @@
                 "input": true,
                 "text": "tilt sensor",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "tiltsensor"
+                ]
             },
             {
                 "type": "text",
@@ -1327,7 +1350,10 @@
                 "input": true,
                 "text": "force sensor",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "forcesensor"
+                ]
             },
             {
                 "type": "text",
@@ -1410,7 +1436,10 @@
                 "input": true,
                 "text": "infrared sensor",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "infraredsensor"
+                ]
             },
             {
                 "type": "text",
@@ -1487,7 +1516,10 @@
                 "input": true,
                 "text": "remote",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "remote"
+                ]
             },
             {
                 "type": "text",
@@ -1635,7 +1667,10 @@
                 "input": true,
                 "text": "controller",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "controller"
+                ]
             }
         ]
     }],
@@ -1669,7 +1704,10 @@
                 "input": true,
                 "text": "watch",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "watch"
+                ]
             }
         ]
     }],
@@ -1703,7 +1741,10 @@
                 "input": true,
                 "text": "radio",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "radio"
+                ]
             },
             {
                 "type": "text",

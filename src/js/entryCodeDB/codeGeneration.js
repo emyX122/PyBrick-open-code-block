@@ -175,12 +175,11 @@ function setupScan() {
 
 //mettre à jour les lien des éléments
 function updateDeviceLink(typeDevice, deviceName) {
-    console.log(typeDevice);
     //entrée pour chaque type différent
-    typeDevice.forEach(type=>{
+    JSON.parse(typeDevice).forEach(type=>{
         //entrée de type hub
         allSetupDevice[type].push(deviceName);
-    })
+    });
 
     console.log(allSetupDevice);
 }
