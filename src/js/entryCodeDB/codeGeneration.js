@@ -132,11 +132,11 @@ function importScan() {
 
 //sous-fonction scan des blocks setup
 function setupScan() {
-    //scann tout les élément div en mode setup
+    //scann tout les élément canva
     canvasContainers.querySelectorAll(".canvas-code").forEach(container => {
-        //contrôle si le container à bien un type
+        //contrôle si le container $ bien du code setup
         if (container.hasAttribute("data-type")) {
-            //le type est-il setup
+            //contrôl si le container est de type setup
             if (container.getAttribute("data-type") == "setup") {
                 //masque si le container n'as pas de début
                 if (!Number(container.getAttribute("data-started"))) {
@@ -148,7 +148,9 @@ function setupScan() {
 
                 //scan de tout les blocks du container
                 Array.from(container.children).forEach(block=>{
-                    scannedCode.push(String(block));
+                    if (block.hasAttribute("data-compiled-code-setup")) {
+                        scannedCode.push(block.getAttribute("data-compiled-code-setup").replaceAll('"', ""));
+                    }
                 });
 
                 //fin du masque si le container n'as pas de début
@@ -161,8 +163,6 @@ function setupScan() {
                     compiledCode = compiledCode + code + "\n";
                 });
             }
-        } else {
-            console.error("error : div canva blocks without any type");
         }
     });
 }
