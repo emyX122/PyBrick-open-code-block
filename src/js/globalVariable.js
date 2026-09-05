@@ -84,3 +84,26 @@ const langageFileLocalisation = "../../assets/json/langage/"
 //emplacement du code enregistré
 let scannedCode = null;
 let compiledCode = null;
+
+//liste des périphériques
+let allSetupDevice = {
+  hub: [],
+  motor: [],
+  driveBase: [],
+  car: [],
+  simpleMotor: [],
+  pfMotor: [],
+  light: [],
+  matrix: [],
+  colorSensor: [],
+  sensor: [],
+  distanceSensor: [],
+  tiltSensor: [],
+  forceSensor: [],
+  infraredSensor: [],
+  remote: [],
+  controller: [],
+  watch: [],
+  radio: [],
+  variable: []
+};

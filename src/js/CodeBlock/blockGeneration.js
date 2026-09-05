@@ -209,6 +209,9 @@ function blockInitialisation(jsonExtract, data, file) {
                                         if (actualJsonPath.settings) {
                                             htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.settings = actualJsonPath.settings;
                                         }
+                                        if (actualJsonPath.device) {
+                                            htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.device = actualJsonPath.device;
+                                        }
                                     }
                                 }
 

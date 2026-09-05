@@ -30,17 +30,23 @@ function blockCodeScanning(element) {
                 //entré de type text
                 if (subElement.getAttribute("data-code") == "content-text") {
                     //contenu scanné en remplacent les espace, les $ et les #
-                    const elementToCompile = subElement.innerHTML.replaceAll(" ", "_").replaceAll("$", "§").replaceAll("#", "-");
+                    let elementToCompile = subElement.innerHTML.replaceAll(" ", "_").replaceAll("$", "§").replaceAll("#", "-");
                     //control si l'élément à des settings
                     if (subElement.hasAttribute("data-settings")) {
                         //Majuscule
                         if (subElement.getAttribute("data-settings") == "uppercase") {
                             //insertion en mettant tout en majuscule
-                            setupCodeCompiled = setupCodeCompiled.replace(subElement.getAttribute("data-variable"), elementToCompile.toUpperCase());
+                            elementToCompile = elementToCompile.toUpperCase();
                         }
-                    } else {
-                        //insertion simple
-                        setupCodeCompiled = setupCodeCompiled.replace(subElement.getAttribute("data-variable"), elementToCompile);
+                    }
+                        
+                    //insertion du code
+                    setupCodeCompiled = setupCodeCompiled.replace(subElement.getAttribute("data-variable"), elementToCompile);
+
+                    //control si il y à un lien avec un type de device
+                    if (subElement.hasAttribute("data-device")) {
+                        //mettre à jour tout les éléments
+                        updateDeviceLink(subElement.getAttribute("data-device"), elementToCompile);
                     }
                 }
                 //entré de type value
@@ -52,6 +58,7 @@ function blockCodeScanning(element) {
         });
     }
 
+    //mise é jour de l'élément
     element.dataset.compiledCodeSetup = setupCodeCompiled;
 }
 
@@ -129,7 +136,6 @@ function importScan() {
     compiledCode = compiledCode + "\n";
 }
 
-
 //sous-fonction scan des blocks setup
 function setupScan() {
     //scann tout les élément canva
@@ -165,4 +171,16 @@ function setupScan() {
             }
         }
     });
+}
+
+//mettre à jour les lien des éléments
+function updateDeviceLink(typeDevice, deviceName) {
+    console.log(typeDevice);
+    //entrée pour chaque type différent
+    typeDevice.forEach(type=>{
+        //entrée de type hub
+        allSetupDevice[type].push(deviceName);
+    })
+
+    console.log(allSetupDevice);
 }

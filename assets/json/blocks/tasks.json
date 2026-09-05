@@ -11,6 +11,9 @@
             "input": false,
             "output": true
         }],
+        "code": [{
+            "setup": "#setup"
+        }],
         "content": [
             {
                 "type": "text",

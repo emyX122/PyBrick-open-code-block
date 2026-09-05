@@ -28,7 +28,11 @@
                 "input": true,
                 "text": "inventor hub",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "hub",
+                    "test"
+                ]
             }
         ]
     }],
@@ -62,7 +66,10 @@
                 "input": true,
                 "text": "prime hub",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "hub"
+                ]
             }
         ]
     }],
@@ -96,7 +103,10 @@
                 "input": true,
                 "text": "essential hub",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "hub"
+                ]
             }
         ]
     }],
@@ -130,7 +140,10 @@
                 "input": true,
                 "text": "technic hub",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "hub"
+                ]
             }
         ]
     }],
@@ -164,7 +177,10 @@
                 "input": true,
                 "text": "city hub",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "hub"
+                ]
             }
         ]
     }],
@@ -198,7 +214,10 @@
                 "input": true,
                 "text": "move hub",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "hub"
+                ]
             }
         ]
     }],
@@ -233,7 +252,10 @@
                 "input": true,
                 "text": "motor",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "motor"
+                ]
             },
             {
                 "type": "text",
@@ -333,7 +355,10 @@
                 "input": true,
                 "text": "drive base",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "drivebase"
+                ]
             },
             {
                 "type": "text",
@@ -435,7 +460,10 @@
                 "input": true,
                 "text": "car",
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "car"
+                ]
             },
             {
                 "type": "text",
