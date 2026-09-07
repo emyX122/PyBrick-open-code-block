@@ -830,7 +830,7 @@
         "name": "light",
         "class": "output",
         "categorie": "output",
-        "submenu": "Light & Sound",
+        "submenu": "Light and Sound",
         "icon": "light",
         "connection": [{
             "type": "code",
@@ -884,7 +884,7 @@
         "name": "lightRGB",
         "class": "output",
         "categorie": "output",
-        "submenu": "Light & Sound",
+        "submenu": "Light and Sound",
         "icon": "lightRGB",
         "connection": [{
             "type": "code",
@@ -979,7 +979,7 @@
         "name": "display",
         "class": "output",
         "categorie": "output",
-        "submenu": "Light & Sound",
+        "submenu": "Light and Sound",
         "icon": "display",
         "connection": [{
             "type": "code",
@@ -1082,7 +1082,7 @@
         "name": "beep",
         "class": "output",
         "categorie": "output",
-        "submenu": "Light & Sound",
+        "submenu": "Light and Sound",
         "icon": "song",
         "connection": [{
             "type": "code",

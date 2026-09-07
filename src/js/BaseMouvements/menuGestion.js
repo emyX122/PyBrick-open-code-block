@@ -14,6 +14,14 @@ for (let i = 0; i < nameMenu.length; i++) {
     });
 }
 
+//traduction des submenu
+function translateSubmenu() {
+    document.getElementById("panelMenu").querySelectorAll(".panel-menu-title").forEach(submenuTitle=>{
+        submenuTitle.innerHTML = getTraduction(submenuTitle.innerHTML);
+    });
+}
+
+
 //chargement des titres des menu (dans langageSelector.js)
 function generateTitleMenu() {
     for (let i = 0; i < nameMenu.length; i++) {
