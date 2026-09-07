@@ -86,24 +86,52 @@ let scannedCode = null;
 let compiledCode = null;
 
 //liste des périphériques
-let allSetupDevice = {
-  hub: [],
-  motor: [],
-  drivebase: [],
-  car: [],
-  simplemotor: [],
-  pfmotor: [],
-  light: [],
-  matrix: [],
-  colorsensor: [],
-  sensor: [],
-  distancesensor: [],
-  tiltsensor: [],
-  forcesensor: [],
-  infraredsensor: [],
-  remote: [],
-  controller: [],
-  watch: [],
-  radio: [],
-  variable: []
-};
+let allSetupDevice = null;
+//lien des périphérique au blocks
+let allSetupDeviceLink = null;
+resetSetupDevice();
+//mise à zéro de la variable qu début du programme
+function resetSetupDevice() {
+  allSetupDevice = {
+    hub: [],
+    motor: [],
+    drivebase: [],
+    car: [],
+    simplemotor: [],
+    pfmotor: [],
+    light: [],
+    matrix: [],
+    colorsensor: [],
+    sensor: [],
+    distancesensor: [],
+    tiltsensor: [],
+    forcesensor: [],
+    infraredsensor: [],
+    remote: [],
+    controller: [],
+    watch: [],
+    radio: [],
+    variable: []
+  };
+  allSetupDeviceLink = {
+    hub: [],
+    motor: [],
+    drivebase: [],
+    car: [],
+    simplemotor: [],
+    pfmotor: [],
+    light: [],
+    matrix: [],
+    colorsensor: [],
+    sensor: [],
+    distancesensor: [],
+    tiltsensor: [],
+    forcesensor: [],
+    infraredsensor: [],
+    remote: [],
+    controller: [],
+    watch: [],
+    radio: [],
+    variable: []
+  };
+}

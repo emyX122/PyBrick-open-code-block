@@ -44,9 +44,9 @@ function blockCodeScanning(element) {
                     setupCodeCompiled = setupCodeCompiled.replace(subElement.getAttribute("data-variable"), elementToCompile);
 
                     //control si il y à un lien avec un type de device
-                    if (subElement.hasAttribute("data-device")) {
+                    if (subElement.hasAttribute("data-device") && !element.parentElement?.classList.contains("panel-menu-submenu")) {
                         //mettre à jour tout les éléments
-                        updateDeviceLink(subElement.getAttribute("data-device"), elementToCompile);
+                        updateDeviceLink(false, subElement.getAttribute("data-device"), elementToCompile, subElement);
                     }
                 }
                 //entré de type value
@@ -174,12 +174,32 @@ function setupScan() {
 }
 
 //mettre à jour les lien des éléments
-function updateDeviceLink(typeDevice, deviceName) {
-    //entrée pour chaque type différent
-    JSON.parse(typeDevice).forEach(type=>{
-        //entrée de type hub
-        allSetupDevice[type].push(deviceName);
-    });
+function updateDeviceLink(forceScan, typeDevice, deviceName, subElement) {
+    if (forceScan) {
+        resetSetupDevice();
+        canvasContainers.querySelectorAll(".canva-global-block-default").forEach(subElementAll=>{
+            //control si il y à un lien avec un type de device
+            if (subElementAll.hasAttribute("data-device")) {
+                //mettre à jour tout les éléments
+                updateDeviceLink(false, subElementAll.getAttribute("data-device"), subElementAll.innerHTML.replaceAll(" ", "_").replaceAll("$", "§").replaceAll("#", "-"), subElementAll);
+            }
+        });
+
+    } else {
+        //entrée pour chaque type différent
+        JSON.parse(typeDevice).forEach(type=>{
+            //control si l'élément exist déjà
+            if (allSetupDeviceLink[type].indexOf(subElement) >= 0) {
+                //change la valeur à l'emplacement de l'élément
+                allSetupDevice[type][allSetupDeviceLink[type].indexOf(subElement)] = deviceName;
+            } else {
+                //entrée de type hub
+                allSetupDevice[type].push(deviceName);
+                //ajout du lien à l'élément
+                allSetupDeviceLink[type].push(subElement);
+            }
+        });
+    }
 
     console.log(allSetupDevice);
 }

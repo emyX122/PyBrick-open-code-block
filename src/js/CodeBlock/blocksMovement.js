@@ -62,6 +62,9 @@ document.addEventListener("mouseup", () => {
         } else {
             handCanvaElement.innerHTML = "";
         }
+
+        //mise à jour du code en forcent le rescann complet
+        updateDeviceLink(true);
         
         //vider la variable de selection
         oldHoverHandZoneElement = elementBackground;
