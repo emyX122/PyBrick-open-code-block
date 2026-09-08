@@ -73,6 +73,12 @@ function codeScanning() {
     //scan des élément setup 
     setupScan();
 
+    //scan des blocks valides
+    codeScanning(true);
+
+    //scan des blocks non valides
+    codeScanning(false);
+
     //injection du code
     injectCodeToPybricks(compiledCode);
 
@@ -175,6 +181,7 @@ function setupScan() {
 
 //mettre à jour les lien des éléments
 function updateDeviceLink(forceScan, typeDevice, deviceName, subElement) {
+    //force le scan de tout les éléments dans le canva container
     if (forceScan) {
         resetSetupDevice();
         canvasContainers.querySelectorAll(".canva-global-block-default").forEach(subElementAll=>{
@@ -184,6 +191,7 @@ function updateDeviceLink(forceScan, typeDevice, deviceName, subElement) {
                 updateDeviceLink(false, subElementAll.getAttribute("data-device"), subElementAll.innerHTML.replaceAll(" ", "_").replaceAll("$", "§").replaceAll("#", "-"), subElementAll);
             }
         });
+        updateDeviceOptions(true);
 
     } else {
         //entrée pour chaque type différent
@@ -198,8 +206,23 @@ function updateDeviceLink(forceScan, typeDevice, deviceName, subElement) {
                 //ajout du lien à l'élément
                 allSetupDeviceLink[type].push(subElement);
             }
+
+            updateDeviceOptions(false, type);
         });
     }
+}
 
-    console.log(allSetupDevice);
+//mise à jour des selecteur d'un type de device
+function updateDeviceOptions(updateAll, typeDevice) {
+    //control s'il faut mettre à jour tout les éléments
+    if (updateAll) {
+
+    } else {
+        
+    }
+}
+
+//scan des bloques de code normal et volant
+function codeScanning(flyingBlocks) {
+
 }

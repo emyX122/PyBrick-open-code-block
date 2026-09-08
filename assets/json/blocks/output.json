@@ -15,13 +15,9 @@
             {
                 "type": "number",
                 "input": true,
-                "selector": [
-                    {
-                        "option": "!left!"
-                    },
-                    {
-                        "option": "!right!"
-                    }
+                "selector": [],
+                "device": [
+                    "motor"
                 ],
                 "text": "motor"
             },
