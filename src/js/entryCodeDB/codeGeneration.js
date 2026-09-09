@@ -64,7 +64,6 @@ function blockCodeScanning(element) {
 
 //Fonction scann code pour compilation
 function codeScanning() {
-    scannedCode = [];
     compiledCode = "";
 
     //scan des élément import
@@ -74,10 +73,10 @@ function codeScanning() {
     setupScan();
 
     //scan des blocks valides
-    codeScanning(true);
+    globalCodeScanning(true);
 
     //scan des blocks non valides
-    codeScanning(false);
+    globalCodeScanning(false);
 
     //injection du code
     injectCodeToPybricks(compiledCode);
@@ -144,6 +143,8 @@ function importScan() {
 
 //sous-fonction scan des blocks setup
 function setupScan() {
+    scannedCode = [];
+
     //scann tout les élément canva
     canvasContainers.querySelectorAll(".canvas-code").forEach(container => {
         //contrôle si le container $ bien du code setup
@@ -169,13 +170,13 @@ function setupScan() {
                 if (!Number(container.getAttribute("data-started"))) {
                     scannedCode.push('"""')
                 }
-
-                //génération d'un code compilé
-                scannedCode.forEach(code=>{
-                    compiledCode = compiledCode + code + "\n";
-                });
             }
         }
+    });
+
+    //génération d'un code compilé
+    scannedCode.forEach(code=>{
+        compiledCode = compiledCode + code + "\n";
     });
 }
 
@@ -316,6 +317,51 @@ function updateDeviceOptions(updateAll, typeDevice) {
 }
 
 //scan des bloques de code normal et volant
-function codeScanning(flyingBlocks) {
+function globalCodeScanning(startedBlocks) {
+    scannedCode = [];
 
+    //scann tout les élément canva
+    canvasContainers.querySelectorAll(".canvas-code").forEach(container => {
+        //contrôle si le container est à bien du data type
+        if (container.hasAttribute("data-type")) {
+            //contrôl si le container est de type code
+            if (container.getAttribute("data-type") == "code") {
+                //fait soit les élément started soit les autres
+                if (!startedBlocks && !Number(container.getAttribute("data-started"))) {
+                    //mets le code en commentaire
+                    scannedCode.push('"""');
+
+                    //affiche les position du container
+                    scannedCode.push('#'+container.style.getPropertyValue('--position-x')+'/'+container.style.getPropertyValue('--position-y'));
+
+                    //scan de tout les blocks du container
+                    Array.from(container.children).forEach(block=>{
+                        if (block.hasAttribute("data-compiled-code-code")) {
+                            scannedCode.push(block.getAttribute("data-compiled-code-code").replaceAll('"', ""));
+                        }
+                    });
+
+                    //fin du commentaire
+                    scannedCode.push('"""');
+
+                } else if (startedBlocks && Number(container.getAttribute("data-started"))) {
+                    //affiche les position du container
+                    scannedCode.push('#'+container.style.getPropertyValue('--position-x')+'/'+container.style.getPropertyValue('--position-y'));
+
+                    //scan de tout les blocks du container
+                    Array.from(container.children).forEach(block=>{
+                        if (block.hasAttribute("data-compiled-code-code")) {
+                            scannedCode.push(block.getAttribute("data-compiled-code-code").replaceAll('"', ""));
+                        }
+                    });
+
+                }
+            }
+        }
+    });
+
+    //génération d'un code compilé
+    scannedCode.forEach(code=>{
+        compiledCode = compiledCode + code + "\n";
+    });
 }

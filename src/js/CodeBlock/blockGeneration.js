@@ -164,10 +164,10 @@ function blockInitialisation(jsonExtract, data, file) {
                                     htmlSelectorChild.push(document.createElement('option'));
                                     htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('selected', '');
                                     htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('disabled', '');
-                                    htmlSelectorChild[htmlSelectorChild.length-1].textContent = getTraduction(actualJsonPath.text);
+                                    htmlSelectorChild[htmlSelectorChild.length-1].textContent = "!"+getTraduction(actualJsonPath.text)+"!";
                                     //ajout de la valeur de base si un device est lié
                                     if (actualJsonPath.linkDevice) {
-                                        htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.defaultText = getTraduction(actualJsonPath.text);
+                                        htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.defaultText = "!"+getTraduction(actualJsonPath.text)+"!";
                                     }
                                     //ajout d'une valeur à l'option
                                     if (actualJsonPath.value) {
