@@ -216,9 +216,102 @@ function updateDeviceLink(forceScan, typeDevice, deviceName, subElement) {
 function updateDeviceOptions(updateAll, typeDevice) {
     //control s'il faut mettre à jour tout les éléments
     if (updateAll) {
+        //selectionne tous les élément avec un data-link-device
+        document.querySelectorAll("[data-link-device]").forEach(element=>{
+            //initialisation du contenu et de l'encien contenu et de la valeur
+            const optionsDevice = [];
+            const oldSelected = element.value;
+            //vide les options actuel
+            element.innerHTML = null;
 
+            //control si l'élément à un placholder
+            if (element.hasAttribute("data-default-text")) {
+                //création du placeholder
+                optionsDevice.push(document.createElement('option'));
+                //control si le placeholder était l'élément selectionné et le selectionne
+                if (element.getAttribute("data-default-text") == oldSelected || oldSelected == "None") {
+                    optionsDevice[optionsDevice.length-1].setAttribute('selected', '');
+                }
+                //désactive le placholder et insert le text par default
+                optionsDevice[optionsDevice.length-1].setAttribute('disabled', '');
+                optionsDevice[optionsDevice.length-1].textContent = element.getAttribute("data-default-text");
+                optionsDevice[optionsDevice.length-1].setAttribute('value', 'None');
+            }
+
+            //control chaque type de device
+            JSON.parse(element.getAttribute("data-link-device")).forEach(type=>{
+                //pour chaque type liste tout les nom d'élément
+                allSetupDevice[type].forEach(deviceLink=>{
+                    //création de l'option
+                    optionsDevice.push(document.createElement('option'));                     
+                    //insertion du text complet de l'option
+                    optionsDevice[optionsDevice.length-1].textContent = deviceLink;
+                    //control si l'option était selectionné et le selectionne
+                    if (deviceLink == oldSelected) {
+                        optionsDevice[optionsDevice.length-1].setAttribute('selected', '');
+                    }
+                });
+            });
+
+            //entre toutes les option dans le selecteur
+            for (let i = 0; i < optionsDevice.length; i++) {
+                element.appendChild(optionsDevice[i]);
+            }
+
+            //met à jour le contenu et la taille de l'élément
+            resize(element);
+
+        });
     } else {
-        
+        //selectionne tous les élément avec un data-link-device
+        document.querySelectorAll("[data-link-device]").forEach(element=>{
+            //control que le type de device est le même que le modifier
+            if (JSON.parse(element.getAttribute("data-link-device")).includes(typeDevice)) {
+                //initialisation du contenu et de l'encien contenu et de la valeur
+                const optionsDevice = [];
+                const oldSelected = element.value;
+                //vide les options actuel
+                element.innerHTML = null;
+
+                //control si l'élément à un placholder
+                if (element.hasAttribute("data-default-text")) {
+                    //création du placeholder
+                    optionsDevice.push(document.createElement('option'));
+                    //control si le placeholder était l'élément selectionné et le selectionne
+                    if (element.getAttribute("data-default-text") == oldSelected || oldSelected == "None") {
+                        optionsDevice[optionsDevice.length-1].setAttribute('selected', '');
+                    }
+                    //désactive le placholder et insert le text par default
+                    optionsDevice[optionsDevice.length-1].setAttribute('disabled', '');
+                    optionsDevice[optionsDevice.length-1].textContent = element.getAttribute("data-default-text");
+                    optionsDevice[optionsDevice.length-1].setAttribute('value', 'None');
+                }
+
+                //control chaque type de device
+                JSON.parse(element.getAttribute("data-link-device")).forEach(type=>{
+                    //pour chaque type liste tout les nom d'élément
+                    allSetupDevice[type].forEach(deviceLink=>{
+                        //création de l'option
+                        optionsDevice.push(document.createElement('option'));                     
+                        //insertion du text complet de l'option
+                        optionsDevice[optionsDevice.length-1].textContent = deviceLink;
+                        //control si l'option était selectionné et le selectionne
+                        if (deviceLink == oldSelected) {
+                            optionsDevice[optionsDevice.length-1].setAttribute('selected', '');
+                        }
+                    });
+                });
+
+                //entre toutes les option dans le selecteur
+                for (let i = 0; i < optionsDevice.length; i++) {
+                    element.appendChild(optionsDevice[i]);
+                }
+
+                //met à jour le contenu et la taille de l'élément
+                resize(element);
+
+            }
+        });
     }
 }
 

@@ -10,12 +10,12 @@ function resize(elementSelect) {
   }
 
   //control si l'option contien un subtext 
-  if (elementSelect.options[elementSelect.selectedIndex].hasAttribute("data-subtext")) {
+  if (elementSelect.options[elementSelect.selectedIndex]?.hasAttribute("data-subtext")) {
     //insertion du subtext
     elementDisplay.innerHTML = elementSelect.options[elementSelect.selectedIndex].getAttribute("data-subtext") + " ▾";
   } else {
     //insertion du conttenu à la place du subtext
-    elementDisplay.innerHTML = elementSelect.options[elementSelect.selectedIndex].innerHTML + " ▾";
+    elementDisplay.innerHTML = elementSelect.options[elementSelect.selectedIndex]?.innerHTML + " ▾";
   }
 
   //définition de la taille

@@ -366,15 +366,9 @@
             {
                 "type": "number",
                 "input": true,
-                "selector": [
-                    {
-                        "option": "!left!",
-                        "value": "!left!"
-                    },
-                    {
-                        "option": "!right!",
-                        "value": "!right!"
-                    }
+                "selector": [],
+                "linkDevice": [
+                    "motor"
                 ],
                 "text": "motor",
                 "value": "None",
@@ -388,15 +382,9 @@
             {
                 "type": "number",
                 "input": true,
-                "selector": [
-                    {
-                        "option": "!left!",
-                        "value": "!left!"
-                    },
-                    {
-                        "option": "!right!",
-                        "value": "!right!"
-                    }
+                "selector": [],
+                "linkDevice": [
+                    "motor"
                 ],
                 "text": "motor",
                 "value": "None",
@@ -471,15 +459,9 @@
             {
                 "type": "number",
                 "input": true,
-                "selector": [
-                    {
-                        "option": "!left!",
-                        "value": "!left!"
-                    },
-                    {
-                        "option": "!right!",
-                        "value": "!right!"
-                    }
+                "selector": [],
+                "linkDevice": [
+                    "motor"
                 ],
                 "text": "motor",
                 "value": "None",
@@ -514,15 +496,9 @@
             {
                 "type": "number",
                 "input": true,
-                "selector": [
-                    {
-                        "option": "!left!",
-                        "value": "!left!"
-                    },
-                    {
-                        "option": "!right!",
-                        "value": "!right!"
-                    }
+                "selector": [],
+                "linkDevice": [
+                    "motor"
                 ],
                 "text": "motor",
                 "value": "None",
@@ -533,15 +509,9 @@
                 "selection": "1",
                 "type": "number",
                 "input": true,
-                "selector": [
-                    {
-                        "option": "!left!",
-                        "value": "!left!"
-                    },
-                    {
-                        "option": "!right!",
-                        "value": "!right!"
-                    }
+                "selector": [],
+                "linkDevice": [
+                    "motor"
                 ],
                 "text": "motor",
                 "value": "None",
@@ -663,7 +633,7 @@
 
     "10": [{
         "version": 1.0,
-        "name": "infraredMotor",
+        "name": "pfMotor",
         "class": "output",
         "categorie": "setup",
         "submenu": "Set up basic motors",
@@ -709,15 +679,9 @@
             {
                 "type": "number",
                 "input": true,
-                "selector": [
-                    {
-                        "option": "!infrared!",
-                        "value": "!infrared!"
-                    },
-                    {
-                        "option": "!color!",
-                        "value": "!color!"
-                    }
+                "selector": [],
+                "linkDevice": [
+                    "sensor"
                 ],
                 "text": "sensor",
                 "value": "None",

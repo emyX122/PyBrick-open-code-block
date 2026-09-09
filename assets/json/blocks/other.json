@@ -36,10 +36,9 @@
             {
                 "type": "number",
                 "input": true,
-                "selector": [
-                    {
-                        "option": "!prime!"
-                    }
+                "selector": [],
+                "linkDevice": [
+                    "hub"
                 ],
                 "text": "HUB"
             },
@@ -88,10 +87,9 @@
             {
                 "type": "number",
                 "input": true,
-                "selector": [
-                    {
-                        "option": "!prime!"
-                    }
+                "selector": [],
+                "linkDevice": [
+                    "hub"
                 ],
                 "text": "HUB"
             },

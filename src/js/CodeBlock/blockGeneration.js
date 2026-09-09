@@ -148,6 +148,11 @@ function blockInitialisation(jsonExtract, data, file) {
                                     htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.resize = "";                          
                                 }
 
+                                //control si l'élément à un lien avec un device
+                                if (actualJsonPath.linkDevice) {
+                                    htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.linkDevice = JSON.stringify(actualJsonPath.linkDevice);
+                                }
+
                                 //ajout des donné qui montre que c'est du code
                                 if (actualJsonPath.variable) {
                                     htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.variable = actualJsonPath.variable;
@@ -160,6 +165,10 @@ function blockInitialisation(jsonExtract, data, file) {
                                     htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('selected', '');
                                     htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('disabled', '');
                                     htmlSelectorChild[htmlSelectorChild.length-1].textContent = getTraduction(actualJsonPath.text);
+                                    //ajout de la valeur de base si un device est lié
+                                    if (actualJsonPath.linkDevice) {
+                                        htmlSeparatorChild[htmlSeparatorChild.length-1].dataset.defaultText = getTraduction(actualJsonPath.text);
+                                    }
                                     //ajout d'une valeur à l'option
                                     if (actualJsonPath.value) {
                                         htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('value', actualJsonPath.value);
