@@ -177,6 +177,9 @@
         "categorie": "output",
         "submenu": "Motor",
         "icon": "outputMotor",
+        "code": [{
+            "code": "$A.track_target($B)"
+        }],
         "connection": [{
             "type": "code",
             "input": true,
@@ -190,7 +193,9 @@
                 "linkDevice": [
                     "motor"
                 ],
-                "text": "motor"
+                "text": "motor",
+                "variable": "$A",
+                "code": "content-value"
             },
             {
                 "type": "text",
@@ -200,7 +205,9 @@
                 "type": "number",
                 "input": true,
                 "value": 90,
-                "text": "°"
+                "text": "°",
+                "variable": "$B",
+                "code": "content-text"
             }
         ]
     }],
@@ -212,6 +219,9 @@
         "categorie": "output",
         "submenu": "Motor",
         "icon": "outputMotor",
+        "code": [{
+            "code": "$A.$B()"
+        }],
         "connection": [{
             "type": "code",
             "input": true,
@@ -225,7 +235,9 @@
                 "linkDevice": [
                     "motor"
                 ],
-                "text": "motor"
+                "text": "motor",
+                "variable": "$A",
+                "code": "content-value"
             },
             {
                 "type": "text",
@@ -238,17 +250,22 @@
                     {
                         "option": "coast freely",
                         "subtext": "coast",
-                        "selected": true
+                        "selected": true,
+                        "value": "stop"
                     },
                     {
                         "option": "brake by friction",
-                        "subtext": "brake"
+                        "subtext": "brake",
+                        "value": "brake"
                     },
                     {
                         "option": "hold this position",
-                        "subtext": "hold"
+                        "subtext": "hold",
+                        "value": "hold"
                     }
-                ]
+                ],
+                "variable": "$B",
+                "code": "content-value"
             }
         ]
     }],
@@ -260,6 +277,9 @@
         "categorie": "output",
         "submenu": "Motor",
         "icon": "outputMotor",
+        "code": [{
+            "code": "$A.$B"
+        }],
         "connection": [{
             "type": "code",
             "input": true,
@@ -273,7 +293,9 @@
                 "linkDevice": [
                     "motor"
                 ],
-                "text": "motor"
+                "text": "motor",
+                "variable": "$A",
+                "code": "content-value"
             },
             {
                 "type": "text",
@@ -287,57 +309,71 @@
                         "option": "acceleration and deceleration",
                         "subtext": "acceleration",
                         "selected": true,
-                        "redirect": "0"
+                        "redirect": "0",
+                        "value": "control.limits(acceleration=$C)"
                     },
                     {
                         "option": "maximum speed",
                         "subtext": "maximum speed",
-                        "redirect": "1"
+                        "redirect": "1",
+                        "value": "control.limits(speed=$D)"
                     },
                     {
                         "option": "maximum feedback torque",
                         "subtext": "maximum torque",
-                        "redirect": "2"
+                        "redirect": "2",
+                        "value": "control.limits(torque=$E)"
                     },
                     {
                         "option": "maximum voltage",
                         "subtext": "maximum voltage",
-                        "redirect": "3"
+                        "redirect": "3",
+                        "value": "settings(max_voltage=$F)"
                     },
                     {
                         "option": "tolerances for movements",
                         "subtext": "tolerances",
-                        "redirect": "4"
+                        "redirect": "4",
+                        "value": "control.target_tolerances($G, $H)"
                     }
-                ]
+                ],
+                "variable": "$B",
+                "code": "content-value"
             },
             {
                 "selection": "0",
                 "type": "number",
                 "input": true,
                 "value": 2000,
-                "text": "°/s²"
+                "text": "°/s²",
+                "variable": "$C",
+                "code": "content-text"
             },
             {
                 "selection": "1",
                 "type": "number",
                 "input": true,
                 "value": 1000,
-                "text": "°/s"
+                "variable": "$D",
+                "code": "content-text"
             },
             {
                 "selection": "2",
                 "type": "number",
                 "input": true,
                 "value": 200,
-                "text": "mNm"
+                "text": "mNm",
+                "variable": "$E",
+                "code": "content-text"
             },
             {
                 "selection": "3",
                 "type": "number",
                 "input": true,
                 "value": 9000,
-                "text": "mV"
+                "text": "mV",
+                "variable": "$F",
+                "code": "content-text"
             },
             {
                 "selection": "4",
@@ -349,7 +385,9 @@
                 "type": "number",
                 "input": true,
                 "value": 50,
-                "text": "°/s"
+                "text": "°/s",
+                "variable": "$G",
+                "code": "content-text"
             },
             {
                 "selection": "4",
@@ -361,7 +399,9 @@
                 "type": "number",
                 "input": true,
                 "value": 11,
-                "text": "°"
+                "text": "°",
+                "variable": "$H",
+                "code": "content-text"
             }
         ]
     }],
