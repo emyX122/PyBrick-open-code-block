@@ -58,8 +58,48 @@ function blockCodeScanning(element) {
         });
     }
 
+    //scan des élément avec du code global
+    if (element.hasAttribute("data-code-global")) {
+        globalCodeCompiled = element.getAttribute("data-code-global");
+
+        //scan tout les élément qui peuvent avoir du code
+        element.querySelectorAll(".canva-global-block-default").forEach(subElement=>{
+            //control si il y à un lien avec une variable
+            if (subElement.hasAttribute("data-variable")) {
+                //entré de type text
+                if (subElement.getAttribute("data-code") == "content-text") {
+                    //contenu scanné en remplacent les espace, les $ et les #
+                    let elementToCompile = subElement.innerHTML.replaceAll(" ", "_").replaceAll("$", "§").replaceAll("#", "-");
+                    //control si l'élément à des settings
+                    if (subElement.hasAttribute("data-settings")) {
+                        //Majuscule
+                        if (subElement.getAttribute("data-settings") == "uppercase") {
+                            //insertion en mettant tout en majuscule
+                            elementToCompile = elementToCompile.toUpperCase();
+                        }
+                    }
+                        
+                    //insertion du code
+                    globalCodeCompiled = globalCodeCompiled.replace(subElement.getAttribute("data-variable"), elementToCompile);
+
+                    //control si il y à un lien avec un type de device
+                    if (subElement.hasAttribute("data-device") && !element.parentElement?.classList.contains("panel-menu-submenu")) {
+                        //mettre à jour tout les éléments
+                        updateDeviceLink(false, subElement.getAttribute("data-device"), elementToCompile, subElement);
+                    }
+                }
+                //entré de type value
+                if (subElement.getAttribute("data-code") == "content-value") {
+                    //insertion en remplacent les espace, les $ et les #
+                    globalCodeCompiled = globalCodeCompiled.replace(subElement.getAttribute("data-variable"), subElement.value);
+                }
+            }
+        });
+    }
+
     //mise é jour de l'élément
     element.dataset.compiledCodeSetup = setupCodeCompiled;
+    element.dataset.compiledCodeGlobal = globalCodeCompiled;
 }
 
 //Fonction scann code pour compilation

@@ -67,7 +67,7 @@ function blockInitialisation(jsonExtract, data, file) {
                         }
                         //code global
                         if (data[String(key)][0].code[0].code) {
-                            htmlBlock.dataset.CodeGlobal = JSON.stringify(data[String(key)][0].code[0].code);
+                            htmlBlock.dataset.codeGlobal = JSON.stringify(data[String(key)][0].code[0].code);
                         }
                     }
                     

@@ -6,6 +6,17 @@
         "categorie": "output",
         "submenu": "Motor",
         "icon": "outputMotor",
+        "import": [
+            {
+                "from": "pybricks.parameters",
+                "import": [
+                    "Stop"
+                ]
+            }
+        ],
+        "code": [{
+            "code": "$A.$B"
+        }],
         "connection": [{
             "type": "code",
             "input": true,
@@ -19,17 +30,9 @@
                 "linkDevice": [
                     "motor"
                 ],
-                "text": "motor"
-            },
-            {
-                "type": "text",
-                "text": "run at"
-            },
-            {
-                "type": "number",
-                "input": true,
-                "value": 500,
-                "text": "°/s"
+                "text": "motor",
+                "variable": "$A",
+                "code": "content-value"
             },
             {
                 "type": "text",
@@ -38,32 +41,66 @@
                     {
                         "option": "rotate forever",
                         "subtext": "forever",
-                        "redirect": "0"
+                        "redirect": "0",
+                        "value": "run($C)"
                     },
                     {
                         "option": "rotate by the given angle",
                         "subtext": "by",
                         "selected": true,
-                        "redirect": "1"
+                        "redirect": "1",
+                        "value": "run_angle($C, $D$F)"
                     },
                     {
                         "option": "rotate towards the angle target",
                         "subtext": "towards",
-                        "redirect": "1"
+                        "redirect": "1",
+                        "value": "run_target($C, $D$F)"
                     },
                     {
                         "option": "rotate to the end stop",
                         "subtext": "to end stop",
-                        "redirect": "2"
+                        "redirect": "2",
+                        "value": "run_until_stalled($C, Stop.$G, $E)"
                     }
-                ]
+                ],
+                "variable": "$B",
+                "code": "content-value"
             },
             {
                 "selection": "1",
                 "type": "number",
                 "input": true,
                 "value": 360,
-                "text": "°"
+                "text": "°",
+                "variable": "$D",
+                "code": "content-text"
+            },
+            {
+                "selection": "2",
+                "type": "text",
+                "text": "with power limit"
+            },
+            {
+                "selection": "2",
+                "type": "number",
+                "input": true,
+                "value": 50,
+                "text": "%",
+                "variable": "$E",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "at"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 500,
+                "text": "°/s",
+                "variable": "$C",
+                "code": "content-text"
             },
             {
                 "selection": "1",
@@ -77,34 +114,28 @@
                 "selector": [
                     {
                         "option": "coast freely",
-                        "subtext": "coast"
+                        "subtext": "coast",
+                        "value": ", Stop.COAST"
                     },
                     {
                         "option": "brake by friction",
-                        "subtext": "brake"
+                        "subtext": "brake",
+                        "value": ", Stop.BRAKE"
                     },
                     {
                         "option": "hold this position",
                         "subtext": "hold",
-                        "selected": true
+                        "selected": true,
+                        "value": " "
                     },
                     {
                         "option": "continue moving",
-                        "subtext": "continue"
+                        "subtext": "continue",
+                        "value": ", Stop.NONE"
                     }
-                ]
-            },
-            {
-                "selection": "2",
-                "type": "text",
-                "text": "with power limit"
-            },
-            {
-                "selection": "2",
-                "type": "number",
-                "input": true,
-                "value": 50,
-                "text": "%"
+                ],
+                "variable": "$F",
+                "code": "content-value"
             },
             {
                 "selection": "2",
@@ -119,21 +150,22 @@
                     {
                         "option": "coast freely",
                         "subtext": "coast",
-                        "selected": true
+                        "selected": true,
+                        "value": "COAST"
                     },
                     {
                         "option": "brake by friction",
-                        "subtext": "brake"
+                        "subtext": "brake",
+                        "value": "BRAKE"
                     },
                     {
                         "option": "hold this position",
-                        "subtext": "hold"
-                    },
-                    {
-                        "option": "continue moving",
-                        "subtext": "continue"
+                        "subtext": "hold",
+                        "value": "HOLD"
                     }
-                ]
+                ],
+                "variable": "$G",
+                "code": "content-value"
             }
         ]
     }],
