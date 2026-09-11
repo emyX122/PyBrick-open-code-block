@@ -14,7 +14,7 @@
 
     z-index: 10;
 }::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .menu-categorie {
@@ -104,6 +104,8 @@
     position: absolute;
     
     background-color: rgba(75, 73, 73, 0.527);
+
+    border-radius: 0px 15px 15px 0px;
 
     min-width: 150px;
     top: 0px;

@@ -240,6 +240,12 @@
                     "Direction", 
                     "Port"
                 ]
+            },
+            {
+                "from": "pybricks.pupdevices",
+                "import": [
+                    "Motor"
+                ]
             }
         ],
         "code": [{
