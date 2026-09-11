@@ -92,6 +92,7 @@ for (let i = 0; i < nameMenu.length; i++) {
     });
 }
 
+//fermeture du menu au clic à coté
 function closeMenu() {
     //initialisation des élément de la sous-catégorie
     const menuCategorieClass = document.querySelector(".menu-categorie-"+nameMenu[menuActif]);

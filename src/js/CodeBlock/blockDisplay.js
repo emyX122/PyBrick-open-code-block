@@ -18,9 +18,16 @@ function resize(elementSelect) {
     elementDisplay.innerHTML = elementSelect.options[elementSelect.selectedIndex]?.innerHTML + " ▾";
   }
 
-  //définition de la taille
-  elementSelect.style.width = elementDisplay.getBoundingClientRect().width+"px";
-  elementDisplay.style.marginRight = "-"+elementDisplay.getBoundingClientRect().width+"px";
+    //control si l'élément est dans le menu
+  if (elementSelect.parentElement?.parentElement?.parentElement?.classList.contains("panel-menu-submenu")) {
+    //définition de la taille
+    elementSelect.style.width = elementDisplay.getBoundingClientRect().width+"px";
+    elementDisplay.style.marginRight = "-"+elementDisplay.getBoundingClientRect().width+"px";
+  } else {
+    //définition de la taille par apport au zoom actuel
+    elementSelect.style.width = elementDisplay.getBoundingClientRect().width/currentZoom+"px";
+    elementDisplay.style.marginRight = "-"+elementDisplay.getBoundingClientRect().width/currentZoom+"px";
+  }
   elementSelect.style.color = "transparent";
 }
 
