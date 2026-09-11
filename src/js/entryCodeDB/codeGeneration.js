@@ -121,8 +121,6 @@ function codeScanning() {
     //injection du code
     injectCodeToPybricks(compiledCode);
 
-    console.log(compiledCode);
-
 }
 
 //sous-fonction scan des div setup
@@ -218,6 +216,8 @@ function setupScan() {
     scannedCode.forEach(code=>{
         compiledCode = compiledCode + code + "\n";
     });
+
+    compiledCode = compiledCode + "\n";
 }
 
 //mettre à jour les lien des éléments
@@ -376,8 +376,8 @@ function globalCodeScanning(startedBlocks) {
 
                     //scan de tout les blocks du container
                     Array.from(container.children).forEach(block=>{
-                        if (block.hasAttribute("data-compiled-code-code")) {
-                            scannedCode.push(block.getAttribute("data-compiled-code-code").replaceAll('"', "").replaceAll("<br>", ""));
+                        if (block.hasAttribute("data-compiled-code-global")) {
+                            scannedCode.push(block.getAttribute("data-compiled-code-global").replaceAll('"', "").replaceAll("<br>", ""));
                         }
                     });
 
@@ -390,8 +390,8 @@ function globalCodeScanning(startedBlocks) {
 
                     //scan de tout les blocks du container
                     Array.from(container.children).forEach(block=>{
-                        if (block.hasAttribute("data-compiled-code-code")) {
-                            scannedCode.push(block.getAttribute("data-compiled-code-code").replaceAll('"', "").replaceAll("<br>", ""));
+                        if (block.hasAttribute("data-compiled-code-global")) {
+                            scannedCode.push(block.getAttribute("data-compiled-code-global").replaceAll('"', "").replaceAll("<br>", ""));
                         }
                     });
 
@@ -404,4 +404,6 @@ function globalCodeScanning(startedBlocks) {
     scannedCode.forEach(code=>{
         compiledCode = compiledCode + code + "\n";
     });
+
+    compiledCode = compiledCode + "\n";
 }
