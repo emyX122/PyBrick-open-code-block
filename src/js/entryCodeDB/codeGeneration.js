@@ -30,7 +30,7 @@ function blockCodeScanning(element) {
                 //entré de type text
                 if (subElement.getAttribute("data-code") == "content-text") {
                     //contenu scanné en remplacent les espace, les $ et les #
-                    let elementToCompile = subElement.innerHTML.replaceAll(" ", "_").replaceAll("$", "§").replaceAll("#", "-");
+                    let elementToCompile = subElement.innerHTML.replaceAll(" ", "_").replaceAll("$", "§").replaceAll("#", "-").replaceAll("<br>", "");
                     //control si l'élément à des settings
                     if (subElement.hasAttribute("data-settings")) {
                         //Majuscule
@@ -69,7 +69,7 @@ function blockCodeScanning(element) {
                 //entré de type text
                 if (subElement.getAttribute("data-code") == "content-text") {
                     //contenu scanné en remplacent les espace, les $ et les #
-                    let elementToCompile = subElement.innerHTML.replaceAll(" ", "_").replaceAll("$", "§").replaceAll("#", "-");
+                    let elementToCompile = subElement.innerHTML.replaceAll(" ", "_").replaceAll("$", "§").replaceAll("#", "-").replaceAll("<br>", "");
                     //control si l'élément à des settings
                     if (subElement.hasAttribute("data-settings")) {
                         //Majuscule
@@ -202,7 +202,7 @@ function setupScan() {
                 //scan de tout les blocks du container
                 Array.from(container.children).forEach(block=>{
                     if (block.hasAttribute("data-compiled-code-setup")) {
-                        scannedCode.push(block.getAttribute("data-compiled-code-setup").replaceAll('"', ""));
+                        scannedCode.push(block.getAttribute("data-compiled-code-setup").replaceAll('"', "").replaceAll("<br>", ""));
                     }
                 });
 
@@ -229,7 +229,7 @@ function updateDeviceLink(forceScan, typeDevice, deviceName, subElement) {
             //control si il y à un lien avec un type de device
             if (subElementAll.hasAttribute("data-device")) {
                 //mettre à jour tout les éléments
-                updateDeviceLink(false, subElementAll.getAttribute("data-device"), subElementAll.innerHTML.replaceAll(" ", "_").replaceAll("$", "§").replaceAll("#", "-"), subElementAll);
+                updateDeviceLink(false, subElementAll.getAttribute("data-device"), subElementAll.innerHTML.replaceAll(" ", "_").replaceAll("$", "§").replaceAll("#", "-").replaceAll("<br>", ""), subElementAll);
             }
         });
         updateDeviceOptions(true);
@@ -377,7 +377,7 @@ function globalCodeScanning(startedBlocks) {
                     //scan de tout les blocks du container
                     Array.from(container.children).forEach(block=>{
                         if (block.hasAttribute("data-compiled-code-code")) {
-                            scannedCode.push(block.getAttribute("data-compiled-code-code").replaceAll('"', ""));
+                            scannedCode.push(block.getAttribute("data-compiled-code-code").replaceAll('"', "").replaceAll("<br>", ""));
                         }
                     });
 
@@ -391,7 +391,7 @@ function globalCodeScanning(startedBlocks) {
                     //scan de tout les blocks du container
                     Array.from(container.children).forEach(block=>{
                         if (block.hasAttribute("data-compiled-code-code")) {
-                            scannedCode.push(block.getAttribute("data-compiled-code-code").replaceAll('"', ""));
+                            scannedCode.push(block.getAttribute("data-compiled-code-code").replaceAll('"', "").replaceAll("<br>", ""));
                         }
                     });
 
