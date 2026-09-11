@@ -31,8 +31,7 @@ document.getElementById("saveButton").addEventListener("click", () => {
     const langage = document.getElementById("langageSelector").value;
     //enregistrement de la langue dans le storage local
     localStorage.setItem("langage", langage);
-    //message de rechargement
-    alert("To change the langage, we need to reload the page");
+    //rechargement de la page
     chrome.tabs.reload(); 
 });
 
