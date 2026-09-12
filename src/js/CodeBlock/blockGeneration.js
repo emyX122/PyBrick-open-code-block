@@ -180,7 +180,7 @@ function blockInitialisation(jsonExtract, data, file) {
                                     if (actualJsonPath.selector[keySelector].selected) {
                                         htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('selected', '');
                                         //récupération du redirect pour le mode selector
-                                        if (actualJsonPath.selector[keySelector].redirect) {
+                                        if (actualJsonPath.selector[keySelector].redirect && !selection) {
                                             selection = actualJsonPath.selector[keySelector].redirect;
                                         }
                                     }

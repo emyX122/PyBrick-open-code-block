@@ -413,6 +413,9 @@
         "categorie": "output",
         "submenu": "Motor",
         "icon": "outputMotor",
+        "code": [{
+            "code": "$A.dc($B)"
+        }],
         "connection": [{
             "type": "code",
             "input": true,
@@ -426,7 +429,9 @@
                 "linkDevice": [
                     "motor"
                 ],
-                "text": "motor"
+                "text": "motor",
+                "variable": "$A",
+                "code": "content-value"
             },
             {
                 "type": "text",
@@ -436,7 +441,9 @@
                 "type": "number",
                 "input": true,
                 "value": 50,
-                "text": "%"
+                "text": "%",
+                "variable": "$B",
+                "code": "content-text"
             },
             {
                 "type": "text",
@@ -452,6 +459,17 @@
         "categorie": "output",
         "submenu": "Drive base",
         "icon": "outputDrive",
+        "code": [{
+            "code": "$A.$B"
+        }],
+        "import": [
+            {
+                "from": "pybricks.parameters",
+                "import": [
+                    "Stop"
+                ]
+            }
+        ],
         "connection": [{
             "type": "code",
             "input": true,
@@ -465,7 +483,9 @@
                 "linkDevice": [
                     "drivebase"
                 ],
-                "text": "drive base"
+                "text": "drive base",
+                "variable": "$A",
+                "code": "content-value"
             },
             {
                 "type": "text",
@@ -479,24 +499,30 @@
                         "option": "straight",
                         "subtext": "straight",
                         "selected": true,
-                        "redirect": "0"
+                        "redirect": "0",
+                        "value": "straight($C$Z)"
                     },
                     {
                         "option": "turn",
                         "subtext": "turn",
-                        "redirect": "1"
+                        "redirect": "1",
+                        "value": "turn($D$E$Z)"
                     },
                     {
                         "option": "curve",
                         "subtext": "curve",
-                        "redirect": "2"
+                        "redirect": "2",
+                        "value": "arc($F, $G$Z)"
                     },
                     {
                         "option": "coordinates",
                         "subtext": "coordinates",
-                        "redirect": "3"
+                        "redirect": "3",
+                        "value": "move_by(dx=$H, dy=$I$Z)"
                     }
-                ]
+                ],
+                "variable": "$B",
+                "code": "content-value"
             },
             {
                 "selection": "0",
@@ -508,42 +534,83 @@
                 "type": "number",
                 "input": true,
                 "value": 250,
-                "text": "mm"
+                "text": "mm",
+                "variable": "$C",
+                "code": "content-text"
             },
             {
-                "selection": "2",
+                "selection": "245",
                 "type": "text",
                 "text": "radius"
             },
             {
-                "selection": "2",
+                "selection": "245",
                 "type": "number",
                 "input": true,
                 "value": 100,
-                "text": "mm"
+                "text": "mm",
+                "variable": "$F",
+                "code": "content-text"
             },
             {
-                "selection": "12",
+                "selection": "1",
                 "type": "text",
                 "input": true,
                 "selector": [
                     {
                         "option": "relative: by a given angle",
                         "subtext": "by",
-                        "selected": true
+                        "selected": true,
+                        "value": " "
                     },
                     {
                         "option": "absolute: to a target angle",
-                        "subtext": "to"
+                        "subtext": "to",
+                        "value": ", absolute=True"
                     }
-                ]
+                ],
+                "variable": "$E",
+                "code": "content-value"
             },
             {
-                "selection": "12",
+                "selection": "245",
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "redirect": "4",
+                        "option": "by an angle",
+                        "subtext": "by",
+                        "selected": true,
+                        "value": "angle=$D"
+                    },
+                    {
+                        "redirect": "5",
+                        "option": "for a distance",
+                        "subtext": "for",
+                        "value": "distance=$J"
+                    }
+                ],
+                "variable": "$G",
+                "code": "content-value"
+            },
+            {
+                "selection": "124",
                 "type": "number",
                 "input": true,
                 "value": 90,
-                "text": "°"
+                "text": "°",
+                "variable": "$D",
+                "code": "content-text"
+            },
+            {
+                "selection": "5",
+                "type": "number",
+                "input": true,
+                "value": 250,
+                "text": "mm",
+                "variable": "$J",
+                "code": "content-text"
             },
             {
                 "selection": "3",
@@ -555,7 +622,9 @@
                 "type": "number",
                 "input": true,
                 "value": 200,
-                "text": "mm"
+                "text": "mm",
+                "variable": "$H",
+                "code": "content-text"
             },
             {
                 "selection": "3",
@@ -567,7 +636,9 @@
                 "type": "number",
                 "input": true,
                 "value": 100,
-                "text": "mm"
+                "text": "mm",
+                "variable": "$I",
+                "code": "content-text"
             },
             {
                 "type": "text",
@@ -579,22 +650,28 @@
                 "selector": [
                     {
                         "option": "coast freely",
-                        "subtext": "coast"
+                        "subtext": "coast",
+                        "value": ", then=Stop.COAST"
                     },
                     {
                         "option": "brake by friction",
-                        "subtext": "brake"
+                        "subtext": "brake",
+                        "value": ", then=Stop.BRAKE"
                     },
                     {
                         "option": "hold this position",
                         "subtext": "hold",
-                        "selected": true
+                        "selected": true,
+                        "value": " "
                     },
                     {
                         "option": "continue moving",
-                        "subtext": "continue"
+                        "subtext": "continue",
+                        "value": ", then=Stop.NONE"
                     }
-                ]
+                ],
+                "variable": "$Z",
+                "code": "content-value"
             }
         ]
     }],

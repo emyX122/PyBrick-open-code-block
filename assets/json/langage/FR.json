@@ -151,6 +151,8 @@
     "forever": "démarrer",
     "rotate by the given angle": "tourner durant des degrés",
     "by": "degrés",
+    "by an angle": "sur un angle",
+    "for a distance": "sur une distance",
     "rotate towards the angle target": "tourner à la position",
     "towards": "position",
     "rotate to the end stop": "tourner vers la butée",
