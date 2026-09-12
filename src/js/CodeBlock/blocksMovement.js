@@ -50,8 +50,8 @@ document.addEventListener("mouseup", () => {
                 const clonedCanva = invisibleCodeCanva.children[0].cloneNode(true);
 
                 //définir la position du canva
-                clonedCanva.style.setProperty('--position-x', `${(event.clientX - currentX - 271 + positionHandCanvaX)/currentZoom}px`);
-                clonedCanva.style.setProperty('--position-y', `${(event.clientY - currentY - 271 + positionHandCanvaY)/currentZoom}px`);
+                clonedCanva.style.setProperty('--position-x', `${(event.clientX - currentX - 265 - (6 * currentZoom) + positionHandCanvaX)/currentZoom}px`);
+                clonedCanva.style.setProperty('--position-y', `${(event.clientY - currentY - 265 - (6 * currentZoom)+ positionHandCanvaY)/currentZoom}px`);
 
                 // insertion du canva dans le container
                 canvasContainers.insertAdjacentElement('beforeend', clonedCanva);
