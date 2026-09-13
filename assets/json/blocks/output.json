@@ -1013,6 +1013,9 @@
         "categorie": "output",
         "submenu": "Light and Sound",
         "icon": "light",
+        "code": [{
+            "code": "$A.$B"
+        }],
         "connection": [{
             "type": "code",
             "input": true,
@@ -1028,7 +1031,9 @@
                     "light",
                     "distancesensor"
                 ],
-                "text": "light"
+                "text": "light",
+                "variable": "$A",
+                "code": "content-value"
             },
             {
                 "type": "text",
@@ -1042,21 +1047,27 @@
                         "option": "ON",
                         "subtext": "ON",
                         "selected": true,
-                        "redirect": "0"
+                        "redirect": "0",
+                        "value": "on($C)"
                     },
                     {
                         "option": "OFF",
                         "subtext": "OFF",
-                        "redirect": "1"
+                        "redirect": "1",
+                        "value": "off()"
                     }
-                ]
+                ],
+                "variable": "$B",
+                "code": "content-value"
             },
             {
                 "selection": "0",
                 "type": "number",
                 "input": true,
                 "value": 100,
-                "text": "%"
+                "text": "%",
+                "variable": "$C",
+                "code": "content-text"
             }
         ]
     }],
@@ -1068,6 +1079,17 @@
         "categorie": "output",
         "submenu": "Light and Sound",
         "icon": "lightRGB",
+        "import": [
+            {
+                "from": "pybricks.parameters",
+                "import": [
+                    "Color"
+                ]
+            }
+        ],
+        "code": [{
+            "code": "$A.light.$B"
+        }],
         "connection": [{
             "type": "code",
             "input": true,
@@ -1084,7 +1106,9 @@
                     "remote",
                     "sensor"
                 ],
-                "text": "light"
+                "text": "light",
+                "variable": "$A",
+                "code": "content-value"
             },
             {
                 "type": "text",
@@ -1098,14 +1122,18 @@
                         "option": "ON",
                         "subtext": "ON",
                         "selected": true,
-                        "redirect": "0"
+                        "redirect": "0",
+                        "value": "on(Color.$C)"
                     },
                     {
                         "option": "OFF",
                         "subtext": "OFF",
-                        "redirect": "1"
+                        "redirect": "1",
+                        "value": "off()"
                     }
-                ]
+                ],
+                "variable": "$B",
+                "code": "content-value"
             },
             {
                 "selection": "0",
@@ -1115,45 +1143,57 @@
                     {
                         "option": "none",
                         "subtext": "none",
-                        "selected": true
+                        "selected": true,
+                        "value": "NONE"
                     },
                     {
                         "option": "blue",
-                        "subtext": "blue"
+                        "subtext": "blue",
+                        "value": "BLUE"
                     },
                     {
                         "option": "cyan",
-                        "subtext": "cyan"
+                        "subtext": "cyan",
+                        "value": "CYAN"
                     },
                     {
                         "option": "green",
-                        "subtext": "green"
+                        "subtext": "green",
+                        "value": "GREEN"
                     },
                     {
                         "option": "magenta",
-                        "subtext": "magenta"
+                        "subtext": "magenta",
+                        "value": "MAGENTA"
                     },
                     {
                         "option": "orange",
-                        "subtext": "orange"
+                        "subtext": "orange",
+                        "value": "ORANGE"
                     },
                     {
                         "option": "red",
-                        "subtext": "red"
+                        "subtext": "red",
+                        "value": "RED"
                     },
                     {
                         "option": "violet",
-                        "subtext": "violet"
+                        "subtext": "violet",
+                        "value": "VIOLET"
                     },
                     {
                         "option": "white",
-                        "subtext": "white"
+                        "subtext": "white",
+                        "value": "WHITE"
                     },
                     {
                         "option": "yellow",
-                        "subtext": "yellow"
+                        "subtext": "yellow",
+                        "value": "YELLOW"
                     }
-                ]
+                ],
+                "variable": "$C",
+                "code": "content-value"
             }
         ]
     }],
@@ -1165,6 +1205,9 @@
         "categorie": "output",
         "submenu": "Light and Sound",
         "icon": "display",
+        "code": [{
+            "code": "$A.display.$B"
+        }],
         "connection": [{
             "type": "code",
             "input": true,
@@ -1178,7 +1221,9 @@
                 "linkDevice": [
                     "hub"
                 ],
-                "text": "HUB"
+                "text": "HUB",
+                "variable": "$A",
+                "code": "content-value"
             },
             {
                 "type": "text",
@@ -1192,36 +1237,46 @@
                         "option": "number from 0 to 99",
                         "subtext": "number",
                         "selected": true,
-                        "redirect": "0"
+                        "redirect": "0",
+                        "value": "number($C)"
                     },
                     {
                         "option": "letter (A-Z) or synbol (!%<=>?@)",
                         "subtext": "letter",
-                        "redirect": "1"
+                        "redirect": "1",
+                        "value": "char('$D')"
                     },
                     {
                         "option": "pixel (one light)",
                         "subtext": "pixel",
-                        "redirect": "2"
+                        "redirect": "2",
+                        "value": "pixel($E, $F, $G)"
                     },
                     {
                         "option": "turn display off",
                         "subtext": "OFF",
-                        "redirect": "3"
+                        "redirect": "3",
+                        "value": "off()"
                     }
-                ]
+                ],
+                "variable": "$B",
+                "code": "content-value"
             },
             {
                 "selection": "0",
                 "type": "number",
                 "input": true,
-                "value": 42
+                "value": 42,
+                "variable": "$C",
+                "code": "content-text"
             },
             {
                 "selection": "1",
                 "type": "number",
                 "input": true,
-                "value": "A"
+                "value": "A",
+                "variable": "$D",
+                "code": "content-text"
             },
             {
                 "selection": "2",
@@ -1232,7 +1287,9 @@
                 "selection": "2",
                 "type": "number",
                 "input": true,
-                "value": 0
+                "value": 0,
+                "variable": "$E",
+                "code": "content-text"
             },
             {
                 "selection": "2",
@@ -1243,7 +1300,9 @@
                 "selection": "2",
                 "type": "number",
                 "input": true,
-                "value": 0
+                "value": 0,
+                "variable": "$F",
+                "code": "content-text"
             },
             {
                 "selection": "2",
@@ -1255,7 +1314,9 @@
                 "type": "number",
                 "input": true,
                 "value": 100,
-                "text": "%"
+                "text": "%",
+                "variable": "$G",
+                "code": "content-text"
             }
         ]
     }],
@@ -1267,6 +1328,9 @@
         "categorie": "output",
         "submenu": "Light and Sound",
         "icon": "song",
+        "code": [{
+            "code": "$A.speaker.beep($B, $C)"
+        }],
         "connection": [{
             "type": "code",
             "input": true,
@@ -1280,7 +1344,9 @@
                 "linkDevice": [
                     "hub"
                 ],
-                "text": "HUB"
+                "text": "HUB",
+                "variable": "$A",
+                "code": "content-value"
             },
             {
                 "type": "text",
@@ -1290,7 +1356,9 @@
                 "type": "number",
                 "input": true,
                 "value": 500,
-                "text": "Hz"
+                "text": "Hz",
+                "variable": "$B",
+                "code": "content-text"
             },
             {
                 "type": "text",
@@ -1300,7 +1368,9 @@
                 "type": "number",
                 "input": true,
                 "value": 100,
-                "text": "ms"
+                "text": "ms",
+                "variable": "$C",
+                "code": "content-text"
             }
         ]
     }],
