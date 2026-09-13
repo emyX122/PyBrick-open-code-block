@@ -3,7 +3,7 @@
 // -------------------------------
 //initialisation des fichier json
 const jsonPath = "../../assets/json/blocks/";
-const jsonFiles = ["tasks", "other", "flow", "output", "setup"];
+const jsonFiles = ["tasks", "other", "flow", "output", "input", "setup"];
 
 // -------------------------------
 //    Initialisation du menu    (src/js/BaseMouvements/menuGestion.js)
