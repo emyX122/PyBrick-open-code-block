@@ -1,3 +1,297 @@
 {
-    
+    "0": [{
+        "version": 1.0,
+        "name": "motorGet",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Motors",
+        "icon": "outputMotor",
+        "code": [{
+            "value": "$A.$B"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "motor"
+                ],
+                "text": "motor",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "get"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "angle: °",
+                        "subtext": "angle",
+                        "redirect": "0",
+                        "selected": true,
+                        "value": "angle()"
+                    },
+                    {
+                        "option": "speed: °/s",
+                        "subtext": "speed",
+                        "redirect": "0",
+                        "value": "speed()"
+                    },
+                    {
+                        "option": "average speed: °/s",
+                        "subtext": "average speed",
+                        "redirect": "1",
+                        "value": "speed(window=$C)"
+                    },
+                    {
+                        "option": "load: mNm",
+                        "subtext": "load",
+                        "redirect": "0",
+                        "value": "load()"
+                    },
+                    {
+                        "option": "stalled: true or false",
+                        "subtext": "stalled",
+                        "redirect": "0",
+                        "value": "stalled()"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            },
+            {
+                "selection": "1",
+                "type": "text",
+                "text": "during"
+            },
+            {
+                "selection": "1",
+                "type": "number",
+                "input": true,
+                "value": 100,
+                "text": "ms",
+                "variable": "$C",
+                "code": "content-text"
+            }
+        ]
+    }],
+
+    "1": [{
+        "version": 1.0,
+        "name": "motorResetAngle",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Motors",
+        "icon": "outputMotor",
+        "code": [{
+            "code": "$A.reset_angle($B)"
+        }],
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "motor"
+                ],
+                "text": "motor",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "reset angle to"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "text": "°",
+                "variable": "$B",
+                "code": "content-text"
+            }
+        ]
+    }],
+
+    "2": [{
+        "version": 1.0,
+        "name": "driveBaseGet",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Motors",
+        "icon": "outputDrive",
+        "code": [{
+            "value": "$A.$B"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "drivebase"
+                ],
+                "text": "drive base",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "get"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "driven distance: mm",
+                        "subtext": "distance",
+                        "selected": true,
+                        "value": "distance()"
+                    },
+                    {
+                        "option": "driven angle: °",
+                        "subtext": "angle",
+                        "value": "angle()"
+                    },
+                    {
+                        "option": "drive speed: mm/s",
+                        "subtext": "speed",
+                        "redirect": "1",
+                        "value": "state()[1]"
+                    },
+                    {
+                        "option": "turn rate: °/s",
+                        "subtext": "rate",
+                        "value": "None.state()[3]"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            }
+        ]
+    }],
+
+    "3": [{
+        "version": 1.0,
+        "name": "driveBaseUseGyro",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Motors",
+        "icon": "outputDrive",
+        "code": [{
+            "code": "$A.use_gyro($B)"
+        }],
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "drivebase"
+                ],
+                "text": "drive base",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "use"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "use gyro for turning and driving straight",
+                        "subtext": "gyro",
+                        "selected": true,
+                        "value": "True"
+                    },
+                    {
+                        "option": "use rotation sensors dor turning and driving straight",
+                        "subtext": "rotation",
+                        "value": "False"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            }
+        ]
+    }],
+
+    "4": [{
+        "version": 1.0,
+        "name": "driveBaseReset",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Motors",
+        "icon": "outputDrive",
+        "code": [{
+            "code": "$A.reset($B, $C)"
+        }],
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "drivebase"
+                ],
+                "text": "drive base",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "reset distance"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "text": "mm",
+                "variable": "$B",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "angle"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "text": "°",
+                "variable": "$C",
+                "code": "content-text"
+            }
+        ]
+    }]
 }

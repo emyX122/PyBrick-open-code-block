@@ -37,6 +37,9 @@
 
     pointer-events: all;
 }
+.canva-base-block-value {
+    border-radius: 5000px;
+}
 .canva-base-block:hover {
     cursor: grab;
 }

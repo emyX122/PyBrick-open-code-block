@@ -59,7 +59,7 @@ function blockInitialisation(jsonExtract, data, file) {
                     if (data[String(key)][0].import) {
                         htmlBlock.dataset.import = JSON.stringify(data[String(key)][0].import);
                     }
-                    //génération du code setup/code
+                    //génération du code setup/code/value
                     if (data[String(key)][0].code) {
                         //code de setup
                         if (data[String(key)][0].code[0].setup) {
@@ -69,9 +69,13 @@ function blockInitialisation(jsonExtract, data, file) {
                         if (data[String(key)][0].code[0].code) {
                             htmlBlock.dataset.codeGlobal = JSON.stringify(data[String(key)][0].code[0].code);
                         }
+                        //code value
+                        if (data[String(key)][0].code[0].value) {
+                            htmlBlock.dataset.codeValue = JSON.stringify(data[String(key)][0].code[0].value);
+                        }
                     }
                     
-                    //base de type code ou setup
+                    //base de type code, setup ou value
                     if (data[String(key)][0].connection[0].type == "code") {
                         //ajout des data
                         htmlBlock.dataset.type = "code";
@@ -100,6 +104,12 @@ function blockInitialisation(jsonExtract, data, file) {
                             htmlChild.push(document.createElement('span'));
                             htmlChild[htmlChild.length-1].classList.add('canva-global-blocks-setup');
                         }
+                    } else if (data[String(key)][0].connection[0].type == "value") {
+                        //ajout des data
+                        htmlBlock.dataset.type = "value";
+                        //ajouter la class de base
+                        htmlBlock.classList.add('canva-base-block');
+                        htmlBlock.classList.add('canva-base-block-value');
                     }
                     //icon
                     if (data[String(key)][0].icon) {

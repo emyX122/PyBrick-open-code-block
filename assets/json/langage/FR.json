@@ -45,6 +45,10 @@
     "Comments": "Commentaires",
     "Stopping the program": "Arrêter le programme",
     "broadcast": "envoyer",
+    "get": "récupérer",
+    "reset angle to": "réinitialiser l'angle à",
+    "use": "utilise",
+    "reset distance": "réinitialise la distance",
 
     "wait forever": "attendre à l'infini",
     "Describe your program.": "Décrivez votre programme.",
@@ -225,6 +229,23 @@
     "connect to a specific remote": "se connecter à une manette spécifique",
     "connect to": "connecter à",
     "scan and connect to the first available remote, then rename it": "cherche et se connecte à la première manette disponible, et la renommer",
-    "connect and rename to": "connecter et renommer"
+    "connect and rename to": "connecter et renommer",
+    "angle: °": "angle: °",
+    "speed: °/s": "vitesse: °/s",
+    "average speed: °/s": "vitesse moyenne: °/s",
+    "load: mNm": "charge: mNm",
+    "load": "charge",
+    "stalled: true or false": "bloqué: vrai ou faux",
+    "stalled": "bloqué",
+    "driven distance: mm": "distance parcouru: mm",
+    "distance": "distance",
+    "driven angle: °": "angle de déplacement: °",
+    "drive speed: mm/s": "vitesse de déplacement: mm/s",
+    "turn rate: °/s": "vitesse de rotation: °/s",
+    "rate": "rotation",
+    "use gyro for turning and driving straight": "utilise le gyro pour avancer tout droit et tourner",
+    "gyro": "gyro",
+    "use rotation sensors dor turning and driving straight": "utilise les rotation pour avancer tout droit et tourner",
+    "rotation": "rotation"
 
 }
