@@ -683,6 +683,9 @@
         "categorie": "output",
         "submenu": "Drive base",
         "icon": "outputDrive",
+        "code": [{
+            "code": "$A.settings($B)"
+        }],
         "connection": [{
             "type": "code",
             "input": true,
@@ -696,7 +699,9 @@
                 "linkDevice": [
                     "drivebase"
                 ],
-                "text": "drive base"
+                "text": "drive base",
+                "variable": "$A",
+                "code": "content-value"
             },
             {
                 "type": "text",
@@ -710,52 +715,66 @@
                         "option": "drive speed",
                         "subtext": "drive speed",
                         "selected": true,
-                        "redirect": "0"
+                        "redirect": "0",
+                        "value": "straight_speed=$C"
                     },
                     {
                         "option": "turn speed",
                         "subtext": "turn speed",
-                        "redirect": "1"
+                        "redirect": "1",
+                        "value": "turn_rate=$D"
                     },
                     {
                         "option": "drive acceleration",
                         "subtext": "drive acceleration",
-                        "redirect": "2"
+                        "redirect": "2",
+                        "value": "straight_acceleration=$E"
                     },
                     {
                         "option": "turn acceleration",
                         "subtext": "turn acceleration",
-                        "redirect": "3"
+                        "redirect": "3",
+                        "value": "turn_acceleration=$F"
                     }
-                ]
+                ],
+                "variable": "$B",
+                "code": "content-value"
             },
             {
                 "selection": "0",
                 "type": "number",
                 "input": true,
                 "value": 200,
-                "text": "mm/s"
+                "text": "mm/s",
+                "variable": "$C",
+                "code": "content-text"
             },
             {
                 "selection": "1",
                 "type": "number",
                 "input": true,
                 "value": 150,
-                "text": "°/s"
+                "text": "°/s",
+                "variable": "$D",
+                "code": "content-text"
             },
             {
                 "selection": "2",
                 "type": "number",
                 "input": true,
                 "value": 750,
-                "text": "mm/s²"
+                "text": "mm/s²",
+                "variable": "$E",
+                "code": "content-text"
             },
             {
                 "selection": "3",
                 "type": "number",
                 "input": true,
                 "value": 750,
-                "text": "°/s²"
+                "text": "°/s²",
+                "variable": "$F",
+                "code": "content-text"
             }
         ]
     }],
@@ -767,6 +786,9 @@
         "categorie": "output",
         "submenu": "Drive base",
         "icon": "outputDrive",
+        "code": [{
+            "code": "$A.drive($B, $C)"
+        }],
         "connection": [{
             "type": "code",
             "input": true,
@@ -780,7 +802,9 @@
                 "linkDevice": [
                     "drivebase"
                 ],
-                "text": "drive base"
+                "text": "drive base",
+                "variable": "$A",
+                "code": "content-value"
             },
             {
                 "type": "text",
@@ -790,7 +814,9 @@
                 "type": "number",
                 "input": true,
                 "value": 100,
-                "text": "mm/s"
+                "text": "mm/s",
+                "variable": "$B",
+                "code": "content-text"
             },
             {
                 "type": "text",
@@ -800,7 +826,9 @@
                 "type": "number",
                 "input": true,
                 "value": 0,
-                "text": "°/s"
+                "text": "°/s",
+                "variable": "$C",
+                "code": "content-text"
             }
         ]
     }],
@@ -812,6 +840,9 @@
         "categorie": "output",
         "submenu": "Drive base",
         "icon": "outputDrive",
+        "code": [{
+            "code": "$A.$B()"
+        }],
         "connection": [{
             "type": "code",
             "input": true,
@@ -825,7 +856,9 @@
                 "linkDevice": [
                     "drivebase"
                 ],
-                "text": "drive base"
+                "text": "drive base",
+                "variable": "$A",
+                "code": "content-value"
             },
             {
                 "type": "text",
@@ -838,17 +871,22 @@
                     {
                         "option": "coast freely",
                         "subtext": "coast",
-                        "selected": true
+                        "selected": true,
+                        "value": "stop"
                     },
                     {
                         "option": "brake by friction",
-                        "subtext": "brake"
+                        "subtext": "brake",
+                        "value": "brake"
                     },
                     {
                         "option": "hold this position",
-                        "subtext": "hold"
+                        "subtext": "hold",
+                        "value": "hold"
                     }
-                ]
+                ],
+                "variable": "$B",
+                "code": "content-value"
             }
         ]
     }],
