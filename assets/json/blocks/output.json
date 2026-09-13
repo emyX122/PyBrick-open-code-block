@@ -898,6 +898,9 @@
         "categorie": "output",
         "submenu": "Car",
         "icon": "car",
+        "code": [{
+            "code": "$A.$B"
+        }],
         "connection": [{
             "type": "code",
             "input": true,
@@ -911,7 +914,9 @@
                 "linkDevice": [
                     "car"
                 ],
-                "text": "car"
+                "text": "car",
+                "variable": "$A",
+                "code": "content-value"
             },
             {
                 "type": "text",
@@ -925,28 +930,36 @@
                         "option": "power",
                         "subtext": "power",
                         "selected": true,
-                        "redirect": "0"
+                        "redirect": "0",
+                        "value": "drive_power($C)"
                     },
                     {
                         "option": "speed",
                         "subtext": "speed",
-                        "redirect": "1"
+                        "redirect": "1",
+                        "value": "drive_speed($D)"
                     }
-                ]
+                ],
+                "variable": "$B",
+                "code": "content-value"
             },
             {
                 "selection": "0",
                 "type": "number",
                 "input": true,
                 "value": 50,
-                "text": "%"
+                "text": "%",
+                "variable": "$C",
+                "code": "content-text"
             },
             {
                 "selection": "1",
                 "type": "number",
                 "input": true,
                 "value": 500,
-                "text": "°/s"
+                "text": "°/s",
+                "variable": "$D",
+                "code": "content-text"
             }
         ]
     }],
@@ -958,6 +971,9 @@
         "categorie": "output",
         "submenu": "Car",
         "icon": "car",
+        "code": [{
+            "code": "$A.steer($B)"
+        }],
         "connection": [{
             "type": "code",
             "input": true,
@@ -971,7 +987,9 @@
                 "linkDevice": [
                     "car"
                 ],
-                "text": "car"
+                "text": "car",
+                "variable": "$A",
+                "code": "content-value"
             },
             {
                 "type": "text",
@@ -981,7 +999,9 @@
                 "type": "number",
                 "input": true,
                 "value": 0,
-                "text": "%"
+                "text": "%",
+                "variable": "$B",
+                "code": "content-text"
             }
         ]
     }],
