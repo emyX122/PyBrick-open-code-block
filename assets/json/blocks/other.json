@@ -6,6 +6,9 @@
         "categorie": "other",
         "submenu": "Comments",
         "icon": "comment",
+        "code": [{
+            "code": "#$A"
+        }],
         "connection": [{
             "type": "code",
             "input": true,
@@ -15,7 +18,9 @@
             {
                 "type": "text",
                 "input": true,
-                "text": "Describe your program."
+                "text": "Describe your program.",
+                "variable": "$A",
+                "code": "content-text"
             }
         ]
     }],
@@ -27,6 +32,17 @@
         "categorie": "other",
         "submenu": "Stopping the program",
         "icon": "power",
+        "import": [
+            {
+                "from": "pybricks.parameters",
+                "import": [
+                    "Button"
+                ]
+            }
+        ],
+        "code": [{
+            "code": "$A.system.set_stop_button($B)"
+        }],
         "connection": [{
             "type": "code",
             "input": true,
@@ -40,7 +56,9 @@
                 "linkDevice": [
                     "hub"
                 ],
-                "text": "HUB"
+                "text": "HUB",
+                "variable": "$A",
+                "code": "content-value"
             },
             {
                 "type": "text",
@@ -52,21 +70,28 @@
                 "selector": [
                     {
                         "option": "none",
-                        "selected": true
+                        "selected": true,
+                        "value": "None"
                     },
                     {
-                        "option": "center"
+                        "option": "center",
+                        "value": "Button.CENTER"
                     },
                     {
-                        "option": "left"
+                        "option": "left",
+                        "value": "Button.LEFT"
                     },
                     {
-                        "option": "right"
+                        "option": "right",
+                        "value": "Button.RIGHT"
                     },
                     {
-                        "option": "bluetooth"
+                        "option": "bluetooth",
+                        "value": "Button.BLUETOOTH"
                     }
-                ]
+                ],
+                "variable": "$B",
+                "code": "content-value"
             }
         ]
     }],
@@ -78,6 +103,9 @@
         "categorie": "other",
         "submenu": "Stopping the program",
         "icon": "power",
+        "code": [{
+            "code": "$A.system.shutdown()"
+        }],
         "connection": [{
             "type": "code",
             "input": true,
@@ -91,7 +119,9 @@
                 "linkDevice": [
                     "hub"
                 ],
-                "text": "HUB"
+                "text": "HUB",
+                "variable": "$A",
+                "code": "content-value"
             },
             {
                 "type": "text",
@@ -107,6 +137,9 @@
         "categorie": "other",
         "submenu": "Stopping the program",
         "icon": "power",
+        "code": [{
+            "code": "raise SystemExit"
+        }],
         "connection": [{
             "type": "code",
             "input": true,
