@@ -1382,6 +1382,9 @@
         "categorie": "output",
         "submenu": "Communication",
         "icon": "console",
+        "code": [{
+            "code": "print('$A')"
+        }],
         "connection": [{
             "type": "code",
             "input": true,
@@ -1395,7 +1398,51 @@
             {
                 "type": "number",
                 "input": true,
-                "value": "abc"
+                "value": "abc",
+                "variable": "$A",
+                "code": "content-text"
+            }
+        ]
+    }],
+
+    "16": [{
+        "version": 1.0,
+        "name": "radioBroadcast",
+        "class": "output",
+        "categorie": "output",
+        "submenu": "Communication",
+        "icon": "radio",
+        "code": [{
+            "code": "$A.broadcast($B)"
+        }],
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "radio"
+                ],
+                "text": "radio",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "broadcast"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "text": "",
+                "variable": "$B",
+                "code": "content-text"
             }
         ]
     }]
