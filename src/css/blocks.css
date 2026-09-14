@@ -1,4 +1,4 @@
-/* Base du bloque placholder */
+/* Base des bloques placholder */
 .canva-placeholder-block {
     position: relative;
 
@@ -11,6 +11,27 @@
     background-color: var(--color-blocks);
 
     border-radius: 4px;
+
+    user-select: none;
+}
+
+.canva-placeholder-value {
+    position: relative;
+
+    --height: 50px;
+    --width: 50px;
+    --selector-width: 50px;
+
+    height: calc(var(--height) - 20px);
+    width: var(--width);
+
+    margin: 5px 5px;
+
+    margin-left: calc(var(--selector-width) * -1 - 5px);
+    
+    background-color: var(--color-blocks);
+
+    border-radius: 500000px;
 
     user-select: none;
 }
@@ -38,7 +59,15 @@
     pointer-events: all;
 }
 .canva-base-block-value {
+    --selector-width: 50px;
+
+    margin: 5px 5px 5px 0px;
+
+    margin-right: calc(var(--selector-width) * -1);
+
     border-radius: 5000px;
+
+    z-index: +2;
 }
 .canva-base-block:hover {
     cursor: grab;

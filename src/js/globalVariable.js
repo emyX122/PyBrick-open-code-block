@@ -27,6 +27,7 @@ let movedBlockOutput = null;
 const canvasContainers = document.getElementById("mainCanvas");
 const handCanvaElement = document.getElementById("canvaHand");
 const placeholder = document.getElementById("placeholderCode");
+const placeholderValue = document.getElementById("placeholderValue");
 const invisibleCanva = document.getElementById("canvaInvisible");
 const invisibleCodeCanva = document.getElementById("canvaCodeInvisible");
 const elementBackground = document.getElementById("backgroundMouseJS");

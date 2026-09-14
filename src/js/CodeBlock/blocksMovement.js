@@ -38,13 +38,21 @@ document.addEventListener("mouseup", () => {
 
     //control que un bloque est bien déplacé
     if (blockMoved) {
-
         if (oldHoverHandZoneElement) {
             // control que le bloque survolé n'est pas dans le menu et est un bloque
             if (!oldHoverHandZoneElement?.parentElement?.classList.contains("panel-menu-submenu") && oldHoverHandZoneElement?.classList.contains("canva-base-block")) {
                 //placement du fragment de la main après le survolé
                 insertFragment(oldHoverHandZoneElement, blockMoved, movedBlockInput);
 
+            } else if (blockMoved?.getAttribute('data-type') == "value" && !oldHoverHandZoneElement?.parentElement?.classList.contains("panel-menu-submenu") && oldHoverHandZoneElement?.classList.contains("canva-global-block-number-case")) {
+                //control le type d'élément ciblé
+                if (oldHoverHandZoneElement.nodeName == "SELECT") {
+                    //insertion de l'élément dans le bloque avec un élément de décalage pour éviter le display
+                    oldHoverHandZoneElement.previousSibling.insertAdjacentElement('beforebegin', blockMoved);
+                } else {
+                    //insertion direct de l'élément dans le bloque
+                    oldHoverHandZoneElement.insertAdjacentElement('beforebegin', blockMoved);
+                }
             } else {
                 //création du canva à cloner
                 const clonedCanva = invisibleCodeCanva.children[0].cloneNode(true);
@@ -75,8 +83,13 @@ document.addEventListener("mouseup", () => {
         //retirer le bloque de la variable de déplacement
         blockMoved = null;
 
-        //retirer le placeholder
+        //retirer les placeholder
         invisibleCanva.insertAdjacentElement('afterend', placeholder);
+        invisibleCanva.insertAdjacentElement('afterend', placeholderValue);
+        placeholder.style.setProperty('--width', `0px`);
+        placeholder.style.setProperty('--height', `0px`);
+        placeholderValue.style.setProperty('--width', `0px`);
+        placeholderValue.style.setProperty('--height', `0px`);
     }
 });
 
@@ -91,11 +104,17 @@ document.addEventListener('mousemove', () => {
         //type d'élément (début/fin)
         const elementEnd = !Number(blockMoved?.getAttribute('data-output'));
         const elementStart = !Number(blockMoved?.getAttribute('data-input'));
+        const elementTypeValue = blockMoved?.getAttribute('data-type') == "value";
 
         //prend l'élément qui est survolé par la zone de main
         if (!elementStart) {
+            //detection au coins haut gauche
             hoverHandZoneElement = document.elementFromPoint(handCanvaElement.getBoundingClientRect().left - 1, handCanvaElement.getBoundingClientRect().top);
+        } else if (elementTypeValue) {
+            //detection au centre gauche
+            hoverHandZoneElement = document.elementFromPoint(handCanvaElement.getBoundingClientRect().left - 1, handCanvaElement.getBoundingClientRect().top + handCanvaElement.getBoundingClientRect().height / 2)
         } else {
+            //detection au coins bas gauche
             hoverHandZoneElement = document.elementFromPoint(handCanvaElement.getBoundingClientRect().left - 1, handCanvaElement.getBoundingClientRect().bottom);
         }
         movedBlockInput = Number(blockMoved?.getAttribute('data-input'));
@@ -103,7 +122,8 @@ document.addEventListener('mousemove', () => {
 
         //control que la cible à un parent et qui n'est pas dans le menu et que c'est un bloque 
         if (!hoverHandZoneElement?.parentElement?.classList.contains("panel-menu-submenu") 
-            && hoverHandZoneElement?.classList.contains("canva-base-block")) {
+            && hoverHandZoneElement?.classList.contains("canva-base-block")
+            && !blockMoved?.getAttribute('data-type') == "value") {
 
             //control que le bloque survolé et porter on soit une sortie et une entrée soit l'inverse
             if ((Number(hoverHandZoneElement?.getAttribute('data-output')) && Number(blockMoved?.getAttribute('data-input'))) ||
@@ -126,6 +146,22 @@ document.addEventListener('mousemove', () => {
                     oldHoverHandZoneElement = hoverHandZoneElement;
                 }
             }
+        } else if (!hoverHandZoneElement?.parentElement?.parentElement?.parentElement?.classList.contains("panel-menu-submenu") 
+                && blockMoved?.getAttribute('data-type') == "value") {
+            //contrôle que l'element est bien un select de type number
+            if (hoverHandZoneElement?.classList.contains("canva-global-block-number-case")) {
+                //taille du placeholder
+                widthPlaceholder = blockMoved.getBoundingClientRect().width / currentZoom;
+                heightPlaceholder = handCanvaElement.getBoundingClientRect().height / currentZoom;
+                placeholderValue.style.setProperty('--width', `${widthPlaceholder}px`);
+                placeholderValue.style.setProperty('--height', `${heightPlaceholder}px`);
+                placeholderValue.style.setProperty('--selector-width', `${hoverHandZoneElement.getBoundingClientRect().width / currentZoom}px`);
+                blockMoved.style.setProperty('--selector-width', `${hoverHandZoneElement.getBoundingClientRect().width / currentZoom}px`);
+                // insertion du placeholder avant ou après le bloque
+                hoverHandZoneElement.insertAdjacentElement('afterend', placeholderValue);
+                //enregistre dernier élément valide
+                oldHoverHandZoneElement = hoverHandZoneElement;
+            }
         }
 
         //control si le bloque est en dehors de l'écran à gauche
@@ -140,6 +176,8 @@ document.addEventListener('mousemove', () => {
             //réduit la zone de placeholder
             placeholder.style.setProperty('--width', `0px`);
             placeholder.style.setProperty('--height', `0px`);
+            placeholderValue.style.setProperty('--width', `0px`);
+            placeholderValue.style.setProperty('--height', `0px`);
             //enregistre dernier élément valide
             oldHoverHandZoneElement = hoverHandZoneElement;
         }
@@ -177,8 +215,13 @@ function moveGrapedBlocks(element) {
     //déplace la main au niveau de la prise du bloque
     setOffsetHandCanva(element);
 
-    //placement du bloque dans la main
-    handCanvaElement.appendChild(makeFragmentElement(element));
+    //contrôle le type de bloque
+    if (element?.getAttribute('data-type') == "value") {
+        handCanvaElement.appendChild(element);
+    } else {
+        // met le bloque avec les suivants dans la main
+        handCanvaElement.appendChild(makeFragmentElement(element));
+    }
 
     //initialisation de la variable de déplacement
     blockMoved = element;
