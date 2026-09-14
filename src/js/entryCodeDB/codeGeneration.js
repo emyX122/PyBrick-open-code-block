@@ -46,7 +46,7 @@ function blockCodeScanning(element) {
                     //control si il y à un lien avec un type de device
                     if (subElement.hasAttribute("data-device") && !element.parentElement?.classList.contains("panel-menu-submenu")) {
                         //mettre à jour tout les éléments
-                        updateDeviceLink(false, subElement.getAttribute("data-device"), elementToCompile, subElement);
+                        updateDeviceLink(false, true, subElement.getAttribute("data-device"), elementToCompile, subElement);
                     }
                 }
                 //entré de type value
@@ -85,7 +85,7 @@ function blockCodeScanning(element) {
                     //control si il y à un lien avec un type de device
                     if (subElement.hasAttribute("data-device") && !element.parentElement?.classList.contains("panel-menu-submenu")) {
                         //mettre à jour tout les éléments
-                        updateDeviceLink(false, subElement.getAttribute("data-device"), elementToCompile, subElement);
+                        updateDeviceLink(false, true, subElement.getAttribute("data-device"), elementToCompile, subElement);
                     }
                 }
                 //entré de type value
@@ -221,15 +221,16 @@ function setupScan() {
 }
 
 //mettre à jour les lien des éléments
-function updateDeviceLink(forceScan, typeDevice, deviceName, subElement) {
+function updateDeviceLink(forceScan, updateDeviceScan, typeDevice, deviceName, subElement) {
     //force le scan de tout les éléments dans le canva container
     if (forceScan) {
         resetSetupDevice();
+        //scan tout les éléments setup device
         canvasContainers.querySelectorAll(".canva-global-block-default").forEach(subElementAll=>{
             //control si il y à un lien avec un type de device
             if (subElementAll.hasAttribute("data-device")) {
                 //mettre à jour tout les éléments
-                updateDeviceLink(false, subElementAll.getAttribute("data-device"), subElementAll.innerHTML.replaceAll(" ", "_").replaceAll("$", "§").replaceAll("#", "-").replaceAll("<br>", ""), subElementAll);
+                updateDeviceLink(false, false, subElementAll.getAttribute("data-device"), subElementAll.innerHTML.replaceAll(" ", "_").replaceAll("$", "§").replaceAll("#", "-").replaceAll("<br>", ""), subElementAll);
             }
         });
         updateDeviceOptions(true);
@@ -248,7 +249,9 @@ function updateDeviceLink(forceScan, typeDevice, deviceName, subElement) {
                 allSetupDeviceLink[type].push(subElement);
             }
 
-            updateDeviceOptions(false, type);
+            if (updateDeviceScan) {
+                updateDeviceOptions(false, type);
+            }
         });
     }
 }
@@ -355,7 +358,6 @@ function updateDeviceOptions(updateAll, typeDevice) {
         });
     }
 }
-
 //scan des bloques de code normal et volant
 function globalCodeScanning(startedBlocks) {
     scannedCode = [];

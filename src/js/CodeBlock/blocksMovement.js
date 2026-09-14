@@ -72,7 +72,7 @@ document.addEventListener("mouseup", () => {
         }
 
         //mise à jour du code en forcent le rescann complet
-        updateDeviceLink(true);
+        updateDeviceLink(true, false);
         
         //vider la variable de selection
         oldHoverHandZoneElement = elementBackground;
