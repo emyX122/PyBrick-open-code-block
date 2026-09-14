@@ -123,7 +123,7 @@ document.addEventListener('mousemove', () => {
         //control que la cible à un parent et qui n'est pas dans le menu et que c'est un bloque 
         if (!hoverHandZoneElement?.parentElement?.classList.contains("panel-menu-submenu") 
             && hoverHandZoneElement?.classList.contains("canva-base-block")
-            && !blockMoved?.getAttribute('data-type') == "value") {
+            && !(blockMoved?.getAttribute('data-type') == "value")) {
 
             //control que le bloque survolé et porter on soit une sortie et une entrée soit l'inverse
             if ((Number(hoverHandZoneElement?.getAttribute('data-output')) && Number(blockMoved?.getAttribute('data-input'))) ||
