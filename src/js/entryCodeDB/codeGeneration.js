@@ -66,34 +66,57 @@ function blockCodeScanning(element) {
 
         //scan tout les élément qui peuvent avoir du code
         element.querySelectorAll(".canva-global-block-default, .canva-base-block-value").forEach(subElement=>{
-            //control si il y à un lien avec une variable
-            if (subElement.hasAttribute("data-variable")) {
-                //entré de type text
-                if (subElement.getAttribute("data-code") == "content-text") {
-                    //contenu scanné en remplacent les espace, les $ et les #
-                    let elementToCompile = subElement.innerHTML.replaceAll(" ", "_").replaceAll("$", "§").replaceAll("#", "-").replaceAll("<br>", "");
-                    //control si l'élément à des settings
-                    if (subElement.hasAttribute("data-settings")) {
-                        //Majuscule
-                        if (subElement.getAttribute("data-settings") == "uppercase") {
-                            //insertion en mettant tout en majuscule
-                            elementToCompile = elementToCompile.toUpperCase();
+            //control que l'élément n'ait pas un parent value
+            let childElement = subElement;
+            let isValueChildren = false;
+            for (let i = 0; i < 3; i++) {
+                if (childElement.parentElement) {
+                    if (childElement.parentElement.classList.contains("canva-base-block-value") && (childElement.parentElement != element)) {
+                        //indique que l'élément à un parent value
+                        isValueChildren = true;
+                        break;
+                    }
+                    //prend le parent précédent
+                    childElement = childElement.parentElement;
+                }else {
+                    break;
+                }
+            }
+            if (!isValueChildren) {
+                //control si il y à un lien avec une variable
+                if (subElement.hasAttribute("data-variable")) {
+                    //entré de type text
+                    if (subElement.getAttribute("data-code") == "content-text") {
+                        //contenu scanné en remplacent les espace, les $ et les #
+                        let elementToCompile = subElement.innerHTML.replaceAll(" ", "_").replaceAll("$", "§").replaceAll("#", "-").replaceAll("<br>", "");
+                        //control si l'élément à des settings
+                        if (subElement.hasAttribute("data-settings")) {
+                            //Majuscule
+                            if (subElement.getAttribute("data-settings") == "uppercase") {
+                                //insertion en mettant tout en majuscule
+                                elementToCompile = elementToCompile.toUpperCase();
+                            }
+                        }
+                            
+                        //insertion du code
+                        globalValueCompiled = globalValueCompiled.replace(subElement.getAttribute("data-variable"), elementToCompile);
+
+                        //control si il y à un lien avec un type de device
+                        if (subElement.hasAttribute("data-device") && !element.parentElement?.classList.contains("panel-menu-submenu")) {
+                            //mettre à jour tout les éléments
+                            updateDeviceLink(false, true, subElement.getAttribute("data-device"), elementToCompile, subElement);
                         }
                     }
-                        
-                    //insertion du code
-                    globalValueCompiled = globalValueCompiled.replace(subElement.getAttribute("data-variable"), elementToCompile);
-
-                    //control si il y à un lien avec un type de device
-                    if (subElement.hasAttribute("data-device") && !element.parentElement?.classList.contains("panel-menu-submenu")) {
-                        //mettre à jour tout les éléments
-                        updateDeviceLink(false, true, subElement.getAttribute("data-device"), elementToCompile, subElement);
+                    //entré de type value
+                    if (subElement.getAttribute("data-code") == "content-value") {
+                        //insertion en remplacent les espace, les $ et les #
+                        globalValueCompiled = globalValueCompiled.replace(subElement.getAttribute("data-variable"), subElement.value);
                     }
-                }
-                //entré de type value
-                if (subElement.getAttribute("data-code") == "content-value") {
-                    //insertion en remplacent les espace, les $ et les #
-                    globalValueCompiled = globalValueCompiled.replace(subElement.getAttribute("data-variable"), subElement.value);
+                    //entré de type block value
+                    if (subElement.getAttribute("data-code") == "value") {
+                        //insertion en remplacent les espace, les $ et les #
+                        globalValueCompiled = globalValueCompiled.replace(subElement.getAttribute("data-variable"), subElement.getAttribute("data-compiled-code-value").replaceAll('"', ""));
+                    }
                 }
             }
         });
@@ -177,7 +200,6 @@ function blockCodeScanning(element) {
                     }
                 }
             }
-            
         });
     }
 
