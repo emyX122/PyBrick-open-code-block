@@ -72,6 +72,7 @@ function blockInitialisation(jsonExtract, data, file) {
                         //code value
                         if (data[String(key)][0].code[0].value) {
                             htmlBlock.dataset.codeValue = JSON.stringify(data[String(key)][0].code[0].value);
+                            htmlBlock.dataset.code = "value";
                         }
                     }
                     

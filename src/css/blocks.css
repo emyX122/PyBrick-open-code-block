@@ -65,7 +65,7 @@
 
     margin-right: calc(var(--selector-width) * -1);
 
-    border-radius: 5000px;
+    border-radius: 500000px;
 
     z-index: +2;
 }

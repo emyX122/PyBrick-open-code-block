@@ -178,6 +178,7 @@ document.addEventListener('mousemove', () => {
             placeholder.style.setProperty('--height', `0px`);
             placeholderValue.style.setProperty('--width', `0px`);
             placeholderValue.style.setProperty('--height', `0px`);
+            placeholderValue.style.setProperty('--selector-width', `0px`);
             //enregistre dernier élément valide
             oldHoverHandZoneElement = hoverHandZoneElement;
         }

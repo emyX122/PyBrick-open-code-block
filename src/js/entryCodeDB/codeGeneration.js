@@ -16,8 +16,10 @@ function findBlockToScan(element) {
 
 //fonction scann des blocks pour code
 function blockCodeScanning(element) {
-    let setupCodeCompiled = "";
-    let globalCodeCompiled = "";
+    let setupCodeCompiled = null;
+    let globalCodeCompiled = null;
+    let globalCodeVariable = null;
+    let globalValueCompiled = null;
 
     //scan des élément avec du code setup
     if (element.hasAttribute("data-code-setup")) {
@@ -58,9 +60,9 @@ function blockCodeScanning(element) {
         });
     }
 
-    //scan des élément avec du code global
-    if (element.hasAttribute("data-code-global")) {
-        globalCodeCompiled = element.getAttribute("data-code-global");
+    //scan des élément avec du code value
+    if (element.hasAttribute("data-code-value")) {
+        globalValueCompiled = element.getAttribute("data-code-value");
 
         //scan tout les élément qui peuvent avoir du code
         element.querySelectorAll(".canva-global-block-default").forEach(subElement=>{
@@ -80,7 +82,7 @@ function blockCodeScanning(element) {
                     }
                         
                     //insertion du code
-                    globalCodeCompiled = globalCodeCompiled.replace(subElement.getAttribute("data-variable"), elementToCompile);
+                    globalValueCompiled = globalValueCompiled.replace(subElement.getAttribute("data-variable"), elementToCompile);
 
                     //control si il y à un lien avec un type de device
                     if (subElement.hasAttribute("data-device") && !element.parentElement?.classList.contains("panel-menu-submenu")) {
@@ -91,15 +93,93 @@ function blockCodeScanning(element) {
                 //entré de type value
                 if (subElement.getAttribute("data-code") == "content-value") {
                     //insertion en remplacent les espace, les $ et les #
-                    globalCodeCompiled = globalCodeCompiled.replace(subElement.getAttribute("data-variable"), subElement.value);
+                    globalValueCompiled = globalValueCompiled.replace(subElement.getAttribute("data-variable"), subElement.value);
                 }
             }
+        });
+        
+        //scan l'élément lié pour récupérer la variable
+       let nextElement = element;
+        for (let i = 0; i < 5; i++) {
+            if (nextElement.nextElementSibling?.querySelector("[data-variable]") || nextElement.nextElementSibling?.hasAttribute("data-variable")) {
+                if (nextElement.nextElementSibling?.hasAttribute("data-variable")) {
+                    //ajoute le lien à la variable directement
+                    globalCodeVariable = nextElement.nextElementSibling.getAttribute("data-variable");
+                } else {
+                    //ajoute le lien à la variable du children 
+                    globalCodeVariable = nextElement.nextElementSibling.querySelector("[data-variable]").getAttribute("data-variable");
+                }
+                break;
+            } else if (nextElement.nextElementSibling) {
+                //prend le block suivant
+                nextElement = nextElement.nextElementSibling;
+            } else {
+                break;
+            }
+        }
+    }
+
+    //scan des élément avec du code global
+    if (element.hasAttribute("data-code-global") && !element.hasAttribute("data-code-value")) {
+        globalCodeCompiled = element.getAttribute("data-code-global");
+
+        //scan tout les élément qui peuvent avoir du code
+        element.querySelectorAll(".canva-global-block-default, .canva-base-block-value").forEach(subElement=>{
+            //control que l'élément n'ait pas un parent value
+            if (!subElement.parentElement?.parentElement?.hasAttribute("data-code-value")) {
+                //control si il y à un lien avec une variable
+                if (subElement.hasAttribute("data-variable")) {
+                    //entré de type text
+                    if (subElement.getAttribute("data-code") == "content-text") {
+                        //contenu scanné en remplacent les espace, les $ et les #
+                        let elementToCompile = subElement.innerHTML.replaceAll(" ", "_").replaceAll("$", "§").replaceAll("#", "-").replaceAll("<br>", "");
+                        //control si l'élément à des settings
+                        if (subElement.hasAttribute("data-settings")) {
+                            //Majuscule
+                            if (subElement.getAttribute("data-settings") == "uppercase") {
+                                //insertion en mettant tout en majuscule
+                                elementToCompile = elementToCompile.toUpperCase();
+                            }
+                        }
+                            
+                        //insertion du code
+                        globalCodeCompiled = globalCodeCompiled.replace(subElement.getAttribute("data-variable"), elementToCompile);
+
+                        //control si il y à un lien avec un type de device
+                        if (subElement.hasAttribute("data-device") && !element.parentElement?.classList.contains("panel-menu-submenu")) {
+                            //mettre à jour tout les éléments
+                            updateDeviceLink(false, true, subElement.getAttribute("data-device"), elementToCompile, subElement);
+                        }
+                    }
+                    //entré de type value
+                    if (subElement.getAttribute("data-code") == "content-value") {
+                        //insertion en remplacent les espace, les $ et les #
+                        globalCodeCompiled = globalCodeCompiled.replace(subElement.getAttribute("data-variable"), subElement.value);
+                    }
+                    //entré de type block value
+                    if (subElement.getAttribute("data-code") == "value") {
+                        //insertion en remplacent les espace, les $ et les #
+                        globalCodeCompiled = globalCodeCompiled.replace(subElement.getAttribute("data-variable"), subElement.getAttribute("data-code-value").replaceAll('"', ""));
+                    }
+                }
+            }
+            
         });
     }
 
     //mise é jour de l'élément
-    element.dataset.compiledCodeSetup = setupCodeCompiled;
-    element.dataset.compiledCodeGlobal = globalCodeCompiled;
+    if (setupCodeCompiled) {
+        element.dataset.compiledCodeSetup = setupCodeCompiled;
+    }
+    if (globalCodeVariable) {
+        element.dataset.variable = globalCodeVariable
+    }
+    if (globalValueCompiled) {
+        element.dataset.codeValue = globalValueCompiled;
+    }
+    if (globalCodeCompiled) {
+        element.dataset.compiledCodeGlobal = globalCodeCompiled;
+    }   
 }
 
 //Fonction scann code pour compilation
