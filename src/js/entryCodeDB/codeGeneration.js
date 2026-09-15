@@ -65,7 +65,7 @@ function blockCodeScanning(element) {
         globalValueCompiled = element.getAttribute("data-code-value");
 
         //scan tout les élément qui peuvent avoir du code
-        element.querySelectorAll(".canva-global-block-default").forEach(subElement=>{
+        element.querySelectorAll(".canva-global-block-default, .canva-base-block-value").forEach(subElement=>{
             //control si il y à un lien avec une variable
             if (subElement.hasAttribute("data-variable")) {
                 //entré de type text
@@ -99,7 +99,7 @@ function blockCodeScanning(element) {
         });
         
         //scan l'élément lié pour récupérer la variable
-       let nextElement = element;
+        let nextElement = element;
         for (let i = 0; i < 5; i++) {
             if (nextElement.nextElementSibling?.querySelector("[data-variable]") || nextElement.nextElementSibling?.hasAttribute("data-variable")) {
                 if (nextElement.nextElementSibling?.hasAttribute("data-variable")) {
@@ -120,13 +120,27 @@ function blockCodeScanning(element) {
     }
 
     //scan des élément avec du code global
-    if (element.hasAttribute("data-code-global") && !element.hasAttribute("data-code-value")) {
+    if (element.hasAttribute("data-code-global")) {
         globalCodeCompiled = element.getAttribute("data-code-global");
 
         //scan tout les élément qui peuvent avoir du code
         element.querySelectorAll(".canva-global-block-default, .canva-base-block-value").forEach(subElement=>{
             //control que l'élément n'ait pas un parent value
-            if (!subElement.parentElement?.parentElement?.hasAttribute("data-code-value")) {
+            let childElement = subElement;
+            let isValueChildren = false;
+            for (let i = 0; i < 3; i++) {
+                if (childElement.parentElement?.classList.contains("canva-base-block-value")) {
+                    //indique que l'élément à un parent value
+                    isValueChildren = true;
+                    break;
+                } else if (childElement.parentElement) {
+                    //prend le parent précédent
+                    childElement = childElement.parentElement;
+                } else {
+                    break;
+                }
+            }
+            if (!isValueChildren) {
                 //control si il y à un lien avec une variable
                 if (subElement.hasAttribute("data-variable")) {
                     //entré de type text
@@ -159,7 +173,7 @@ function blockCodeScanning(element) {
                     //entré de type block value
                     if (subElement.getAttribute("data-code") == "value") {
                         //insertion en remplacent les espace, les $ et les #
-                        globalCodeCompiled = globalCodeCompiled.replace(subElement.getAttribute("data-variable"), subElement.getAttribute("data-code-value").replaceAll('"', ""));
+                        globalCodeCompiled = globalCodeCompiled.replace(subElement.getAttribute("data-variable"), subElement.getAttribute("data-compiled-code-value").replaceAll('"', ""));
                     }
                 }
             }
@@ -175,7 +189,7 @@ function blockCodeScanning(element) {
         element.dataset.variable = globalCodeVariable
     }
     if (globalValueCompiled) {
-        element.dataset.codeValue = globalValueCompiled;
+        element.dataset.compiledCodeValue = globalValueCompiled;
     }
     if (globalCodeCompiled) {
         element.dataset.compiledCodeGlobal = globalCodeCompiled;
