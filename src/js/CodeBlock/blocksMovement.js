@@ -44,6 +44,11 @@ document.addEventListener("mouseup", () => {
                 //placement du fragment de la main après le survolé
                 insertFragment(oldHoverHandZoneElement, blockMoved, movedBlockInput);
 
+                //scan tout les bloques insérer dans le sens inverse
+                inverseQuerySelectorAll(blockMoved.parentElement, ".canva-base-block").forEach(element => {
+                    blockCodeScanning(element);
+                });
+
             } else if (blockMoved?.getAttribute('data-type') == "value" && !oldHoverHandZoneElement?.parentElement?.classList.contains("panel-menu-submenu") && oldHoverHandZoneElement?.classList.contains("canva-global-block-number-case")) {
                 //control le type d'élément ciblé
                 if (oldHoverHandZoneElement.nodeName == "SELECT") {
@@ -53,6 +58,20 @@ document.addEventListener("mouseup", () => {
                     //insertion direct de l'élément dans le bloque
                     oldHoverHandZoneElement.insertAdjacentElement('beforebegin', blockMoved);
                 }
+
+                //recherche le bloque le plus proche du canva
+                let blockToScann = blockMoved;
+                while (!blockToScann.parentElement.classList.contains("canvas-code")) {
+                    blockToScann = blockToScann.parentElement;
+                }
+
+                //scan tout les bloques insérer dans le sens inverse
+                inverseQuerySelectorAll(blockToScann, ".canva-base-block").forEach(element => {
+                    blockCodeScanning(element);
+                });
+                //scann du parent
+                blockCodeScanning(blockToScann);
+
             } else {
                 //création du canva à cloner
                 const clonedCanva = invisibleCodeCanva.children[0].cloneNode(true);
@@ -66,6 +85,11 @@ document.addEventListener("mouseup", () => {
 
                 //placement du fragment de la main dans le nouveau canva
                 clonedCanva.appendChild(makeFragmentElement(blockMoved));
+
+                //scan tout les bloques insérer dans le sens inverse
+                inverseQuerySelectorAll(blockMoved.parentElement, ".canva-base-block").forEach(element => {
+                    blockCodeScanning(element);
+                });
             }
         } else {
             handCanvaElement.innerHTML = "";
@@ -290,4 +314,25 @@ function updateAllCanva() {
 
     //scanning du code
     codeScanning()
+}
+
+//inverse le sens d'un scan querySelectorAll
+function inverseQuerySelectorAll(element, elementClass) {
+    let scannedElement = [];
+    const numberQueryElement = element.querySelectorAll(elementClass).length;
+
+    //initialise la variable liste
+    for (let i = 0; i < numberQueryElement; i++) {
+        scannedElement.push(null);
+    }
+
+    //insert les éléments dans le sens inverse
+    let counter = 1;
+    element.querySelectorAll(elementClass).forEach(queryElement=>{
+        scannedElement[numberQueryElement - counter] = queryElement;
+        counter = counter + 1;
+    });
+
+    //renvoie de la variable
+    return scannedElement;
 }
