@@ -19,6 +19,7 @@ function blockCodeScanning(element) {
     let setupCodeCompiled = null;
     let globalCodeCompiled = null;
     let globalCodeVariable = null;
+    let globalCodeSelection = null;
     let globalValueCompiled = null;
 
     //scan des élément avec du code setup
@@ -132,6 +133,13 @@ function blockCodeScanning(element) {
                     //ajoute le lien à la variable du children 
                     globalCodeVariable = nextElement.nextElementSibling.querySelector("[data-variable]").getAttribute("data-variable");
                 }
+                if (nextElement.nextElementSibling?.hasAttribute("data-selection")) {
+                    //ajoute le lien à la variable directement
+                    globalCodeSelection = nextElement.nextElementSibling.getAttribute("data-selection");
+                } else if (nextElement.nextElementSibling.querySelector("[data-selection]")) {
+                    //ajoute le lien à la variable du children 
+                    globalCodeSelection = nextElement.nextElementSibling.querySelector("[data-selection]").getAttribute("data-selection");
+                }
                 break;
             } else if (nextElement.nextElementSibling) {
                 //prend le block suivant
@@ -208,7 +216,10 @@ function blockCodeScanning(element) {
         element.dataset.compiledCodeSetup = setupCodeCompiled;
     }
     if (globalCodeVariable) {
-        element.dataset.variable = globalCodeVariable
+        element.dataset.variable = globalCodeVariable;
+    }
+    if (globalCodeSelection) {
+        element.dataset.selection = globalCodeSelection;
     }
     if (globalValueCompiled) {
         element.dataset.compiledCodeValue = globalValueCompiled;
