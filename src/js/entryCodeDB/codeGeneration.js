@@ -6,8 +6,33 @@ function findBlockToScan(element) {
         elementParent = elementParent.parentElement;
     }
     if (elementParent.classList.contains("canva-base-block")){
-        //rechargement du code source
-        blockCodeScanning(elementParent)
+        //contrôl si l'élément à un data type et si c'est un value
+        if (elementParent.hasAttribute("data-type")) {
+            if (elementParent.getAttribute("data-type") == "value") {
+                //recherche le bloque le plus proche du canva
+                let blockToScann = elementParent;
+                while (!blockToScann.parentElement.classList.contains("canvas-code")) {
+                    blockToScann = blockToScann.parentElement;
+                }
+
+                //scan tout les bloques insérer dans le sens inverse
+                inverseQuerySelectorAll(blockToScann, ".canva-base-block").forEach(element => {
+                    blockCodeScanning(element);
+                    console.log(element);
+                });
+                //scann du parent
+                blockCodeScanning(blockToScann);
+                console.log(blockToScann);
+
+            } else {
+                //rechargement du code source pour les setup eet code
+                blockCodeScanning(elementParent);
+                console.log(elementParent);
+
+            }
+        } else {
+            console.error("element doesn't have type data : " + elementParent);
+        }
     }
 
     //mise à jour du code
