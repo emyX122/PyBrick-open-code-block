@@ -293,5 +293,104 @@
                 "code": "content-text"
             }
         ]
+    }],
+
+    "5": [{
+        "version": 1.0,
+        "name": "sensorDistance",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "General",
+        "icon": "inputDistance",
+        "code": [{
+            "value": "$A.distance()"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "sensor",
+                    "distancesensor",
+                    "forcesensor",
+                    "infraredsensor"
+                ],
+                "text": "sensor",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "distance"
+            }
+        ]
+    }],
+
+    "6": [{
+        "version": 1.0,
+        "name": "sensorVolume",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "General",
+        "icon": "sensorVolume",
+        "code": [{
+            "value": "$A.intensity()"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+
+                ],
+                "text": "sensor",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "volume"
+            }
+        ]
+    }],
+
+    "7": [{
+        "version": 1.0,
+        "name": "sensortemperature",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "General",
+        "icon": "temperature",
+        "code": [{
+            "value": "$A.temperature()"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+
+                ],
+                "text": "sensor",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "temperature"
+            }
+        ]
     }]
 }
