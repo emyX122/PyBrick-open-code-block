@@ -53,6 +53,8 @@
     "temperature": "température",
     "reflected light": "lumière réfléchit",
     "ambient light": "lumière ambiante",
+    "is": "est",
+    "get headling": "récupérer le sens",
 
     "wait forever": "attendre à l'infini",
     "Describe your program.": "Décrivez votre programme.",
@@ -254,6 +256,14 @@
     "best matching color": "couleur avec la meilleur correspondance",
     "color": "couleur",
     "hue (h), saturation (s), and brightness value (v) measurement": "Mesure de la teinte (t), saturation (s) et de la luminosité (l)",
-    "hsv": "tsl"
+    "hsv": "tsl",
+    "pitch: °": "tangage: °",
+    "pitch": "tangage",
+    "roll: °": "roulis: °",
+    "roll": "roulis",
+    "check if gyro is ready for use": "contrôl si le gyro est prêt à être utilisé",
+    "ready": "prêt",
+    "check if hub is currently stationary": "contrôl si le gyro est actuellement fixe",
+    "stationary": "fixe"
 
 }

@@ -583,5 +583,139 @@
                 "code": "content-value"
             }
         ]
+    }],
+
+    "12": [{
+        "version": 1.0,
+        "name": "gyroTilt",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Orientation",
+        "icon": "gyroTilt",
+        "code": [{
+            "value": "$A.tilt()[$B]"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "hub"
+                ],
+                "text": "hub",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "get"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "pitch: °",
+                        "subtext": "pitch",
+                        "selected": true,
+                        "value": "0"
+                    },
+                    {
+                        "option": "roll: °",
+                        "subtext": "roll",
+                        "value": "1"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            }
+        ]
+    }],
+
+    "13": [{
+        "version": 1.0,
+        "name": "gyroStat",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Orientation",
+        "icon": "gyroAngle",
+        "code": [{
+            "value": "$A.imu.$B"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "hub"
+                ],
+                "text": "hub",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "is"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "check if gyro is ready for use",
+                        "subtext": "ready",
+                        "selected": true,
+                        "value": "ready()"
+                    },
+                    {
+                        "option": "check if hub is currently stationary",
+                        "subtext": "stationary",
+                        "value": "stationary()"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            }
+        ]
+    }],
+
+    "14": [{
+        "version": 1.0,
+        "name": "gyroHeadling",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Orientation",
+        "icon": "gyroAngle",
+        "code": [{
+            "value": "$A.imu.heading()"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "hub"
+                ],
+                "text": "hub",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "get headling"
+            }
+        ]
     }]
 }
