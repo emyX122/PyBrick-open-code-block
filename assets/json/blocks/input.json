@@ -392,5 +392,196 @@
                 "text": "temperature"
             }
         ]
+    }],
+
+    "8": [{
+        "version": 1.0,
+        "name": "lightReflect",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Light and Color",
+        "icon": "lightReflect",
+        "code": [{
+            "value": "$A.reflection()"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "colorsensor",
+                    "sensor",
+                    "infraredsensor"
+                ],
+                "text": "sensor",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "reflected light"
+            }
+        ]
+    }],
+
+    "9": [{
+        "version": 1.0,
+        "name": "lightAmbient",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Light and Color",
+        "icon": "lightAmbient",
+        "code": [{
+            "value": "$A.ambients()"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "colorsensor",
+                    "sensor"
+                ],
+                "text": "sensor",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "ambient light"
+            }
+        ]
+    }],
+
+    "10": [{
+        "version": 1.0,
+        "name": "lightColor",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Light and Color",
+        "icon": "lightRGB",
+        "code": [{
+            "value": "$A.$B"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "colorsensor",
+                    "sensor"
+                ],
+                "text": "sensor",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "best matching color",
+                        "subtext": "color",
+                        "selected": true,
+                        "value": "color()"
+                    },
+                    {
+                        "option": "hue (h), saturation (s), and brightness value (v) measurement",
+                        "subtext": "hsv",
+                        "value": "hsv()"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            }
+        ]
+    }],
+
+    "11": [{
+        "version": 1.0,
+        "name": "RGB",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Light and Color",
+        "icon": "RGB",
+        "code": [{
+            "value": "Color.$A"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "none",
+                        "subtext": "none",
+                        "selected": true,
+                        "value": "NONE"
+                    },
+                    {
+                        "option": "blue",
+                        "subtext": "blue",
+                        "value": "BLUE"
+                    },
+                    {
+                        "option": "cyan",
+                        "subtext": "cyan",
+                        "value": "CYAN"
+                    },
+                    {
+                        "option": "green",
+                        "subtext": "green",
+                        "value": "GREEN"
+                    },
+                    {
+                        "option": "magenta",
+                        "subtext": "magenta",
+                        "value": "MAGENTA"
+                    },
+                    {
+                        "option": "orange",
+                        "subtext": "orange",
+                        "value": "ORANGE"
+                    },
+                    {
+                        "option": "red",
+                        "subtext": "red",
+                        "value": "RED"
+                    },
+                    {
+                        "option": "violet",
+                        "subtext": "violet",
+                        "value": "VIOLET"
+                    },
+                    {
+                        "option": "white",
+                        "subtext": "white",
+                        "value": "WHITE"
+                    },
+                    {
+                        "option": "yellow",
+                        "subtext": "yellow",
+                        "value": "YELLOW"
+                    }
+                ],
+                "variable": "$A",
+                "code": "content-value"
+            }
+        ]
     }]
 }

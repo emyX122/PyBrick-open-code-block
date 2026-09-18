@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0, 0)">
+    <defs>
+<linearGradient id="a" x1=".98572" x2="5.8902" y1="3.3073" y2="3.3073" gradientTransform="matrix(3.7795 0 0 .90709 0 19)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#fff" offset="0"/>
+<stop stop-color="#fff" stop-opacity="0" offset="1"/>
+</linearGradient>
+</defs>
+<path d="m3.8564 8.8795 6.5033 7.6336 8.3395-10.169" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+<g transform="matrix(-.24297 1.232 -1.232 -.24297 32.257 -8.3302)" stroke-width=".85791">
+<path transform="rotate(180 11.532 6.2538)" d="m13.919 6.633h-7.5374l3.7687-6.5276z" fill="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="23.164"/>
+</g>
+<rect y="19" width="25" height="6"/>
+<rect y="19" width="25" height="6" fill="url(#a)"/>
+  </g>
+</svg>

@@ -51,6 +51,8 @@
     "reset distance": "réinitialise la distance",
     "volume": "volume",
     "temperature": "température",
+    "reflected light": "lumière réfléchit",
+    "ambient light": "lumière ambiante",
 
     "wait forever": "attendre à l'infini",
     "Describe your program.": "Décrivez votre programme.",
@@ -248,6 +250,10 @@
     "use gyro for turning and driving straight": "utilise le gyro pour avancer tout droit et tourner",
     "gyro": "gyro",
     "use rotation sensors dor turning and driving straight": "utilise les rotation pour avancer tout droit et tourner",
-    "rotation": "rotation"
+    "rotation": "rotation",
+    "best matching color": "couleur avec la meilleur correspondance",
+    "color": "couleur",
+    "hue (h), saturation (s), and brightness value (v) measurement": "Mesure de la teinte (t), saturation (s) et de la luminosité (l)",
+    "hsv": "tsl"
 
 }
