@@ -995,5 +995,127 @@
                 "text": "is up"
             }
         ]
+    }],
+
+    "19": [{
+        "version": 1.0,
+        "name": "gyroConfigure",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Orientation",
+        "icon": "gyroAngle",
+        "code": [{
+            "code": "$A.imu.settings($B)"
+        }],
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "hub"
+                ],
+                "text": "hub",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "configure"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "headling correction",
+                        "subtext": "headling correction",
+                        "selected": true,
+                        "redirect": "0",
+                        "value": "heading_correction=$C"
+                    },
+                    {
+                        "option": "angular velocity below which the hub calibrates",
+                        "subtext": "angular velocity threshold",
+                        "redirect": "1",
+                        "value": "angular_velocity_threshold=$D"
+                    },
+                    {
+                        "option": "acceleration below which the hub calibrates",
+                        "subtext": "acceleration threshold",
+                        "redirect": "2",
+                        "value": "acceleration_threshold=$E"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            },
+            {
+                "selection": "0",
+                "type": "number",
+                "input": true,
+                "value": 360,
+                "text": "°",
+                "variable": "$C",
+                "code": "content-text"
+            },
+            {
+                "selection": "1",
+                "type": "number",
+                "input": true,
+                "value": 2,
+                "text": "°/s",
+                "variable": "$D",
+                "code": "content-text"
+            },
+            {
+                "selection": "2",
+                "type": "number",
+                "input": true,
+                "value": 2500,
+                "text": "mm/s²",
+                "variable": "$E",
+                "code": "content-text"
+            }
+        ]
+    }],
+
+    "20": [{
+        "version": 1.0,
+        "name": "gyroReset",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Orientation",
+        "icon": "gyroAngle",
+        "code": [{
+            "code": "$A.system.reset_storage"
+        }],
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "hub"
+                ],
+                "text": "hub",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "reset gyro configuration"
+            }
+        ]
     }]
 }
