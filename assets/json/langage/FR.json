@@ -60,6 +60,8 @@
     "acceleration along": "accélération sur",
     "is up": "est dessus",
     "reset gyro configuration": "réinitialiser la configuration du gyro",
+    "force": "force",
+    "is pressed": "est pressé",
 
     "wait forever": "attendre à l'infini",
     "Describe your program.": "Décrivez votre programme.",
@@ -114,9 +116,13 @@
     "move hub": "hub move",
 
     "HUB": "HUB",
+    "motor": "moteur",
+    "drive base": "paire de moteurs",
+    "car": "véhicule",
     "none": "aucun",
     "simple motor": "moteur simple",
     "pf motor": "moteur pf",
+    "sensor": "capteur",
     "matrix": "matrice",
     "color sensor": "capteur couleur",
     "distance sensor": "capteur ultrason",
@@ -270,6 +276,22 @@
     "angular velocity below which the hub calibrates": "vitesse angulaire en dessous de laquelle le hub se calibre",
     "angular velocity threshold": "seuil de vitesse angulaire",
     "acceleration below which the hub calibrates": "accélération en dessous de laquelle le hub se calibre",
-    "acceleration threshold": "seuil d'accélération"
+    "acceleration threshold": "seuil d'accélération",
+    "center": "centre",
+    "left": "gauche",
+    "left +": "gauche +",
+    "left -": "gauche -",
+    "right": "droite",
+    "right +": "droite +",
+    "right -": "droite -",
+    "bluetooth": "bluetooth",
+    "left trigger": "gâchette gauche",
+    "right trigger": "gâchette droite",
+    "left joystick horizontal": "joystick gauche horizontal",
+    "left joystick vertical": "joystick gauche vertical",
+    "right joystick horizontal": "joystick droit horizontal",
+    "right joystick vertical": "joystick droit vertical",
+    "direction pad": "pad directionnel",
+    "profile": "profil"
 
 }

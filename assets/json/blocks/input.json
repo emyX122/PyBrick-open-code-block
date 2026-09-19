@@ -969,7 +969,7 @@
                     {
                         "option": "right side",
                         "subtext": "right side",
-                        "value": "Right"
+                        "value": "RIGHT"
                     },
                     {
                         "option": "bottom side",
@@ -1115,6 +1115,377 @@
             {
                 "type": "text",
                 "text": "reset gyro configuration"
+            }
+        ]
+    }],
+
+    "21": [{
+        "version": 1.0,
+        "name": "buttonForce",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Buttons and force",
+        "icon": "weight",
+        "import": [
+            {
+                "from": "pybricks.parameters",
+                "import": [
+                    "Button"
+                ]
+            }
+        ],
+        "code": [{
+            "value": "$A.force()"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "forcesensor"
+                ],
+                "text": "sensor",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "force"
+            }
+        ]
+    }],
+
+    "22": [{
+        "version": 1.0,
+        "name": "buttonHubPressed",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Buttons and force",
+        "icon": "buttonPressed",
+        "import": [
+            {
+                "from": "pybricks.parameters",
+                "import": [
+                    "Button"
+                ]
+            }
+        ],
+        "code": [{
+            "value": "Button.$B in $A.buttons.pressed()"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "hub"
+                ],
+                "text": "hub",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "center",
+                        "subtext": "center",
+                        "selected": true,
+                        "value": "CENTER"
+                    },
+                    {
+                        "option": "left",
+                        "subtext": "left",
+                        "value": "LEFT"
+                    },
+                    {
+                        "option": "right",
+                        "subtext": "right",
+                        "value": "RIGHT"
+                    },
+                    {
+                        "option": "bluetooth",
+                        "subtext": "bluetooth",
+                        "value": "BLUETOOTH"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "is pressed"
+            }
+        ]
+    }],
+
+    "23": [{
+        "version": 1.0,
+        "name": "buttonRemotePressed",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Buttons and force",
+        "icon": "remote",
+        "import": [
+            {
+                "from": "pybricks.parameters",
+                "import": [
+                    "Button"
+                ]
+            }
+        ],
+        "code": [{
+            "value": "Button.$B in $A.buttons.pressed()"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "remote"
+                ],
+                "text": "remote",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "center",
+                        "subtext": "center",
+                        "selected": true,
+                        "value": "CENTER"
+                    },
+                    {
+                        "option": "left -",
+                        "subtext": "left -",
+                        "value": "LEFT_MINUS"
+                    },
+                    {
+                        "option": "left",
+                        "subtext": "left",
+                        "value": "LEFT"
+                    },
+                    {
+                        "option": "left +",
+                        "subtext": "left +",
+                        "value": "LEFT_PLUS"
+                    },
+                    {
+                        "option": "right -",
+                        "subtext": "right -",
+                        "value": "RIGHT_MINUS"
+                    },
+                    {
+                        "option": "right",
+                        "subtext": "right",
+                        "value": "RIGHT"
+                    },
+                    {
+                        "option": "right +",
+                        "subtext": "right +",
+                        "value": "RIGHT_PLUS"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "is pressed"
+            }
+        ]
+    }],
+
+    "24": [{
+        "version": 1.0,
+        "name": "controllerInput",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Buttons and force",
+        "icon": "controllerInput",
+        "code": [{
+            "value": "$A.$B"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "controller"
+                ],
+                "text": "controller",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "left trigger",
+                        "subtext": "left trigger",
+                        "selected": true,
+                        "value": "triggers()[0]"
+                    },
+                    {
+                        "option": "right trigger",
+                        "subtext": "right trigger",
+                        "value": "triggers()[1]"
+                    },
+                    {
+                        "option": "left joystick horizontal",
+                        "subtext": "left joystick horizontal",
+                        "value": "joystick_left()[0]"
+                    },
+                    {
+                        "option": "left joystick vertical",
+                        "subtext": "left joystick vertical",
+                        "value": "joystick_left()[1]"
+                    },
+                    {
+                        "option": "right joystick horizontal",
+                        "subtext": "right joystick horizontal",
+                        "value": "joystick_right()[0]"
+                    },
+                    {
+                        "option": "right joystick vertical",
+                        "subtext": "right joystick vertical",
+                        "value": "joystick_right()[1]"
+                    },
+                    {
+                        "option": "direction pad",
+                        "subtext": "direction pad",
+                        "value": "dpad()"
+                    },
+                    {
+                        "option": "profile",
+                        "subtext": "profile",
+                        "value": "profile()"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            }
+        ]
+    }],
+
+    "25": [{
+        "version": 1.0,
+        "name": "controllerOutput",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Buttons and force",
+        "icon": "controllerInput",
+        "code": [{
+            "code": "$A.rumble($B)"
+        }],
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "controller"
+                ],
+                "text": "controller",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "rumble"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "one time",
+                        "subtext": "one time",
+                        "selected": true,
+                        "redirect": "0",
+                        "value": "$C, $D"
+                    },
+                    {
+                        "option": "several times",
+                        "subtext": "several times",
+                        "redirect": "1",
+                        "value": "$C, $D, $E, $F"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "at"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 100,
+                "text": "%",
+                "variable": "$C",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "for"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 200,
+                "text": "ms",
+                "variable": "$D",
+                "code": "content-text"
+            },
+            {
+                "selection": "1",
+                "type": "number",
+                "input": true,
+                "value": 2,
+                "variable": "$E",
+                "code": "content-text"
+            },
+            {
+                "selection": "1",
+                "type": "text",
+                "text": "times with pause"
+            },
+            {
+                "selection": "1",
+                "type": "number",
+                "input": true,
+                "value": 100,
+                "text": "ms",
+                "variable": "$F",
+                "code": "content-text"
             }
         ]
     }]

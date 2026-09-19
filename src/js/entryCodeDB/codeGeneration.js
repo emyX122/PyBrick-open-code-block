@@ -18,16 +18,13 @@ function findBlockToScan(element) {
                 //scan tout les bloques insérer dans le sens inverse
                 inverseQuerySelectorAll(blockToScann, ".canva-base-block").forEach(element => {
                     blockCodeScanning(element);
-                    console.log(element);
                 });
                 //scann du parent
                 blockCodeScanning(blockToScann);
-                console.log(blockToScann);
 
             } else {
                 //rechargement du code source pour les setup eet code
                 blockCodeScanning(elementParent);
-                console.log(elementParent);
 
             }
         } else {
