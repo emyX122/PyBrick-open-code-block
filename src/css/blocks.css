@@ -67,6 +67,8 @@
 
     border-radius: 500000px;
 
+    overflow: hidden;
+
     z-index: +2;
 }
 .canva-base-block:hover {

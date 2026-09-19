@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0, 0)">
+    <g transform="matrix(.46178 1.2627 1.2605 -.46256 -11.628 .066332)" stroke-width=".8018">
+<path transform="rotate(180 11.532 6.2538)" d="m13.919 6.633h-7.5374l3.7687-6.5276z" fill="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="21.649"/>
+</g>
+<path transform="matrix(.80778 .58949 .60156 -.79882 0 0)" d="m21.148-11.154a9.6519 9.8083 0 0 1 7.1095 8.5349 9.6519 9.8083 0 0 1-5.3781 9.7556 9.6519 9.8083 0 0 1-10.875-1.7037 9.6519 9.8083 0 0 1-2.2373-10.949" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.1001"/>
+<circle transform="scale(-1,1)" cx="-14.202" cy="12.819" r="2.266" fill="#fff" stop-color="#000000"/>
+  </g>
+</svg>

@@ -717,5 +717,283 @@
                 "text": "get headling"
             }
         ]
+    }],
+
+    "15": [{
+        "version": 1.0,
+        "name": "gyroResetHeadling",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Orientation",
+        "icon": "gyroAngle",
+        "code": [{
+            "code": "$A.imu.reset_heading($B)"
+        }],
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "hub"
+                ],
+                "text": "hub",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "reset headling to"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "text": "°",
+                "variable": "$B",
+                "code": "content-text"
+            }
+        ]
+    }],
+
+    "16": [{
+        "version": 1.0,
+        "name": "gyroRotationAround",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Orientation",
+        "icon": "gyroRotation",
+        "code": [{
+            "value": "$A.imu.$B"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "hub"
+                ],
+                "text": "hub",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "get"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "rotation: °",
+                        "subtext": "rotation",
+                        "selected": true,
+                        "value": "rotation($C)"
+                    },
+                    {
+                        "option": "angular velocity: °/s",
+                        "subtext": "angular velocity",
+                        "value": "angular_velocity($C)"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "around"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "+ x",
+                        "subtext": "x",
+                        "selected": true,
+                        "value": "Axis.X"
+                    },
+                    {
+                        "option": "+ y",
+                        "subtext": "y",
+                        "value": "Axis.Y"
+                    },
+                    {
+                        "option": "+ z",
+                        "subtext": "z",
+                        "value": "Axis.Z"
+                    },
+                    {
+                        "option": "- x",
+                        "subtext": "- x",
+                        "value": "-Axis.X"
+                    },
+                    {
+                        "option": "- y",
+                        "subtext": "- y",
+                        "value": "-Axis.Y"
+                    },
+                    {
+                        "option": "- z",
+                        "subtext": "- z",
+                        "value": "-Axis.Z"
+                    }
+                ],
+                "variable": "$C",
+                "code": "content-value"
+            }
+        ]
+    }],
+
+    "17": [{
+        "version": 1.0,
+        "name": "gyroAccelerationAlong",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Orientation",
+        "icon": "gyroAlong",
+        "code": [{
+            "value": "$A.imu.acceleration($B)"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "hub"
+                ],
+                "text": "hub",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "acceleration along"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "+ x",
+                        "subtext": "x",
+                        "selected": true,
+                        "value": "Axis.X"
+                    },
+                    {
+                        "option": "+ y",
+                        "subtext": "y",
+                        "value": "Axis.Y"
+                    },
+                    {
+                        "option": "+ z",
+                        "subtext": "z",
+                        "value": "Axis.Z"
+                    },
+                    {
+                        "option": "- x",
+                        "subtext": "- x",
+                        "value": "-Axis.X"
+                    },
+                    {
+                        "option": "- y",
+                        "subtext": "- y",
+                        "value": "-Axis.Y"
+                    },
+                    {
+                        "option": "- z",
+                        "subtext": "- z",
+                        "value": "-Axis.Z"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            }
+        ]
+    }],
+
+    "18": [{
+        "version": 1.0,
+        "name": "gyroOrientation",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Orientation",
+        "icon": "gyroOrientation",
+        "code": [{
+            "value": "$A.imu.up() == Side.$B"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "hub"
+                ],
+                "text": "hub",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "top side",
+                        "subtext": "top side",
+                        "selected": true,
+                        "value": "TOP"
+                    },
+                    {
+                        "option": "left side",
+                        "subtext": "left side",
+                        "value": "LEFT"
+                    },
+                    {
+                        "option": "right side",
+                        "subtext": "right side",
+                        "value": "Right"
+                    },
+                    {
+                        "option": "bottom side",
+                        "subtext": "bottom side",
+                        "value": "BOTTOM"
+                    },
+                    {
+                        "option": "front side",
+                        "subtext": "front side",
+                        "value": "FRONT"
+                    },
+                    {
+                        "option": "back side",
+                        "subtext": "back side",
+                        "value": "BACK"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "is up"
+            }
+        ]
     }]
 }

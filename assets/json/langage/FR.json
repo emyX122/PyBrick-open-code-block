@@ -54,7 +54,11 @@
     "reflected light": "lumière réfléchit",
     "ambient light": "lumière ambiante",
     "is": "est",
-    "get headling": "récupérer le sens",
+    "get headling": "récupérer le lacet",
+    "reset headling to": "mettre le lacet à",
+    "around": "sur",
+    "acceleration along": "accélération sur",
+    "is up": "est dessus",
 
     "wait forever": "attendre à l'infini",
     "Describe your program.": "Décrivez votre programme.",
@@ -110,16 +114,6 @@
 
     "HUB": "HUB",
     "none": "aucun",
-    "center": "centre",
-    "left": "gauche",
-    "right": "droite",
-    "bluetooth": "bluetooth",
-    "shut down": "eteindre",
-    "stop program": "arreter le programme",
-    "motor": "moteur",
-    "sensor": "capteur",
-    "drive base": "paire de moteurs",
-    "car": "vehicule",
     "simple motor": "moteur simple",
     "pf motor": "moteur pf",
     "matrix": "matrice",
@@ -264,6 +258,12 @@
     "check if gyro is ready for use": "contrôl si le gyro est prêt à être utilisé",
     "ready": "prêt",
     "check if hub is currently stationary": "contrôl si le gyro est actuellement fixe",
-    "stationary": "fixe"
+    "stationary": "fixe",
+    "top side": "face supérieur",
+    "left side": "face gauche",
+    "right side": "face droite",
+    "bottom side": "face inférieur",
+    "front side": "face avant",
+    "back side": "face arrière"
 
 }
