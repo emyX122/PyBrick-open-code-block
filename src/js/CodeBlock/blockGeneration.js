@@ -224,8 +224,10 @@ function blockInitialisation(jsonExtract, data, file) {
                                 if (actualJsonPath.type == "text") {
                                     htmlSeparatorChild.push(document.createElement('span'));
                                     htmlSeparatorChild[htmlSeparatorChild.length-1].classList.add('canva-global-block-text-input');
-                                    htmlSeparatorChild[htmlSeparatorChild.length-1].setAttribute('contenteditable', 'true');
-                                    htmlSeparatorChild[htmlSeparatorChild.length-1].setAttribute('spellcheck', 'false');
+                                    if (!actualJsonPath.constant) {
+                                        htmlSeparatorChild[htmlSeparatorChild.length-1].setAttribute('contenteditable', 'true');
+                                        htmlSeparatorChild[htmlSeparatorChild.length-1].setAttribute('spellcheck', 'false');
+                                    }
                                     htmlSeparatorChild[htmlSeparatorChild.length-1].textContent = getTraduction(actualJsonPath.text);
                                     //ajout des donné qui montre que c'est du code
                                     if (actualJsonPath.variable) {
@@ -248,8 +250,12 @@ function blockInitialisation(jsonExtract, data, file) {
                                     htmlSelectorChild.push(document.createElement('span'));
                                     htmlSelectorChild[htmlSelectorChild.length-1].classList.add('canva-global-block-default');
                                     htmlSelectorChild[htmlSelectorChild.length-1].classList.add('canva-global-block-number-input');
-                                    htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('contenteditable', 'true');
-                                    htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('spellcheck', 'false');
+                                    if (!actualJsonPath.constant) {
+                                        htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('contenteditable', 'true');
+                                        htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('spellcheck', 'false');
+                                    } else {
+                                        htmlSelectorChild[htmlSelectorChild.length-1].classList.add('canva-global-block-number-input-constant');
+                                    }
                                     htmlSelectorChild[htmlSelectorChild.length-1].textContent = getTraduction(actualJsonPath.value);
                                     //ajout des class sans text
                                     if (!actualJsonPath.text) {

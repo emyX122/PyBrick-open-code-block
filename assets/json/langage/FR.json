@@ -63,6 +63,7 @@
     "radius": "rayon",
     "start at": "démarre à",
     "and": "et",
+    "or": "ou",
     "set up": "configurer",
     "program": "début du programme",
     "drive at": "rouler à",
@@ -115,6 +116,9 @@
     "starting at": "commence à",
     "set to": "mettre à",
     "random between": "aléatoir entre",
+    "if": "si",
+    "else": "sinon",
+    "None": "Vide",
 
     "inventor hub": "hub inventor",
     "prime hub": "hub spike prime",
@@ -336,6 +340,9 @@
     "< true if first value is smaller": "< vrai si la première valeur est plus petite",
     "≤ true if first value is smaller, or the same": "≤ vrai si la première valeur est plus petite ou égale",
     "> true if second value is smaller": "> vrai si la seconde valeur est plus petite",
-    "≥ true if second value is smaller, or the same": "≥ vrai si la seconde valeur est plus petite ou égale"
+    "≥ true if second value is smaller, or the same": "≥ vrai si la seconde valeur est plus petite ou égale",
+    "not": "non",
+    "is none": "est vide",
+    "is not none": "n'est pas vide"
 
 }

@@ -700,5 +700,274 @@
                 "code": "content-text"
             }
         ]
+    }],
+
+    "6": [{
+        "version": 1.0,
+        "name": "logicIfElse",
+        "class": "data-logic",
+        "categorie": "data",
+        "submenu": "Logic",
+        "code": [{
+            "value": "$A if $B else $C"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "value": 1,
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "if"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": "True",
+                "constant": true,
+                "variable": "$B",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "else"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$C",
+                "code": "content-text"
+            }
+        ]
+    }],
+
+    "7": [{
+        "version": 1.0,
+        "name": "logicDoubleIfElse",
+        "class": "data-logic",
+        "categorie": "data",
+        "submenu": "Logic",
+        "code": [{
+            "value": "$A if $B else ($C if $D else $E)"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "value": 100,
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "if"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": "True",
+                "constant": true,
+                "variable": "$B",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "else"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": -100,
+                "variable": "$C",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "if"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": "True",
+                "constant": true,
+                "variable": "$D",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "else"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$E",
+                "code": "content-text"
+            }
+        ]
+    }],
+
+    "8": [{
+        "version": 1.0,
+        "name": "logicAndOr",
+        "class": "data-logic",
+        "categorie": "data",
+        "submenu": "Logic",
+        "code": [{
+            "value": "$A $B $C"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "value": "True",
+                "constant": true,
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "and",
+                        "subtext": "and",
+                        "selected": true,
+                        "value": "and"
+                    },
+                    {
+                        "option": "or",
+                        "subtext": "or",
+                        "value": "or"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": "True",
+                "constant": true,
+                "variable": "$C",
+                "code": "content-text"
+            }
+        ]
+    }],
+
+    "9": [{
+        "version": 1.0,
+        "name": "logicNotNone",
+        "class": "data-logic",
+        "categorie": "data",
+        "submenu": "Logic",
+        "code": [{
+            "value": "$A"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "not",
+                        "subtext": "not",
+                        "selected": true,
+                        "value": "not $B"
+                    },
+                    {
+                        "option": "is none",
+                        "subtext": "is none",
+                        "value": "$B is None"
+                    },
+                    {
+                        "option": "is not none",
+                        "subtext": "is not none",
+                        "value": "$B is not None"
+                    }
+                ],
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": "True",
+                "constant": true,
+                "variable": "$B",
+                "code": "content-text"
+            }
+        ]
+    }],
+
+    "10": [{
+        "version": 1.0,
+        "name": "logicTrueFalse",
+        "class": "data-logic",
+        "categorie": "data",
+        "submenu": "Logic",
+        "code": [{
+            "value": "$A"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "True",
+                        "subtext": "True",
+                        "selected": true,
+                        "value": "True"
+                    },
+                    {
+                        "option": "False",
+                        "subtext": "False",
+                        "value": "False"
+                    }
+                ],
+                "variable": "$A",
+                "code": "content-value"
+            }
+        ]
+    }],
+
+    "11": [{
+        "version": 1.0,
+        "name": "logicNone",
+        "class": "data-logic",
+        "categorie": "data",
+        "submenu": "Logic",
+        "code": [{
+            "value": "None"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "text": "None"
+            }
+        ]
     }]
 }

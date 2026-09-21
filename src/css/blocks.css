@@ -44,7 +44,7 @@
     align-items: center;
 
     min-height: 45px;
-    min-width: 100px;
+    min-width: 50px;
     height: fit-content;
     width: fit-content;
     
@@ -213,7 +213,7 @@
 
     border-left: 1px solid var(--color-alterntive);
 
-    min-width: 50px;
+    min-width: 35px;
     min-height: 35px;
     height: fit-content;
 
@@ -315,6 +315,10 @@
     min-width: 15px;
 
     user-select: none;
+}
+.canva-global-block-number-input-constant {
+    color: #ffffff;
+    background-color: var(--color-intermediate);
 }
 .canva-global-block-number-input-without-text {
     margin: 0px;
