@@ -112,6 +112,7 @@ function resetSetupDevice() {
     controller: [],
     watch: [],
     radio: [],
+    channel: [],
     variable: []
   };
   allSetupDeviceLink = {
@@ -133,6 +134,7 @@ function resetSetupDevice() {
     controller: [],
     watch: [],
     radio: [],
+    channel: [],
     variable: []
   };
 }

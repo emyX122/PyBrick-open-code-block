@@ -1782,43 +1782,59 @@
             },
             {
                 "selection": "01234",
-                "type": "number",
+                "type": "text",
                 "input": true,
-                "value": 0,
+                "text": 0,
                 "variable": "$D",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "channel"
+                ]
             },
             {
                 "selection": "1234",
-                "type": "number",
+                "type": "text",
                 "input": true,
-                "value": 0,
+                "text": 0,
                 "variable": "$E",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "channel"
+                ]
+                
             },
             {
                 "selection": "234",
-                "type": "number",
+                "type": "text",
                 "input": true,
-                "value": 0,
+                "text": 0,
                 "variable": "$F",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "channel"
+                ]
             },
             {
                 "selection": "34",
-                "type": "number",
+                "type": "text",
                 "input": true,
-                "value": 0,
+                "text": 0,
                 "variable": "$G",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "channel"
+                ]
             },
             {
                 "selection": "4",
-                "type": "number",
+                "type": "text",
                 "input": true,
-                "value": 0,
+                "text": 0,
                 "variable": "$H",
-                "code": "content-text"
+                "code": "content-text",
+                "device": [
+                    "channel"
+                ]
             }
         ]
     }]

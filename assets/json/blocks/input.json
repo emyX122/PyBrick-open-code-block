@@ -1574,5 +1574,98 @@
                 "code": "content-value"
             }
         ]
+    }],
+
+    "28": [{
+        "version": 1.0,
+        "name": "consoleRead",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Communication",
+        "icon": "console",
+        "code": [{
+            "value": "read_input_byte($A)"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "text": "read"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "the first (oldest) input byte, as a number (0 to 255)",
+                        "subtext": "first byte",
+                        "value": "False, False"
+                    },
+                    {
+                        "option": "the first (oldest) input byte, as a character key",
+                        "subtext": "first key",
+                        "value": "False, True"
+                    },
+                    {
+                        "option": "the last (newest) input byte, as a number (0 to 255)",
+                        "subtext": "last byte",
+                        "value": "True, False"
+                    },
+                    {
+                        "option": "the last (newest) input byte, as a character key",
+                        "subtext": "last key",
+                        "selected": true,
+                        "value": "True, True"
+                    }
+                ],
+                "variable": "$A",
+                "code": "content-value"
+            }
+        ]
+    }],
+
+    "29": [{
+        "version": 1.0,
+        "name": "radioObserve",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Communication",
+        "icon": "radio",
+        "code": [{
+            "value": "$A.observe($B)"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "radio"
+                ],
+                "text": "radio",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "observe"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "channel"
+                ],
+                "text": "channel",
+                "variable": "$B",
+                "code": "content-value"
+            }
+        ]
     }]
 }

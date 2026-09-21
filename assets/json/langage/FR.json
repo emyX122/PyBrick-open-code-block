@@ -110,6 +110,7 @@
     "rumble": "vibre",
     "times with pause": "fois avec une pause de",
     "time": "temps",
+    "read": "lire",
 
     "inventor hub": "hub inventor",
     "prime hub": "hub spike prime",
@@ -301,6 +302,14 @@
     "reset time to 0 ms": "réinitialiser à 0 ms",
     "reset": "réinitialiser",
     "pause": "stopper",
-    "resume": "reprendre"
+    "resume": "reprendre",
+    "the first (oldest) input byte, as a number (0 to 255)": "le premier (plus vieux) byte d'entrée, comme un nombre (0 à 255)",
+    "first byte": "premier byte",
+    "the first (oldest) input byte, as a character key": "le premier (plus vieux) byte d'entrée, comme un charactère",
+    "first key": "premier charactère",
+    "the last (newest) input byte, as a number (0 to 255)": "le dernier (plus récent) byte d'entrée, comme un nombre (0 à 255)",
+    "last byte": "dernier byte",
+    "the last (newest) input byte, as a character key": "le dernier (plus récent) byte d'entrée, comme un charactère",
+    "last key": "dernier charactère"
 
 }
