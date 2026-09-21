@@ -1488,5 +1488,91 @@
                 "code": "content-text"
             }
         ]
+    }],
+
+    "26": [{
+        "version": 1.0,
+        "name": "watchTime",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Time",
+        "icon": "watch",
+        "code": [{
+            "value": "$A.time()"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "watch"
+                ],
+                "text": "watch",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "time"
+            }
+        ]
+    }],
+
+    "27": [{
+        "version": 1.0,
+        "name": "watchControl",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Time",
+        "icon": "watch",
+        "code": [{
+            "code": "$A.$B"
+        }],
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "watch"
+                ],
+                "text": "watch",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "reset time to 0 ms",
+                        "subtext": "reset",
+                        "selected": true,
+                        "value": "reset()"
+                    },
+                    {
+                        "option": "pause",
+                        "subtext": "pause",
+                        "value": "pause()"
+                    },
+                    {
+                        "option": "resume",
+                        "subtext": "resume",
+                        "value": "resume()"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            }
+        ]
     }]
 }

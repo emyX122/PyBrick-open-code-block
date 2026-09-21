@@ -109,6 +109,7 @@
     "is pressed": "est pressé",
     "rumble": "vibre",
     "times with pause": "fois avec une pause de",
+    "time": "temps",
 
     "inventor hub": "hub inventor",
     "prime hub": "hub spike prime",
@@ -296,6 +297,10 @@
     "direction pad": "pad directionnel",
     "profile": "profil",
     "one time": "une fois",
-    "several times": "plusieurs fois"
+    "several times": "plusieurs fois",
+    "reset time to 0 ms": "réinitialiser à 0 ms",
+    "reset": "réinitialiser",
+    "pause": "stopper",
+    "resume": "reprendre"
 
 }
