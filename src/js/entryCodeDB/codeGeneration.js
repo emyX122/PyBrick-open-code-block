@@ -111,7 +111,7 @@ function blockCodeScanning(element) {
                     //entré de type text
                     if (subElement.getAttribute("data-code") == "content-text") {
                         //contenu scanné en remplacent les espace, les $ et les #
-                        let elementToCompile = subElement.innerHTML.replaceAll(" ", "_").replaceAll("$", "§").replaceAll("#", "-").replaceAll("<br>", "");
+                        let elementToCompile = subElement.innerHTML.replaceAll("<br>", "");
                         //control si l'élément à des settings
                         if (subElement.hasAttribute("data-settings")) {
                             //Majuscule

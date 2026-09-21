@@ -66,5 +66,455 @@
                 "code": "content-text"
             }
         ]
+    }],
+
+    "1": [{
+        "version": 1.0,
+        "name": "numberAdvance",
+        "class": "data-number",
+        "categorie": "data",
+        "submenu": "Number",
+        "import": [
+            {
+                "from": "umath",
+                "import": [
+                    "sqrt",
+                    "log",
+                    "log10",
+                    "exp",
+                    "pow",
+                    "ceil",
+                    "floor",
+                    "sin",
+                    "cos",
+                    "tan",
+                    "asin",
+                    "acos",
+                    "atan",
+                    "atan2"
+                ]
+            }
+        ],
+        "code": [{
+            "value": "$A"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "redirect": "0",
+                        "option": "square root",
+                        "subtext": "√",
+                        "value": "sqrt($B)"
+                    },
+                    {
+                        "redirect": "0",
+                        "option": "absolute",
+                        "subtext": "abs",
+                        "selected": true,
+                        "value": "abs($B)"
+                    },
+                    {
+                        "redirect": "0",
+                        "option": "-",
+                        "subtext": "-",
+                        "value": "-$B"
+                    },
+                    {
+                        "redirect": "0",
+                        "option": "ln",
+                        "subtext": "ln",
+                        "value": "log($B)"
+                    },
+                    {
+                        "redirect": "0",
+                        "option": "log10",
+                        "subtext": "log10",
+                        "value": "log10($B)"
+                    },
+                    {
+                        "redirect": "0",
+                        "option": "e^",
+                        "subtext": "e^",
+                        "value": "exp($B)"
+                    },
+                    {
+                        "redirect": "0",
+                        "option": "10^",
+                        "subtext": "10^",
+                        "value": "pow(10,$B)"
+                    },
+                    {
+                        "redirect": "0",
+                        "option": "round",
+                        "subtext": "round",
+                        "value": "round($B)"
+                    },
+                    {
+                        "redirect": "0",
+                        "option": "round up",
+                        "subtext": "ceil",
+                        "value": "ceil($B)"
+                    },
+                    {
+                        "redirect": "0",
+                        "option": "round down",
+                        "subtext": "floor",
+                        "value": "floor($B)"
+                    },
+                    {
+                        "redirect": "0",
+                        "option": "sin",
+                        "subtext": "sin",
+                        "value": "sin($B)"
+                    },
+                    {
+                        "redirect": "0",
+                        "option": "cos",
+                        "subtext": "cos",
+                        "value": "cos($B)"
+                    },
+                    {
+                        "redirect": "0",
+                        "option": "tan",
+                        "subtext": "tan",
+                        "value": "tan($B)"
+                    },
+                    {
+                        "redirect": "0",
+                        "option": "asin",
+                        "subtext": "asin",
+                        "value": "asin($B)"
+                    },
+                    {
+                        "redirect": "0",
+                        "option": "acos",
+                        "subtext": "acos",
+                        "value": "acos($B)"
+                    },
+                    {
+                        "option": "atan",
+                        "subtext": "atan",
+                        "value": "atan($B)"
+                    },
+                    {
+                        "redirect": "1",
+                        "option": "atan2",
+                        "subtext": "atan2",
+                        "value": "atan2($B, $C)"
+                    },
+                    {
+                        "redirect": "1",
+                        "option": "modulo",
+                        "subtext": "mod",
+                        "value": "$B % $C"
+                    },
+                    {
+                        "redirect": "1",
+                        "option": "min",
+                        "subtext": "min",
+                        "value": "min($B, $C)"
+                    },
+                    {
+                        "redirect": "1",
+                        "option": "max",
+                        "subtext": "max",
+                        "value": "max($B, $C)"
+                    }
+                ],
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$B",
+                "code": "content-text"
+            },
+            {
+                "selection": "1",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$C",
+                "code": "content-text"
+            }
+        ]
+    }],
+
+    "2": [{
+        "version": 1.0,
+        "name": "numberTextAdvance",
+        "class": "data-number",
+        "categorie": "data",
+        "submenu": "Number",
+        "import": [
+            {
+                "from": "umath",
+                "import": [
+                    "sqrt",
+                    "log",
+                    "log10",
+                    "exp",
+                    "pow",
+                    "ceil",
+                    "floor",
+                    "sin",
+                    "cos",
+                    "tan",
+                    "asin",
+                    "acos",
+                    "atan",
+                    "atan2"
+                ]
+            }
+        ],
+        "code": [{
+            "value": "$A"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "$a * sin($b - $c)",
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "redirect": "1",
+                        "option": "1",
+                        "subtext": "1",
+                        "value": "$A"
+                    },
+                    {
+                        "redirect": "2",
+                        "option": "2",
+                        "subtext": "2",
+                        "value": "$A"
+                    },
+                    {
+                        "redirect": "3",
+                        "option": "3",
+                        "subtext": "3",
+                        "selected": true,
+                        "value": "$A"
+                    },
+                    {
+                        "redirect": "4",
+                        "option": "4",
+                        "subtext": "4",
+                        "value": "$A"
+                    },
+                    {
+                        "redirect": "5",
+                        "option": "5",
+                        "subtext": "5",
+                        "value": "$A"
+                    },
+                    {
+                        "redirect": "6",
+                        "option": "6",
+                        "subtext": "6",
+                        "value": "$A"
+                    },
+                    {
+                        "redirect": "7",
+                        "option": "7",
+                        "subtext": "7",
+                        "value": "$A"
+                    },
+                    {
+                        "redirect": "8",
+                        "option": "8",
+                        "subtext": "8",
+                        "value": "$A"
+                    },
+                    {
+                        "redirect": "9",
+                        "option": "9",
+                        "subtext": "9",
+                        "value": "$A"
+                    }
+                ],
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "selection": "123456789",
+                "type": "text",
+                "text": "$a"
+            },
+            {
+                "selection": "123456789",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$a",
+                "code": "content-text"
+            },
+            {
+                "selection": "23456789",
+                "type": "text",
+                "text": "$b"
+            },
+            {
+                "selection": "23456789",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$b",
+                "code": "content-text"
+            },
+            {
+                "selection": "3456789",
+                "type": "text",
+                "text": "$c"
+            },
+            {
+                "selection": "3456789",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$c",
+                "code": "content-text"
+            },
+            {
+                "selection": "456789",
+                "type": "text",
+                "text": "$d"
+            },
+            {
+                "selection": "456789",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$d",
+                "code": "content-text"
+            },
+            {
+                "selection": "56789",
+                "type": "text",
+                "text": "$e"
+            },
+            {
+                "selection": "56789",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$e",
+                "code": "content-text"
+            },
+            {
+                "selection": "6789",
+                "type": "text",
+                "text": "$f"
+            },
+            {
+                "selection": "6789",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$f",
+                "code": "content-text"
+            },
+            {
+                "selection": "789",
+                "type": "text",
+                "text": "$g"
+            },
+            {
+                "selection": "789",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$g",
+                "code": "content-text"
+            },
+            {
+                "selection": "89",
+                "type": "text",
+                "text": "$h"
+            },
+            {
+                "selection": "89",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$h",
+                "code": "content-text"
+            },
+            {
+                "selection": "9",
+                "type": "text",
+                "text": "$i"
+            },
+            {
+                "selection": "9",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$i",
+                "code": "content-text"
+            }
+        ]
+    }],
+
+    "3": [{
+        "version": 1.0,
+        "name": "numberRandom",
+        "class": "data-number",
+        "categorie": "data",
+        "submenu": "Number",
+        "import": [
+            {
+                "from": "urandom",
+                "import": [
+                    "randint"
+                ]
+            }
+        ],
+        "code": [{
+            "value": "randint($A, $B)"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "text": "random between"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "and"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 100,
+                "variable": "$B",
+                "code": "content-text"
+            }
+        ]
     }]
 }

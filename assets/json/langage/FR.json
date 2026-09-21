@@ -114,6 +114,7 @@
     "battery": "batterie",
     "starting at": "commence à",
     "set to": "mettre à",
+    "random between": "aléatoir entre",
 
     "inventor hub": "hub inventor",
     "prime hub": "hub spike prime",
@@ -324,6 +325,11 @@
     "x multiply": "x multiplier",
     "÷ divide": "÷ diviser",
     "^ power": "^ puissance",
-    "// divide and discard decimals": "// diviser et arrondir les décimals"
+    "// divide and discard decimals": "// diviser et arrondir les décimals",
+    "square root": "racine carré",
+    "absolute": "absolu",
+    "round": "arrondir",
+    "round up": "arrondir au dessus",
+    "round down": "arrondir en dessous"
 
 }
