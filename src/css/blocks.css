@@ -140,6 +140,11 @@
     --color-intermediate: #d99115;
     --color-alterntive: #bf8013;
 }
+.color-variable {
+    --color-blocks: #ff6680;
+    --color-intermediate: #d9576d;
+    --color-alterntive: #bf4d60;
+}
 .color-nothing {
     --color-blocks: #00000039;
     --color-intermediate: var(--color-blocks);

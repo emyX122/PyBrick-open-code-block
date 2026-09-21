@@ -111,6 +111,9 @@
     "times with pause": "fois avec une pause de",
     "time": "temps",
     "read": "lire",
+    "battery": "batterie",
+    "starting at": "commence à",
+    "set to": "mettre à",
 
     "inventor hub": "hub inventor",
     "prime hub": "hub spike prime",
@@ -138,6 +141,7 @@
     "controller": "manette",
     "watch": "tempo",
     "radio": "radio",
+    "variable": "variable",
     
     "°/s": "°/s",
     "°": "°",
@@ -310,6 +314,10 @@
     "the last (newest) input byte, as a number (0 to 255)": "le dernier (plus récent) byte d'entrée, comme un nombre (0 à 255)",
     "last byte": "dernier byte",
     "the last (newest) input byte, as a character key": "le dernier (plus récent) byte d'entrée, comme un charactère",
-    "last key": "dernier charactère"
+    "last key": "dernier charactère",
+    "voltage: mV": "voltage: mV",
+    "voltage": "voltage",
+    "current: mA": "courant: mA",
+    "current": "courant"
 
 }

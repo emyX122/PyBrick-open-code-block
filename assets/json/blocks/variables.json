@@ -1,0 +1,110 @@
+{
+    "0": [{
+        "version": 1.0,
+        "name": "variableSetup",
+        "class": "variable",
+        "categorie": "variables",
+        "submenu": "Variables",
+        "icon": "variable",
+        "code": [{
+            "setup": "$A = $B"
+        }],
+        "connection": [{
+            "type": "setup",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "text": "variable",
+                "variable": "$A",
+                "code": "content-text",
+                "device": [
+                    "variable"
+                ]
+            },
+            {
+                "type": "text",
+                "text": "starting at"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$B",
+                "code": "content-text"
+            }
+        ]
+    }],
+
+    "1": [{
+        "version": 1.0,
+        "name": "variableRead",
+        "class": "variable",
+        "categorie": "variables",
+        "submenu": "Variables",
+        "icon": "variable",
+        "code": [{
+            "value": "$A"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "variable"
+                ],
+                "text": "variable",
+                "variable": "$A",
+                "code": "content-value"
+            }
+        ]
+    }],
+
+    "2": [{
+        "version": 1.0,
+        "name": "variableWrite",
+        "class": "variable",
+        "categorie": "variables",
+        "submenu": "Variables",
+        "icon": "variable",
+        "code": [{
+            "code": "$A = $B"
+        }],
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "variable"
+                ],
+                "text": "variable",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "set to"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$B",
+                "code": "content-text"
+            }
+        ]
+    }]
+}
