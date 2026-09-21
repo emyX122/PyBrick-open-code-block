@@ -969,5 +969,351 @@
                 "text": "None"
             }
         ]
+    }],
+
+    "12": [{
+        "version": 1.0,
+        "name": "geometryVector",
+        "class": "data-list",
+        "categorie": "data",
+        "submenu": "Geometry",
+        "import": [
+            {
+                "from": "pybricks.tools",
+                "import": [
+                    "vector"
+                ]
+            }
+        ],
+        "code": [{
+            "value": "vector($A, $B, $C)"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "text": "vector"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 3,
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 4,
+                "variable": "$B",
+                "code": "content-text"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$C",
+                "code": "content-text"
+            }
+        ]
+    }],
+
+    "13": [{
+        "version": 1.0,
+        "name": "listText",
+        "class": "data-list",
+        "categorie": "data",
+        "submenu": "Lists and Text",
+        "code": [{
+            "value": "'$A'"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "text": "``"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "text": "abc",
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "``"
+            }
+        ]
+    }],
+
+    "14": [{
+        "version": 1.0,
+        "name": "listTextInText",
+        "class": "data-list",
+        "categorie": "data",
+        "submenu": "Lists and Text",
+        "code": [{
+            "value": "$A in $B"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "value": "'a'",
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "in"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": "'abc'",
+                "variable": "$B",
+                "code": "content-text"
+            }
+        ]
+    }],
+
+    "15": [{
+        "version": 1.0,
+        "name": "listListWith",
+        "class": "data-list",
+        "categorie": "data",
+        "submenu": "Lists and Text",
+        "code": [{
+            "value": "[$A]"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "text": "list with"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "redirect": "1",
+                        "option": "1",
+                        "subtext": "1",
+                        "value": "$A"
+                    },
+                    {
+                        "redirect": "2",
+                        "option": "2",
+                        "subtext": "2",
+                        "value": "$A, $B"
+                    },
+                    {
+                        "redirect": "3",
+                        "option": "3",
+                        "subtext": "3",
+                        "selected": true,
+                        "value": "$A, $B, $C"
+                    },
+                    {
+                        "redirect": "4",
+                        "option": "4",
+                        "subtext": "4",
+                        "value": "$A, $B, $C, $D"
+                    },
+                    {
+                        "redirect": "5",
+                        "option": "5",
+                        "subtext": "5",
+                        "value": "$A, $B, $C, $D, $E"
+                    },
+                    {
+                        "redirect": "6",
+                        "option": "6",
+                        "subtext": "6",
+                        "value": "$A, $B, $C, $D, $E, $F"
+                    },
+                    {
+                        "redirect": "7",
+                        "option": "7",
+                        "subtext": "7",
+                        "value": "$A, $B, $C, $D, $E, $F, $G"
+                    },
+                    {
+                        "redirect": "8",
+                        "option": "8",
+                        "subtext": "8",
+                        "value": "$A, $B, $C, $D, $E, $F, $G, $H"
+                    },
+                    {
+                        "redirect": "9",
+                        "option": "9",
+                        "subtext": "9",
+                        "value": "$A, $B, $C, $D, $E, $F, $G, $H, $I"
+                    }
+                ],
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "selection": "123456789",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "selection": "23456789",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$B",
+                "code": "content-text"
+            },
+            {
+                "selection": "3456789",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$C",
+                "code": "content-text"
+            },
+            {
+                "selection": "456789",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$D",
+                "code": "content-text"
+            },
+            {
+                "selection": "56789",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$E",
+                "code": "content-text"
+            },
+            {
+                "selection": "6789",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$F",
+                "code": "content-text"
+            },
+            {
+                "selection": "789",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$G",
+                "code": "content-text"
+            },
+            {
+                "selection": "89",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$H",
+                "code": "content-text"
+            },
+            {
+                "selection": "9",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$I",
+                "code": "content-text"
+            }
+        ]
+    }],
+
+    "16": [{
+        "version": 1.0,
+        "name": "listRange",
+        "class": "data-list",
+        "categorie": "data",
+        "submenu": "Lists and Text",
+        "code": [{
+            "value": "range($A, $B, $C)"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "text": "range from"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "at"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 3,
+                "variable": "$B",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "with steps of"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 1,
+                "variable": "$C",
+                "code": "content-text"
+            }
+        ]
+    }],
+
+    "17": [{
+        "version": 1.0,
+        "name": "listLength",
+        "class": "data-list",
+        "categorie": "data",
+        "submenu": "Lists and Text",
+        "code": [{
+            "value": "len($A)"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "text": "length of"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": "list",
+                "constant": true,
+                "variable": "$A",
+                "code": "content-text"
+            }
+        ]
     }]
 }

@@ -119,6 +119,12 @@
     "if": "si",
     "else": "sinon",
     "None": "Vide",
+    "vector": "vecteur",
+    "in": "dans",
+    "list with": "list contenant",
+    "range from": "list depuis",
+    "with steps of": "avec une incrémentation de",
+    "length of": "longueur de",
 
     "inventor hub": "hub inventor",
     "prime hub": "hub spike prime",
