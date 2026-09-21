@@ -330,6 +330,12 @@
     "absolute": "absolu",
     "round": "arrondir",
     "round up": "arrondir au dessus",
-    "round down": "arrondir en dessous"
+    "round down": "arrondir en dessous",
+    "= true if the values are equal": "= vrai si les valeurs sont égales",
+    "≠ true if the values are different": "≠ vrai si les valeurs sont différentes",
+    "< true if first value is smaller": "< vrai si la première valeur est plus petite",
+    "≤ true if first value is smaller, or the same": "≤ vrai si la première valeur est plus petite ou égale",
+    "> true if second value is smaller": "> vrai si la seconde valeur est plus petite",
+    "≥ true if second value is smaller, or the same": "≥ vrai si la seconde valeur est plus petite ou égale"
 
 }

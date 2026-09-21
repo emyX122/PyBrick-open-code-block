@@ -516,5 +516,189 @@
                 "code": "content-text"
             }
         ]
+    }],
+
+    "4": [{
+        "version": 1.0,
+        "name": "logicSimple",
+        "class": "data-logic",
+        "categorie": "data",
+        "submenu": "Logic",
+        "code": [{
+            "value": "$A $B $C"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "value": 1,
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "= true if the values are equal",
+                        "subtext": "==",
+                        "value": "=="
+                    },
+                    {
+                        "option": "≠ true if the values are different",
+                        "subtext": "≠",
+                        "value": "!="
+                    },
+                    {
+                        "option": "< true if first value is smaller",
+                        "subtext": "<",
+                        "value": "<"
+                    },
+                    {
+                        "option": "≤ true if first value is smaller, or the same",
+                        "subtext": "≤",
+                        "selected": true,
+                        "value": "<="
+                    },
+                    {
+                        "option": "> true if second value is smaller",
+                        "subtext": ">",
+                        "value": ">"
+                    },
+                    {
+                        "option": "≥ true if second value is smaller, or the same",
+                        "subtext": "≥",
+                        "value": ">="
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 2,
+                "variable": "$C",
+                "code": "content-text"
+            }
+        ]
+    }],
+
+    "5": [{
+        "version": 1.0,
+        "name": "logicDoubleSimple",
+        "class": "data-logic",
+        "categorie": "data",
+        "submenu": "Logic",
+        "code": [{
+            "value": "$A $B $C $D $E"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "value": 1,
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "= true if the values are equal",
+                        "subtext": "==",
+                        "value": "=="
+                    },
+                    {
+                        "option": "≠ true if the values are different",
+                        "subtext": "≠",
+                        "value": "!="
+                    },
+                    {
+                        "option": "< true if first value is smaller",
+                        "subtext": "<",
+                        "value": "<"
+                    },
+                    {
+                        "option": "≤ true if first value is smaller, or the same",
+                        "subtext": "≤",
+                        "selected": true,
+                        "value": "<="
+                    },
+                    {
+                        "option": "> true if second value is smaller",
+                        "subtext": ">",
+                        "value": ">"
+                    },
+                    {
+                        "option": "≥ true if second value is smaller, or the same",
+                        "subtext": "≥",
+                        "value": ">="
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 2,
+                "variable": "$C",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "= true if the values are equal",
+                        "subtext": "==",
+                        "value": "=="
+                    },
+                    {
+                        "option": "≠ true if the values are different",
+                        "subtext": "≠",
+                        "value": "!="
+                    },
+                    {
+                        "option": "< true if first value is smaller",
+                        "subtext": "<",
+                        "value": "<"
+                    },
+                    {
+                        "option": "≤ true if first value is smaller, or the same",
+                        "subtext": "≤",
+                        "selected": true,
+                        "value": "<="
+                    },
+                    {
+                        "option": "> true if second value is smaller",
+                        "subtext": ">",
+                        "value": ">"
+                    },
+                    {
+                        "option": "≥ true if second value is smaller, or the same",
+                        "subtext": "≥",
+                        "value": ">="
+                    }
+                ],
+                "variable": "$D",
+                "code": "content-value"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 3,
+                "variable": "$E",
+                "code": "content-text"
+            }
+        ]
     }]
 }

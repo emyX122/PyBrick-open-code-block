@@ -108,6 +108,7 @@
     border-radius: 0px 15px 15px 0px;
 
     min-width: 150px;
+    max-width: 50vw;
     top: 0px;
     bottom: 0px;
     left: 130px;
