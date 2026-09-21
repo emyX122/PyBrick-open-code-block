@@ -1667,5 +1667,56 @@
                 "code": "content-value"
             }
         ]
+    }],
+
+    "30": [{
+        "version": 1.0,
+        "name": "hubVoltageLevel",
+        "class": "input",
+        "categorie": "input",
+        "submenu": "Hub status",
+        "icon": "battery",
+        "code": [{
+            "value": "$A.battery.$B"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "selector": [],
+                "linkDevice": [
+                    "hub"
+                ],
+                "text": "hub",
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "type": "text",
+                "text": "battery"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "voltage: mV",
+                        "subtext": "voltage",
+                        "selected": true,
+                        "value": "voltage()"
+                    },
+                    {
+                        "option": "current: mA",
+                        "subtext": "current",
+                        "value": "current()"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            }
+        ]
     }]
 }
