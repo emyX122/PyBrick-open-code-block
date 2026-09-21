@@ -145,6 +145,21 @@
     --color-intermediate: #d9576d;
     --color-alterntive: #bf4d60;
 }
+.color-data-number {
+    --color-blocks: #59c059;
+    --color-intermediate: #59c059;
+    --color-alterntive: #439043;
+}
+.color-data-logic {
+    --color-blocks: #21a176;
+    --color-intermediate: #1c8964;
+    --color-alterntive: #197959;
+}
+.color-data-list {
+    --color-blocks: #00cc99;
+    --color-intermediate: #00ad82;
+    --color-alterntive: #009973;
+}
 .color-nothing {
     --color-blocks: #00000039;
     --color-intermediate: var(--color-blocks);
@@ -210,6 +225,11 @@
 
     pointer-events: none;
 }
+.separator-none-icon {
+    border-style: none;
+
+    margin: 0px 5px 0px 0px;
+}
 
 .canva-global-block-text {
     color: inherit;
@@ -253,13 +273,16 @@
 }
 .canva-global-block-number-case {
     padding: 0px 0px 0px 5px;
-    border-radius: 500px;
+    border-radius: 50000px;
 
     border: 1px solid var(--color-alterntive);
     background-color: var(--color-intermediate);
     color: inherit;
 
     user-select: none;
+}
+.canva-global-block-number-case-without-text {
+    padding: 0px;
 }
 .canva-global-block-number-case option {
     color: #ffffff;
@@ -292,6 +315,11 @@
     min-width: 15px;
 
     user-select: none;
+}
+.canva-global-block-number-input-without-text {
+    margin: 0px;
+    padding: 0px 10px 0px 10px;
+    border-radius: 50000px;
 }
 .canva-global-block-text-input {
     padding: 0px 5px 0px 5px;

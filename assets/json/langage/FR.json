@@ -318,6 +318,12 @@
     "voltage: mV": "voltage: mV",
     "voltage": "voltage",
     "current: mA": "courant: mA",
-    "current": "courant"
+    "current": "courant",
+    "+ add": "+ additionner",
+    "- substract": "- soustraire",
+    "x multiply": "x multiplier",
+    "÷ divide": "÷ diviser",
+    "^ power": "^ puissance",
+    "// divide and discard decimals": "// diviser et arrondir les décimals"
 
 }

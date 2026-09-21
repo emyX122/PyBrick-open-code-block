@@ -1,0 +1,70 @@
+{
+    "0": [{
+        "version": 1.0,
+        "name": "numberSimple",
+        "class": "data-number",
+        "categorie": "data",
+        "submenu": "Number",
+        "code": [{
+            "value": "$A $B $C"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "number",
+                "input": true,
+                "value": 1,
+                "variable": "$A",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "option": "+ add",
+                        "subtext": "+",
+                        "selected": true,
+                        "value": "+"
+                    },
+                    {
+                        "option": "- substract",
+                        "subtext": "-",
+                        "value": "-"
+                    },
+                    {
+                        "option": "x multiply",
+                        "subtext": "x",
+                        "value": "*"
+                    },
+                    {
+                        "option": "÷ divide",
+                        "subtext": "÷",
+                        "value": "/"
+                    },
+                    {
+                        "option": "^ power",
+                        "subtext": "^",
+                        "value": "**"
+                    },
+                    {
+                        "option": "// divide and discard decimals",
+                        "subtext": "//",
+                        "value": "//"
+                    }
+                ],
+                "variable": "$B",
+                "code": "content-value"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 1,
+                "variable": "$C",
+                "code": "content-text"
+            }
+        ]
+    }]
+}

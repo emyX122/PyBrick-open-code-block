@@ -122,6 +122,11 @@ function blockInitialisation(jsonExtract, data, file) {
                     //separator
                     htmlChild.push(document.createElement('span'));
                     htmlChild[htmlChild.length-1].classList.add('separator');
+                    //control s'il y avait un icon
+                    if (!data[String(key)][0].icon) {
+                        //ajoute la class pour retirer l'icon
+                        htmlChild[htmlChild.length-1].classList.add('separator-none-icon');
+                    }
                     // --------------------------------
                     //      création du centenu
                     // --------------------------------
@@ -239,20 +244,29 @@ function blockInitialisation(jsonExtract, data, file) {
                                 if (actualJsonPath.type == "number") {
                                     htmlSeparatorChild.push(document.createElement('span'));
                                     htmlSeparatorChild[htmlSeparatorChild.length-1].classList.add('canva-global-block-number-case');
-                                    htmlSelectorChild.push(document.createElement('span')); //entrée de valeur
+                                    // création de l'entrée de valeur
+                                    htmlSelectorChild.push(document.createElement('span'));
                                     htmlSelectorChild[htmlSelectorChild.length-1].classList.add('canva-global-block-default');
                                     htmlSelectorChild[htmlSelectorChild.length-1].classList.add('canva-global-block-number-input');
                                     htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('contenteditable', 'true');
                                     htmlSelectorChild[htmlSelectorChild.length-1].setAttribute('spellcheck', 'false');
                                     htmlSelectorChild[htmlSelectorChild.length-1].textContent = getTraduction(actualJsonPath.value);
+                                    //ajout des class sans text
+                                    if (!actualJsonPath.text) {
+                                        htmlSeparatorChild[htmlSeparatorChild.length-1].classList.add('canva-global-block-number-case-without-text');
+                                        htmlSelectorChild[htmlSelectorChild.length-1].classList.add('canva-global-block-number-input-without-text');
+                                    }
                                     //ajout des donné qui montre que c'est du code
                                     if (actualJsonPath.variable) {
                                         htmlSelectorChild[htmlSelectorChild.length-1].dataset.variable = actualJsonPath.variable;
                                         htmlSelectorChild[htmlSelectorChild.length-1].dataset.code = actualJsonPath.code;
                                     }
-                                    htmlSelectorChild.push(document.createElement('a')); //texte unitée de la valeur
-                                    htmlSelectorChild[htmlSelectorChild.length-1].classList.add('canva-global-block-text');
-                                    htmlSelectorChild[htmlSelectorChild.length-1].textContent = getTraduction(actualJsonPath.text);
+                                    //ajoute le text si existant
+                                    if (actualJsonPath.text) {
+                                        htmlSelectorChild.push(document.createElement('a')); //texte unitée de la valeur
+                                        htmlSelectorChild[htmlSelectorChild.length-1].classList.add('canva-global-block-text');
+                                        htmlSelectorChild[htmlSelectorChild.length-1].textContent = getTraduction(actualJsonPath.text);
+                                    }                                    
                                     //ajout des entrées du selecteur
                                     for (let i = 0; i < htmlSelectorChild.length; i++) {
                                         htmlSeparatorChild[htmlSeparatorChild.length-1].appendChild(htmlSelectorChild[i]);
