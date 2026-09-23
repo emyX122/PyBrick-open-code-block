@@ -1322,5 +1322,202 @@
                 "code": "content-master"
             }
         ]
+    }],
+
+    "18": [{
+        "version": 1.0,
+        "name": "listGet",
+        "class": "data-list",
+        "categorie": "data",
+        "submenu": "Lists and Text",
+        "import": [
+            {
+                "from": "urandom",
+                "import": [
+                    "choice"
+                ]
+            }
+        ],
+        "code": [{
+            "value": "$A"
+        }],
+        "connection": [{
+            "type": "value"
+        }],
+        "content": [
+            {
+                "type": "text",
+                "text": "get"
+            },
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "redirect": "1",
+                        "option": "value at index #",
+                        "subtext": "#",
+                        "selected": true,
+                        "value": "$B[$C]"
+                    },
+                    {
+                        "redirect": "0",
+                        "option": "first value",
+                        "subtext": "first",
+                        "value": "$B[0]"
+                    },
+                    {
+                        "redirect": "0",
+                        "option": "last value",
+                        "subtext": "last",
+                        "value": "$B[-1]"
+                    },
+                    {
+                        "redirect": "0",
+                        "option": "random value",
+                        "subtext": "random",
+                        "value": "choice($B)"
+                    }
+                ],
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "selection": "1",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$C",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "in list"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": "list",
+                "master": "[]",
+                "constant": true,
+                "variable": "$B",
+                "code": "content-master"
+            }
+        ]
+    }],
+
+    "19": [{
+        "version": 1.0,
+        "name": "listSet",
+        "class": "data-list",
+        "categorie": "data",
+        "submenu": "Lists and Text",
+        "code": [{
+            "code": "$A"
+        }],
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "text",
+                "input": true,
+                "selector": [
+                    {
+                        "redirect": "1",
+                        "option": "set value with index # to a new value",
+                        "subtext": "set #",
+                        "selected": true,
+                        "value": "$B[$C] = $D"
+                    },
+                    {
+                        "redirect": "2",
+                        "option": "set first value to a new value",
+                        "subtext": "set first",
+                        "value": "$B[0] = $D"
+                    },
+                    {
+                        "redirect": "2",
+                        "option": "set last value to a new value",
+                        "subtext": "set last",
+                        "value": "$B[-1] = $D"
+                    },
+                    {
+                        "redirect": "3",
+                        "option": "remove value with index #",
+                        "subtext": "remove #",
+                        "value": "$B.pop($C)"
+                    },
+                    {
+                        "redirect": "0",
+                        "option": "remove first value",
+                        "subtext": "remove first",
+                        "value": "$B.pop(0)"
+                    },
+                    {
+                        "redirect": "0",
+                        "option": "remove last value",
+                        "subtext": "remove last",
+                        "value": "$B.pop()"
+                    },
+                    {
+                        "redirect": "1",
+                        "option": "insert a new value at (before) index #",
+                        "subtext": "insert at #",
+                        "value": "$B.insert($C, $D)"
+                    },
+                    {
+                        "redirect": "2",
+                        "option": "prefix a new value at the beginning",
+                        "subtext": "prefix",
+                        "value": "$B.insert(0, $D)"
+                    },
+                    {
+                        "redirect": "2",
+                        "option": "append a new value at the end",
+                        "subtext": "append",
+                        "value": "$B.append($D)"
+                    }
+                ],
+                "variable": "$A",
+                "code": "content-value"
+            },
+            {
+                "selection": "13",
+                "type": "number",
+                "input": true,
+                "value": 0,
+                "variable": "$C",
+                "code": "content-text"
+            },
+            {
+                "selection": "12",
+                "type": "text",
+                "text": "at"
+            },
+            {
+                "selection": "12",
+                "type": "number",
+                "input": true,
+                "value": 123,
+                "variable": "$D",
+                "code": "content-text"
+            },
+            {
+                "type": "text",
+                "text": "in list"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": "list",
+                "master": "[]",
+                "constant": true,
+                "variable": "$B",
+                "code": "content-master"
+            }
+        ]
     }]
 }
