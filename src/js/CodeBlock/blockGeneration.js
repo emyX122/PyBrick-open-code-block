@@ -266,6 +266,10 @@ function blockInitialisation(jsonExtract, data, file) {
                                     if (actualJsonPath.variable) {
                                         htmlSelectorChild[htmlSelectorChild.length-1].dataset.variable = actualJsonPath.variable;
                                         htmlSelectorChild[htmlSelectorChild.length-1].dataset.code = actualJsonPath.code;
+                                        //ajout du master s'il existe
+                                        if (actualJsonPath.master) {
+                                            htmlSelectorChild[htmlSelectorChild.length-1].dataset.master = JSON.stringify(actualJsonPath.master);
+                                        }
                                     }
                                     //ajoute le text si existant
                                     if (actualJsonPath.text) {
@@ -277,7 +281,6 @@ function blockInitialisation(jsonExtract, data, file) {
                                     for (let i = 0; i < htmlSelectorChild.length; i++) {
                                         htmlSeparatorChild[htmlSeparatorChild.length-1].appendChild(htmlSelectorChild[i]);
                                     }
-                                    
                                 }
                             }
                             

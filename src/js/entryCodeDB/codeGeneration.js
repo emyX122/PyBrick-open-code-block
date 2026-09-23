@@ -79,6 +79,11 @@ function blockCodeScanning(element) {
                     //insertion en remplacent les espace, les $ et les #
                     setupCodeCompiled = setupCodeCompiled.replace(subElement.getAttribute("data-variable"), subElement.value);
                 }
+                //entré de type masterValue
+                if (subElement.getAttribute("data-code") == "content-master") {
+                    //insertion simple et direct car masterValue n'est pas éditable
+                    setupCodeCompiled = setupCodeCompiled.replace(subElement.getAttribute("data-variable"), subElement.getAttribute("data-master").replaceAll('"', ""));
+                }
             }
         });
     }
@@ -139,6 +144,11 @@ function blockCodeScanning(element) {
                     if (subElement.getAttribute("data-code") == "value") {
                         //insertion en remplacent les espace, les $ et les #
                         globalValueCompiled = globalValueCompiled.replace(subElement.getAttribute("data-variable"), subElement.getAttribute("data-compiled-code-value").replaceAll('"', ""));
+                    }
+                    //entré de type masterValue
+                    if (subElement.getAttribute("data-code") == "content-master") {
+                        //insertion simple et direct car masterValue n'est pas éditable
+                        globalValueCompiled = globalValueCompiled.replace(subElement.getAttribute("data-variable"), subElement.getAttribute("data-master").replaceAll('"', ""));
                     }
                 }
             }
@@ -227,6 +237,11 @@ function blockCodeScanning(element) {
                     if (subElement.getAttribute("data-code") == "value") {
                         //insertion en remplacent les espace, les $ et les #
                         globalCodeCompiled = globalCodeCompiled.replace(subElement.getAttribute("data-variable"), subElement.getAttribute("data-compiled-code-value").replaceAll('"', ""));
+                    }
+                    //entré de type masterValue
+                    if (subElement.getAttribute("data-code") == "content-master") {
+                        //insertion simple et direct car masterValue n'est pas éditable
+                        globalCodeCompiled = globalCodeCompiled.replace(subElement.getAttribute("data-variable"), subElement.getAttribute("data-master").replaceAll('"', ""));
                     }
                 }
             }

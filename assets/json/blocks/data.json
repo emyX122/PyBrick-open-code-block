@@ -730,9 +730,10 @@
                 "type": "number",
                 "input": true,
                 "value": "True",
+                "master": "True",
                 "constant": true,
                 "variable": "$B",
-                "code": "content-text"
+                "code": "content-master"
             },
             {
                 "type": "text",
@@ -776,9 +777,10 @@
                 "type": "number",
                 "input": true,
                 "value": "True",
+                "master": "True",
                 "constant": true,
                 "variable": "$B",
-                "code": "content-text"
+                "code": "content-master"
             },
             {
                 "type": "text",
@@ -799,9 +801,10 @@
                 "type": "number",
                 "input": true,
                 "value": "True",
+                "master": "True",
                 "constant": true,
                 "variable": "$D",
-                "code": "content-text"
+                "code": "content-master"
             },
             {
                 "type": "text",
@@ -834,9 +837,10 @@
                 "type": "number",
                 "input": true,
                 "value": "True",
+                "master": "True",
                 "constant": true,
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-master"
             },
             {
                 "type": "text",
@@ -861,9 +865,10 @@
                 "type": "number",
                 "input": true,
                 "value": "True",
+                "master": "True",
                 "constant": true,
                 "variable": "$C",
-                "code": "content-text"
+                "code": "content-master"
             }
         ]
     }],
@@ -909,9 +914,10 @@
                 "type": "number",
                 "input": true,
                 "value": "True",
+                "master": "True",
                 "constant": true,
                 "variable": "$B",
-                "code": "content-text"
+                "code": "content-master"
             }
         ]
     }],
@@ -1310,9 +1316,10 @@
                 "type": "number",
                 "input": true,
                 "value": "list",
+                "master": "[]",
                 "constant": true,
                 "variable": "$A",
-                "code": "content-text"
+                "code": "content-master"
             }
         ]
     }]

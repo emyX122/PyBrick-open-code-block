@@ -118,7 +118,6 @@
     "random between": "aléatoir entre",
     "if": "si",
     "else": "sinon",
-    "None": "Vide",
     "vector": "vecteur",
     "in": "dans",
     "list with": "list contenant",
@@ -177,6 +176,11 @@
     "violet": "violet",
     "white": "blanc",
     "yellow": "jaune",
+
+    "True" : "Vrai",
+    "False" : "faux",
+    "list" : "liste",
+    "None": "Vide",
 
     "rotate forever": "démarrer",
     "forever": "démarrer",
