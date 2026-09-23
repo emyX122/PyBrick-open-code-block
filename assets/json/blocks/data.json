@@ -1113,6 +1113,12 @@
                 "input": true,
                 "selector": [
                     {
+                        "redirect": "0",
+                        "option": "0",
+                        "subtext": "0",
+                        "value": " "
+                    },
+                    {
                         "redirect": "1",
                         "option": "1",
                         "subtext": "1",
