@@ -17,5 +17,115 @@
                 "text": "wait forever"
             }
         ]
+    }],
+
+    "1": [{
+        "version": 1.0,
+        "name": "wait",
+        "class": "flow",
+        "categorie": "flow",
+        "submenu": "Waiting",
+        "icon": "wait",
+        "import": [
+            {
+                "from": "pybricks.tools",
+                "import": [
+                    "wait"
+                ]
+            }
+        ],
+        "code": [{
+            "code": "wait($A)"
+        }],
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "text",
+                "text": "wait"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": 1000,
+                "text": "ms",
+                "variable": "$A",
+                "code": "content-text"
+            }
+        ]
+    }],
+
+    "2": [{
+        "version": 1.0,
+        "name": "waitUntil",
+        "class": "flow",
+        "categorie": "flow",
+        "submenu": "Waiting",
+        "icon": "wait",
+        "import": [
+            {
+                "from": "pybricks.tools",
+                "import": [
+                    "wait until"
+                ]
+            }
+        ],
+        "code": [{
+            "code": "while not $A:\nwait(0)"
+        }],
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "text",
+                "text": "wait"
+            },
+            {
+                "type": "number",
+                "input": true,
+                "value": "True",
+                "master": "True",
+                "constant": true,
+                "variable": "$A",
+                "code": "content-master"
+            }
+        ]
+    }],
+
+    "3": [{
+        "version": 1.0,
+        "name": "waitForever",
+        "class": "flow",
+        "categorie": "flow",
+        "submenu": "Waiting",
+        "icon": "wait",
+        "import": [
+            {
+                "from": "pybricks.tools",
+                "import": [
+                    "wait"
+                ]
+            }
+        ],
+        "code": [{
+            "code": "while True:\nwait(1000)"
+        }],
+        "connection": [{
+            "type": "code",
+            "input": true,
+            "output": true
+        }],
+        "content": [
+            {
+                "type": "text",
+                "text": "wait forever"
+            }
+        ]
     }]
 }

@@ -120,8 +120,8 @@
     "else": "sinon",
     "vector": "vecteur",
     "in": "dans",
-    "list with": "list contenant",
-    "range from": "list depuis",
+    "list with": "liste contenant",
+    "range from": "liste depuis",
     "with steps of": "avec une incrémentation de",
     "length of": "longueur de",
     "in list": "dans la liste",
@@ -179,7 +179,7 @@
     "yellow": "jaune",
 
     "True" : "Vrai",
-    "False" : "faux",
+    "False" : "Faux",
     "list" : "liste",
     "None": "Vide",
 
